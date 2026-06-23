@@ -19,6 +19,7 @@ This package is the foundational spine of the platform: the **institutional narr
 | **models/build_underwriting_model.py** | Reproducible builder for the model (re-run to regenerate). | Internal |
 | **acquisitions/05_Acquisition_Memorandum_Template.md** | The per-deal "yes" document — reusable template with placeholders + drafting rules. | IC, then capital partner |
 | **acquisitions/06_Acquisition_Memorandum_SAMPLE_RioVista.md** | Fully worked sample memo on the Rio Vista deal; ties number-for-number to the model. | Reference / training |
+| **site/index.html** | Public landing page — self-contained, responsive, navy/gold brand. Mirrors the thesis, value chain, edge, box, and economics. Open in any browser. | Public / marketing |
 
 ---
 
