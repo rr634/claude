@@ -95,19 +95,27 @@ The strategy is *not* a bet on market appreciation. Returns are engineered from 
 
 | Factor | Detail |
 |---|---|
-| **Supply-constrained** | No new waterfront land is being created in Las Olas Isles, Rio Vista, Harbor Beach, Coral Ridge, or Lighthouse Point. Deep-water, ocean-access lots are finite. |
+| **Supply-constrained** | No new waterfront land is being created anywhere on the South Florida coast — from the Las Olas Isles to Miami Beach to Palm Beach. Deep-water, ocean-access lots are finite. |
 | **Durable demand** | Sustained in-migration of wealth, no state income tax, financial-services and family-office relocation, and a global buyer base. |
 | **Price resilience** | Finished trophy product at the top of the market is comparatively insulated and liquid to the right buyer. |
 | **Inefficiency** | Hyper-local, relationship-driven, opaque — exactly the conditions under which an insider with legal, title, and brokerage reach has durable edge. |
 
-**Primary markets:** Fort Lauderdale, Las Olas Isles, Rio Vista, Harbor Beach, Coral Ridge, Lighthouse Point, Boca Raton waterfront.
-**Secondary:** Palm Beach County, Miami Beach, Coconut Grove, Coral Gables.
+We pursue special situations across **all of South Florida's luxury coast** — the entire tri-county region plus the adjacent Treasure Coast and Keys — wherever supply-constrained waterfront meets distressed execution:
+
+- **Broward** — Fort Lauderdale, Las Olas Isles, Rio Vista, Harbor Beach, Coral Ridge, Lighthouse Point, Hillsboro Beach, Sea Ranch Lakes.
+- **Miami-Dade** — Miami Beach, Coconut Grove, Coral Gables, Bay Harbor Islands, Golden Beach, Sunset Islands, Key Biscayne.
+- **Palm Beach** — Palm Beach, Manalapan, Boca Raton, Delray Beach, Highland Beach, Jupiter / Admirals Cove, Singer Island.
+- **Treasure Coast & Keys (reach)** — Vero Beach, Stuart / Sewall's Point, Jupiter Island, Islamorada, Key Largo.
+
+Fort Lauderdale's waterfront remains the operational core where the founder's relationships are deepest; the broader footprint scales the same machine across every luxury submarket in the region.
 
 ---
 
-## 6. The Moat — Vertical Integration
+## 6. The Moat — Total Vertical Integration
 
-"Anyone can buy a distressed asset cheap" is the objection. The answer is that buying is the easy part — **resolving and finishing** is where 90% of distressed buyers fail. Breakwater controls the entire chain through the founder's combined licensure and infrastructure:
+"Anyone can buy a distressed asset cheap" is the objection. The answer is that buying is the easy part — **resolving, finishing, and presenting** is where 90% of distressed buyers fail. Breakwater is *totally vertical*: it controls — or partners to control — every link from the note to the finished, furnished home. The founder's combined licensure provides the in-house spine; strategic build-and-design partnerships complete the chain.
+
+**In-house capabilities** (founder-controlled):
 
 | Capability | What it does | Edge it creates |
 |---|---|---|
@@ -118,7 +126,15 @@ The strategy is *not* a bet on market appreciation. Returns are engineered from 
 | **Development oversight** | Manages completion to CO. | Converts a stalled asset into finished, salable product — the part competitors can't execute. |
 | **Capital structuring** | Note, pref equity, JV, DIL, foreclosure, REO. | Enters at the optimal point in the stack for each situation. |
 
-**Net effect:** Breakwater is the rare counterparty that can underwrite, acquire, clear, finish, and sell — and is therefore the natural *first call* for any holder of a problem asset. The integration is the moat, and the moat is what makes the returns repeatable rather than lucky.
+**Build & design capabilities** (strategic partnerships — extending control through completion and presentation):
+
+| Capability | What it does | Edge it creates |
+|---|---|---|
+| **Architecture** (partner) | Re-engineers stalled plans for cost, marketability, and speed to CO. | Value-add by redesign, not default completion; resolves the design flaws that often stalled the project. |
+| **General contracting** (partner) | Delivers the build under tightly scoped, accountable contracts (GMP where possible). | Pricing certainty and schedule control; a disciplined build, not a rescued-subcontractor scramble; aligned, repeat-relationship execution. |
+| **Interior design & staging** (partner) | Finishes and presents the home to the target buyer's eye. | Maximizes exit price and compresses time on market — the difference between selling the house and selling the lifestyle. |
+
+**Net effect:** Breakwater is the rare counterparty that can underwrite, acquire, clear, finish, *furnish,* and sell — and is therefore the natural *first call* for any holder of a problem asset. Total vertical integration is the moat, and the moat is what makes the returns repeatable rather than lucky. (Note: partnership capabilities are governed by arm's-length agreements with clear scope, pricing, and conflict disclosure — see Risk.)
 
 ---
 

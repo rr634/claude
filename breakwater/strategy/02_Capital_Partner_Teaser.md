@@ -12,13 +12,19 @@
 Higher rates, cost inflation, and over-leveraged developers have stranded luxury residential projects at 50–90% complete across Fort Lauderdale's waterfront. Lenders, receivers, and estates need these assets *off their books* — but few buyers can actually resolve the liens, restructure the debt, and finish the construction. That gap is the opportunity, and it is mispriced.
 
 ### Why Breakwater Wins — One Sponsor, Whole Value Chain
-Most distressed buyers can acquire but cannot finish. Breakwater controls every link, in-house:
+Most distressed buyers can acquire but cannot finish. Breakwater is **totally vertical** — controlling, or partnering to control, every link from the note to the finished, furnished home:
 
+**In-house** (founder-controlled):
 - ⚖️ **Legal** — workouts, foreclosure, structuring (FL real estate attorney)
 - 🏷️ **Title** — instant lien diligence, clean closings (title agency owner)
 - 🏠 **Brokerage** — off-market sourcing & disposition (FL broker)
 - 💵 **Debt** — recap & construction-to-perm (mortgage loan originator)
-- 🔨 **Development** — completion to CO
+- 🔨 **Development** — oversight, draws, completion to CO
+
+**Build & design** (strategic partnerships):
+- 📐 **Architecture** — re-engineer stalled plans for cost, marketability & speed
+- 🏗️ **General Contracting** — accountable, tightly scoped build (pricing & schedule certainty)
+- ✨ **Interior Design & Staging** — present to the buyer's eye; maximize exit, minimize days on market
 
 → *We are the certain-execution counterparty a problem asset gets sold to — and we capture the third-party friction others pay away.*
 
@@ -30,7 +36,7 @@ Most distressed buyers can acquire but cannot finish. Breakwater controls every 
 | **Cost to complete** | $250K – $3M |
 | **Hold period** | 6 – 18 months |
 | **Structures** | Note purchase · Pref equity rescue · JV recap · Deed-in-lieu · Foreclosure · REO |
-| **Markets** | Las Olas Isles · Rio Vista · Harbor Beach · Coral Ridge · Lighthouse Point · Boca / Palm Beach waterfront |
+| **Markets** | All South Florida — Broward · Miami-Dade · Palm Beach (+ Treasure Coast & Keys) |
 
 ### Target Economics *(illustrative; not a guarantee)*
 - **Project gross IRR:** 25–40%+

@@ -18,7 +18,7 @@
 
 | # | Filter | Pass condition | Fail condition |
 |---|---|---|---|
-| A1 | **Geography** | In a primary or secondary target submarket (waterfront / luxury corridor). | Outside target markets. |
+| A1 | **Geography** | Within the South Florida footprint — Broward, Miami-Dade, or Palm Beach (or Treasure Coast / Keys reach); waterfront / luxury corridor. | Outside the South Florida footprint. |
 | A2 | **Asset type** | Luxury residential (spec home, waterfront development, small luxury multi-unit). | Commercial, raw land with no vertical, non-luxury tract product. |
 | A3 | **Completion at entry** | 50%–90% complete (permits in place, vertical construction underway). | <50% (entitlement/early risk) or >90% (thin spread, retail-priced). |
 | A4 | **Finished value** | $2M–$15M projected finished value. | Outside range. |
