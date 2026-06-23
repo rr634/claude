@@ -17,17 +17,7 @@ Document types to query (canonical codes in config):
     JUDGMENT_LIEN, TAX_LIEN, NOTICE_OF_DEFAULT, RELEASE
 """
 from .base import BaseCountyAdapter
-
-
-class BrowardAdapter(BaseCountyAdapter):
-    county = "broward"
-    source_kind = "portal"
-    # Broward County Records, Taxes & Treasury — Official Records search.
-    # Check for a bulk/subscription data feed before automating the portal.
-    source_url = "https://officialrecords.broward.org/"
-    notes = ("Operational core. Highest priority. Look for the County's records "
-             "data subscription / bulk export; otherwise polite, rate-limited "
-             "queries by recorded date + document type.")
+from .broward import BrowardAdapter
 
 
 class MiamiDadeAdapter(BaseCountyAdapter):

@@ -1,0 +1,64 @@
+{
+  "_note": "REPRESENTATIVE sample of a Harris/Acclaim-style Official Records response. Field names mirror BrowardWire defaults and MUST be confirmed against the live Broward portal before live use. Not captured from production. Used by the parser unit tests and offline demo.",
+  "total": 4,
+  "page": 1,
+  "pageSize": 50,
+  "results": [
+    {
+      "instrumentNumber": "117654321",
+      "documentType": "CLAIM OF LIEN",
+      "recordDate": "2026-05-28",
+      "consideration": "$420,000.00",
+      "parcelId": "5042-12-07-0310",
+      "address": "812 Rio Vista Blvd",
+      "city": "Rio Vista",
+      "directName": "RIO VISTA ESTATES LLC",
+      "indirectName": "ATLANTIC CUSTOM BUILDERS LLC",
+      "book": "59021",
+      "pageNumber": "1187",
+      "documentUrl": "https://officialrecords.broward.org/AcclaimWeb/Details/117654321"
+    },
+    {
+      "instrumentNumber": "117654322",
+      "documentType": "NOTICE OF COMMENCEMENT",
+      "recordDate": "2025-06-12",
+      "consideration": null,
+      "parcelId": "5042-12-07-0310",
+      "address": "812 Rio Vista Blvd",
+      "city": "Rio Vista",
+      "directName": "RIO VISTA ESTATES LLC",
+      "indirectName": "",
+      "book": "57810",
+      "pageNumber": "904",
+      "documentUrl": "https://officialrecords.broward.org/AcclaimWeb/Details/117654322"
+    },
+    {
+      "instrumentNumber": "117660045",
+      "documentType": "LIS PENDENS",
+      "recordDate": "2026-06-04",
+      "consideration": "",
+      "parcelId": "5042-22-30-0710",
+      "address": "2401 Sea Island Dr",
+      "city": "Harbor Beach",
+      "directName": "HARBOR BEACH BUILD LLC",
+      "indirectName": "COASTAL TRUST BANK NA",
+      "book": "59140",
+      "pageNumber": "22",
+      "documentUrl": "https://officialrecords.broward.org/AcclaimWeb/Details/117660045"
+    },
+    {
+      "instrumentNumber": "117661120",
+      "documentType": "SATISFACTION OF LIEN",
+      "recordDate": "2026-06-08",
+      "consideration": "0.00",
+      "parcelId": "5042-09-15-0220",
+      "address": "640 Solar Isle Dr",
+      "city": "Coral Ridge",
+      "directName": "SOLAR ISLE OWNER LLC",
+      "indirectName": "PRIORITY PLUMBING INC",
+      "book": "59155",
+      "pageNumber": "488",
+      "documentUrl": "https://officialrecords.broward.org/AcclaimWeb/Details/117661120"
+    }
+  ]
+}

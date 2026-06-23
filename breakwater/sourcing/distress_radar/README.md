@@ -93,11 +93,54 @@ distress_radar/
   scoring.py       aggregate-by-parcel → score → classify (HOT/WATCH/IGNORE)
   storage.py       SQLite dedup store (incremental runs)
   pipeline.py      fetch → store → score → export (csv/json/intake)
-  run.py           CLI
+  http_client.py   PoliteClient — robots + rate-limit + retry (stdlib)
+  run.py           CLI (--mock | --fixture | --live)
   adapters/
     base.py            BaseCountyAdapter + responsible-use contract
     mock_county.py     working synthetic adapter (demo + tests)
-    florida_counties.py county stubs w/ official source notes
+    broward.py         LIVE Broward adapter (Acclaim platform) — implemented
+    florida_counties.py registry + remaining county stubs
+  fixtures/        representative county responses (offline parser demo/tests)
+  tests/           unit tests (parser, scoring, http client) — 16 tests
+```
+
+### Broward adapter (the operational core — implemented)
+
+Broward's Official Records run on the Harris **Acclaim** platform, so this
+adapter is also a template for other Acclaim counties. Three run modes:
+
+```bash
+# MOCK (default): synthetic data, exercises scoring/exports end-to-end
+python3 -m distress_radar.run --mock --since 2025-01-01
+
+# FIXTURE: runs the REAL Broward parser against a saved response (offline)
+python3 -m distress_radar.run --counties broward \
+    --fixture distress_radar/fixtures/broward_sample.json --since 2025-01-01
+
+# LIVE: real HTTP (refuses until the wire config is verified — see below)
+python3 -m distress_radar.run --counties broward --live --since 2026-06-01
+```
+
+**Going live — verification checklist (in `adapters/broward.py → BrowardWire`):**
+The county-specific unknowns are isolated and marked `VERIFY`. Confirm against
+the live portal, then set `wire.verified = True`:
+- [ ] Endpoint path + query-parameter names (`p_date_from`, `p_doctype`, …)
+- [ ] Doc-type query codes (`doctype_query_codes`) against the Acclaim doc-type list
+- [ ] Response field names (`f_instrument`, `f_amount`, …)
+- [ ] **The portal's Terms of Use permit automated access** — else use Broward's
+      official bulk-data channel instead
+The live path **refuses to run** while `verified` is `False`, by design, so we
+never hammer the wrong endpoint.
+
+> **Domain nuance — NOC lookback.** A Notice of Commencement is filed at project
+> *start*, often 1–2 years before the distress. Query NOCs on a **longer
+> lookback** than lien events (e.g., 24 months) — or rely on the dedup store
+> accumulating them — so the stalled-construction premium can fire. A narrow
+> recent-date window will miss the NOC and under-score an active stalled build.
+
+### Tests
+```bash
+python3 -m unittest discover -t . -s distress_radar/tests -p 'test_*.py'
 ```
 
 ### Adding a live county adapter
@@ -130,8 +173,12 @@ built to stay on the right side of that line:
 ---
 
 ## Roadmap
-- Implement the six county adapters against official channels (Broward first).
-- Property Appraiser joins for value + waterfront pre-qualification.
+- **Broward adapter: implemented** (verify wire config + ToS to go live). Remaining
+  five counties follow the same pattern; Acclaim counties can reuse `BrowardWire`.
+- **Property Appraiser joins** for `est_value` + waterfront pre-qualification — the
+  highest-value next step (sharpens fit scoring and pre-qualifies the box). Without
+  it, parcels score on distress alone and fit boosts are limited.
+- NOC lookback handling (longer window for Notices of Commencement).
 - Developer-level rollup (one sponsor, multiple troubled parcels = portfolio play).
 - Scheduling + alerting (daily run → email/Slack the new HOT leads).
 - Feed accepted leads directly into the funnel/CRM (the next build).

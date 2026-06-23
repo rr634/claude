@@ -37,10 +37,28 @@ def _parse_args(argv=None):
     p.add_argument("--min-amount", type=float, default=config.LIEN_MIN_AMOUNT,
                    help=f"lien trigger amount (default {config.LIEN_MIN_AMOUNT:.0f})")
     p.add_argument("--mock", action="store_true",
-                   help="use the synthetic mock adapter (no network)")
+                   help="use the synthetic mock adapter (no network) [default]")
+    p.add_argument("--live", action="store_true",
+                   help="use real county adapters over HTTP (requires verified wire config)")
+    p.add_argument("--fixture", default=None,
+                   help="path to a saved county response (offline real-parser demo; broward)")
     p.add_argument("--store", default="exports/distress_radar.db")
     p.add_argument("--out", default="exports")
     return p.parse_args(argv)
+
+
+def _make_adapter(county, args):
+    """Pick the adapter for a county given the run mode."""
+    if args.fixture and county == "broward":
+        from .adapters import BrowardAdapter
+        return BrowardAdapter(fixture_path=args.fixture)
+    if args.live:
+        from .http_client import PoliteClient
+        from .adapters import BrowardAdapter, BrowardWire
+        if county == "broward":
+            return BrowardAdapter(client=PoliteClient(), wire=BrowardWire())
+        return COUNTY_ADAPTERS[county]()        # raises NotImplementedError on fetch
+    return MockCountyAdapter(county)            # safe default
 
 
 def main(argv=None):
@@ -55,10 +73,11 @@ def main(argv=None):
         if c not in COUNTY_ADAPTERS:
             print(f"  ! unknown county '{c}' — skipping")
             continue
-        adapters.append(MockCountyAdapter(c) if args.mock else COUNTY_ADAPTERS[c]())
+        adapters.append(_make_adapter(c, args))
 
+    mode = "FIXTURE" if args.fixture else ("LIVE" if args.live else "MOCK")
     from .pipeline import run
-    print(f"Distress Radar — {'MOCK' if args.mock else 'LIVE'} | "
+    print(f"Distress Radar — {mode} | "
           f"counties={counties} | since={since} | trigger=${args.min_amount:,.0f}")
     summary = run(adapters, since, DEFAULT_DOC_TYPES, args.store, args.out)
     print(f"  fetched={summary['fetched']} new={summary['new']} "
