@@ -1,0 +1,4 @@
+# Local database and Python caches — generated, not source.
+exports/*.db
+__pycache__/
+*.pyc

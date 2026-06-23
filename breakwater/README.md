@@ -22,22 +22,25 @@ This package is the foundational spine of the platform: the **institutional narr
 | **acquisitions/06_Acquisition_Memorandum_SAMPLE_RioVista.md** | Fully worked sample memo on the Rio Vista deal; ties number-for-number to the model. | Reference / training |
 | **site/index.html** | Public landing page — self-contained, responsive, navy/gold brand. Thesis, value chain, totally-vertical edge, markets, box; return targets gated. | Public / marketing |
 | **site/investors.html** | Gated investor page — accredited/institutional acknowledgment wall, then target economics, participation structures, waterfall, worked example, roadmap, full securities disclaimers. | Verified investors |
+| **sourcing/distress_radar/** | Public-records distress-detection engine — flags recorded liens > $100K, lis pendens, judgments; scores them and emits a ranked hot list + pre-filled intake sheets. Runnable now on mock data; per-county adapter framework. | Internal sourcing (top of funnel) |
 
 ---
 
 ## The flow these create
 
 ```
-LEAD ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO ──▶ CAPITAL (01/02) ──▶ CLOSE
-        decide whether    decide price &    the "yes"    the door-opener
-        to underwrite      structure         document     + thesis
+DISTRESS RADAR ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO (05/06) ──▶ DD (07) ──▶ CLOSE
+ detect signal      decide whether   decide price &    the "yes"       verify CPs
+ (liens >$100K)     to underwrite     structure        document
+                                                                  └─▶ CAPITAL (01/02 + site) funds it
 ```
 
-1. A distressed lead is run through the **Screening Box (03)** → pursue / pass in <30 min.
-2. Survivors are priced and structured in the **Underwriting Model** → spread, equity, IRR, waterfall, sensitivity.
-3. A passing deal becomes an **Acquisition Memorandum (05/06)** → the IC and capital-partner "yes."
-4. **Due Diligence (07)** verifies the memo's conditions precedent across 8 workstreams → gate to close.
-5. The **Thesis (01)** and **Teaser (02)** open and hold the capital relationship; the **site (08)** is the public + gated-investor face.
+1. The **Distress Radar** scans county Official Records and flags developer distress → ranked HOT leads with pre-filled intake.
+2. Each flagged lead runs through the **Screening Box (03)** → pursue / pass in <30 min.
+3. Survivors are priced and structured in the **Underwriting Model** → spread, equity, IRR, waterfall, sensitivity.
+4. A passing deal becomes an **Acquisition Memorandum (05/06)** → the IC and capital-partner "yes."
+5. **Due Diligence (07)** verifies the memo's conditions precedent across 8 workstreams → gate to close.
+6. The **Thesis (01)** and **Teaser (02)** open and hold the capital relationship; the **site** is the public + gated-investor face.
 
 ## Worked example economics (illustrative, in the model)
 
@@ -53,10 +56,11 @@ LEAD ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO ──▶ CAPIT
 
 ## Suggested next builds
 
-- **Lender / receiver / estate-attorney outreach engine** + acquisition funnel/CRM stages
+- **Live county adapters** for the Distress Radar (Broward first) + Property Appraiser value joins
+- **Acquisition funnel / CRM** — where flagged leads move through stages (radar → screen → memo → close)
+- **Lender / receiver / estate-attorney outreach engine** — the action taken on a flagged signal
 - **Construction completion playbook** and **lender workout playbook**
 - **Construction & design partner agreement framework** (scope, pricing, conflict disclosure)
-- **Pitch deck** derived from the thesis (once a live deal anchors it)
 
 ---
 

@@ -1,0 +1,8 @@
+rank,label,score,triggered,county,submarket,address,developer,max_lien,est_value,doc_count,latest_date,doc_types
+1,HOT,104.0,YES,miami_dade,Coral Gables,1492 Cocoplum Rd,Cocoplum Waterfront Partners LLC,615000,11200000,2,2026-06-02,CLAIM_OF_LIEN|LIS_PENDENS
+2,HOT,93.0,YES,broward,Rio Vista,812 Rio Vista Blvd,Rio Vista Estates LLC,420000,7500000,3,2026-06-09,CLAIM_OF_LIEN|NOTICE_OF_COMMENCEMENT
+3,HOT,85.0,YES,miami_dade,Sunset Islands,230 Sunset Islands Dr,Sunset Isle Development LLC,305000,9000000,2,2026-06-14,CLAIM_OF_LIEN|NOTICE_OF_COMMENCEMENT
+4,HOT,73.0,YES,palm_beach,Manalapan,1100 S Ocean Blvd,Ocean Vista Holdings LLC,260000,6800000,2,2026-05-22,FINAL_JUDGMENT|TAX_LIEN
+5,WATCH,52.0,,broward,Las Olas,511 Coconut Isle Dr,Coconut Isle LLC,95000,5400000,1,2026-06-01,CLAIM_OF_LIEN
+6,WATCH,34.0,YES,broward,Pompano Beach,3300 NW 9th Ave,Inland Storage Partners LLC,240000,1100000,1,2026-06-05,CLAIM_OF_LIEN
+7,IGNORE,25.0,YES,palm_beach,Palm Beach,200 Royal Palm Way,Royal Palm Renovations LLC,350000,8200000,2,2026-05-30,CLAIM_OF_LIEN|RELEASE

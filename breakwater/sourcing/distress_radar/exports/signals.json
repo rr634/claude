@@ -1,0 +1,275 @@
+[
+  {
+    "key": "miami_dade:03-4108-019-0450",
+    "label": "HOT",
+    "score": 104.0,
+    "triggered": true,
+    "county": "miami_dade",
+    "submarket": "Coral Gables",
+    "address": "1492 Cocoplum Rd",
+    "developer": "Cocoplum Waterfront Partners LLC",
+    "max_lien": 615000.0,
+    "est_value": 11200000,
+    "latest_date": "2026-06-02",
+    "reasons": [
+      "Lis Pendens on record (+40)",
+      "Claim Of Lien on record (+30)",
+      "Largest lien $615,000 (+12)",
+      "TRIGGER: lien \u2265 $100,000",
+      "Target submarket (+12)",
+      "Est. value in acquisition box (+10)"
+    ],
+    "documents": [
+      {
+        "record_id": "CFN-2026-220145",
+        "doc_type": "LIS_PENDENS",
+        "record_date": "2026-06-02",
+        "amount": null,
+        "party_from": "Cocoplum Waterfront Partners LLC",
+        "party_to": "Regional Bank N.A.",
+        "source_url": "synthetic://breakwater/distress_radar"
+      },
+      {
+        "record_id": "CFN-2026-219980",
+        "doc_type": "CLAIM_OF_LIEN",
+        "record_date": "2026-05-19",
+        "amount": 615000.0,
+        "party_from": "Cocoplum Waterfront Partners LLC",
+        "party_to": "Gables Structural Group",
+        "source_url": "synthetic://breakwater/distress_radar"
+      }
+    ]
+  },
+  {
+    "key": "broward:5042-12-07-0310",
+    "label": "HOT",
+    "score": 93.0,
+    "triggered": true,
+    "county": "broward",
+    "submarket": "Rio Vista",
+    "address": "812 Rio Vista Blvd",
+    "developer": "Rio Vista Estates LLC",
+    "max_lien": 420000.0,
+    "est_value": 7500000,
+    "latest_date": "2026-06-09",
+    "reasons": [
+      "Claim Of Lien on record (+30)",
+      "Largest lien $420,000 (+8)",
+      "TRIGGER: lien \u2265 $100,000",
+      "Active construction + lien = stalled project (+25)",
+      "2 liens stacking (+8)",
+      "Target submarket (+12)",
+      "Est. value in acquisition box (+10)"
+    ],
+    "documents": [
+      {
+        "record_id": "CFN-2026-018221",
+        "doc_type": "NOTICE_OF_COMMENCEMENT",
+        "record_date": "2025-06-12",
+        "amount": null,
+        "party_from": "Rio Vista Estates LLC",
+        "party_to": "Self",
+        "source_url": "synthetic://breakwater/distress_radar"
+      },
+      {
+        "record_id": "CFN-2026-041877",
+        "doc_type": "CLAIM_OF_LIEN",
+        "record_date": "2026-05-28",
+        "amount": 420000.0,
+        "party_from": "Rio Vista Estates LLC",
+        "party_to": "Atlantic Custom Builders LLC",
+        "source_url": "synthetic://breakwater/distress_radar"
+      },
+      {
+        "record_id": "CFN-2026-043990",
+        "doc_type": "CLAIM_OF_LIEN",
+        "record_date": "2026-06-09",
+        "amount": 180000.0,
+        "party_from": "Rio Vista Estates LLC",
+        "party_to": "Coastal MEP Subcontractors Inc",
+        "source_url": "synthetic://breakwater/distress_radar"
+      }
+    ]
+  },
+  {
+    "key": "miami_dade:02-3211-006-0120",
+    "label": "HOT",
+    "score": 85.0,
+    "triggered": true,
+    "county": "miami_dade",
+    "submarket": "Sunset Islands",
+    "address": "230 Sunset Islands Dr",
+    "developer": "Sunset Isle Development LLC",
+    "max_lien": 305000.0,
+    "est_value": 9000000,
+    "latest_date": "2026-06-14",
+    "reasons": [
+      "Claim Of Lien on record (+30)",
+      "Largest lien $305,000 (+8)",
+      "TRIGGER: lien \u2265 $100,000",
+      "Active construction + lien = stalled project (+25)",
+      "Target submarket (+12)",
+      "Est. value in acquisition box (+10)"
+    ],
+    "documents": [
+      {
+        "record_id": "CFN-2026-221760",
+        "doc_type": "NOTICE_OF_COMMENCEMENT",
+        "record_date": "2025-09-03",
+        "amount": null,
+        "party_from": "Sunset Isle Development LLC",
+        "party_to": "Self",
+        "source_url": "synthetic://breakwater/distress_radar"
+      },
+      {
+        "record_id": "CFN-2026-244015",
+        "doc_type": "CLAIM_OF_LIEN",
+        "record_date": "2026-06-14",
+        "amount": 305000.0,
+        "party_from": "Sunset Isle Development LLC",
+        "party_to": "Premier Concrete & Shell",
+        "source_url": "synthetic://breakwater/distress_radar"
+      }
+    ]
+  },
+  {
+    "key": "palm_beach:50-43-46-21-00-001",
+    "label": "HOT",
+    "score": 73.0,
+    "triggered": true,
+    "county": "palm_beach",
+    "submarket": "Manalapan",
+    "address": "1100 S Ocean Blvd",
+    "developer": "Ocean Vista Holdings LLC",
+    "max_lien": 260000.0,
+    "est_value": 6800000,
+    "latest_date": "2026-05-22",
+    "reasons": [
+      "Final Judgment on record (+25)",
+      "Tax Lien on record (+18)",
+      "Largest lien $260,000 (+8)",
+      "TRIGGER: lien \u2265 $100,000",
+      "Target submarket (+12)",
+      "Est. value in acquisition box (+10)"
+    ],
+    "documents": [
+      {
+        "record_id": "CFN-2026-090233",
+        "doc_type": "TAX_LIEN",
+        "record_date": "2026-04-30",
+        "amount": 260000.0,
+        "party_from": "Ocean Vista Holdings LLC",
+        "party_to": "IRS",
+        "source_url": "synthetic://breakwater/distress_radar"
+      },
+      {
+        "record_id": "CFN-2026-091500",
+        "doc_type": "FINAL_JUDGMENT",
+        "record_date": "2026-05-22",
+        "amount": 140000.0,
+        "party_from": "Ocean Vista Holdings LLC",
+        "party_to": "Sun Trust Vendors LLC",
+        "source_url": "synthetic://breakwater/distress_radar"
+      }
+    ]
+  },
+  {
+    "key": "broward:5042-10-01-0150",
+    "label": "WATCH",
+    "score": 52.0,
+    "triggered": false,
+    "county": "broward",
+    "submarket": "Las Olas",
+    "address": "511 Coconut Isle Dr",
+    "developer": "Coconut Isle LLC",
+    "max_lien": 95000.0,
+    "est_value": 5400000,
+    "latest_date": "2026-06-01",
+    "reasons": [
+      "Claim Of Lien on record (+30)",
+      "Target submarket (+12)",
+      "Est. value in acquisition box (+10)"
+    ],
+    "documents": [
+      {
+        "record_id": "CFN-2026-044120",
+        "doc_type": "CLAIM_OF_LIEN",
+        "record_date": "2026-06-01",
+        "amount": 95000.0,
+        "party_from": "Coconut Isle LLC",
+        "party_to": "Boutique Millwork Co",
+        "source_url": "synthetic://breakwater/distress_radar"
+      }
+    ]
+  },
+  {
+    "key": "broward:4842-22-10-0990",
+    "label": "WATCH",
+    "score": 34.0,
+    "triggered": true,
+    "county": "broward",
+    "submarket": "Pompano Beach",
+    "address": "3300 NW 9th Ave",
+    "developer": "Inland Storage Partners LLC",
+    "max_lien": 240000.0,
+    "est_value": 1100000,
+    "latest_date": "2026-06-05",
+    "reasons": [
+      "Claim Of Lien on record (+30)",
+      "Largest lien $240,000 (+4)",
+      "TRIGGER: lien \u2265 $100,000"
+    ],
+    "documents": [
+      {
+        "record_id": "CFN-2026-045700",
+        "doc_type": "CLAIM_OF_LIEN",
+        "record_date": "2026-06-05",
+        "amount": 240000.0,
+        "party_from": "Inland Storage Partners LLC",
+        "party_to": "Tri-County Paving",
+        "source_url": "synthetic://breakwater/distress_radar"
+      }
+    ]
+  },
+  {
+    "key": "palm_beach:06-43-47-09-00-077",
+    "label": "IGNORE",
+    "score": 25.0,
+    "triggered": true,
+    "county": "palm_beach",
+    "submarket": "Palm Beach",
+    "address": "200 Royal Palm Way",
+    "developer": "Royal Palm Renovations LLC",
+    "max_lien": 350000.0,
+    "est_value": 8200000,
+    "latest_date": "2026-05-30",
+    "reasons": [
+      "Claim Of Lien on record (+30)",
+      "Largest lien $350,000 (+8)",
+      "TRIGGER: lien \u2265 $100,000",
+      "Release/satisfaction on record (-35)",
+      "Target submarket (+12)",
+      "Est. value in acquisition box (+10)"
+    ],
+    "documents": [
+      {
+        "record_id": "CFN-2026-088010",
+        "doc_type": "CLAIM_OF_LIEN",
+        "record_date": "2026-03-10",
+        "amount": 350000.0,
+        "party_from": "Royal Palm Renovations LLC",
+        "party_to": "Apex Builders",
+        "source_url": "synthetic://breakwater/distress_radar"
+      },
+      {
+        "record_id": "CFN-2026-093441",
+        "doc_type": "RELEASE",
+        "record_date": "2026-05-30",
+        "amount": null,
+        "party_from": "Royal Palm Renovations LLC",
+        "party_to": "Apex Builders",
+        "source_url": "synthetic://breakwater/distress_radar"
+      }
+    ]
+  }
+]
