@@ -17,6 +17,8 @@ This package is the foundational spine of the platform: the **institutional narr
 | **underwriting/04_Underwriting_Methodology.md** | The logic, assumptions, thresholds, and waterfall behind the model. | Internal + capital-partner diligence |
 | **models/Breakwater_Underwriting_Model.xlsx** | Working single-asset model: live formulas, partner waterfall, sensitivity grid. Loaded with an illustrative Rio Vista worked example. | Per-deal underwriting |
 | **models/build_underwriting_model.py** | Reproducible builder for the model (re-run to regenerate). | Internal |
+| **acquisitions/05_Acquisition_Memorandum_Template.md** | The per-deal "yes" document — reusable template with placeholders + drafting rules. | IC, then capital partner |
+| **acquisitions/06_Acquisition_Memorandum_SAMPLE_RioVista.md** | Fully worked sample memo on the Rio Vista deal; ties number-for-number to the model. | Reference / training |
 
 ---
 
@@ -30,7 +32,7 @@ LEAD ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO ──▶ CAPIT
 
 1. A distressed lead is run through the **Screening Box (03)** → pursue / pass in <30 min.
 2. Survivors are priced and structured in the **Underwriting Model** → spread, equity, IRR, waterfall, sensitivity.
-3. A passing deal becomes an **Acquisition Memorandum** (next artifact to build).
+3. A passing deal becomes an **Acquisition Memorandum (05/06)** → the IC and capital-partner "yes."
 4. The **Thesis (01)** and **Teaser (02)** open and hold the capital relationship the memo closes.
 
 ## Worked example economics (illustrative, in the model)
@@ -47,9 +49,9 @@ LEAD ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO ──▶ CAPIT
 
 ## Suggested next builds
 
-- **Acquisition Memorandum template** (deal-level investment committee / capital doc)
+- **Due diligence checklist** (Appendix G of the memo) — the confirmatory-CP backbone
 - **Lender / receiver / estate-attorney outreach engine** + acquisition funnel/CRM stages
-- **Due diligence checklist** and **construction completion playbook**
+- **Construction completion playbook** and **lender workout playbook**
 - **Pitch deck** derived from the thesis (once a live deal anchors it)
 
 ---
