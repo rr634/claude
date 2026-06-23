@@ -1,0 +1,57 @@
+# Breakwater Capital Partners
+### Special Situations Development Platform — South Florida Luxury Residential
+
+This package is the foundational spine of the platform: the **institutional narrative** (why this exists, why us) and the **underwriting discipline** (proof we won't lose a partner's money). Both are built with a capital-formation lens, because **capital is the current binding constraint** — these are the documents a capital partner says "yes" to.
+
+> **Positioning:** A *special situations development platform*, not a "distress fund." Distress is how we source; completion is what we sell.
+
+---
+
+## What's here
+
+| File | Purpose | Audience |
+|---|---|---|
+| **strategy/01_Platform_Thesis.md** | Full institutional thesis — opportunity, strategy, the completion-spread engine, the vertical-integration moat, target returns, risk, capital structure, roadmap to a fund. | Capital partners, internal north star |
+| **strategy/02_Capital_Partner_Teaser.md** | One/two-page door-opener distilling the thesis. | First contact with capital |
+| **underwriting/03_Acquisition_Screening_Box.md** | The go/no-go deal screen — hard filters + scored criteria + decision rule + intake sheet. | Internal sourcing/screening |
+| **underwriting/04_Underwriting_Methodology.md** | The logic, assumptions, thresholds, and waterfall behind the model. | Internal + capital-partner diligence |
+| **models/Breakwater_Underwriting_Model.xlsx** | Working single-asset model: live formulas, partner waterfall, sensitivity grid. Loaded with an illustrative Rio Vista worked example. | Per-deal underwriting |
+| **models/build_underwriting_model.py** | Reproducible builder for the model (re-run to regenerate). | Internal |
+
+---
+
+## The flow these create
+
+```
+LEAD ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO ──▶ CAPITAL (01/02) ──▶ CLOSE
+        decide whether    decide price &    the "yes"    the door-opener
+        to underwrite      structure         document     + thesis
+```
+
+1. A distressed lead is run through the **Screening Box (03)** → pursue / pass in <30 min.
+2. Survivors are priced and structured in the **Underwriting Model** → spread, equity, IRR, waterfall, sensitivity.
+3. A passing deal becomes an **Acquisition Memorandum** (next artifact to build).
+4. The **Thesis (01)** and **Teaser (02)** open and hold the capital relationship the memo closes.
+
+## Worked example economics (illustrative, in the model)
+
+| Metric | Value |
+|---|---|
+| Finished value | $7.5M |
+| All-in basis | ~$5.9M |
+| Completion spread | **27%** |
+| Equity required | ~$1.65M |
+| Project equity multiple | **1.41x** |
+| Project gross IRR (~12 mo) | **~41%** |
+| Downside corner (−10% value / +20% cost) | still profitable — capital preserved |
+
+## Suggested next builds
+
+- **Acquisition Memorandum template** (deal-level investment committee / capital doc)
+- **Lender / receiver / estate-attorney outreach engine** + acquisition funnel/CRM stages
+- **Due diligence checklist** and **construction completion playbook**
+- **Pitch deck** derived from the thesis (once a live deal anchors it)
+
+---
+
+*All materials are informational and illustrative only. Nothing here is an offer to sell or a solicitation to buy any security, or investment/legal/tax advice. Targets are objectives, not guarantees. Any investment is made solely pursuant to definitive offering documents.*
