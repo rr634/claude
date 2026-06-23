@@ -15,11 +15,13 @@ This package is the foundational spine of the platform: the **institutional narr
 | **strategy/02_Capital_Partner_Teaser.md** | One/two-page door-opener distilling the thesis. | First contact with capital |
 | **underwriting/03_Acquisition_Screening_Box.md** | The go/no-go deal screen — hard filters + scored criteria + decision rule + intake sheet. | Internal sourcing/screening |
 | **underwriting/04_Underwriting_Methodology.md** | The logic, assumptions, thresholds, and waterfall behind the model. | Internal + capital-partner diligence |
+| **underwriting/07_Due_Diligence_Checklist.md** | Memo Appendix G — gated confirmatory checklist across 8 workstreams (incl. construction & design partners), with owners, gating items, and sign-off. | Internal deal execution |
 | **models/Breakwater_Underwriting_Model.xlsx** | Working single-asset model: live formulas, partner waterfall, sensitivity grid. Loaded with an illustrative Rio Vista worked example. | Per-deal underwriting |
 | **models/build_underwriting_model.py** | Reproducible builder for the model (re-run to regenerate). | Internal |
 | **acquisitions/05_Acquisition_Memorandum_Template.md** | The per-deal "yes" document — reusable template with placeholders + drafting rules. | IC, then capital partner |
 | **acquisitions/06_Acquisition_Memorandum_SAMPLE_RioVista.md** | Fully worked sample memo on the Rio Vista deal; ties number-for-number to the model. | Reference / training |
-| **site/index.html** | Public landing page — self-contained, responsive, navy/gold brand. Mirrors the thesis, value chain, edge, box, and economics. Open in any browser. | Public / marketing |
+| **site/index.html** | Public landing page — self-contained, responsive, navy/gold brand. Thesis, value chain, totally-vertical edge, markets, box; return targets gated. | Public / marketing |
+| **site/investors.html** | Gated investor page — accredited/institutional acknowledgment wall, then target economics, participation structures, waterfall, worked example, roadmap, full securities disclaimers. | Verified investors |
 
 ---
 
@@ -34,7 +36,8 @@ LEAD ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO ──▶ CAPIT
 1. A distressed lead is run through the **Screening Box (03)** → pursue / pass in <30 min.
 2. Survivors are priced and structured in the **Underwriting Model** → spread, equity, IRR, waterfall, sensitivity.
 3. A passing deal becomes an **Acquisition Memorandum (05/06)** → the IC and capital-partner "yes."
-4. The **Thesis (01)** and **Teaser (02)** open and hold the capital relationship the memo closes.
+4. **Due Diligence (07)** verifies the memo's conditions precedent across 8 workstreams → gate to close.
+5. The **Thesis (01)** and **Teaser (02)** open and hold the capital relationship; the **site (08)** is the public + gated-investor face.
 
 ## Worked example economics (illustrative, in the model)
 
@@ -50,9 +53,9 @@ LEAD ──▶ SCREEN (03) ──▶ MODEL (xlsx) ──▶ MEMO ──▶ CAPIT
 
 ## Suggested next builds
 
-- **Due diligence checklist** (Appendix G of the memo) — the confirmatory-CP backbone
 - **Lender / receiver / estate-attorney outreach engine** + acquisition funnel/CRM stages
 - **Construction completion playbook** and **lender workout playbook**
+- **Construction & design partner agreement framework** (scope, pricing, conflict disclosure)
 - **Pitch deck** derived from the thesis (once a live deal anchors it)
 
 ---
