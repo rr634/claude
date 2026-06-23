@@ -1,0 +1,4 @@
+# Generated SQLite stores anywhere under sourcing
+**/exports/*.db
+__pycache__/
+*.pyc
