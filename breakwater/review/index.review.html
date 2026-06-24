@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Breakwater Capital Partners — Reviving Distressed Luxury Residential Projects</title>
+<meta name="description" content="Breakwater Capital Partners identifies, acquires, stabilizes, and completes distressed and stalled luxury single-family projects across South Florida — a capital solution and execution partner for high-end spec homes, waterfront homes, and unfinished luxury product." />
+<style>
+  /* ============================================================
+     DESIGN SYSTEM
+     ============================================================ */
+  :root{
+    /* Palette — dark navy / charcoal / warm white / muted gold */
+    --navy:#0B1F33;
+    --navy-700:#102a44;
+    --navy-600:#163a5c;
+    --charcoal:#15191F;
+    --charcoal-2:#1E242C;
+    --warm-white:#F7F4EE;
+    --panel:#EDE8DE;          /* warm off-white panel */
+    --gold:#B68D40;
+    --gold-soft:#C9A356;
+    --gold-bright:#D8B25A;
+    --ink:#19222C;            /* primary text on light */
+    --muted:#5F6A75;          /* secondary text on light */
+    --muted-light:rgba(247,244,238,.72); /* secondary text on dark */
+    --line:#E0D9CC;           /* warm hairline on light */
+    --line-dark:rgba(247,244,238,.14);   /* hairline on dark */
+
+    /* Typography */
+    --font-display:Georgia,"Times New Roman",serif;
+    --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+    /* Spacing */
+    --container:1200px;
+    --gutter:24px;
+    --section-y:clamp(64px,9vw,128px);
+    --space-xs:8px;
+    --space-sm:16px;
+    --space-md:24px;
+    --space-lg:40px;
+    --space-xl:64px;
+
+    /* Radius */
+    --r-sm:6px;
+    --r-md:12px;
+    --r-lg:20px;
+    --r-pill:999px;
+
+    /* Shadow */
+    --shadow-sm:0 2px 8px rgba(11,31,51,.06);
+    --shadow-md:0 16px 40px rgba(11,31,51,.10);
+    --shadow-lg:0 30px 70px rgba(11,31,51,.16);
+    --shadow-dark:0 30px 60px rgba(0,0,0,.40);
+
+    /* Motion */
+    --ease:cubic-bezier(.2,.6,.2,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--warm-white);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4,.display{font-family:var(--font-display);font-weight:600;line-height:1.12;letter-spacing:-.01em;}
+  p{margin:0 0 1rem;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter);}
+  .section{padding:var(--section-y) 0;}
+  .dark{background:var(--navy);color:var(--warm-white);}
+  .charcoal{background:var(--charcoal);color:var(--warm-white);}
+  .panel{background:var(--panel);}
+  .dark h1,.dark h2,.dark h3,.charcoal h1,.charcoal h2,.charcoal h3{color:var(--warm-white);}
+
+  .eyebrow{
+    display:inline-block;text-transform:uppercase;letter-spacing:.22em;
+    font-size:.72rem;font-weight:700;color:var(--gold);font-family:var(--font-body);
+    margin-bottom:18px;
+  }
+  .section-head{max-width:62ch;}
+  .section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:0;}
+  .section-head .lede{color:var(--muted);font-size:clamp(1.02rem,1.6vw,1.18rem);margin-top:18px;}
+  .dark .section-head .lede,.charcoal .section-head .lede{color:var(--muted-light);}
+  .rule{width:60px;height:2px;background:var(--gold);margin-top:22px;border:0;}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 30px;border-radius:var(--r-sm);font-weight:600;font-size:.95rem;
+    letter-spacing:.01em;font-family:var(--font-body);cursor:pointer;border:1.5px solid transparent;
+    transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);}
+  .btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px);}
+  .btn-outline{border-color:var(--gold);color:var(--gold-soft);background:transparent;}
+  .btn-outline:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px);}
+  .btn-dark{background:var(--navy);color:var(--warm-white);}
+  .btn-dark:hover{background:var(--navy-700);transform:translateY(-2px);}
+
+  /* ============================================================
+     HEADER / NAV
+     ============================================================ */
+  header.site{
+    position:sticky;top:0;z-index:60;
+    background:rgba(11,31,51,.94);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--warm-white);}
+  .mark{width:30px;height:30px;flex:0 0 auto;border:2px solid var(--gold);border-radius:3px;position:relative;}
+  .mark::before{content:"";position:absolute;left:4px;right:4px;top:50%;height:2px;background:var(--gold);box-shadow:0 -5px 0 var(--gold),0 5px 0 var(--gold);}
+  .brand b{font-family:var(--font-display);font-size:1.08rem;letter-spacing:.03em;font-weight:600;line-height:1;}
+  .brand span small{display:block;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-soft);margin-top:3px;font-family:var(--font-body);}
+  .menu{display:flex;align-items:center;gap:30px;}
+  .menu a.navlink{color:var(--muted-light);font-size:.92rem;letter-spacing:.01em;transition:color .2s var(--ease);}
+  .menu a.navlink:hover{color:var(--gold-soft);}
+  .nav-toggle{display:none;width:44px;height:44px;background:transparent;border:1px solid var(--line-dark);border-radius:var(--r-sm);cursor:pointer;align-items:center;justify-content:center;}
+  .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
+    content:"";display:block;width:20px;height:2px;background:var(--warm-white);position:relative;transition:.2s var(--ease);
+  }
+  .nav-toggle span::before{position:absolute;top:-6px;}
+  .nav-toggle span::after{position:absolute;top:6px;}
+  @media(max-width:920px){
+    .nav-toggle{display:inline-flex;}
+    .menu{
+      position:absolute;top:100%;left:0;right:0;background:var(--navy);
+      flex-direction:column;align-items:stretch;gap:0;padding:8px 0;
+      border-top:1px solid var(--line-dark);box-shadow:var(--shadow-dark);display:none;
+    }
+    .menu.open{display:flex;}
+    .menu a.navlink{padding:14px var(--gutter);}
+    .menu .btn{margin:12px var(--gutter);}
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{
+    position:relative;color:var(--warm-white);overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 82% -10%, rgba(182,141,64,.22), transparent 55%),
+      linear-gradient(160deg,#0B1F33 0%, #102a44 52%, #163a5c 100%);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background:repeating-linear-gradient(180deg,transparent 0 40px,rgba(247,244,238,.022) 40px 41px);
+  }
+  .hero-inner{position:relative;padding:clamp(72px,11vw,140px) 0 clamp(56px,8vw,96px);}
+  .hero h1{font-size:clamp(2.5rem,6vw,4.4rem);margin:14px 0 0;max-width:17ch;}
+  .hero .sub{font-size:clamp(1.05rem,2vw,1.32rem);color:var(--muted-light);max-width:62ch;margin-top:24px;}
+  .hero-cta{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-meta{
+    margin-top:56px;padding-top:26px;border-top:1px solid var(--line-dark);
+    display:flex;flex-wrap:wrap;gap:14px 36px;
+  }
+  .hero-meta span{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-light);}
+  .hero-meta b{color:var(--gold-soft);font-weight:700;}
+
+  /* ============================================================
+     POSITIONING STRIP
+     ============================================================ */
+  .positioning .quote{
+    font-family:var(--font-display);font-size:clamp(1.5rem,3.2vw,2.3rem);
+    line-height:1.3;max-width:24ch;color:var(--navy);
+  }
+  .positioning .body{color:var(--muted);max-width:48ch;font-size:1.06rem;}
+  .split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;}
+  @media(max-width:820px){.split{grid-template-columns:1fr;gap:28px;}}
+
+  /* ============================================================
+     IMAGE PLACEHOLDERS (gradient blocks)
+     ============================================================ */
+  .ph{
+    position:relative;aspect-ratio:4/3;border-radius:var(--r-md);overflow:hidden;
+    display:flex;align-items:flex-end;background:var(--navy);
+  }
+  .ph::before{ /* gold sheen */
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(130% 90% at 78% 8%, rgba(201,163,86,.22), transparent 52%);
+  }
+  .ph::after{ /* faint architectural grid */
+    content:"";position:absolute;inset:0;opacity:.5;
+    background:
+      repeating-linear-gradient(90deg,transparent 0 38px,rgba(247,244,238,.05) 38px 39px),
+      repeating-linear-gradient(0deg,transparent 0 38px,rgba(247,244,238,.05) 38px 39px);
+  }
+  .ph .ph-tag{
+    position:relative;z-index:2;margin:0;padding:14px 16px;
+    font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,244,238,.82);
+    font-family:var(--font-body);
+  }
+  .g1{background:linear-gradient(150deg,#0B1F33,#163a5c);}
+  .g2{background:linear-gradient(150deg,#15191F,#243140);}
+  .g3{background:linear-gradient(150deg,#163a5c,#0B1F33);}
+  .g4{background:linear-gradient(150deg,#2e2418,#0B1F33 72%);}
+  .g5{background:linear-gradient(150deg,#1E242C,#11212f);}
+  .g6{background:linear-gradient(160deg,#1f3850,#0B1F33);}
+
+  /* ============================================================
+     CARD GRIDS (phases / takeover)
+     ============================================================ */
+  .grid{display:grid;gap:24px;}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+  .grid-2{grid-template-columns:repeat(2,1fr);}
+  @media(max-width:920px){.grid-3{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.grid-3,.grid-2{grid-template-columns:1fr;}}
+
+  .phase-card{
+    background:var(--warm-white);border:1px solid var(--line);border-radius:var(--r-md);
+    overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+  }
+  .charcoal .phase-card{background:rgba(247,244,238,.03);border-color:var(--line-dark);}
+  .phase-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .phase-card .ph{border-radius:0;aspect-ratio:16/10;}
+  .phase-card .pc-body{padding:22px 24px 26px;}
+  .phase-card .step-no{font-family:var(--font-display);color:var(--gold);font-size:.95rem;letter-spacing:.08em;}
+  .phase-card h3{font-size:1.22rem;margin:6px 0 8px;}
+  .phase-card p{margin:0;color:var(--muted);font-size:.95rem;}
+  .charcoal .phase-card p{color:var(--muted-light);}
+
+  .takeover-card{
+    background:var(--warm-white);border:1px solid var(--line);border-radius:var(--r-md);
+    padding:30px 28px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
+  }
+  .takeover-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold);}
+  .takeover-card .ic{
+    width:46px;height:46px;border:1.5px solid var(--gold);border-radius:var(--r-sm);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);
+    font-family:var(--font-display);font-size:1.3rem;margin-bottom:18px;
+  }
+  .takeover-card h3{font-size:1.16rem;margin:0 0 8px;}
+  .takeover-card p{margin:0;color:var(--muted);font-size:.95rem;}
+
+  /* ============================================================
+     PROCESS TIMELINE
+     ============================================================ */
+  .timeline{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:54px;}
+  .timeline::before{
+    content:"";position:absolute;top:21px;left:10%;right:10%;height:2px;
+    background:linear-gradient(90deg,rgba(182,141,64,.25),var(--gold),rgba(182,141,64,.25));z-index:0;
+  }
+  .tstep{position:relative;z-index:1;text-align:center;}
+  .tstep .num{
+    width:44px;height:44px;border-radius:var(--r-pill);background:var(--navy);
+    border:1.5px solid var(--gold);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-size:1.05rem;margin:0 auto 18px;
+  }
+  .tstep h3{font-size:1.06rem;margin:0 0 8px;}
+  .tstep p{margin:0;color:var(--muted);font-size:.9rem;}
+  @media(max-width:920px){
+    .timeline{grid-template-columns:1fr;gap:0;margin-top:36px;}
+    .timeline::before{left:21px;right:auto;top:8px;bottom:8px;width:2px;height:auto;background:linear-gradient(180deg,rgba(182,141,64,.25),var(--gold),rgba(182,141,64,.25));}
+    .tstep{text-align:left;display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start;padding:16px 0;}
+    .tstep .num{margin:0;}
+  }
+
+  /* ============================================================
+     WHY US
+     ============================================================ */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--r-md);overflow:hidden;margin-top:50px;}
+  .why-item{background:var(--navy);padding:32px 30px;}
+  .why-item .n{font-family:var(--font-display);color:var(--gold);font-size:.9rem;letter-spacing:.1em;}
+  .why-item h3{font-size:1.14rem;margin:10px 0 10px;}
+  .why-item p{margin:0;color:var(--muted-light);font-size:.94rem;}
+  @media(max-width:920px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.why-grid{grid-template-columns:1fr;}}
+
+  /* ============================================================
+     FEATURED PROJECTS
+     ============================================================ */
+  .projects{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:50px;}
+  @media(max-width:980px){.projects{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.projects{grid-template-columns:1fr;}}
+  .project{
+    border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:var(--warm-white);
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+  }
+  .project:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+  .project .ph{border-radius:0;aspect-ratio:1/1;}
+  .project .chip{
+    position:absolute;top:12px;left:12px;z-index:3;background:var(--gold);color:var(--navy);
+    font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:6px 11px;border-radius:var(--r-pill);font-family:var(--font-body);
+  }
+  .project .pj-body{padding:18px 20px 22px;}
+  .project h3{font-size:1.08rem;margin:0 0 6px;}
+  .project .meta{margin:0;color:var(--muted);font-size:.84rem;letter-spacing:.02em;}
+  .projects-note{margin-top:22px;color:var(--muted);font-size:.82rem;font-style:italic;}
+
+  /* ============================================================
+     MARKETS
+     ============================================================ */
+  .markets{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px;}
+  .mk{background:var(--warm-white);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--r-sm);padding:24px 22px;}
+  .mk h3{margin:0 0 10px;font-size:1.1rem;color:var(--navy);}
+  .mk p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.8;}
+  @media(max-width:900px){.markets{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.markets{grid-template-columns:1fr;}}
+
+  /* ============================================================
+     INVESTOR GATE TEASER
+     ============================================================ */
+  .gate{
+    margin-top:46px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+    background:rgba(247,244,238,.05);border:1px solid var(--line-dark);border-radius:var(--r-md);padding:30px 34px;
+  }
+  .gate .lockrow{display:flex;align-items:center;gap:18px;}
+  .gate .lock{width:44px;height:44px;flex:0 0 auto;border:1.5px solid var(--gold);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;color:var(--gold-soft);font-size:1.2rem;}
+  .gate strong{color:var(--warm-white);font-size:1.1rem;}
+  .gate p{margin:5px 0 0;color:var(--muted-light);font-size:.92rem;max-width:54ch;}
+
+  /* ============================================================
+     CONTACT / SUBMISSION FORM
+     ============================================================ */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,72px);align-items:start;}
+  @media(max-width:920px){.contact-grid{grid-template-columns:1fr;gap:36px;}}
+  .contact-aside h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin:0;}
+  .contact-aside .lede{color:var(--muted);margin-top:18px;font-size:1.06rem;}
+  .contact-aside .direct{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);}
+  .contact-aside .direct a{color:var(--navy);font-weight:600;}
+  .contact-aside .direct a:hover{color:var(--gold);}
+
+  form.submit{background:var(--warm-white);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,4vw,40px);box-shadow:var(--shadow-sm);}
+  .field{margin-bottom:18px;}
+  .field.row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:0;}
+  @media(max-width:560px){.field.row{grid-template-columns:1fr;gap:0;}}
+  label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:7px;}
+  input,select,textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:var(--r-sm);
+    font-family:var(--font-body);font-size:.96rem;color:var(--ink);background:#fff;
+    transition:border-color .2s var(--ease),box-shadow .2s var(--ease);
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(182,141,64,.15);}
+  textarea{resize:vertical;min-height:110px;}
+  .form-actions{margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .form-note{font-size:.8rem;color:var(--muted);margin:14px 0 0;}
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer.site{background:var(--charcoal);color:var(--muted-light);padding:60px 0 36px;font-size:.92rem;}
+  footer.site .cols{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;border-bottom:1px solid var(--line-dark);padding-bottom:30px;}
+  footer.site strong{color:var(--warm-white);}
+  footer.site a:hover{color:var(--gold-soft);}
+  footer.site .disc{font-size:.76rem;color:rgba(247,244,238,.45);margin-top:24px;line-height:1.7;max-width:96ch;}
+  footer.site .legal{margin-top:16px;font-size:.8rem;color:rgba(247,244,238,.55);}
+
+  /* Reveal-on-scroll (progressive enhancement; no-JS shows everything) */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="site">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Breakwater Capital Partners — home">
+      <span class="mark" aria-hidden="true"></span>
+      <span><b>BREAKWATER</b><small>Capital Partners</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+      <span aria-hidden="true"></span>
+    </button>
+    <nav class="menu" id="menu">
+      <a class="navlink" href="#phases">Project Phases</a>
+      <a class="navlink" href="#takeover">What We Take Over</a>
+      <a class="navlink" href="#process">Process</a>
+      <a class="navlink" href="#projects">Projects</a>
+      <a class="navlink" href="investors.review.html">Investors</a>
+      <a class="btn btn-gold" href="#contact">Submit a Project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">Special Situations Development Platform · South Florida</span>
+      <h1>Reviving Distressed Luxury Residential Projects</h1>
+      <p class="sub">
+        Strategic capital, legal execution, and development oversight for high-end
+        single-family projects caught between lender pressure, construction delays,
+        and unfinished potential.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#contact">Submit a Project</a>
+        <a class="btn btn-outline" href="#contact">Discuss a Takeover</a>
+      </div>
+      <div class="hero-meta">
+        <span><b>50–90%</b> complete</span>
+        <span><b>$2M–$15M</b> finished value</span>
+        <span><b>6–18 mo</b> execution</span>
+        <span><b>Note · Pref · JV · Deed-in-Lieu · REO</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== POSITIONING STRIP ====================== -->
+  <section class="section positioning">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Capital Solution &amp; Execution Partner</span>
+        <p class="quote">We identify, acquire, stabilize, and complete what others couldn't.</p>
+      </div>
+      <div>
+        <p class="body">
+          Breakwater steps into distressed and stalled luxury single-family projects —
+          high-end spec homes, waterfront homes, partially completed shells, and
+          lender-driven situations — and carries them to a finished, marketable result.
+        </p>
+        <p class="body" style="margin-bottom:0;">
+          We are both the capital that unlocks the project and the operator that
+          completes it. Distress is how we source; completion is what we deliver.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PROJECT PHASES ======================= -->
+  <section class="section charcoal" id="phases">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Where We Engage</span>
+        <h2>Luxury single-family projects, at every phase of distress.</h2>
+        <p class="lede">We acquire and complete high-end residential product wherever
+          execution has stalled — from an entitled site to a near-finished estate.</p>
+        <hr class="rule" />
+      </div>
+      <div class="grid grid-3" style="margin-top:50px;">
+        <article class="phase-card reveal">
+          <div class="ph g1"><p class="ph-tag">Phase 01 · Land</p></div>
+          <div class="pc-body"><div class="step-no">01</div><h3>Land / Entitled Site</h3>
+            <p>Permitted, ready-to-build parcels and entitled sites where the prior plan stalled before vertical work began.</p></div>
+        </article>
+        <article class="phase-card reveal">
+          <div class="ph g2"><p class="ph-tag">Phase 02 · Shell</p></div>
+          <div class="pc-body"><div class="step-no">02</div><h3>Foundation / Shell Condition</h3>
+            <p>Poured foundations and structural shells abandoned mid-build, exposed to time and mounting carrying cost.</p></div>
+        </article>
+        <article class="phase-card reveal">
+          <div class="ph g3"><p class="ph-tag">Phase 03 · Dried-In</p></div>
+          <div class="pc-body"><div class="step-no">03</div><h3>Dried-In Structure</h3>
+            <p>Roofed, weather-tight structures where framing is complete but the interior remains untouched.</p></div>
+        </article>
+        <article class="phase-card reveal">
+          <div class="ph g4"><p class="ph-tag">Phase 04 · Interior</p></div>
+          <div class="pc-body"><div class="step-no">04</div><h3>Interior Buildout</h3>
+            <p>Homes mid-finish — MEP, millwork, and stone underway — stalled by a capital shortfall or contractor failure.</p></div>
+        </article>
+        <article class="phase-card reveal">
+          <div class="ph g5"><p class="ph-tag">Phase 05 · Workout</p></div>
+          <div class="pc-body"><div class="step-no">05</div><h3>Near-Completion / Lender Workout</h3>
+            <p>Assets weeks from a certificate of occupancy, tangled in lender pressure or a maturity default.</p></div>
+        </article>
+        <article class="phase-card reveal">
+          <div class="ph g6"><p class="ph-tag">Phase 06 · Resale</p></div>
+          <div class="pc-body"><div class="step-no">06</div><h3>Completed Luxury Resale</h3>
+            <p>Finished trophy product, positioned and sold into a supply-constrained waterfront market.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== WHAT WE TAKE OVER ====================== -->
+  <section class="section" id="takeover">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What We Take Over</span>
+        <h2>The situations we are built to resolve.</h2>
+        <p class="lede">When a luxury single-family project stalls, the problem is rarely
+          the house — it's the capital stack, the timeline, or the operator. We take on all three.</p>
+        <hr class="rule" />
+      </div>
+      <div class="grid grid-3" style="margin-top:50px;">
+        <article class="takeover-card reveal"><div class="ic">◆</div><h3>Stalled Waterfront Spec Homes</h3>
+          <p>High-end speculative waterfront builds that ran out of capital or runway before completion.</p></article>
+        <article class="takeover-card reveal"><div class="ic">▣</div><h3>Incomplete Luxury Shells</h3>
+          <p>Structural shells and dried-in homes sitting idle, accruing carrying cost and weather exposure.</p></article>
+        <article class="takeover-card reveal"><div class="ic">§</div><h3>Projects With Lender Pressure</h3>
+          <p>Maturity defaults, construction-loan distress, and lender-driven situations needing a clean, certain resolution.</p></article>
+        <article class="takeover-card reveal"><div class="ic">⚑</div><h3>Builder / Operator Distress</h3>
+          <p>Capable projects undone by a distressed or overextended builder — we replace the execution, not the vision.</p></article>
+        <article class="takeover-card reveal"><div class="ic">◷</div><h3>Permit or Inspection Delays</h3>
+          <p>Projects stranded by permitting, inspection, or entitlement friction that we resolve in-house.</p></article>
+        <article class="takeover-card reveal"><div class="ic">$</div><h3>Capital Shortfalls Before Completion</h3>
+          <p>Sound projects weeks or months from the finish line, short the completion capital to get there.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= OUR PROCESS ========================= -->
+  <section class="section panel" id="process">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our Process</span>
+        <h2>A disciplined path from intake to exit.</h2>
+        <p class="lede">A repeatable, confidential process designed to move quietly and
+          quickly — and to give a lender, receiver, or owner certainty of execution.</p>
+        <hr class="rule" />
+      </div>
+      <div class="timeline">
+        <div class="tstep reveal"><div class="num">1</div><h3>Intake</h3>
+          <p>A confidential first look — address, phase, debt, and cost to complete. We assess fit fast.</p></div>
+        <div class="tstep reveal"><div class="num">2</div><h3>Project Diligence</h3>
+          <p>Title, liens, permits, structural condition, budget, and exit value — verified by our in-house team.</p></div>
+        <div class="tstep reveal"><div class="num">3</div><h3>Capital Structure</h3>
+          <p>We structure the right position — note purchase, preferred equity, rescue capital, or joint venture.</p></div>
+        <div class="tstep reveal"><div class="num">4</div><h3>Takeover / Lender Resolution</h3>
+          <p>We resolve the capital stack — deed-in-lieu, note acquisition, foreclosure, or negotiated workout.</p></div>
+        <div class="tstep reveal"><div class="num">5</div><h3>Completion &amp; Exit</h3>
+          <p>We complete the home to certificate of occupancy and exit through luxury resale or refinance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== WHY US ========================== -->
+  <section class="section dark" id="why">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why Breakwater</span>
+        <h2>An operator that controls the whole problem.</h2>
+        <p class="lede">Most buyers can acquire but cannot complete. Breakwater pairs legal
+          and lender-side fluency with a development execution mindset — under one roof.</p>
+        <hr class="rule" />
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal"><div class="n">01</div><h3>Real Estate Legal Background</h3>
+          <p>A Florida real estate attorney leads execution — workouts, foreclosure, and deal structuring handled in-house.</p></div>
+        <div class="why-item reveal"><div class="n">02</div><h3>Title, Closing &amp; Lender-Side Understanding</h3>
+          <p>An owned title agency and lender-side experience de-risk the most dangerous part of distressed acquisition.</p></div>
+        <div class="why-item reveal"><div class="n">03</div><h3>Development Execution Mindset</h3>
+          <p>We don't just underwrite — we complete. Verified budgets, disciplined oversight, finished luxury product.</p></div>
+        <div class="why-item reveal"><div class="n">04</div><h3>We Move Quietly and Quickly</h3>
+          <p>Off-market, confidential, and decisive. We close when others can't — and without noise around the asset.</p></div>
+        <div class="why-item reveal"><div class="n">05</div><h3>Distressed Luxury Familiarity</h3>
+          <p>We speak the language of distressed luxury single-family product — and we know exactly what it takes to finish it.</p></div>
+        <div class="why-item reveal" style="display:flex;flex-direction:column;justify-content:center;background:var(--navy-700);">
+          <p style="margin:0;color:var(--warm-white);font-family:var(--font-display);font-size:1.2rem;line-height:1.4;">When a problem asset needs a solution, be the first call.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED PROJECTS ===================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Featured Scenarios</span>
+        <h2>The product we take on.</h2>
+        <p class="lede">Representative luxury single-family situations across the phases of
+          distress and the capital that completes them.</p>
+        <hr class="rule" />
+      </div>
+      <div class="projects">
+        <article class="project reveal">
+          <div class="ph g1"><span class="chip">Shell</span><p class="ph-tag">Waterfront</p></div>
+          <div class="pj-body"><h3>Waterfront Shell</h3><p class="meta">Las Olas Isles · structural shell · deep-water frontage</p></div>
+        </article>
+        <article class="project reveal">
+          <div class="ph g3"><span class="chip">Dried-In</span><p class="ph-tag">Modern Spec</p></div>
+          <div class="pj-body"><h3>Modern Spec Completion</h3><p class="meta">Coral Ridge · interior buildout · completion capital</p></div>
+        </article>
+        <article class="project reveal">
+          <div class="ph g5"><span class="chip">Permit Recovery</span><p class="ph-tag">Lender-Controlled</p></div>
+          <div class="pj-body"><h3>Lender-Controlled Asset</h3><p class="meta">Miami Beach · maturity default · workout</p></div>
+        </article>
+        <article class="project reveal">
+          <div class="ph g4"><span class="chip">Completion Capital</span><p class="ph-tag">Estate</p></div>
+          <div class="pj-body"><h3>Near-Finished Estate</h3><p class="meta">Palm Beach · weeks to certificate of occupancy</p></div>
+        </article>
+      </div>
+      <p class="projects-note">Representative scenarios shown for illustration. Not actual or currently available assets.</p>
+    </div>
+  </section>
+
+  <!-- ========================== MARKETS ========================== -->
+  <section class="section charcoal" id="markets">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Footprint</span>
+        <h2>All of South Florida's luxury coast.</h2>
+        <p class="lede">We pursue distressed and stalled luxury single-family projects across
+          the tri-county region and the adjacent coastal corridors.</p>
+        <hr class="rule" />
+      </div>
+      <div class="markets">
+        <div class="mk reveal"><h3>Broward</h3><p>Fort Lauderdale · Las Olas Isles · Rio Vista · Harbor Beach · Coral Ridge · Lighthouse Point · Hillsboro Beach</p></div>
+        <div class="mk reveal"><h3>Miami-Dade</h3><p>Miami Beach · Coconut Grove · Coral Gables · Bay Harbor Islands · Golden Beach · Sunset Islands · Key Biscayne</p></div>
+        <div class="mk reveal"><h3>Palm Beach</h3><p>Palm Beach · Manalapan · Boca Raton · Delray Beach · Highland Beach · Jupiter / Admirals Cove · Singer Island</p></div>
+        <div class="mk reveal"><h3>Treasure Coast &amp; Keys</h3><p>Vero Beach · Stuart / Sewall's Point · Jupiter Island · Islamorada · Key Largo</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INVESTOR GATE TEASER ===================== -->
+  <section class="section dark" id="capital">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">For Capital Partners</span>
+        <h2>Returns engineered from basis and execution.</h2>
+        <p class="lede">Our edge is structural: we acquire below replacement cost, complete with
+          capabilities competitors lack, and exit into supply-constrained demand. Detailed return
+          targets and deal structures are shared with verified investors.</p>
+      </div>
+      <div class="gate">
+        <div class="lockrow">
+          <span class="lock" aria-hidden="true">&#128274;</span>
+          <div>
+            <strong>Return targets &amp; partner structures</strong>
+            <p>Made available to accredited and institutional investors upon verification.</p>
+          </div>
+        </div>
+        <a class="btn btn-gold" href="investors.review.html">Request Investor Access &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT / SUBMISSION ===================== -->
+  <section class="section panel" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-aside">
+        <span class="eyebrow">Submit a Project</span>
+        <h2>Bring us a distressed or stalled project.</h2>
+        <p class="lede">A confidential first look, a fast read on fit, and — if it fits — a
+          decisive path to a takeover or completion. Lenders, receivers, builders, and owners welcome.</p>
+        <div class="direct">
+          <p style="margin:0;color:var(--muted);">Prefer to talk directly?</p>
+          <p style="margin:6px 0 0;"><a href="mailto:rr@richardrosalaw.com?subject=Breakwater%20%E2%80%94%20Discuss%20a%20Takeover">Discuss a Takeover &rarr;</a></p>
+          <p style="margin:14px 0 0;color:var(--muted);font-size:.92rem;">Richard Rosa, Founder &amp; Principal<br/><a href="mailto:rr@richardrosalaw.com" style="color:var(--navy);">rr@richardrosalaw.com</a></p>
+        </div>
+      </div>
+
+      <form class="submit" id="projectForm" novalidate>
+        <div class="field row">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Full name" required /></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></div>
+        </div>
+        <div class="field row">
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" /></div>
+          <div class="field"><label for="address">Property Address</label><input id="address" name="address" type="text" placeholder="Street, city, FL" /></div>
+        </div>
+        <div class="field row">
+          <div class="field">
+            <label for="phase">Current Project Phase</label>
+            <select id="phase" name="phase">
+              <option value="" selected>Select a phase…</option>
+              <option>Land / Entitled Site</option>
+              <option>Foundation / Shell Condition</option>
+              <option>Dried-In Structure</option>
+              <option>Interior Buildout</option>
+              <option>Near-Completion / Lender Workout</option>
+              <option>Completed / Resale</option>
+            </select>
+          </div>
+          <div class="field"><label for="debt">Estimated Debt / Cost to Complete</label><input id="debt" name="debt" type="text" placeholder="e.g. $2.4M debt / $900K to complete" /></div>
+        </div>
+        <div class="field">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" placeholder="Situation, lender status, timeline, and anything else we should know."></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn-dark" type="submit">Submit Project</button>
+          <a class="btn btn-outline" href="mailto:rr@richardrosalaw.com?subject=Breakwater%20%E2%80%94%20Discuss%20a%20Takeover" style="border-color:var(--navy);color:var(--navy);">Discuss a Takeover</a>
+        </div>
+        <p class="form-note" id="formNote">Confidential. Submitting opens a pre-filled email to our team — nothing is stored on this site.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <strong>BREAKWATER CAPITAL PARTNERS</strong><br/>
+        Reviving distressed luxury residential projects — South Florida
+      </div>
+      <div>
+        <strong>Contact</strong><br/>
+        Richard Rosa, Founder &amp; Principal<br/>
+        <a href="mailto:rr@richardrosalaw.com">rr@richardrosalaw.com</a>
+      </div>
+      <div>
+        <strong>Navigate</strong><br/>
+        <a href="#phases">Project Phases</a> · <a href="#takeover">What We Take Over</a><br/>
+        <a href="#process">Process</a> · <a href="#projects">Projects</a> · <a href="investors.review.html">Investors</a>
+      </div>
+    </div>
+    <p class="disc">
+      This website is for general informational purposes only. It does not constitute an offer to sell
+      or a solicitation of an offer to buy any security, nor investment, legal, or tax advice.
+      Illustrative figures and representative scenarios are objectives or examples only, are inherently
+      uncertain, and are not guarantees of future results. Any investment would be made solely pursuant
+      to definitive offering documents and applicable law.
+    </p>
+    <p class="legal">© <span id="yr"></span> Breakwater Capital Partners. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  (function(){
+    var t = document.getElementById('navToggle'), m = document.getElementById('menu');
+    if(t && m){
+      t.addEventListener('click', function(){
+        var open = m.classList.toggle('open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      m.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ m.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+      });
+    }
+  })();
+
+  // Reveal on scroll (progressive enhancement)
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // Project submission → compose a confidential mailto (static site, no backend)
+  (function(){
+    var f = document.getElementById('projectForm'), note = document.getElementById('formNote');
+    if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+      if(!v('name') || !v('email')){
+        note.textContent = 'Please add your name and email so we can respond.';
+        note.style.color = '#9a3b2f'; return;
+      }
+      var body = [
+        'Name: ' + v('name'),
+        'Email: ' + v('email'),
+        'Phone: ' + v('phone'),
+        'Property Address: ' + v('address'),
+        'Current Project Phase: ' + v('phase'),
+        'Estimated Debt / Cost to Complete: ' + v('debt'),
+        '',
+        'Notes:',
+        v('notes')
+      ].join('\n');
+      var href = 'mailto:rr@richardrosalaw.com'
+        + '?subject=' + encodeURIComponent('Breakwater — Project Submission: ' + (v('address') || v('name')))
+        + '&body=' + encodeURIComponent(body);
+      window.location.href = href;
+      note.textContent = 'Opening your email client with the details pre-filled…';
+      note.style.color = '';
+    });
+  })();
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+<div style="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:99999;pointer-events:none;background:#7a1f1f;color:#fff;font:600 12px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:11px 20px;border-radius:999px;box-shadow:0 8px 30px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.28);white-space:nowrap;">&#9679; Private draft &mdash; not live &middot; review copy</div>
+</body>
+</html>
