@@ -11,7 +11,7 @@ name: Deploy site to GitHub Pages
 
 on:
   push:
-    branches: [ "claude/breakwater-capital-strategy-pdprql" ]
+    branches: [ "main", "claude/breakwater-capital-strategy-pdprql" ]
     paths:
       - "breakwater/site/**"
       - ".github/workflows/pages.yml"
