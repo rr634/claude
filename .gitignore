@@ -1,0 +1,6 @@
+breakwater/previews/
+breakwater/*.small.jpg
+breakwater/preview-*.png
+breakwater/*-preview*.png
+breakwater/m[0-9]-*.png
+breakwater/faq-preview.png
