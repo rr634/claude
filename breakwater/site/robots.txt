@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brkwatercap.com/sitemap.xml
