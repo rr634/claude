@@ -666,6 +666,7 @@
       </div>
 
       <form class="submit" id="projectForm" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
         <div class="field row">
           <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Full name" required /></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></div>
@@ -711,7 +712,7 @@
           <button class="btn btn-dark" type="submit">Submit Project</button>
           <a class="btn btn-outline" href="mailto:rr@richardrosalaw.com?subject=Breakwater%20%E2%80%94%20Discuss%20a%20Takeover" style="border-color:var(--navy);color:var(--navy);">Discuss a Takeover</a>
         </div>
-        <p class="form-note" id="formNote">Confidential. Submitting opens a pre-filled email to our team — nothing is stored on this site.</p>
+        <p class="form-note" id="formNote">Confidential. Submitting sends your details straight to our team — we typically respond within one business day.</p>
       </form>
     </div>
   </section>
@@ -772,36 +773,58 @@
     els.forEach(function(e){ io.observe(e); });
   })();
 
-  // Project submission → compose a confidential mailto (static site, no backend)
+  // Project submission → seamless AJAX send via FormSubmit (static site, no backend),
+  // with an email-app fallback so a lead is never lost if the service is unreachable.
   (function(){
     var f = document.getElementById('projectForm'), note = document.getElementById('formNote');
     if(!f) return;
-    f.addEventListener('submit', function(e){
-      e.preventDefault();
-      var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
-      if(!v('name') || !v('email')){
-        note.textContent = 'Please add your name and email so we can respond.';
-        note.style.color = '#9a3b2f'; return;
-      }
+    var ENDPOINT = 'https://formsubmit.co/ajax/rr@richardrosalaw.com';
+    var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+    function mailtoFallback(){
       var body = [
-        'Name: ' + v('name'),
-        'Email: ' + v('email'),
-        'Phone: ' + v('phone'),
-        'Property Address: ' + v('address'),
-        'Asset Type: ' + v('assetType'),
+        'Name: ' + v('name'), 'Email: ' + v('email'), 'Phone: ' + v('phone'),
+        'Property Address: ' + v('address'), 'Asset Type: ' + v('assetType'),
         'Current Project Phase: ' + v('phase'),
         'Estimated Debt / Cost to Complete: ' + v('debt'),
-        'Situation Type: ' + v('situation'),
-        '',
-        'Notes:',
-        v('notes')
+        'Situation Type: ' + v('situation'), '', 'Notes:', v('notes')
       ].join('\n');
-      var href = 'mailto:rr@richardrosalaw.com'
+      window.location.href = 'mailto:rr@richardrosalaw.com'
         + '?subject=' + encodeURIComponent('Breakwater — Project Submission: ' + (v('address') || v('name')))
         + '&body=' + encodeURIComponent(body);
-      window.location.href = href;
-      note.textContent = 'Opening your email client with the details pre-filled…';
+    }
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!v('name') || !v('email')){
+        note.style.color = '#9a3b2f';
+        note.textContent = 'Please add your name and email so we can respond.';
+        return;
+      }
+      var btn = f.querySelector('button[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
       note.style.color = '';
+      note.textContent = 'Sending your project details…';
+
+      var data = new FormData(f);
+      data.append('_subject', 'Breakwater — Project Submission: ' + (v('address') || v('name')));
+      data.append('_template', 'table');
+      data.append('_captcha', 'false');
+
+      fetch(ENDPOINT, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
+        .then(function(r){ if(!r.ok) throw new Error('bad status'); return r.json(); })
+        .then(function(){
+          f.reset();
+          note.style.color = '';
+          note.innerHTML = '<strong>Thank you — your project has been sent.</strong> We’ll be in touch shortly.';
+        })
+        .catch(function(){
+          note.style.color = '';
+          note.textContent = 'Opening your email app so your details aren’t lost…';
+          mailtoFallback();
+        })
+        .then(function(){ if(btn){ btn.disabled = false; btn.textContent = label; } });
     });
   })();
 
