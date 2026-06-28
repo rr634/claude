@@ -415,6 +415,26 @@
   footer.site .disc{font-size:.76rem;color:rgba(247,244,238,.45);margin-top:24px;line-height:1.7;max-width:96ch;}
   footer.site .legal{margin-top:16px;font-size:.8rem;color:rgba(247,244,238,.55);}
 
+  /* ============================================================
+     FAQ
+     ============================================================ */
+  .faq{margin-top:50px;border-top:1px solid var(--line);}
+  .faq details{border-bottom:1px solid var(--line);}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:22px 48px 22px 0;position:relative;
+    font-family:var(--font-display);font-size:clamp(1.05rem,1.8vw,1.2rem);color:var(--navy);
+    font-weight:600;line-height:1.35;transition:color .2s var(--ease);
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{
+    content:"+";position:absolute;right:6px;top:20px;
+    font-family:var(--font-body);font-size:1.5rem;line-height:1;color:var(--gold);
+  }
+  .faq details[open] summary::after{content:"\2013";}
+  .faq summary:hover{color:var(--gold);}
+  .faq .ans{padding:0 48px 26px 0;color:var(--muted);font-size:1rem;max-width:82ch;}
+  .faq .ans p{margin:0;}
+
   /* Reveal-on-scroll (progressive enhancement; no-JS shows everything) */
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
   .reveal.in{opacity:1;transform:none;}
@@ -438,6 +458,7 @@
       <a class="navlink" href="#takeover">What We Take Over</a>
       <a class="navlink" href="#process">Process</a>
       <a class="navlink" href="#projects">Projects</a>
+      <a class="navlink" href="#faq">FAQ</a>
       <a class="navlink" href="investors.review.html">Investors</a>
       <a class="btn btn-gold" href="#contact">Submit a Project</a>
     </nav>
@@ -677,6 +698,68 @@
     </div>
   </section>
 
+  <!-- ============================ FAQ ============================ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Questions &amp; Answers</span>
+        <h2>How Breakwater works.</h2>
+        <p class="lede">Common questions from lenders, receivers, builders, and owners weighing a distressed or stalled South Florida project.</p>
+        <hr class="rule" />
+      </div>
+      <div class="faq">
+        <details>
+          <summary>What kinds of projects does Breakwater Capital Partners take on?</summary>
+          <div class="ans"><p>We acquire, work out, and complete distressed and stalled luxury single-family homes, multifamily, and condominium developments across South Florida — from entitled land and abandoned shells to near-finished buildings caught in lender or partnership trouble.</p></div>
+        </details>
+        <details>
+          <summary>What exactly counts as a “distressed” or “stalled” project?</summary>
+          <div class="ans"><p>Any project where execution has halted: a spec home that ran out of capital, a multifamily build stuck mid-construction, a condominium facing a maturity default, or an asset tangled in foreclosure, receivership, or a partnership dispute. Usually the building is sound — it’s the capital stack, the timeline, or the operator that broke.</p></div>
+        </details>
+        <details>
+          <summary>Do you buy the loan or note, or only the real estate?</summary>
+          <div class="ans"><p>Both. We structure whatever resolves the situation — note or loan purchase, preferred equity, rescue capital, a joint venture, deed-in-lieu, a negotiated workout, or a direct purchase from a lender, receiver, or owner.</p></div>
+        </details>
+        <details>
+          <summary>How quickly can you close?</summary>
+          <div class="ans"><p>We’re built for speed and certainty. A confidential first look takes days, and because legal, title, and lender-side work are handled in-house, we can move on timelines a traditional buyer can’t.</p></div>
+        </details>
+        <details>
+          <summary>What areas of South Florida do you cover?</summary>
+          <div class="ans"><p>Broward, Miami-Dade, and Palm Beach counties, plus the adjacent Treasure Coast and Keys — Fort Lauderdale, Las Olas, Miami Beach, Coral Gables, Palm Beach, Boca Raton, and the surrounding waterfront corridors.</p></div>
+        </details>
+        <details>
+          <summary>Is the process confidential?</summary>
+          <div class="ans"><p>Yes. We move quietly and off-market. Lenders, receivers, builders, and owners can bring us a situation without creating noise around the asset.</p></div>
+        </details>
+        <details>
+          <summary>Who is Breakwater the right call for?</summary>
+          <div class="ans"><p>Lenders and special servicers with a problem construction loan, receivers managing a court-controlled asset, builders or sponsors who’ve run out of runway, and owners who need a certain, discreet exit on an unfinished project.</p></div>
+        </details>
+        <details>
+          <summary>Does Breakwater work with investors?</summary>
+          <div class="ans"><p>Yes — accredited and institutional investors can request access to target returns and partnership structures on the <a href="investors.review.html" style="color:var(--navy);text-decoration:underline;text-decoration-color:var(--gold);">Investors</a> page. Nothing on this site is an offer to sell, or a solicitation to buy, any security.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"What kinds of projects does Breakwater Capital Partners take on?","acceptedAnswer":{"@type":"Answer","text":"We acquire, work out, and complete distressed and stalled luxury single-family homes, multifamily, and condominium developments across South Florida — from entitled land and abandoned shells to near-finished buildings caught in lender or partnership trouble."}},
+      {"@type":"Question","name":"What exactly counts as a distressed or stalled project?","acceptedAnswer":{"@type":"Answer","text":"Any project where execution has halted: a spec home that ran out of capital, a multifamily build stuck mid-construction, a condominium facing a maturity default, or an asset tangled in foreclosure, receivership, or a partnership dispute. Usually the building is sound; it is the capital stack, the timeline, or the operator that broke."}},
+      {"@type":"Question","name":"Do you buy the loan or note, or only the real estate?","acceptedAnswer":{"@type":"Answer","text":"Both. We structure whatever resolves the situation — note or loan purchase, preferred equity, rescue capital, a joint venture, deed-in-lieu, a negotiated workout, or a direct purchase from a lender, receiver, or owner."}},
+      {"@type":"Question","name":"How quickly can you close?","acceptedAnswer":{"@type":"Answer","text":"A confidential first look takes days, and because legal, title, and lender-side work are handled in-house, we can move on timelines a traditional buyer cannot."}},
+      {"@type":"Question","name":"What areas of South Florida do you cover?","acceptedAnswer":{"@type":"Answer","text":"Broward, Miami-Dade, and Palm Beach counties, plus the adjacent Treasure Coast and Keys — Fort Lauderdale, Las Olas, Miami Beach, Coral Gables, Palm Beach, Boca Raton, and the surrounding waterfront corridors."}},
+      {"@type":"Question","name":"Is the process confidential?","acceptedAnswer":{"@type":"Answer","text":"Yes. We move quietly and off-market. Lenders, receivers, builders, and owners can bring us a situation without creating noise around the asset."}},
+      {"@type":"Question","name":"Who is Breakwater the right call for?","acceptedAnswer":{"@type":"Answer","text":"Lenders and special servicers with a problem construction loan, receivers managing a court-controlled asset, builders or sponsors who have run out of runway, and owners who need a certain, discreet exit on an unfinished project."}},
+      {"@type":"Question","name":"Does Breakwater work with investors?","acceptedAnswer":{"@type":"Answer","text":"Yes — accredited and institutional investors can request access to target returns and partnership structures on the Investors page. Nothing on this site is an offer to sell, or a solicitation to buy, any security."}}
+    ]
+  }
+  </script>
+
   <!-- ===================== INVESTOR GATE TEASER ===================== -->
   <section class="section dark" id="capital">
     <div class="container">
@@ -784,7 +867,7 @@
       <div>
         <strong>Navigate</strong><br/>
         <a href="#phases">Project Phases</a> · <a href="#takeover">What We Take Over</a><br/>
-        <a href="#process">Process</a> · <a href="#projects">Projects</a> · <a href="investors.review.html">Investors</a>
+        <a href="#process">Process</a> · <a href="#projects">Projects</a> · <a href="#faq">FAQ</a> · <a href="investors.review.html">Investors</a>
       </div>
     </div>
     <p class="disc">
