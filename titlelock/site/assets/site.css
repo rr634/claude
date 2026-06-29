@@ -165,6 +165,27 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(10,26,47,.86);
 .card h3{font-size:1.16rem;margin-bottom:8px;color:var(--slate);}
 .card p{margin:0;color:var(--muted);font-size:.96rem;}
 
+/* compare + coverage (insurance differentiator) */
+.compare{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;
+  display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
+.compare.featured{border:1.5px solid var(--emerald);box-shadow:0 24px 60px rgba(16,185,129,.18);}
+.compare .ch{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.compare h3{font-size:1.18rem;color:var(--slate);}
+.compare .tag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
+  padding:5px 11px;border-radius:var(--r-pill);margin-left:auto;}
+.compare .tag.them{background:#FBE9E5;color:#B23A24;}
+.compare .tag.us{background:#D2F3E6;color:#047857;}
+.compare ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:13px;}
+.compare li{display:flex;gap:11px;align-items:flex-start;font-size:.96rem;color:var(--slate-700);}
+.compare li svg{width:19px;height:19px;flex:0 0 auto;margin-top:1px;}
+.compare li.no{color:var(--muted);}
+.compare li .x{color:var(--alert);}
+.compare li .c{color:var(--emerald-600);}
+.cov{background:rgba(255,255,255,.04);border:1px solid var(--line-dark);border-radius:var(--r-md);padding:24px 22px;}
+.cov b{display:block;font-family:var(--font-display);font-size:clamp(1.5rem,2.6vw,1.95rem);font-weight:800;
+  color:var(--emerald-soft);letter-spacing:-.02em;line-height:1.1;}
+.cov span{display:block;font-size:.86rem;color:var(--muted-light);margin-top:8px;}
+
 /* steps */
 .steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 @media(max-width:760px){.steps{grid-template-columns:1fr;}}

@@ -46,5 +46,7 @@ Alternatively, drop `titlelock/site/` onto Netlify, Vercel, Cloudflare Pages, or
 
 ---
 
-*Demonstration site. DeedGuard is a records-monitoring concept, not title insurance. Figures shown
-are illustrative. Nothing here creates an attorney-client relationship.*
+*Demonstration site. DeedGuard is presented as monitoring **plus** an insurance policy underwritten by
+a licensed carrier; all carriers, coverage limits, and figures shown are illustrative placeholders and
+subject to the actual policy issued and state availability. Nothing here creates an attorney-client
+relationship. Replace the placeholder coverage amounts with real, carrier-approved terms before launch.*
