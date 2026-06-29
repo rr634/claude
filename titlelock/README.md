@@ -12,6 +12,24 @@ deed & title monitoring service (home title theft / equity-fraud protection).
 | `site/assets/favicon.svg` | Shield-and-lock mark. |
 | `site/robots.txt` | Crawler allow. |
 
+## Business model reflected in the site
+
+The site is built around a **membership + embedded-insurance** model (placeholders, illustrative):
+
+- **Phase 1 — piggyback.** An annual **membership** ($249 / $399 / $499) that *includes* a
+  title-fraud **insurance endorsement** ($25K / $100K / $250K). The site deliberately splits the
+  two: the insurance **premium is passed through at cost**, and the membership fee is a **separate
+  charge** for monitoring + attorney-backed restoration (the cleaner premium-vs-fee structure).
+- **Phase 2 — own paper.** Higher limits / DeedGuard's own program (fronting carrier + captive)
+  to capture underwriting profit, not just the service spread.
+- **Phase 3 — vertical.** In-house attorneys litigate the *fraud* (client-aligned quiet-title work);
+  coverage-determination is firewalled to an independent administrator to avoid the conflict.
+
+> ⚠️ **Before launch:** selling insurance needs a licensed carrier/producer; coverage limits,
+> carriers, and state availability must be real; and the Phase-3 conflict/ownership structure
+> (Rule 4-1.7 / 4-5.4; ABS domicile) must be cleared by a professional-responsibility specialist.
+> Every dollar figure on the site is marked illustrative for this reason.
+
 ## Design
 
 - **Brand:** deep slate-blue (`#0E2A47`) for trust, signal emerald (`#10B981`) for "protected,"
