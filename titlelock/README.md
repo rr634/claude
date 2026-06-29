@@ -1,7 +1,8 @@
-# DeedGuard — home title-fraud protection site
+# DeedGuard USA — home title-fraud protection site
 
-A self-contained, responsive marketing site for **DeedGuard**, an attorney-backed
-deed & title monitoring service (home title theft / equity-fraud protection).
+A self-contained, responsive marketing site for **DeedGuard USA** (deedguardusa.com), an
+insurance-backed, attorney-led deed & title monitoring service (home title theft / equity-fraud
+protection).
 
 ## What's here
 
@@ -55,12 +56,22 @@ The "Run Free Check" form is wired up client-side only — it validates input an
 To go live, point the form `submit` handler at your backend, CRM, or an email/Forms endpoint
 (e.g. Formspree, a Lambda, or your intake system). Search for `checkForm` in `index.html`.
 
-## Deploying
+## Deploying — domain: `deedguardusa.com`
 
-The repo's existing GitHub Pages workflow (`.github/workflows/pages.yml`) publishes
-`breakwater/site/`. GitHub Pages serves **one** site per repository, so to publish DeedGuard
-instead, point that workflow's `path:` at `titlelock/site` (and update its trigger `paths:`).
-Alternatively, drop `titlelock/site/` onto Netlify, Vercel, Cloudflare Pages, or any static host.
+The site is **deploy-ready**: `site/CNAME`, `site/sitemap.xml`, `site/robots.txt`, canonical/OG URLs,
+and `netlify.toml` all point at **deedguardusa.com**. Pick a host and connect this repo — no build step.
+
+**Recommended (doesn't touch the Breakwater site):** any static host pointed at **`titlelock/site`**.
+- **Netlify:** New site from Git → this repo → set **Base directory = `titlelock`** (reads `netlify.toml`,
+  publishes `site`). Add `deedguardusa.com` as a custom domain.
+- **Cloudflare Pages / Vercel:** framework preset **None/Other**, **output dir = `titlelock/site`**.
+
+**DNS at your registrar** for `deedguardusa.com`: follow the host's instructions — typically an
+apex `A`/`ALIAS` (or `CNAME` for `www`) pointing at the host. The `CNAME` file in `site/` also makes
+this repo's folder GitHub-Pages-ready if you ever move to a dedicated repo.
+
+> GitHub Pages serves **one** site per repository and this repo already publishes `breakwater/site/`,
+> so use a separate host (above) rather than this repo's Pages — or move DeedGuard to its own repo.
 
 ---
 
