@@ -38,10 +38,11 @@ restoration services (premium-vs-fee split, not a marked-up premium).
 - **Phase 3 — vertical.** In-house attorneys litigate the *fraud* (client-aligned quiet-title work);
   coverage-determination is firewalled to an independent administrator to avoid the conflict.
 
-> ⚠️ **Before launch:** selling insurance needs a licensed carrier/producer; coverage limits,
-> carriers, and state availability must be real; and the Phase-3 conflict/ownership structure
-> (Rule 4-1.7 / 4-5.4; ABS domicile) must be cleared by a professional-responsibility specialist.
-> Every dollar figure on the site is marked illustrative for this reason.
+> ⚠️ **Before launch:** ALTA 49 / 49.1 is available in Florida (the operator is an Old Republic
+> agent), so the Phase-1 product is real. Still to finalize: the actual endorsement cost/commission
+> (drop into the calculator), and — for Phase 2/3 — the conflict/ownership structure
+> (Rule 4-1.7 / 4-5.4; ABS domicile) cleared by a professional-responsibility specialist.
+> Dollar figures on the site remain marked illustrative until real numbers are dropped in.
 
 ## Design
 

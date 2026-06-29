@@ -1,7 +1,8 @@
 # DeedGuard USA — unit economics (assumptions & scenarios)
 
-Companion to `tools/economics.html`. All numbers are **illustrative placeholders** — replace with
-Old Republic's real endorsement charge, your FL title-agency split, and confirmed FL approval.
+Companion to `tools/economics.html`. ALTA 49 / 49.1 is **available in Florida**; the remaining
+unknowns are Old Republic's real **endorsement charge** and your **FL title-agency split** — drop
+those in and the margins are real. All numbers below are **illustrative placeholders**.
 
 ## Revenue streams (Phase 1 — piggyback on ORT)
 

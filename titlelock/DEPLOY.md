@@ -44,6 +44,8 @@ Done — `https://deedguardusa.com` is live. The site already sets `CNAME`, cano
 ---
 
 ## Before you point real customers at it
-- ✅ Confirm **FL approval** of ALTA 49 / 49.1 and your **Old Republic** endorsement cost.
+- ✅ **FL availability:** ALTA 49 / 49.1 is approved/available in Florida. Pull Old Republic's
+  underwriting bulletin for your **endorsement cost** and any date-down requirement, and drop the
+  number into `tools/economics.html`.
 - ✅ Wire the free-check form to your inbox/CRM (currently a client-side demo — see `checkForm` in `site/index.html`).
 - ✅ Have counsel sign off on the insurance language (it's attorney-branded and makes coverage claims).
