@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeedGuard USA — Unit Economics Calculator</title>
+<style>
+:root{--ink:#0A1A2F;--slate:#0E2A47;--emerald:#10B981;--emerald-600:#059669;--emerald-soft:#34D399;
+  --paper:#F6F8FB;--panel:#EEF2F8;--white:#fff;--muted:#5B6B7C;--line:#DEE6F0;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);line-height:1.55;}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 22px 64px;}
+header.h{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.logo{width:34px;height:34px;}
+.h b{font-size:1.2rem;font-weight:800;letter-spacing:-.01em;}
+.h b span{color:var(--emerald-600);}
+h1{font-size:clamp(1.5rem,3vw,2.1rem);margin:18px 0 4px;letter-spacing:-.02em;}
+.sub{color:var(--muted);margin:0 0 26px;max-width:70ch;}
+.grid{display:grid;grid-template-columns:380px 1fr;gap:26px;align-items:start;}
+@media(max-width:880px){.grid{grid-template-columns:1fr;}}
+.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 2px 10px rgba(14,42,71,.05);}
+.card h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--emerald-600);margin:0 0 16px;}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:.84rem;font-weight:600;margin-bottom:5px;}
+.field .hint{font-weight:400;color:var(--muted);font-size:.78rem;}
+.field input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:.98rem;font-family:var(--font);}
+.field input:focus{outline:none;border-color:var(--emerald);}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.toggle{display:flex;align-items:center;gap:10px;margin:18px 0 6px;padding-top:16px;border-top:1px solid var(--line);}
+.toggle input{width:18px;height:18px;}
+.toggle label{font-size:.9rem;font-weight:700;}
+.outs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+@media(max-width:520px){.outs{grid-template-columns:1fr;}}
+.kpi{background:linear-gradient(150deg,#0E2A47,#143655);color:#fff;border-radius:12px;padding:18px 18px;}
+.kpi.alt{background:linear-gradient(150deg,#10B981,#059669);color:#04231a;}
+.kpi .lab{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;opacity:.85;}
+.kpi .val{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;letter-spacing:-.02em;margin-top:4px;}
+.kpi .note{font-size:.76rem;opacity:.8;margin-top:3px;}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:6px;}
+td{padding:9px 4px;border-bottom:1px solid var(--line);}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;}
+tr.tot td{border-top:2px solid var(--slate);border-bottom:0;font-weight:800;color:var(--slate);padding-top:12px;}
+tr.neg td:last-child{color:#C2410C;}
+.disc{font-size:.76rem;color:var(--muted);margin-top:22px;line-height:1.6;}
+.phase2{display:none;}
+.phase2.on{display:block;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="h">
+    <svg class="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E2A47"/><path d="M32 11 L49 18 V32 C49 43 41 50 32 54 C23 50 15 43 15 32 V18 Z" fill="none" stroke="#34D399" stroke-width="3.2" stroke-linejoin="round"/><rect x="25" y="30" width="14" height="12" rx="2.4" fill="#34D399"/><path d="M27.5 30 V26.5 a4.5 4.5 0 0 1 9 0 V30" fill="none" stroke="#34D399" stroke-width="2.6"/></svg>
+    <b>Deed<span>Guard</span> USA</b>
+  </header>
+  <h1>Unit-Economics Calculator</h1>
+  <p class="sub">Model the membership + ALTA 49/49.1 offering. Drop in Old Republic's real endorsement cost and your title-agency split, and per-member margin, portfolio revenue, and Phase-2 underwriting upside update live. All figures are yours to set — defaults are illustrative.</p>
+
+  <div class="grid">
+    <!-- INPUTS -->
+    <div class="card">
+      <h2>Assumptions</h2>
+      <div class="field"><label>Members <span class="hint">(active memberships)</span></label><input id="members" type="number" value="500"></div>
+      <div class="field"><label>Annual membership price <span class="hint">($/yr, retail)</span></label><input id="price" type="number" value="399"></div>
+      <div class="row2">
+        <div class="field"><label>Service cost / member <span class="hint">($/yr)</span></label><input id="svc" type="number" value="40"></div>
+        <div class="field"><label>Onboarding cost <span class="hint">($, yr 1)</span></label><input id="onb" type="number" value="50"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Endorsement premium <span class="hint">(pass-through $)</span></label><input id="endPrem" type="number" value="100"></div>
+        <div class="field"><label>Your commission on it <span class="hint">(%)</span></label><input id="endComm" type="number" value="70"></div>
+      </div>
+      <div class="field"><label>New-policy attach rate <span class="hint">(% needing a new ORT owner's policy)</span></label><input id="attach" type="number" value="40"></div>
+      <div class="row2">
+        <div class="field"><label>Avg new-policy premium <span class="hint">($, one-time)</span></label><input id="npPrem" type="number" value="1500"></div>
+        <div class="field"><label>Your retention <span class="hint">(%)</span></label><input id="npRet" type="number" value="70"></div>
+      </div>
+
+      <div class="toggle"><input id="p2" type="checkbox"><label for="p2">Model Phase 2 (your own paper)</label></div>
+      <div class="phase2" id="p2box">
+        <div class="row2">
+          <div class="field"><label>Own premium / member <span class="hint">($/yr)</span></label><input id="ownPrem" type="number" value="150"></div>
+          <div class="field"><label>Expected loss ratio <span class="hint">(%)</span></label><input id="loss" type="number" value="8"></div>
+        </div>
+        <div class="field"><label>Reinsurance + admin expense <span class="hint">(% of own premium)</span></label><input id="exp" type="number" value="20"></div>
+      </div>
+    </div>
+
+    <!-- OUTPUTS -->
+    <div>
+      <div class="outs">
+        <div class="kpi"><div class="lab">Year-1 contribution / member</div><div class="val" id="o_y1pm">—</div><div class="note">membership + commissions − costs</div></div>
+        <div class="kpi alt"><div class="lab">Recurring contribution / member</div><div class="val" id="o_rpm">—</div><div class="note">year 2+ (membership − service)</div></div>
+        <div class="kpi"><div class="lab">Year-1 gross profit (portfolio)</div><div class="val" id="o_y1gp">—</div></div>
+        <div class="kpi alt"><div class="lab">Recurring gross profit / yr</div><div class="val" id="o_rgp">—</div></div>
+      </div>
+
+      <div class="card">
+        <h2>Year-1 breakdown (portfolio)</h2>
+        <table id="tbl"></table>
+      </div>
+
+      <div class="card phase2" id="p2out" style="margin-top:16px">
+        <h2>Phase 2 — underwriting upside (annual)</h2>
+        <table id="tbl2"></table>
+      </div>
+
+      <p class="disc"><b>Structure note:</b> the endorsement premium is shown as <em>pass-through</em> (the homeowner pays it to the title insurer); your income on it is the title-agency commission, not a markup. The membership fee is a separate charge for the recorded notice, monitoring, and restoration concierge. Phase-1 covered-claim legal defense is borne by Old Republic, so it is <em>not</em> a Phase-1 cost here. Illustrative only — confirm ORT's endorsement charge, your FL agency split, and FL approval before relying on these.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var $=function(id){return document.getElementById(id);};
+var ids=['members','price','svc','onb','endPrem','endComm','attach','npPrem','npRet','ownPrem','loss','exp'];
+function n(id){return parseFloat($(id).value)||0;}
+function money(x){return (x<0?'-$':'$')+Math.abs(Math.round(x)).toLocaleString();}
+function calc(){
+  var m=n('members'),price=n('price'),svc=n('svc'),onb=n('onb');
+  var endPrem=n('endPrem'),endComm=n('endComm')/100;
+  var attach=n('attach')/100,npPrem=n('npPrem'),npRet=n('npRet')/100;
+  var endCommPM=endPrem*endComm;                 // per member, yr1
+  var npRevPM=attach*npPrem*npRet;               // per member, yr1 (one-time title rev)
+  var y1pm=price+endCommPM+npRevPM-svc-onb;
+  var rpm=price-svc;
+  // portfolio
+  var memRev=m*price, endRev=m*endCommPM, npRev=m*npRevPM;
+  var svcCost=m*svc, onbCost=m*onb;
+  var y1gp=memRev+endRev+npRev-svcCost-onbCost;
+  var rgp=memRev-svcCost;
+  $('o_y1pm').textContent=money(y1pm);
+  $('o_rpm').textContent=money(rpm);
+  $('o_y1gp').textContent=money(y1gp);
+  $('o_rgp').textContent=money(rgp);
+  $('tbl').innerHTML=
+    row('Membership fees',memRev)+
+    row('Endorsement commission (one-time)',endRev)+
+    row('New-policy title commission (one-time)',npRev)+
+    row('Service costs (monitoring, notice, support)',-svcCost,true)+
+    row('Onboarding / recording (one-time)',-onbCost,true)+
+    row('Year-1 gross profit',y1gp,false,true);
+  // phase 2
+  var on=$('p2').checked;
+  $('p2box').classList.toggle('on',on);
+  $('p2out').classList.toggle('on',on);
+  if(on){
+    var ownPrem=n('ownPrem'),loss=n('loss')/100,exp=n('exp')/100;
+    var prem=m*ownPrem, losses=prem*loss, expense=prem*exp;
+    var uw=prem-losses-expense;
+    $('tbl2').innerHTML=
+      row('Own premium written',prem)+
+      row('Expected losses',-losses,true)+
+      row('Reinsurance + admin',-expense,true)+
+      row('Underwriting profit',uw,false,true)+
+      row('Combined w/ recurring service GP',uw+rgp,false,true);
+  }
+}
+function row(label,val,neg,tot){
+  return '<tr class="'+(tot?'tot':'')+(neg?' neg':'')+'"><td>'+label+'</td><td>'+money(val)+'</td></tr>';
+}
+ids.forEach(function(id){$(id).addEventListener('input',calc);});
+$('p2').addEventListener('change',calc);
+calc();
+</script>
+</body>
+</html>
