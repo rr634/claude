@@ -197,7 +197,9 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(10,26,47,.86);
 
 /* steps */
 .steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-@media(max-width:760px){.steps{grid-template-columns:1fr;}}
+.steps.cols-4{grid-template-columns:repeat(4,1fr);}
+@media(max-width:980px){.steps.cols-4{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:760px){.steps{grid-template-columns:1fr;}.steps.cols-4{grid-template-columns:1fr;}}
 .step{position:relative;background:rgba(255,255,255,.04);border:1px solid var(--line-dark);
   border-radius:var(--r-md);padding:30px 26px 26px;}
 .step::before{counter-increment:step;content:counter(step,decimal-leading-zero);

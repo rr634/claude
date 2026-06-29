@@ -15,12 +15,24 @@ protection).
 
 ## Business model reflected in the site
 
-The site is built around a **membership + embedded-insurance** model (placeholders, illustrative):
+The site presents a **four-layer stack** — **Prevent → Detect → Insure → Restore** — sold as an
+annual **membership** ($249 / $399 / $499), where every layer is a real product:
 
-- **Phase 1 — piggyback.** An annual **membership** ($249 / $399 / $499) that *includes* a
-  title-fraud **insurance endorsement** ($25K / $100K / $250K). The site deliberately splits the
-  two: the insurance **premium is passed through at cost**, and the membership fee is a **separate
-  charge** for monitoring + attorney-backed restoration (the cleaner premium-vs-fee structure).
+- **Prevent** — a recorded protection notice placed in the county chain of title (deterrent; adds
+  scrutiny, does not by itself block a filing).
+- **Detect** — 24/7 monitoring of public land records + instant alerts.
+- **Insure** — the **ALTA 49 / 49.1** post-closing forgery endorsement, **issued through Old Republic
+  Title** (the operator is an Old Republic agent). Coverage ties to the owner's policy amount (home
+  value). Eligibility: 1–4 family residential owned by a **natural person or estate-planning entity**
+  — **LLC-held property is excluded** (a Phase-2 own-paper opportunity).
+- **Restore** — attorney-led quiet-title / fraud restoration, with the policy covering the cost.
+
+**Pricing structure (deliberate, for compliance):** the insurance **premium is passed through at
+cost**; the **membership fee is a separate charge** for the recorded notice, monitoring, and
+restoration services (premium-vs-fee split, not a marked-up premium).
+
+- **Phase 1 — piggyback.** Add ALTA 49.1 to clients' existing owner's policies (or write a new
+  policy + ALTA 49) and wrap it in the membership service layer.
 - **Phase 2 — own paper.** Higher limits / DeedGuard's own program (fronting carrier + captive)
   to capture underwriting profit, not just the service spread.
 - **Phase 3 — vertical.** In-house attorneys litigate the *fraud* (client-aligned quiet-title work);
