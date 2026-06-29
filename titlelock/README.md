@@ -1,6 +1,6 @@
-# TitleLock — home title-fraud protection site
+# DeedGuard — home title-fraud protection site
 
-A self-contained, responsive marketing site for **TitleLock**, an attorney-backed
+A self-contained, responsive marketing site for **DeedGuard**, an attorney-backed
 deed & title monitoring service (home title theft / equity-fraud protection).
 
 ## What's here
@@ -8,7 +8,7 @@ deed & title monitoring service (home title theft / equity-fraud protection).
 | File | Purpose |
 |---|---|
 | `site/index.html` | The full landing page — hero, the threat, how it works, protection features, free property-check form, pricing, testimonials, FAQ, CTA, footer. |
-| `site/assets/site.css` | The TitleLock design system (deep slate + signal emerald). No frameworks, no build step. |
+| `site/assets/site.css` | The DeedGuard design system (deep slate + signal emerald). No frameworks, no build step. |
 | `site/assets/favicon.svg` | Shield-and-lock mark. |
 | `site/robots.txt` | Crawler allow. |
 
@@ -40,11 +40,11 @@ To go live, point the form `submit` handler at your backend, CRM, or an email/Fo
 ## Deploying
 
 The repo's existing GitHub Pages workflow (`.github/workflows/pages.yml`) publishes
-`breakwater/site/`. GitHub Pages serves **one** site per repository, so to publish TitleLock
+`breakwater/site/`. GitHub Pages serves **one** site per repository, so to publish DeedGuard
 instead, point that workflow's `path:` at `titlelock/site` (and update its trigger `paths:`).
 Alternatively, drop `titlelock/site/` onto Netlify, Vercel, Cloudflare Pages, or any static host.
 
 ---
 
-*Demonstration site. TitleLock is a records-monitoring concept, not title insurance. Figures shown
+*Demonstration site. DeedGuard is a records-monitoring concept, not title insurance. Figures shown
 are illustrative. Nothing here creates an attorney-client relationship.*
