@@ -1,25 +1,33 @@
-# The Paddock — Fort Lauderdale car condo site
+# 8 AT RIO — website
 
-Single-page marketing site for a private car-condo / collector-garage community in
-Fort Lauderdale. Modeled on the dark, editorial, members-club style of Revault Society
-(revaultsociety.com) and fully original.
+Single-page marketing site for **8 AT RIO**, a project of eight private garage residences on SE 12th Street
+in Rio Vista, Fort Lauderdale (Richard N. Rosa, P.A.). The look follows the dark, editorial, members-club
+style of revaultsociety.com. Content comes from the DRC schematics and renderings.
 
 - `site/index.html` — the whole site (HTML + CSS + JS inline, no build step)
-- `site/assets/favicon.svg`
+- `site/assets/` — images cropped and compressed from the concept package and drone photography
 
 Open `site/index.html` in a browser to preview.
 
-## Things to customize
+## Source of the content
 
-| What | Where |
+| Site section | Source |
 |---|---|
-| Brand name "The Paddock" | search/replace in `site/index.html` |
-| Colors / fonts | `:root` tokens at the top of the `<style>` block |
-| Studio sizes and specs | `#studios` section (three tabs) |
-| Unit inventory and status | `#availability` table (rows marked `s-open`, `s-hold`, `s-sold`) |
-| Drive times and map | `#location` section |
-| Inquiry email | `TO` constant in the inquiry script (sends via FormSubmit, falls back to mailto) |
+| Hero + "Entry Court" | Entry rendering (top band of the DRC sheet) → `entry-rendering.jpg` |
+| Typical section | DRC sheet "Typical Section" → `typical-section.jpg` |
+| Site plan + project data + setbacks | Site plan sheet → `site-plan.jpg` |
+| Rio Vista aerial | Drone photo looking north → `aerial-skyline.jpg` |
+| The site today | Overhead drone photo → `site-today.jpg` |
 
-Placeholder content (unit count, square footage, inventory, events, drive times) is
-illustrative and should be replaced with real project data before launch. The footer
-includes the Florida §718.503 developer disclaimer; have counsel confirm the final text.
+## Still to confirm before launch
+
+- Drive times in the Rio Vista section (approximate)
+- Unit status (all shown as "Pre-release")
+- Ownership language in the FAQ (planned as condominium units)
+- Florida §718.503 disclaimer in the footer (have counsel confirm the final text)
+
+## Swapping in new images
+
+To add a photo, drop the image into `site/assets/` and reference it from `index.html`. The Grounds tiles
+02–05 (`.t-a` … `.t-d` in the CSS) are styled placeholders made ready for pool, promenade, cabana and
+night-lighting renderings: set `background: url("assets/<file>.jpg") center/cover` on the tile's `::before`.
