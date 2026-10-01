@@ -16,7 +16,7 @@ Open `site/index.html` in a browser to preview.
 | Hero | Entry rendering (top band of the DRC sheet) → `entry-rendering.jpg` |
 | Motor Court · "The Gate" | Left crop of the entry rendering → `entry-gate.jpg` |
 | Typical section | DRC sheet "Typical Section" → `typical-section.jpg` |
-| Site plan diagram | Inline SVG redrawn from the DRC site plan, with the courtyard shown as an open motor court (no trees in the middle). `site-plan.jpg` is kept but not used |
+| Site plan diagram | Inline SVG redrawn from the DRC site plan, with the courtyard shown as an open motor court (no trees in the middle). |
 | Project data + setbacks | DRC site plan sheet |
 | Interior gallery | Six conceptual interior renderings supplied by the owner (garage, door, garage + mezzanine, mezzanine lounge, bar, bath) → `interior-*.jpg` |
 | Rio Vista aerial | Drone photo looking north → `aerial-skyline.jpg` |
@@ -39,3 +39,20 @@ To add a photo, drop the image into `site/assets/` and reference it from `index.
 tiles 02–05 (`.t-court`, `.t-a`, `.t-c`, `.t-d` in the CSS) are styled placeholders made ready for renderings of the
 court, pool, cabana and landscaped edges: set `background: url("assets/<file>.jpg") center/cover` on the tile's
 `::before`.
+
+## Deploying to rio8.com (GitHub Pages)
+
+The `rr634/claude` repository's Pages slot already serves brkwatercap.com, so rio8.com needs its own repository.
+
+1. Create an empty **public** repository `rr634/rio8` on GitHub.
+2. Put the contents of `autocondo/site/` at its root (including `CNAME`, which contains `rio8.com`), and
+   `autocondo/deploy/pages.yml` at `.github/workflows/pages.yml`. Push to `main`.
+3. In the new repository, open Settings → Pages and set Source to "GitHub Actions". Set the custom
+   domain to `rio8.com`, then turn on "Enforce HTTPS" once the certificate is issued.
+4. At the domain registrar, add these DNS records for rio8.com:
+   - `A` @ → 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+   - `AAAA` @ → 2606:50c0:8000::153, 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153
+   - `CNAME` www → rr634.github.io
+
+The inquiry form posts to FormSubmit. The first submission from the live domain triggers a one-time activation
+email to rr@richardrosalaw.com, and the inquiries start arriving after you confirm it.
