@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>8 AT RIO — Eight Private Garage Residences · Rio Vista, Fort Lauderdale</title>
-<meta name="description" content="8 AT RIO is a gated collection of eight private garage residences on SE 12th Street in Rio Vista, Fort Lauderdale — a 14-foot garage and living level, a mezzanine above, a shared pool and a palm-lined promenade.">
+<title>8 AT RIO — Eight Bays. One Hall. · Rio Vista, Fort Lauderdale</title>
+<meta name="description" content="8 AT RIO: eight private garage residences on SE 12th Street in Rio Vista, Fort Lauderdale, set along one covered, climate-controlled drive-in hall. Fourteen feet clear, lift-ready, by introduction only.">
 <meta name="theme-color" content="#0C0C0B">
-<meta property="og:title" content="8 AT RIO — Eight Private Garage Residences">
-<meta property="og:description" content="Eight private garage residences in Rio Vista, Fort Lauderdale. Built for what drives you.">
+<meta property="og:title" content="8 AT RIO — Eight Bays. One Hall.">
+<meta property="og:description" content="Eight private garage residences off one covered, drive-in hall in Rio Vista, Fort Lauderdale. Built for what drives you.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/og-cover.jpg">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -20,7 +20,7 @@
   "@context":"https://schema.org",
   "@type":"Residence",
   "name":"8 AT RIO",
-  "description":"Eight private garage residences with a garage/living level, mezzanine, shared pool and gated entry in Rio Vista, Fort Lauderdale.",
+  "description":"Eight private garage residences set along one covered, climate-controlled drive-in hall in Rio Vista, Fort Lauderdale.",
   "address":{"@type":"PostalAddress","streetAddress":"SE 12th Street","addressLocality":"Fort Lauderdale","addressRegion":"FL","addressCountry":"US"}
 }
 </script>
@@ -33,7 +33,7 @@
     --black:#0C0C0B;
     --carbon:#141413;
     --graphite:#1C1C1A;
-    --stone:#EFEBE4;           /* monument-wall limestone */
+    --stone:#EFEBE4;
     --bone:#EFEBE4;
     --bone-dim:rgba(239,235,228,.68);
     --bone-faint:rgba(239,235,228,.40);
@@ -42,8 +42,9 @@
     --ink:#121211;
     --ink-dim:rgba(18,18,17,.66);
     --ink-line:rgba(18,18,17,.14);
-    --accent:#D3A462;          /* warm landscape-light glow */
+    --accent:#D3A462;          /* warm bay-door glow */
     --accent-soft:rgba(211,164,98,.14);
+    --sky:#9FC4D4;             /* skylight / pool, used sparingly */
 
     --font-display:"Archivo",system-ui,sans-serif;
     --font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -81,6 +82,7 @@
   h3{font-family:var(--font-display);font-stretch:115%;font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;margin:0}
   .lede{font-size:clamp(17px,1.5vw,20px);font-weight:300;color:var(--bone-dim);max-width:58ch;line-height:1.65;margin:0}
   .muted{color:var(--bone-dim)}
+  .mono{font-family:var(--font-display);font-stretch:100%;letter-spacing:.14em;text-transform:uppercase}
 
   .btn{
     display:inline-flex;align-items:center;gap:12px;
@@ -105,13 +107,13 @@
   .brand b{font-weight:300;font-size:34px;line-height:1}
   .brand span{font-weight:400;font-size:15px;letter-spacing:.32em;line-height:1.2}
   .brand small{display:block;font-family:var(--font-body);font-size:9px;letter-spacing:.32em;color:var(--bone-faint);margin-top:3px}
-  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links{display:flex;gap:30px;align-items:center}
   .nav-links a{font-family:var(--font-display);font-stretch:110%;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-dim);transition:color .2s}
   .nav-links a:hover{color:var(--bone)}
   .nav-links .btn{padding:12px 18px;font-size:11px;color:var(--bone)}
   .nav-links .btn:hover{color:var(--black)}
   .menu-btn{display:none;background:none;border:0;color:var(--bone);cursor:pointer;padding:8px}
-  @media (max-width:980px){
+  @media (max-width:1020px){
     .nav-links{
       position:fixed;inset:76px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;
       background:var(--black);border-bottom:1px solid var(--line);padding:8px var(--gutter) 24px;
@@ -124,24 +126,23 @@
   }
 
   /* ============================================================
-     HERO — title over a cinematic band of the entry rendering
+     HERO — the Hall, drawn in one-point perspective
      ============================================================ */
-  .hero{padding:0;background:var(--black);position:relative;overflow:hidden}
-  .hero-top{padding:clamp(130px,16vw,190px) var(--gutter) clamp(36px,5vw,60px);position:relative}
-  .hero-top::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;background:radial-gradient(45% 50% at 50% 70%,rgba(211,164,98,.10),transparent 70%);pointer-events:none}
-  .hero h1{font-size:clamp(64px,15vw,232px);line-height:.82;letter-spacing:.02em;margin:26px 0 0;font-weight:200}
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;padding:0;isolation:isolate}
+  .hero-art{position:absolute;inset:0;z-index:-2}
+  .hero-art svg{width:100%;height:100%}
+  .hero-art svg{animation:dolly 14s var(--ease) both}
+  @keyframes dolly{from{transform:scale(1.08)}to{transform:scale(1)}}
+  .hero-shade{position:absolute;inset:0;z-index:-1;background:
+    linear-gradient(to top,var(--black) 4%,rgba(12,12,11,.78) 32%,rgba(12,12,11,.15) 62%,rgba(12,12,11,.55) 100%)}
+  .hero-content{width:100%;padding-top:140px;padding-bottom:clamp(40px,6vw,80px)}
+  .hero h1{font-size:clamp(64px,14vw,216px);line-height:.82;letter-spacing:.02em;margin:22px 0 0;font-weight:200}
   .hero h1 b{font-weight:500}
-  .hero-sub{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-top:clamp(28px,4vw,48px)}
+  .hero-sub{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-top:clamp(24px,3.5vw,44px);border-top:1px solid var(--line);padding-top:26px}
   .hero-sub .tags{font-family:var(--font-display);font-stretch:120%;font-size:12px;letter-spacing:.36em;text-transform:uppercase;color:var(--bone-dim);line-height:2.2;margin:0}
   .hero-cta{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
-  @media (max-width:760px){.hero-sub{grid-template-columns:1fr}.hero-cta{justify-content:flex-start}}
-
-  .hero-band{position:relative;width:100%;aspect-ratio:1224/378;max-height:72vh;overflow:hidden;background:#111}
-  .hero-band img{width:100%;height:100%;object-fit:cover;object-position:center 60%;transform:scale(1.05);transition:transform 8s var(--ease)}
-  .hero-band.in img{transform:scale(1)}
-  .hero-band::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--black) 0%,transparent 14%,transparent 80%,rgba(12,12,11,.5))}
-  .hero-band .cap{position:absolute;right:var(--gutter);bottom:14px;z-index:1;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(239,235,228,.75)}
-  @media (max-width:640px){.hero-band{aspect-ratio:16/10}}
+  .hero .cap{position:absolute;right:var(--gutter);top:96px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:rgba(239,235,228,.55)}
+  @media (max-width:760px){.hero-sub{grid-template-columns:1fr}.hero-cta{justify-content:flex-start}.hero .cap{display:none}}
 
   /* ============================================================
      MARQUEE
@@ -161,21 +162,20 @@
   @media (max-width:860px){.sec-head{grid-template-columns:1fr}}
 
   /* Idea */
-  .idea-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(32px,6vw,96px);align-items:end}
-  .idea-text{font-family:var(--font-display);font-stretch:100%;font-weight:300;font-size:clamp(26px,3.4vw,48px);line-height:1.2;max-width:23ch;margin:28px 0 0}
+  .idea-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+  .idea-text{font-family:var(--font-display);font-stretch:100%;font-weight:300;font-size:clamp(28px,3.6vw,52px);line-height:1.15;max-width:20ch;margin:28px 0 0}
   .idea-text em{font-style:normal;color:var(--accent)}
   .stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
   .stat{padding:24px 0 20px;border-bottom:1px solid var(--line)}
   .stat:nth-child(odd){padding-right:20px;border-right:1px solid var(--line)}
   .stat:nth-child(even){padding-left:20px}
   .stat b{display:block;font-family:var(--font-display);font-stretch:125%;font-weight:300;font-size:clamp(34px,4vw,52px);line-height:1}
-  .stat b sup{font-size:.36em;letter-spacing:.06em;vertical-align:top;margin-left:4px;color:var(--bone-faint)}
   .stat span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-faint)}
   @media (max-width:860px){.idea-grid{grid-template-columns:1fr}}
 
-  /* Residences */
-  .residences{background:var(--carbon)}
-  .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
+  /* Bays */
+  .bays{background:var(--carbon)}
+  .bay-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
   .section-card{background:var(--stone);color:var(--ink);padding:clamp(24px,3vw,40px);display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
   .section-card img{width:clamp(180px,20vw,280px);height:auto;border:1px solid var(--ink-line)}
   .dims{list-style:none;margin:0;padding:0}
@@ -186,84 +186,84 @@
   .section-card .fine{grid-column:1/-1;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);margin:0}
   @media (max-width:560px){.section-card{grid-template-columns:1fr}.section-card img{width:100%}}
 
-  .plan-tabs{display:flex;border-bottom:1px solid var(--line);margin-bottom:28px;overflow-x:auto;scrollbar-width:none}
-  .plan-tabs::-webkit-scrollbar{display:none}
-  .plan-tab{background:none;border:0;color:var(--bone-faint);padding:0 0 16px;margin-right:32px;cursor:pointer;
-    font-family:var(--font-display);font-stretch:120%;font-weight:500;font-size:12px;letter-spacing:.24em;text-transform:uppercase;position:relative;white-space:nowrap}
-  .plan-tab[aria-selected="true"]{color:var(--bone)}
-  .plan-tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent)}
-  .plan-panel{display:grid;grid-template-columns:140px 1fr;gap:32px;align-items:start}
-  .plan-panel[hidden]{display:none}
-  .plan-panel svg{width:100%;height:auto}
-  .plan-panel h3.display{font-size:clamp(26px,3vw,40px);font-weight:300;letter-spacing:.04em;margin:14px 0 12px}
+  .bay-plan{display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:start}
+  .bay-plan svg{width:100%;height:auto}
+  .bay-plan h3.display{font-size:clamp(26px,3vw,40px);font-weight:300;letter-spacing:.04em;margin:14px 0 12px}
   .spec{display:grid;grid-template-columns:1fr 1fr;margin:22px 0 0;border-top:1px solid var(--line)}
   .spec div{padding:14px 0;border-bottom:1px solid var(--line)}
   .spec dt{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-faint)}
   .spec dd{margin:3px 0 0;font-family:var(--font-display);font-stretch:115%;font-weight:500;font-size:17px}
-  @media (max-width:960px){.res-grid{grid-template-columns:1fr}}
-  @media (max-width:480px){.plan-panel{grid-template-columns:90px 1fr;gap:20px}}
+  @media (max-width:960px){.bay-grid{grid-template-columns:1fr}}
+  @media (max-width:480px){.bay-plan{grid-template-columns:92px 1fr;gap:20px}}
 
-  .features{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:clamp(64px,8vw,112px)}
-  .feature{padding:32px 26px 36px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s var(--ease)}
-  .feature:hover{background:var(--graphite)}
-  .feature .ico{width:26px;height:26px;color:var(--accent);margin-bottom:24px}
-  .feature p{margin:10px 0 0;font-size:14px;color:var(--bone-dim)}
-  @media (max-width:1060px){.features{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:560px){.features{grid-template-columns:1fr}}
+  /* Garage spec sheet */
+  .specsheet{margin-top:clamp(64px,8vw,112px);border-top:1px solid var(--line-strong)}
+  .specsheet-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .specsheet-head span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-faint)}
+  .specrow{display:grid;grid-template-columns:60px 1fr 1.4fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .3s var(--ease)}
+  .specrow:hover{background:var(--graphite)}
+  .specrow .n{font-family:var(--font-display);font-stretch:125%;font-size:12px;letter-spacing:.14em;color:var(--accent)}
+  .specrow h3{font-size:15px;font-stretch:120%}
+  .specrow p{margin:0;color:var(--bone-dim);font-size:15px}
+  @media (max-width:700px){.specrow{grid-template-columns:40px 1fr}.specrow p{grid-column:2}}
 
-  /* Site plan */
-  .siteplan{background:var(--stone);color:var(--ink)}
-  .siteplan .eyebrow{color:rgba(18,18,17,.5)}
-  .siteplan .lede{color:var(--ink-dim)}
-  .sp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
-  .sp-figure{margin:0;position:relative;background:#fff;border:1px solid var(--ink-line);overflow:hidden}
-  .sp-figure img{width:100%;height:auto}
-  .sp-figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);background:rgba(255,255,255,.88)}
-  .data{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
-  .data caption{text-align:left;font-family:var(--font-display);font-stretch:120%;font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;padding-bottom:12px}
-  .data th,.data td{padding:12px 0;border-bottom:1px solid var(--ink-line);text-align:left;vertical-align:top}
-  .data th{font-weight:400;color:var(--ink-dim);width:46%}
-  .data td{font-family:var(--font-display);font-stretch:110%;font-weight:500}
-  .data td small{display:block;font-family:var(--font-body);font-weight:400;color:var(--ink-dim);font-size:12px}
-  .setbacks{display:grid;grid-template-columns:repeat(4,1fr);margin-top:28px;border-top:1px solid var(--ink-line);border-left:1px solid var(--ink-line)}
-  .setbacks div{padding:14px 12px;border-right:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line)}
-  .setbacks b{display:block;font-family:var(--font-display);font-stretch:125%;font-weight:400;font-size:24px;line-height:1.1}
-  .setbacks span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
-  .siteplan .btn{border-color:var(--ink);color:var(--ink);margin-top:32px}
-  .siteplan .btn:hover{background:var(--ink);color:var(--stone)}
-  @media (max-width:960px){.sp-grid{grid-template-columns:1fr}}
-  @media (max-width:480px){.setbacks{grid-template-columns:repeat(2,1fr)}}
-
-  /* Grounds */
-  .grounds-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  /* The Hall */
+  .hall-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
   .tile{position:relative;overflow:hidden;border:1px solid var(--line);min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;background:var(--carbon);isolation:isolate}
   .tile::before{content:"";position:absolute;inset:0;z-index:-1;transition:transform 1.2s var(--ease)}
   .tile:hover::before{transform:scale(1.05)}
   .tile .num{position:absolute;top:22px;right:26px;font-family:var(--font-display);font-stretch:125%;font-size:11px;letter-spacing:.24em;color:var(--bone-faint)}
   .tile h3{font-size:18px;font-stretch:125%;font-weight:500;letter-spacing:.12em}
   .tile p{margin:10px 0 0;color:var(--bone-dim);font-size:14px;max-width:46ch}
-  .t-photo{grid-column:span 12;min-height:clamp(320px,42vw,540px);padding:clamp(24px,4vw,44px)}
-  .t-photo::before{background:linear-gradient(to top,rgba(12,12,11,.92),rgba(12,12,11,.1) 55%,rgba(12,12,11,.2)),url("assets/entry-rendering.jpg") center 55%/cover no-repeat}
-  .t-photo .num{color:rgba(239,235,228,.75)}
-  .t-a,.t-b,.t-c,.t-d{grid-column:span 3}
-  .t-a::before{background:radial-gradient(70% 60% at 50% 0%,rgba(127,180,201,.18),transparent 70%),#121211}
-  .t-b::before{background:radial-gradient(70% 70% at 50% 100%,rgba(78,107,79,.38),transparent 70%),#121211}
-  .t-c::before{background:radial-gradient(70% 60% at 0% 100%,rgba(211,164,98,.18),transparent 70%),#121211}
-  .t-d::before{background:linear-gradient(225deg,rgba(239,235,228,.06),transparent 55%),#121211}
-  @media (max-width:1060px){.t-a,.t-b,.t-c,.t-d{grid-column:span 6}}
-  @media (max-width:600px){.t-a,.t-b,.t-c,.t-d{grid-column:span 12;min-height:200px}}
+  .tile .art{position:absolute;inset:0;z-index:-1;opacity:.9}
+  .tile .art svg{width:100%;height:100%}
+  .t-wide{grid-column:span 7;min-height:400px}
+  .t-tall{grid-column:span 5;min-height:400px}
+  .t-third{grid-column:span 4}
+  .t-wide::before{background:radial-gradient(60% 70% at 70% 20%,rgba(159,196,212,.16),transparent 70%),linear-gradient(160deg,#1a1a18,#0d0d0c)}
+  .t-tall::before{background:radial-gradient(60% 50% at 50% 70%,rgba(211,164,98,.22),transparent 70%),#111110}
+  .t-third::before{background:linear-gradient(135deg,rgba(239,235,228,.06),transparent 60%),#121211}
+  .t-third.warm::before{background:radial-gradient(80% 60% at 20% 100%,rgba(211,164,98,.16),transparent 70%),#121211}
+  .t-third.cool::before{background:radial-gradient(80% 60% at 80% 0%,rgba(159,196,212,.14),transparent 70%),#121211}
+  @media (max-width:960px){.t-wide,.t-tall{grid-column:span 12;min-height:320px}.t-third{grid-column:span 12;min-height:220px}}
+
+  /* Site plan */
+  .siteplan{background:var(--stone);color:var(--ink)}
+  .siteplan .eyebrow{color:rgba(18,18,17,.5)}
+  .siteplan .lede{color:var(--ink-dim)}
+  .sp-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
+  .sp-figure{margin:0;background:#F7F4EF;border:1px solid var(--ink-line);padding:clamp(12px,2vw,24px)}
+  .sp-figure svg{width:100%;height:auto}
+  .sp-figure figcaption{margin-top:10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .data{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
+  .data caption{text-align:left;font-family:var(--font-display);font-stretch:120%;font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;padding-bottom:12px}
+  .data th,.data td{padding:12px 0;border-bottom:1px solid var(--ink-line);text-align:left;vertical-align:top}
+  .data th{font-weight:400;color:var(--ink-dim);width:44%}
+  .data td{font-family:var(--font-display);font-stretch:110%;font-weight:500}
+  .data td small{display:block;font-family:var(--font-body);font-weight:400;color:var(--ink-dim);font-size:12px}
+  .setbacks{display:grid;grid-template-columns:repeat(4,1fr);margin-top:28px;border-top:1px solid var(--ink-line);border-left:1px solid var(--ink-line)}
+  .setbacks div{padding:14px 12px;border-right:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line)}
+  .setbacks b{display:block;font-family:var(--font-display);font-stretch:125%;font-weight:400;font-size:24px;line-height:1.1}
+  .setbacks span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+  .siteplan .fine{font-size:12px;color:var(--ink-dim);margin:16px 0 0}
+  .siteplan .btn{border-color:var(--ink);color:var(--ink);margin-top:28px}
+  .siteplan .btn:hover{background:var(--ink);color:var(--stone)}
+  @media (max-width:960px){.sp-grid{grid-template-columns:1fr}}
+  @media (max-width:480px){.setbacks{grid-template-columns:repeat(2,1fr)}}
 
   /* Owners */
-  .society{background:var(--carbon)}
-  .society-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
-  .principles{list-style:none;padding:0;margin:32px 0 40px;counter-reset:p}
+  .owners{background:var(--carbon)}
+  .owners-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
+  .keys{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin:34px 0 8px}
+  .keys span{aspect-ratio:3/4;border:1px solid var(--line-strong);display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;font-family:var(--font-display);font-stretch:125%;font-size:11px;letter-spacing:.1em;color:var(--bone-dim);background:linear-gradient(to top,rgba(211,164,98,.18),transparent 70%)}
+  .principles{list-style:none;padding:0;margin:28px 0 40px;counter-reset:p}
   .principles li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--bone-dim)}
   .principles li::before{content:"0" counter(p);font-family:var(--font-display);font-stretch:125%;font-weight:600;font-size:12px;letter-spacing:.1em;color:var(--accent);padding-top:3px}
   .calendar{border-top:1px solid var(--line)}
-  .event{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+  .event{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
   .event .when{font-family:var(--font-display);font-stretch:125%;font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
   .event p{margin:4px 0 0;font-size:14px;color:var(--bone-dim)}
-  @media (max-width:860px){.society-grid{grid-template-columns:1fr}.event{grid-template-columns:80px 1fr}}
+  @media (max-width:860px){.owners-grid{grid-template-columns:1fr}.event{grid-template-columns:86px 1fr}}
 
   /* Location */
   .loc-photo{position:relative;margin:0 0 clamp(48px,6vw,80px);border:1px solid var(--line);overflow:hidden;aspect-ratio:1672/941;max-height:78vh;width:100%}
@@ -271,7 +271,8 @@
   .loc-photo figcaption,.site-today figcaption{position:absolute;left:16px;bottom:14px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.7)}
   .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
   .drive{border-top:1px solid var(--line)}
-  .drive div{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);gap:16px}
+  .drive div{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);gap:16px}
+  .drive div.track span::before{content:"";display:inline-block;width:12px;height:8px;margin-right:10px;background:repeating-linear-gradient(90deg,var(--bone) 0 3px,var(--black) 3px 6px);vertical-align:middle;opacity:.8}
   .drive span{font-size:15px}
   .drive b{font-family:var(--font-display);font-stretch:125%;font-weight:400;font-size:22px;white-space:nowrap}
   .drive b small{font-size:10px;letter-spacing:.2em;color:var(--bone-faint);font-weight:500;margin-left:6px}
@@ -368,9 +369,10 @@
       <b>8</b><span>At Rio<small>Fort Lauderdale</small></span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
-      <a href="#residences">Residences</a>
-      <a href="#siteplan">Site Plan</a>
-      <a href="#grounds">Grounds</a>
+      <a href="#bays">The Bays</a>
+      <a href="#hall">The Hall</a>
+      <a href="#siteplan">Plan</a>
+      <a href="#owners">Owners</a>
       <a href="#location">Rio Vista</a>
       <a href="#availability">Availability</a>
       <a href="#inquire" class="btn">Request Access</a>
@@ -385,27 +387,172 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="hero-top" style="max-width:var(--container);margin:0 auto">
-    <p class="eyebrow">Rio Vista · Fort Lauderdale, FL</p>
+  <div class="hero-art">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of the covered hall: a polished drive aisle between eight lit glass garage doors, a skylight overhead and a car on a turntable at the far end">
+<defs>
+  <linearGradient id="hFloor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1a18"/><stop offset="1" stop-color="#0a0a09"/></linearGradient>
+  <linearGradient id="hCeil" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#191816"/><stop offset="1" stop-color="#0c0c0b"/></linearGradient>
+  <linearGradient id="hWall" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121211"/><stop offset="1" stop-color="#1f1e1b"/></linearGradient>
+  <linearGradient id="hWallR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#121211"/><stop offset="1" stop-color="#1f1e1b"/></linearGradient>
+  <linearGradient id="hGlass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3d39c" stop-opacity=".55"/><stop offset=".7" stop-color="#d3a462" stop-opacity=".85"/><stop offset="1" stop-color="#8a6431" stop-opacity=".9"/></linearGradient>
+  <linearGradient id="hMezz" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3a462" stop-opacity=".18"/><stop offset="1" stop-color="#d3a462" stop-opacity=".38"/></linearGradient>
+  <linearGradient id="hRefl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3a462" stop-opacity=".30"/><stop offset="1" stop-color="#d3a462" stop-opacity="0"/></linearGradient>
+  <linearGradient id="hSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fc4d4" stop-opacity=".40"/><stop offset="1" stop-color="#9fc4d4" stop-opacity=".12"/></linearGradient>
+  <linearGradient id="hEnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3a46"/><stop offset=".62" stop-color="#7d6a55"/><stop offset=".63" stop-color="#3f7f91"/><stop offset="1" stop-color="#1d3d47"/></linearGradient>
+  <radialGradient id="hSpot" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f3d39c" stop-opacity=".45"/><stop offset="1" stop-color="#f3d39c" stop-opacity="0"/></radialGradient>
+  <filter id="hBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="1600" height="900" fill="#0c0c0b"/>
+<polygon points="-271.4,1019.0 1871.4,1019.0 980.0,504.0 620.0,504.0" fill="url(#hFloor)"/>
+<polygon points="-271.4,-171.4 1871.4,-171.4 980.0,304.0 620.0,304.0" fill="url(#hCeil)"/>
+<polygon points="-271.4,-171.4 620.0,304.0 620.0,504.0 -271.4,1019.0" fill="url(#hWall)"/>
+<polygon points="1871.4,-171.4 980.0,304.0 980.0,504.0 1871.4,1019.0" fill="url(#hWallR)"/>
+<rect x="620.0" y="304.0" width="360.0" height="200.0" fill="url(#hEnd)"/>
+<line x1="680.0" y1="304.0" x2="680.0" y2="504.0" stroke="#0c0c0b" stroke-width="2"/>
+<line x1="740.0" y1="304.0" x2="740.0" y2="504.0" stroke="#0c0c0b" stroke-width="2"/>
+<line x1="800.0" y1="304.0" x2="800.0" y2="504.0" stroke="#0c0c0b" stroke-width="2"/>
+<line x1="860.0" y1="304.0" x2="860.0" y2="504.0" stroke="#0c0c0b" stroke-width="2"/>
+<line x1="920.0" y1="304.0" x2="920.0" y2="504.0" stroke="#0c0c0b" stroke-width="2"/>
+<path d="M684.8 428.0 Q688.8 368.0 686.8 308.0" stroke="#16201f" stroke-width="3" fill="none"/>
+<path d="M686.8 308.0 q-26 -4 -40 12 M686.8 308.0 q26 -6 40 10 M686.8 308.0 q-14 -18 -34 -16 M686.8 308.0 q16 -18 34 -14" stroke="#16201f" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M735.2 428.0 Q739.2 380.0 737.2 332.0" stroke="#16201f" stroke-width="3" fill="none"/>
+<path d="M737.2 332.0 q-26 -4 -40 12 M737.2 332.0 q26 -6 40 10 M737.2 332.0 q-14 -18 -34 -16 M737.2 332.0 q16 -18 34 -14" stroke="#16201f" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M886.4 428.0 Q890.4 371.0 888.4 314.0" stroke="#16201f" stroke-width="3" fill="none"/>
+<path d="M888.4 314.0 q-26 -4 -40 12 M888.4 314.0 q26 -6 40 10 M888.4 314.0 q-14 -18 -34 -16 M888.4 314.0 q16 -18 34 -14" stroke="#16201f" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M929.6 428.0 Q933.6 383.0 931.6 338.0" stroke="#16201f" stroke-width="3" fill="none"/>
+<path d="M931.6 338.0 q-26 -4 -40 12 M931.6 338.0 q26 -6 40 10 M931.6 338.0 q-14 -18 -34 -16 M931.6 338.0 q16 -18 34 -14" stroke="#16201f" stroke-width="4" fill="none" stroke-linecap="round"/>
+<polygon points="621.4,-171.4 978.6,-171.4 830.0,304.0 770.0,304.0" fill="url(#hSky)"/>
+<line x1="650.0" y1="-80.0" x2="950.0" y2="-80.0" stroke="#0c0c0b" stroke-width="6.0"/>
+<line x1="700.0" y1="80.0" x2="900.0" y2="80.0" stroke="#0c0c0b" stroke-width="4.0"/>
+<line x1="725.0" y1="160.0" x2="875.0" y2="160.0" stroke="#0c0c0b" stroke-width="3.0"/>
+<line x1="740.0" y1="208.0" x2="860.0" y2="208.0" stroke="#0c0c0b" stroke-width="2.4"/>
+<line x1="750.0" y1="240.0" x2="850.0" y2="240.0" stroke="#0c0c0b" stroke-width="2.0"/>
+<line x1="757.1" y1="262.9" x2="842.9" y2="262.9" stroke="#0c0c0b" stroke-width="1.7"/>
+<line x1="762.5" y1="280.0" x2="837.5" y2="280.0" stroke="#0c0c0b" stroke-width="1.5"/>
+<line x1="766.7" y1="293.3" x2="833.3" y2="293.3" stroke="#0c0c0b" stroke-width="1.3"/>
+<line x1="770.0" y1="304.0" x2="830.0" y2="304.0" stroke="#0c0c0b" stroke-width="1.2"/>
+<line x1="133.3" y1="-135.7" x2="688.0" y2="310.0" stroke="#f6e8cf" stroke-width="3" opacity=".75"/>
+<line x1="1466.7" y1="-135.7" x2="912.0" y2="310.0" stroke="#f6e8cf" stroke-width="3" opacity=".75"/>
+<polygon points="10.5,400.0 316.1,400.0 316.1,679.6 10.5,856.1" fill="url(#hGlass)"/>
+<line x1="10.5" y1="764.9" x2="316.1" y2="623.7" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<line x1="10.5" y1="673.7" x2="316.1" y2="567.7" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<line x1="10.5" y1="582.5" x2="316.1" y2="511.8" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<line x1="10.5" y1="491.2" x2="316.1" y2="455.9" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<polygon points="10.5,400.0 316.1,400.0 316.1,679.6 10.5,856.1" fill="none" stroke="#0c0c0b" stroke-width="8.8"/>
+<polygon points="66.1,660.9 292.6,580.4 292.6,676.3 66.1,799.5" fill="#1a130b" opacity=".32"/>
+<polygon points="10.5,84.2 316.1,206.5 316.1,346.2 10.5,312.3" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="7.0"/>
+<polygon points="10.5,856.1 316.1,679.6 403.2,729.9 152.6,938.2" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="47.5" y="362.1" font-family="Archivo, Inter, sans-serif" font-size="28.6" fill="#efebe4" opacity=".8" text-anchor="start" letter-spacing="3.4">01</text>
+<polygon points="1589.5,400.0 1283.9,400.0 1283.9,679.6 1589.5,856.1" fill="url(#hGlass)"/>
+<line x1="1589.5" y1="764.9" x2="1283.9" y2="623.7" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<line x1="1589.5" y1="673.7" x2="1283.9" y2="567.7" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<line x1="1589.5" y1="582.5" x2="1283.9" y2="511.8" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<line x1="1589.5" y1="491.2" x2="1283.9" y2="455.9" stroke="#2a1f12" stroke-width="2.6" opacity=".7"/>
+<polygon points="1589.5,400.0 1283.9,400.0 1283.9,679.6 1589.5,856.1" fill="none" stroke="#0c0c0b" stroke-width="8.8"/>
+<polygon points="1533.9,660.9 1307.4,580.4 1307.4,676.3 1533.9,799.5" fill="#1a130b" opacity=".32"/>
+<polygon points="1589.5,84.2 1283.9,206.5 1283.9,346.2 1589.5,312.3" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="7.0"/>
+<polygon points="1589.5,856.1 1283.9,679.6 1196.8,729.9 1447.4,938.2" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="1552.5" y="362.1" font-family="Archivo, Inter, sans-serif" font-size="28.6" fill="#efebe4" opacity=".8" text-anchor="end" letter-spacing="3.4">05</text>
+<polygon points="379.4,400.0 485.3,400.0 485.3,581.8 379.4,643.0" fill="url(#hGlass)"/>
+<line x1="379.4" y1="594.4" x2="485.3" y2="545.5" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<line x1="379.4" y1="545.8" x2="485.3" y2="509.1" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<line x1="379.4" y1="497.2" x2="485.3" y2="472.7" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<line x1="379.4" y1="448.6" x2="485.3" y2="436.4" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<polygon points="379.4,400.0 485.3,400.0 485.3,581.8 379.4,643.0" fill="none" stroke="#0c0c0b" stroke-width="4.7"/>
+<polygon points="395.8,543.7 475.5,515.4 475.5,576.7 395.8,620.1" fill="#1a130b" opacity=".32"/>
+<polygon points="379.4,231.8 485.3,274.1 485.3,365.0 379.4,353.3" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="3.7"/>
+<polygon points="379.4,643.0 485.3,581.8 542.0,614.5 455.1,686.7" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="391.4" y="379.4" font-family="Archivo, Inter, sans-serif" font-size="15.5" fill="#efebe4" opacity=".8" text-anchor="start" letter-spacing="1.8">02</text>
+<polygon points="1220.6,400.0 1114.7,400.0 1114.7,581.8 1220.6,643.0" fill="url(#hGlass)"/>
+<line x1="1220.6" y1="594.4" x2="1114.7" y2="545.5" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<line x1="1220.6" y1="545.8" x2="1114.7" y2="509.1" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<line x1="1220.6" y1="497.2" x2="1114.7" y2="472.7" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<line x1="1220.6" y1="448.6" x2="1114.7" y2="436.4" stroke="#2a1f12" stroke-width="1.4" opacity=".7"/>
+<polygon points="1220.6,400.0 1114.7,400.0 1114.7,581.8 1220.6,643.0" fill="none" stroke="#0c0c0b" stroke-width="4.7"/>
+<polygon points="1204.2,543.7 1124.5,515.4 1124.5,576.7 1204.2,620.1" fill="#1a130b" opacity=".32"/>
+<polygon points="1220.6,231.8 1114.7,274.1 1114.7,365.0 1220.6,353.3" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="3.7"/>
+<polygon points="1220.6,643.0 1114.7,581.8 1058.0,614.5 1144.9,686.7" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="1208.6" y="379.4" font-family="Archivo, Inter, sans-serif" font-size="15.5" fill="#efebe4" opacity=".8" text-anchor="end" letter-spacing="1.8">06</text>
+<polygon points="513.4,400.0 566.8,400.0 566.8,534.7 513.4,565.6" fill="url(#hGlass)"/>
+<line x1="513.4" y1="532.5" x2="566.8" y2="507.8" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<line x1="513.4" y1="499.4" x2="566.8" y2="480.8" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<line x1="513.4" y1="466.2" x2="566.8" y2="453.9" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<line x1="513.4" y1="433.1" x2="566.8" y2="426.9" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<polygon points="513.4,400.0 566.8,400.0 566.8,534.7 513.4,565.6" fill="none" stroke="#0c0c0b" stroke-width="3.2"/>
+<polygon points="521.1,499.2 561.5,484.8 561.5,529.8 521.1,551.9" fill="#1a130b" opacity=".32"/>
+<polygon points="513.4,285.4 566.8,306.7 566.8,374.1 513.4,368.2" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="2.5"/>
+<polygon points="513.4,565.6 566.8,534.7 608.8,559.0 565.0,595.4" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="519.6" y="385.9" font-family="Archivo, Inter, sans-serif" font-size="10.7" fill="#efebe4" opacity=".8" text-anchor="start" letter-spacing="1.3">03</text>
+<polygon points="1086.6,400.0 1033.2,400.0 1033.2,534.7 1086.6,565.6" fill="url(#hGlass)"/>
+<line x1="1086.6" y1="532.5" x2="1033.2" y2="507.8" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<line x1="1086.6" y1="499.4" x2="1033.2" y2="480.8" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<line x1="1086.6" y1="466.2" x2="1033.2" y2="453.9" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<line x1="1086.6" y1="433.1" x2="1033.2" y2="426.9" stroke="#2a1f12" stroke-width="1.0" opacity=".7"/>
+<polygon points="1086.6,400.0 1033.2,400.0 1033.2,534.7 1086.6,565.6" fill="none" stroke="#0c0c0b" stroke-width="3.2"/>
+<polygon points="1078.9,499.2 1038.5,484.8 1038.5,529.8 1078.9,551.9" fill="#1a130b" opacity=".32"/>
+<polygon points="1086.6,285.4 1033.2,306.7 1033.2,374.1 1086.6,368.2" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="2.5"/>
+<polygon points="1086.6,565.6 1033.2,534.7 991.2,559.0 1035.0,595.4" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="1080.4" y="385.9" font-family="Archivo, Inter, sans-serif" font-size="10.7" fill="#efebe4" opacity=".8" text-anchor="end" letter-spacing="1.3">07</text>
+<polygon points="582.6,400.0 614.8,400.0 614.8,507.0 582.6,525.6" fill="url(#hGlass)"/>
+<line x1="582.6" y1="500.5" x2="614.8" y2="485.6" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<line x1="582.6" y1="475.4" x2="614.8" y2="464.2" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<line x1="582.6" y1="450.2" x2="614.8" y2="442.8" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<line x1="582.6" y1="425.1" x2="614.8" y2="421.4" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<polygon points="582.6,400.0 614.8,400.0 614.8,507.0 582.6,525.6" fill="none" stroke="#0c0c0b" stroke-width="2.4"/>
+<polygon points="587.1,475.7 611.5,467.0 611.5,502.6 587.1,515.9" fill="#1a130b" opacity=".32"/>
+<polygon points="582.6,313.0 614.8,325.9 614.8,379.4 582.6,375.8" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="1.9"/>
+<polygon points="582.6,525.6 614.8,507.0 648.1,526.3 621.7,548.2" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="586.5" y="389.3" font-family="Archivo, Inter, sans-serif" font-size="8.1" fill="#efebe4" opacity=".8" text-anchor="start" letter-spacing="1.0">04</text>
+<polygon points="1017.4,400.0 985.2,400.0 985.2,507.0 1017.4,525.6" fill="url(#hGlass)"/>
+<line x1="1017.4" y1="500.5" x2="985.2" y2="485.6" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<line x1="1017.4" y1="475.4" x2="985.2" y2="464.2" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<line x1="1017.4" y1="450.2" x2="985.2" y2="442.8" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<line x1="1017.4" y1="425.1" x2="985.2" y2="421.4" stroke="#2a1f12" stroke-width="0.7" opacity=".7"/>
+<polygon points="1017.4,400.0 985.2,400.0 985.2,507.0 1017.4,525.6" fill="none" stroke="#0c0c0b" stroke-width="2.4"/>
+<polygon points="1012.9,475.7 988.5,467.0 988.5,502.6 1012.9,515.9" fill="#1a130b" opacity=".32"/>
+<polygon points="1017.4,313.0 985.2,325.9 985.2,379.4 1017.4,375.8" fill="url(#hMezz)" stroke="#0c0c0b" stroke-width="1.9"/>
+<polygon points="1017.4,525.6 985.2,507.0 951.9,526.3 978.3,548.2" fill="url(#hRefl)" filter="url(#hBlur)"/>
+<text x="1013.5" y="389.3" font-family="Archivo, Inter, sans-serif" font-size="8.1" fill="#efebe4" opacity=".8" text-anchor="end" letter-spacing="1.0">08</text>
+<ellipse cx="800" cy="517.1" rx="98.4" ry="20.7" fill="url(#hSpot)"/>
+<ellipse cx="800" cy="517.1" rx="88.1" ry="13.5" fill="#151412" stroke="#d3a462" stroke-opacity=".7" stroke-width="1.5"/>
+<ellipse cx="800" cy="517.1" rx="77.7" ry="11.4" fill="none" stroke="#d3a462" stroke-opacity=".25"/>
+<g transform="translate(722.3 459.9) scale(0.5)">
+    <path d="M18 92 C14 70 24 58 52 52 L84 30 C100 18 200 18 216 30 L248 52 C276 58 286 70 282 92 L282 112 L18 112 Z" fill="#0b0b0a"/>
+    <path d="M92 34 C104 26 196 26 208 34 L232 54 L68 54 Z" fill="#2c3740" opacity=".9"/>
+    <path d="M30 74 L92 80" stroke="#f6f1e6" stroke-width="5" stroke-linecap="round"/>
+    <path d="M270 74 L208 80" stroke="#f6f1e6" stroke-width="5" stroke-linecap="round"/>
+    <rect x="118" y="84" width="64" height="14" rx="3" fill="#151515" stroke="#2b2b2b"/>
+    <path d="M18 92 C14 70 24 58 52 52 L84 30 C100 18 200 18 216 30 L248 52 C276 58 286 70 282 92" fill="none" stroke="#efebe4" stroke-opacity=".35" stroke-width="1.5"/>
+  </g>
+<line x1="200.0" y1="746.7" x2="1400.0" y2="746.7" stroke="#efebe4" stroke-opacity=".04"/>
+<line x1="350.0" y1="660.0" x2="1250.0" y2="660.0" stroke="#efebe4" stroke-opacity=".04"/>
+<line x1="440.0" y1="608.0" x2="1160.0" y2="608.0" stroke="#efebe4" stroke-opacity=".04"/>
+<line x1="500.0" y1="573.3" x2="1100.0" y2="573.3" stroke="#efebe4" stroke-opacity=".04"/>
+<line x1="542.9" y1="548.6" x2="1057.1" y2="548.6" stroke="#efebe4" stroke-opacity=".04"/>
+<line x1="575.0" y1="530.0" x2="1025.0" y2="530.0" stroke="#efebe4" stroke-opacity=".04"/>
+<line x1="600.0" y1="515.6" x2="1000.0" y2="515.6" stroke="#efebe4" stroke-opacity=".04"/>
+<line x1="800.0" y1="1019.0" x2="800.0" y2="523.8" stroke="#efebe4" stroke-opacity=".05" stroke-width="2"/>
+</svg>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <span class="cap">Illustrative concept · The Hall, looking north</span>
+  <div class="wrap hero-content">
+    <p class="eyebrow">Rio Vista · Fort Lauderdale · By introduction</p>
     <h1 class="display"><b>8</b> At Rio</h1>
     <div class="hero-sub">
-      <p class="tags">Eight private garage residences<br>Timeless design<br>Built for what drives you</p>
+      <p class="tags">Eight bays. One hall.<br>Drive in. Close the door.<br>Built for what drives you.</p>
       <div class="hero-cta">
-        <a href="#residences" class="btn">The Residences</a>
+        <a href="#hall" class="btn">Enter the Hall</a>
         <a href="#inquire" class="btn solid">Request Access <span class="arrow">→</span></a>
       </div>
     </div>
-  </div>
-  <div class="hero-band" id="heroBand">
-    <img src="assets/entry-rendering.jpg" alt="Rendering of the gated entry to 8 AT RIO: limestone monument walls flanking a palm-lined promenade between two rows of dark-framed garage residences, lit at dusk" width="1224" height="378" fetchpriority="high">
-    <span class="cap">Conceptual rendering · Entry court</span>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Eight Residences</span><span>Rio Vista</span><span>Garage + Living</span><span>Mezzanine</span><span>Private Pool</span><span>Gated Entry</span><span>SE 12th Street</span>
-    <span>Eight Residences</span><span>Rio Vista</span><span>Garage + Living</span><span>Mezzanine</span><span>Private Pool</span><span>Gated Entry</span><span>SE 12th Street</span>
+    <span>Eight Bays</span><span>One Hall</span><span>Drive In</span><span>14′ Clear</span><span>Lift-Ready</span><span>Turntable</span><span>Climate-Controlled</span><span>By Introduction</span>
+    <span>Eight Bays</span><span>One Hall</span><span>Drive In</span><span>14′ Clear</span><span>Lift-Ready</span><span>Turntable</span><span>Climate-Controlled</span><span>By Introduction</span>
   </div>
 </div>
 
@@ -414,133 +561,111 @@
   <div class="wrap idea-grid">
     <div class="reveal">
       <p class="eyebrow">The Idea</p>
-      <p class="idea-text">Eight private residences where the car comes <em>inside</em>, under a fourteen-foot ceiling, with a lounge above and palms out front.</p>
+      <p class="idea-text">You don't park at 8 AT RIO. <em>You arrive.</em></p>
     </div>
     <div class="reveal">
-      <p class="muted" style="margin:0 0 32px">8 AT RIO is a small gated enclave on SE 12th Street in Rio Vista, one of Fort Lauderdale's most established neighborhoods. Two rows of four residences face a landscaped central promenade that leads to a shared pool and cabana. Each one has a double-height garage and living level, a mezzanine above, and two parking spaces.</p>
+      <p class="muted" style="margin:0 0 32px">Turn off SE 12th Street and a single glass door rises. Behind it is the Hall, one covered, climate-controlled drive aisle lined with eight glass garage doors that light up like display cases. Pull straight into your bay and the door comes down behind you. No sun on the paint, no salt in the air and nobody watching but the other seven.</p>
       <div class="stats">
-        <div class="stat"><b>8</b><span>Private residences</span></div>
-        <div class="stat"><b>880<sup>–960 SF</sup></b><span>Per residence</span></div>
-        <div class="stat"><b>14′</b><span>Garage / living ceiling</span></div>
-        <div class="stat"><b>57%</b><span>Of the site is open space</span></div>
+        <div class="stat"><b>8</b><span>Identical bays</span></div>
+        <div class="stat"><b>1</b><span>Covered drive-in hall</span></div>
+        <div class="stat"><b>14′</b><span>Clear in every bay</span></div>
+        <div class="stat"><b>25′</b><span>Drive aisle, wall to wall</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= RESIDENCES ================= -->
-<section class="residences" id="residences">
+<!-- ================= BAYS ================= -->
+<section class="bays" id="bays">
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
-        <p class="eyebrow">The Residences</p>
-        <h2 class="display">Garage below.<br><strong>Lounge above.</strong></h2>
+        <p class="eyebrow">The Bays</p>
+        <h2 class="display">Eight of them.<br><strong>All the same.</strong></h2>
       </div>
-      <p class="lede">Every residence is a single story plus a mezzanine, 40 feet deep and 22 or 24 feet wide. The car sits on a 14-foot garage and living level, and a mezzanine with an 8-foot ceiling looks down over it. Finish it as a showroom, a studio, an office or a place to land.</p>
+      <p class="lede">There's no better unit and no lesser one. Each of the eight bays is 22′-6″ wide and 40′ deep, with a 14-foot garage floor and a mezzanine lounge above that looks down on the cars. Every door opens onto the Hall.</p>
     </div>
 
-    <div class="res-grid">
+    <div class="bay-grid">
       <div class="section-card reveal">
-        <img src="assets/typical-section.jpg" alt="Typical section of a residence: a car on the ground-level garage and living floor, with a stair up to a furnished mezzanine lounge" width="196" height="188" loading="lazy">
+        <img src="assets/typical-section.jpg" alt="Typical section of a bay: a car on the 14-foot garage floor, with a stair up to a furnished mezzanine lounge overlooking it" width="196" height="188" loading="lazy">
         <ul class="dims">
-          <li><b>22′</b><span>Building height (35′ max)</span></li>
-          <li><b>± 8′-0″</b><span>Mezzanine ceiling</span></li>
-          <li><b>± 14′-0″</b><span>Garage / living ceiling</span></li>
+          <li><b>22′</b><span>Building height</span></li>
+          <li><b>± 8′-0″</b><span>Mezzanine lounge</span></li>
+          <li><b>± 14′-0″</b><span>Garage floor, clear</span></li>
         </ul>
         <p class="fine">Typical section · Dimensions approximate and subject to final architecture</p>
       </div>
 
-      <div class="reveal">
-        <div class="plan-tabs" role="tablist" aria-label="Residence types">
-          <button class="plan-tab" role="tab" id="tab-22" aria-controls="panel-22" aria-selected="true">The 22</button>
-          <button class="plan-tab" role="tab" id="tab-24" aria-controls="panel-24" aria-selected="false" tabindex="-1">The 24 · End Unit</button>
-        </div>
-
-        <div class="plan-panel" role="tabpanel" id="panel-22" aria-labelledby="tab-22">
-          <svg viewBox="0 0 130 232" fill="none" stroke="rgba(239,235,228,.6)" stroke-width="1.2" role="img" aria-label="Plan diagram, 22 by 40 feet">
-            <rect x="15" y="12" width="100" height="182"/>
-            <rect x="32" y="32" width="44" height="92" rx="11" stroke-dasharray="3 3"/>
-            <path d="M89 32v120h26M89 32h26" stroke="rgba(239,235,228,.35)"/>
-            <path d="M89 46h26M89 60h26M89 74h26M89 88h26M89 102h26M89 116h26M89 130h26M89 144h26" stroke="rgba(239,235,228,.2)"/>
-            <rect x="27" y="194" width="76" height="24" stroke="#D3A462"/>
-            <path d="M35 194v24M43 194v24M51 194v24M59 194v24M67 194v24M75 194v24M83 194v24M91 194v24" stroke="rgba(211,164,98,.5)"/>
-            <text x="65" y="8" fill="rgba(239,235,228,.55)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif">22′</text>
-            <text x="8" y="106" fill="rgba(239,235,228,.55)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" transform="rotate(-90 8 106)">40′</text>
-            <text x="65" y="230" fill="rgba(239,235,228,.5)" stroke="none" font-size="6" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="1">ENTRY PERGOLA</text>
-          </svg>
-          <div>
-            <p class="eyebrow">Units 1–3 · 5–7</p>
-            <h3 class="display">The 22</h3>
-            <p class="muted" style="margin:0">Six interior residences, each with a 22-foot frontage on the promenade.</p>
-            <dl class="spec">
-              <div><dt>Dimensions</dt><dd>22′ W × 40′ D</dd></div>
-              <div><dt>Footprint</dt><dd>≈ 880 SF</dd></div>
-              <div><dt>Levels</dt><dd>1 story + mezz.</dd></div>
-              <div><dt>Parking</dt><dd>2 spaces</dd></div>
-            </dl>
-          </div>
-        </div>
-
-        <div class="plan-panel" role="tabpanel" id="panel-24" aria-labelledby="tab-24" hidden>
-          <svg viewBox="0 0 130 232" fill="none" stroke="rgba(239,235,228,.6)" stroke-width="1.2" role="img" aria-label="Plan diagram, 24 by 40 feet">
-            <rect x="10" y="12" width="110" height="182"/>
-            <rect x="30" y="32" width="44" height="92" rx="11" stroke-dasharray="3 3"/>
-            <path d="M94 32v120h26M94 32h26" stroke="rgba(239,235,228,.35)"/>
-            <path d="M94 46h26M94 60h26M94 74h26M94 88h26M94 102h26M94 116h26M94 130h26M94 144h26" stroke="rgba(239,235,228,.2)"/>
-            <rect x="27" y="194" width="76" height="24" stroke="#D3A462"/>
-            <path d="M35 194v24M43 194v24M51 194v24M59 194v24M67 194v24M75 194v24M83 194v24M91 194v24" stroke="rgba(211,164,98,.5)"/>
-            <text x="65" y="8" fill="rgba(239,235,228,.55)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif">24′</text>
-            <text x="4" y="106" fill="rgba(239,235,228,.55)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" transform="rotate(-90 4 106)">40′</text>
-            <text x="65" y="230" fill="rgba(239,235,228,.5)" stroke="none" font-size="6" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="1">ENTRY PERGOLA</text>
-          </svg>
-          <div>
-            <p class="eyebrow">Units 4 · 8</p>
-            <h3 class="display">The 24</h3>
-            <p class="muted" style="margin:0">The two end residences sit at the pool end of each row and are two feet wider.</p>
-            <dl class="spec">
-              <div><dt>Dimensions</dt><dd>24′ W × 40′ D</dd></div>
-              <div><dt>Footprint</dt><dd>≈ 960 SF</dd></div>
-              <div><dt>Levels</dt><dd>1 story + mezz.</dd></div>
-              <div><dt>Parking</dt><dd>2 spaces</dd></div>
-            </dl>
-          </div>
+      <div class="bay-plan reveal">
+        <svg viewBox="0 0 130 232" fill="none" stroke="rgba(239,235,228,.6)" stroke-width="1.2" role="img" aria-label="Bay plan diagram, 22 feet 6 inches by 40 feet, two cars side by side, stair along the back wall, glass door to the hall">
+          <rect x="12" y="12" width="106" height="182"/>
+          <rect x="22" y="58" width="38" height="84" rx="10" stroke-dasharray="3 3"/>
+          <rect x="70" y="58" width="38" height="84" rx="10" stroke-dasharray="3 3"/>
+          <rect x="18" y="52" width="48" height="96" stroke="rgba(211,164,98,.55)" stroke-dasharray="1 4"/>
+          <path d="M24 14v30h82V14" stroke="rgba(239,235,228,.3)"/>
+          <path d="M34 14v30M44 14v30M54 14v30M64 14v30M74 14v30M84 14v30M94 14v30" stroke="rgba(239,235,228,.18)"/>
+          <path d="M26 194h78" stroke="#D3A462" stroke-width="3"/>
+          <text x="65" y="8" fill="rgba(239,235,228,.55)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif">22′-6″</text>
+          <text x="6" y="106" fill="rgba(239,235,228,.55)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" transform="rotate(-90 6 106)">40′</text>
+          <text x="65" y="208" fill="#D3A462" stroke="none" font-size="6" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="1">GLASS DOOR · THE HALL</text>
+          <text x="42" y="160" fill="rgba(211,164,98,.75)" stroke="none" font-size="5.5" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing=".8">LIFT ZONE</text>
+          <text x="65" y="34" fill="rgba(239,235,228,.45)" stroke="none" font-size="5.5" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing=".8">STAIR · WC</text>
+        </svg>
+        <div>
+          <p class="eyebrow">Bays 01–08</p>
+          <h3 class="display">The Bay</h3>
+          <p class="muted" style="margin:0">Two cars side by side on the floor, and four with a stacking lift. A stair leads up to the mezzanine and the restroom sits at the back.</p>
+          <dl class="spec">
+            <div><dt>Dimensions</dt><dd>22′-6″ × 40′</dd></div>
+            <div><dt>Footprint</dt><dd>≈ 900 SF + mezz.</dd></div>
+            <div><dt>Cars</dt><dd>2 · up to 4 w/ lift</dd></div>
+            <div><dt>Door</dt><dd>Glass sectional</dd></div>
+          </dl>
         </div>
       </div>
     </div>
 
-    <div class="features reveal" aria-label="Every residence">
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21V8l9-5 9 5v13"/><path d="M6 21v-9h12v9M6 15h12M6 18h12"/></svg>
-        <h3>Drive-in garage</h3><p>The car lives on the main floor under a ceiling of about 14 feet, not in a lot down the street.</p>
+    <div class="specsheet reveal" aria-label="Garage specification">
+      <div class="specsheet-head"><h3>Garage Spec</h3><span>Planned · subject to final design</span></div>
+      <div class="specrow"><span class="n">01</span><h3>Clear height</h3><p>About 14 feet on the garage floor, enough for a four-post stacking lift for most cars.</p></div>
+      <div class="specrow"><span class="n">02</span><h3>Slab</h3><p>A reinforced slab ready for lift anchors, finished in polished concrete or epoxy.</p></div>
+      <div class="specrow"><span class="n">03</span><h3>Power</h3><p>A dedicated 240V circuit for Level 2 EV charging, plus battery-tender outlets at every parking position.</p></div>
+      <div class="specrow"><span class="n">04</span><h3>Air</h3><p>A compressed-air drop with a hose reel, so you're never more than a few steps from a tire chuck.</p></div>
+      <div class="specrow"><span class="n">05</span><h3>Light</h3><p>High-CRI linear LED lighting, bright enough to judge paint and correct a swirl mark.</p></div>
+      <div class="specrow"><span class="n">06</span><h3>Climate</h3><p>Conditioned and dehumidified for South Florida summers, so leather, rubber and paint stay protected.</p></div>
+      <div class="specrow"><span class="n">07</span><h3>Door</h3><p>A glass sectional door to the Hall, with app control and a camera you can check from anywhere.</p></div>
+      <div class="specrow"><span class="n">08</span><h3>Mezzanine</h3><p>A glass-railed lounge about 8 feet high that overlooks the floor. Use it as an office, bar or quiet room.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE HALL ================= -->
+<section id="hall">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">The Hall</p>
+        <h2 class="display">One roof.<br><strong>One way in.</strong></h2>
       </div>
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 12h18M3 12v9M21 12v9M7 12V8h10v4"/><path d="M14 21v-5h7"/></svg>
-        <h3>Mezzanine level</h3><p>A second level with a ceiling of about 8 feet that overlooks the floor below. Use it as a lounge, office or guest space.</p>
-      </div>
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9h18M5 9v12M19 9v12M8 9v3M12 9v3M16 9v3"/></svg>
-        <h3>Private entry</h3><p>Each residence opens onto the central promenade under its own wood-slat pergola.</p>
-      </div>
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="8" height="12" rx="2"/><rect x="13" y="6" width="8" height="12" rx="2"/></svg>
-        <h3>Two spaces each</h3><p>Sixteen parking spaces on site, two for every residence.</p>
-      </div>
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 21V9M19 21V9M3 9h18"/><path d="M8 21V12h8v9"/></svg>
-        <h3>Gated entry</h3><p>Limestone monument walls and metal gates off SE 12th Street, with one entrance for the whole community.</p>
-      </div>
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 18c3 0 3-2 6-2s3 2 6 2 3-2 6-2M3 14c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/></svg>
-        <h3>Pool &amp; cabana</h3><p>A shared pool, sun deck and cabana across the north end of the site.</p>
-      </div>
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21V10M12 10C9 6 5 6 3 7c3 0 6 1 9 3zM12 10c3-4 7-4 9-3-3 0-6 1-9 3zM12 10c-1-4-4-6-7-6 2 1 5 3 7 6zM12 10c1-4 4-6 7-6-2 1-5 3-7 6z"/></svg>
-        <h3>Tropical landscape</h3><p>Palms and layered planting around the edges and along the promenade, lit at night.</p>
-      </div>
-      <div class="feature">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20l6-6M14 4l6 6-8 8-6-6z"/></svg>
-        <h3>Your finish</h3><p>Finish the interior to suit your collection, whether that's gallery-clean or a fully fitted workspace.</p>
-      </div>
+      <p class="lede">The courtyard between the two rows is 25 feet wide, exactly what it takes to pull straight into a garage. So we covered it. The open-air walk becomes a private, conditioned hall with a skylight running down its length. You drive the car in, and it stays out of the weather from the moment the gate opens.</p>
+    </div>
+    <div class="hall-grid">
+      <article class="tile t-wide reveal">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 700 400" preserveAspectRatio="xMidYMid slice"><g stroke="rgba(159,196,212,.35)" fill="none"><path d="M0 60 L700 60"/><path d="M0 60 L350 200 L700 60"/><path d="M80 60 L350 200 M160 60 L350 200 M240 60 L350 200 M320 60 L350 200 M380 60 L350 200 M460 60 L350 200 M540 60 L350 200 M620 60 L350 200"/></g><rect x="0" y="0" width="700" height="60" fill="rgba(159,196,212,.10)"/></svg>
+        </div>
+        <span class="num">01</span><h3>Skylight Spine</h3><p>Daylight runs the length of the Hall, through glass specified to filter UV. The cars get the light without the sun.</p>
+      </article>
+      <article class="tile t-tall reveal">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice"><ellipse cx="250" cy="150" rx="190" ry="48" fill="none" stroke="rgba(211,164,98,.55)" stroke-width="1.5"/><ellipse cx="250" cy="150" rx="160" ry="38" fill="none" stroke="rgba(211,164,98,.22)"/><path d="M250 102 v-30" stroke="rgba(211,164,98,.4)"/><path d="M60 150 a190 48 0 0 1 120 -42" fill="none" stroke="#D3A462" stroke-width="2.5" stroke-linecap="round"/><path d="M180 108 l-12 -2 l6 10" fill="none" stroke="#D3A462" stroke-width="2"/></svg>
+        </div>
+        <span class="num">02</span><h3>The Turntable</h3><p>At the north end of the Hall, a turntable spins the car so you leave nose-first. On Hall Nights it becomes the plinth.</p>
+      </article>
+      <article class="tile t-third reveal"><span class="num">03</span><h3>The Gate</h3><p>One glass overhead door on SE 12th Street, opened by plate recognition or phone. It's the only way in.</p></article>
+      <article class="tile t-third warm reveal"><span class="num">04</span><h3>Detail Bay &amp; Lounge</h3><p>At the far end there's a lit, drained bay for detailing, plus a small owners' lounge with a coffee machine and a view of the turntable.</p></article>
+      <article class="tile t-third cool reveal"><span class="num">05</span><h3>The Pool Terrace</h3><p>The one bit of open air, behind a glass wall at the end of the Hall. Finish a drive, step out and cool off.</p></article>
     </div>
   </div>
 </section>
@@ -549,81 +674,130 @@
 <section class="siteplan" id="siteplan">
   <div class="wrap sp-grid">
     <figure class="sp-figure reveal">
-      <img src="assets/site-plan.jpg" alt="Site plan of 8 AT RIO on a 125 by 135 foot lot: units 1 through 4 on the west row and 5 through 8 on the east row, a landscaped central promenade, the pool and cabana at the north end, and the entry on SE 12th Street" width="1100" height="1315" loading="lazy">
-      <figcaption>Site plan · Scale 1″ = 20′-0″ · Conceptual</figcaption>
+      <svg viewBox="0 0 540 640" role="img" aria-label="Refined site plan: a 125 by 135 foot lot. Bays 01 to 04 on the west and 05 to 08 on the east face a 25-foot covered hall. The entry gate is on SE 12th Street to the south, the turntable sits at the north end of the hall, and the pool terrace and owners' lounge are beyond it.">
+        <defs>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(18,18,17,.10)" stroke-width="2"/></pattern>
+        </defs>
+        <g transform="translate(20 20)" font-family="Inter, sans-serif">
+          <!-- lot -->
+          <rect x="0" y="0" width="500" height="540" fill="#fff" stroke="#121211" stroke-dasharray="6 4"/>
+          <!-- setback zone -->
+          <path d="M0 0H500V540H0Z M40 80V440H460V80Z" fill="url(#hatch)" fill-rule="evenodd"/>
+          <!-- pool terrace + lounge in rear yard -->
+          <rect x="170" y="18" width="160" height="44" fill="#CFE3EA" stroke="#5E8C9C"/>
+          <text x="250" y="45" font-size="9" text-anchor="middle" fill="#2E5866" letter-spacing="1.5">POOL TERRACE</text>
+          <rect x="352" y="16" width="70" height="48" fill="#F1E6D4" stroke="#121211" stroke-opacity=".5"/>
+          <text x="387" y="38" font-size="7" text-anchor="middle" fill="#121211" letter-spacing="1">OWNERS'</text>
+          <text x="387" y="48" font-size="7" text-anchor="middle" fill="#121211" letter-spacing="1">LOUNGE</text>
+          <!-- building -->
+          <rect x="40" y="80" width="420" height="360" fill="#EDE7DC" stroke="#121211" stroke-width="2"/>
+          <!-- hall -->
+          <rect x="200" y="80" width="100" height="360" fill="#2A2926"/>
+          <rect x="226" y="80" width="48" height="360" fill="#9FC4D4" opacity=".22"/>
+          <g stroke="#9FC4D4" stroke-opacity=".4"><line x1="226" y1="125" x2="274" y2="125"/><line x1="226" y1="170" x2="274" y2="170"/><line x1="226" y1="215" x2="274" y2="215"/><line x1="226" y1="260" x2="274" y2="260"/><line x1="226" y1="305" x2="274" y2="305"/><line x1="226" y1="350" x2="274" y2="350"/><line x1="226" y1="395" x2="274" y2="395"/></g>
+          <!-- turntable -->
+          <circle cx="250" cy="122" r="34" fill="none" stroke="#D3A462" stroke-width="2"/>
+          <circle cx="250" cy="122" r="28" fill="none" stroke="#D3A462" stroke-opacity=".4"/>
+          <rect x="241" y="100" width="18" height="44" rx="6" fill="none" stroke="#EFEBE4" stroke-opacity=".7" stroke-dasharray="2 2"/>
+          <!-- glass end wall -->
+          <line x1="200" y1="80" x2="300" y2="80" stroke="#5E8C9C" stroke-width="4"/>
+          <!-- bays -->
+          <g stroke="#121211" stroke-width="1.2" fill="none">
+            <line x1="40" y1="170" x2="200" y2="170"/><line x1="40" y1="260" x2="200" y2="260"/><line x1="40" y1="350" x2="200" y2="350"/>
+            <line x1="300" y1="170" x2="460" y2="170"/><line x1="300" y1="260" x2="460" y2="260"/><line x1="300" y1="350" x2="460" y2="350"/>
+          </g>
+          <!-- bay doors (glow) -->
+          <g stroke="#D3A462" stroke-width="5">
+            <line x1="200" y1="95" x2="200" y2="155"/><line x1="200" y1="185" x2="200" y2="245"/><line x1="200" y1="275" x2="200" y2="335"/><line x1="200" y1="365" x2="200" y2="425"/>
+            <line x1="300" y1="95" x2="300" y2="155"/><line x1="300" y1="185" x2="300" y2="245"/><line x1="300" y1="275" x2="300" y2="335"/><line x1="300" y1="365" x2="300" y2="425"/>
+          </g>
+          <!-- cars in bays -->
+          <g fill="none" stroke="#121211" stroke-opacity=".35" stroke-dasharray="3 3">
+            <rect x="110" y="98" width="72" height="30" rx="9"/><rect x="110" y="134" width="72" height="30" rx="9"/>
+            <rect x="110" y="188" width="72" height="30" rx="9"/><rect x="110" y="224" width="72" height="30" rx="9"/>
+            <rect x="110" y="278" width="72" height="30" rx="9"/><rect x="110" y="314" width="72" height="30" rx="9"/>
+            <rect x="110" y="368" width="72" height="30" rx="9"/><rect x="110" y="404" width="72" height="30" rx="9"/>
+            <rect x="318" y="98" width="72" height="30" rx="9"/><rect x="318" y="134" width="72" height="30" rx="9"/>
+            <rect x="318" y="188" width="72" height="30" rx="9"/><rect x="318" y="224" width="72" height="30" rx="9"/>
+            <rect x="318" y="278" width="72" height="30" rx="9"/><rect x="318" y="314" width="72" height="30" rx="9"/>
+            <rect x="318" y="368" width="72" height="30" rx="9"/><rect x="318" y="404" width="72" height="30" rx="9"/>
+          </g>
+          <!-- bay labels -->
+          <g font-family="Archivo, Inter, sans-serif" font-size="20" fill="#121211" letter-spacing="1">
+            <text x="56" y="132">04</text><text x="56" y="222">03</text><text x="56" y="312">02</text><text x="56" y="402">01</text>
+            <text x="418" y="132">08</text><text x="418" y="222">07</text><text x="418" y="312">06</text><text x="418" y="402">05</text>
+          </g>
+          <text x="250" y="290" font-size="10" fill="#EFEBE4" text-anchor="middle" letter-spacing="3" transform="rotate(-90 250 290)">THE HALL · 25′ × 90′</text>
+          <!-- entry gate + drive -->
+          <line x1="204" y1="440" x2="296" y2="440" stroke="#D3A462" stroke-width="5"/>
+          <rect x="210" y="440" width="80" height="100" fill="#DAD3C7"/>
+          <path d="M250 530 V452 M242 462 L250 450 L258 462" stroke="#121211" stroke-width="1.5" fill="none"/>
+          <text x="262" y="500" font-size="8" fill="#121211" letter-spacing="1.5">DRIVE IN</text>
+          <!-- dims -->
+          <g font-size="9" fill="#121211" fill-opacity=".7" letter-spacing="1">
+            <text x="250" y="-6" text-anchor="middle">125′ LOT</text>
+            <text x="508" y="270" transform="rotate(90 508 270)" text-anchor="middle">135′ LOT</text>
+            <text x="120" y="76" text-anchor="middle">40′</text><text x="380" y="76" text-anchor="middle">40′</text>
+            <text x="20" y="500" text-anchor="middle">25′</text><text x="20" y="44" text-anchor="middle">20′</text>
+          </g>
+          <!-- north + street -->
+          <g transform="translate(470 470)"><path d="M0 22 L8 0 L16 22 L8 16 Z" fill="#121211"/><text x="8" y="36" font-size="9" text-anchor="middle" fill="#121211">N</text></g>
+        </g>
+        <text x="270" y="632" font-family="Inter, sans-serif" font-size="11" letter-spacing="4" text-anchor="middle" fill="#121211">SE 12TH STREET</text>
+      </svg>
+      <figcaption>Refined concept · Covered hall · Diagrammatic, not to final scale</figcaption>
     </figure>
     <div class="reveal">
-      <p class="eyebrow">Site Plan</p>
-      <h2 class="display" style="margin-top:22px">Two rows.<br><strong>One promenade.</strong></h2>
-      <p class="lede" style="margin-top:24px">A 125 × 135-foot lot with four residences on each side of a palm-lined walk. The gated entry faces SE 12th Street to the south and the pool sits at the north end. More than half the site stays open and planted.</p>
+      <p class="eyebrow">The Plan</p>
+      <h2 class="display" style="margin-top:22px">Lined up.<br><strong>Locked in.</strong></h2>
+      <p class="lede" style="margin-top:24px">There are two rows of four identical bays, each on a 22′-6″ grid, so the doors line up across the Hall. You enter from SE 12th Street to the south. The turntable, lounge and pool are at the north end. The footprint stays within the zoning setbacks.</p>
 
       <table class="data">
-        <caption>Project data</caption>
+        <caption>Project data · refined concept</caption>
         <tbody>
-          <tr><th>Lot size</th><td>16,875 SF <small>0.387 acres</small></td></tr>
-          <tr><th>Zoning</th><td>RML-25</td></tr>
-          <tr><th>Proposed use</th><td>Multifamily <small>8 residential units</small></td></tr>
-          <tr><th>Density</th><td>20.65 units / acre <small>25 max</small></td></tr>
+          <tr><th>Lot</th><td>16,875 SF <small>125′ × 135′ · 0.387 acres</small></td></tr>
+          <tr><th>Zoning</th><td>RML-25 <small>Multifamily · 8 residential units</small></td></tr>
+          <tr><th>Bays</th><td>8 identical <small>22′-6″ × 40′ · ≈ 900 SF + mezzanine</small></td></tr>
+          <tr><th>The Hall</th><td>≈ 25′ × 90′ <small>Covered, conditioned drive aisle</small></td></tr>
           <tr><th>Building height</th><td>22′ <small>35′ max</small></td></tr>
-          <tr><th>Building length</th><td>90′ <small>200′ max</small></td></tr>
-          <tr><th>Floor area ratio</th><td>0.71</td></tr>
-          <tr><th>Lot coverage / open space</th><td>42.7% / 57.3%</td></tr>
-          <tr><th>Parking</th><td>16 spaces <small>2 per unit</small></td></tr>
+          <tr><th>Parking</th><td>16 covered <small>2 per bay, in the bay</small></td></tr>
         </tbody>
       </table>
 
-      <div class="setbacks" role="group" aria-label="Setbacks under RML-25; proposed equals required">
+      <div class="setbacks" role="group" aria-label="Setbacks under RML-25, unchanged from the original concept">
         <div><b>25′</b><span>Front · S</span></div>
         <div><b>20′</b><span>Rear · N</span></div>
         <div><b>10′</b><span>Side · E</span></div>
         <div><b>10′</b><span>Side · W</span></div>
       </div>
+      <p class="fine">The covered hall is a refinement of the concept submitted for City review. Coverage, floor area and code requirements are being confirmed with the design team.</p>
       <a href="#inquire" class="btn">Request the plan set <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- ================= GROUNDS ================= -->
-<section id="grounds">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div>
-        <p class="eyebrow">The Grounds</p>
-        <h2 class="display">An address,<br><strong>not a lot.</strong></h2>
-      </div>
-      <p class="lede">The concept is a walled tropical garden with the cars inside it. You arrive through the gate, walk the promenade to your door and end the day at the pool.</p>
-    </div>
-    <div class="grounds-grid">
-      <article class="tile t-photo reveal"><span class="num">01</span><h3>The Entry Court</h3><p>Lit limestone monument walls, a pair of metal gates and a straight view down the palms to the pool.</p></article>
-      <article class="tile t-a reveal"><span class="num">02</span><h3>Pool &amp; Deck</h3><p>A pool with loungers on both sides, set against the north edge of the site.</p></article>
-      <article class="tile t-b reveal"><span class="num">03</span><h3>The Promenade</h3><p>A paved central walk through palms and garden rooms that links every front door.</p></article>
-      <article class="tile t-c reveal"><span class="num">04</span><h3>The Cabana</h3><p>A covered lounge by the pool where owners can meet, host or wait out an afternoon storm.</p></article>
-      <article class="tile t-d reveal"><span class="num">05</span><h3>Landscape Lighting</h3><p>Warm uplighting on the palms and walls makes the property look as good at night as it does by day.</p></article>
-    </div>
-  </div>
-</section>
-
 <!-- ================= OWNERS ================= -->
-<section class="society" id="owners">
-  <div class="wrap society-grid">
+<section class="owners" id="owners">
+  <div class="wrap owners-grid">
     <div class="reveal">
-      <p class="eyebrow">Eight Owners</p>
-      <h2 class="display" style="margin-top:22px">Small by<br><strong>design.</strong></h2>
-      <p class="lede" style="margin-top:24px">There are only eight residences, so you'll know every neighbor. They'll be people who care about design, about cars and about where they keep them.</p>
+      <p class="eyebrow">Eight Keys</p>
+      <h2 class="display" style="margin-top:22px">There is<br><strong>no ninth.</strong></h2>
+      <div class="keys" aria-hidden="true"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span></div>
+      <p class="lede" style="margin-top:24px">The Hall has eight doors and one gate. It isn't open to the public and there's no valet line. It's eight owners who care about what's behind the glass.</p>
       <ol class="principles">
-        <li>Eight owners share one gate, one promenade and one pool.</li>
-        <li>Residences are offered privately, by introduction or by application.</li>
-        <li>Guests are welcome, and so is the occasional Sunday-morning meet.</li>
+        <li>Bays are offered privately, by introduction. The first conversation is about what you drive.</li>
+        <li>Your bay number is yours, cast on the door and on your key.</li>
+        <li>Owners and their guests only. The gate doesn't open for anyone else.</li>
       </ol>
       <a href="#inquire" class="btn">Request an Introduction <span class="arrow">→</span></a>
     </div>
     <div class="reveal">
-      <p class="eyebrow" style="margin-bottom:22px">Around Rio</p>
+      <p class="eyebrow" style="margin-bottom:22px">The Calendar</p>
       <div class="calendar">
-        <div class="event"><span class="when">Sunday</span><div><h3>Promenade Coffee</h3><p>Doors up, cars out and coffee on the walk.</p></div></div>
-        <div class="event"><span class="when">Dawn</span><div><h3>A1A Run</h3><p>Ten minutes to the beach road, then north along the coast before the traffic wakes up.</p></div></div>
-        <div class="event"><span class="when">Evening</span><div><h3>Las Olas</h3><p>Dinner on the boulevard, a few minutes away across the New River.</p></div></div>
-        <div class="event"><span class="when">Season</span><div><h3>Show Season</h3><p>From November through March, South Florida's concours and boat-show calendar starts at your door.</p></div></div>
+        <div class="event"><span class="when">Hall Night</span><div><h3>Doors Up</h3><p>Twice a year all eight doors go up at once and one car takes the turntable. Invited guests only.</p></div></div>
+        <div class="event"><span class="when">Dawn</span><div><h3>The A1A Run</h3><p>Leave the Hall at first light, drive north up the coast, and be back before the coffee's cold.</p></div></div>
+        <div class="event"><span class="when">Track</span><div><h3>Lapping Days</h3><p>Homestead–Miami and Palm Beach International are both within reach for a day at the track.</p></div></div>
+        <div class="event"><span class="when">Season</span><div><h3>Concours Season</h3><p>From November through March, the South Florida show calendar starts at your door.</p></div></div>
       </div>
     </div>
   </div>
@@ -637,7 +811,7 @@
         <p class="eyebrow">Rio Vista · Fort Lauderdale</p>
         <h2 class="display">Below the skyline.<br><strong>Above it all.</strong></h2>
       </div>
-      <p class="lede">Rio Vista is the leafy, low-rise neighborhood just south of downtown Fort Lauderdale, bounded by the New River and the Intracoastal. The tower views are close, but the streets stay quiet and lined with trees.</p>
+      <p class="lede">Rio Vista is the leafy, low-rise neighborhood just south of downtown Fort Lauderdale, between the New River and the Intracoastal. Las Olas is minutes away, the beach road is ten, and two racetracks are within a morning's drive.</p>
     </div>
 
     <figure class="loc-photo reveal">
@@ -649,10 +823,11 @@
       <div class="reveal">
         <div class="drive">
           <div><span>Las Olas Boulevard</span><b>~5<small>MIN</small></b></div>
-          <div><span>Downtown Fort Lauderdale &amp; Brightline</span><b>~6<small>MIN</small></b></div>
           <div><span>Port Everglades &amp; 17th Street marinas</span><b>~8<small>MIN</small></b></div>
-          <div><span>Fort Lauderdale–Hollywood Int'l (FLL)</span><b>~10<small>MIN</small></b></div>
           <div><span>Fort Lauderdale Beach &amp; A1A</span><b>~10<small>MIN</small></b></div>
+          <div><span>Fort Lauderdale–Hollywood Int'l (FLL)</span><b>~10<small>MIN</small></b></div>
+          <div class="track"><span>Homestead–Miami Speedway</span><b>~60<small>MIN</small></b></div>
+          <div class="track"><span>Palm Beach International Raceway</span><b>~75<small>MIN</small></b></div>
         </div>
         <p class="note">Approximate drive times without traffic. The exact address is shared with qualified inquiries.</p>
       </div>
@@ -672,20 +847,20 @@
         <p class="eyebrow">Availability</p>
         <h2 class="display">Eight.<br><strong>Only eight.</strong></h2>
       </div>
-      <p class="lede">The residences are offered privately ahead of construction. Pricing and reservation terms are shared with qualified buyers.</p>
+      <p class="lede">The bays are offered privately ahead of construction. Pricing and reservation terms are shared with qualified buyers after an introduction.</p>
     </div>
     <div class="table-wrap reveal">
       <table>
-        <thead><tr><th>Residence</th><th>Row</th><th>Dimensions</th><th>Footprint</th><th>Parking</th><th>Status</th></tr></thead>
+        <thead><tr><th>Bay</th><th>Position</th><th>Dimensions</th><th>Footprint</th><th>Covered parking</th><th>Status</th></tr></thead>
         <tbody>
-          <tr><td class="unit">01</td><td>West · Street end</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">02</td><td>West</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">03</td><td>West</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">04</td><td>West · Pool end</td><td>24′ × 40′</td><td>≈ 960 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">05</td><td>East · Street end</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">06</td><td>East</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">07</td><td>East</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">08</td><td>East · Pool end</td><td>24′ × 40′</td><td>≈ 960 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">01</td><td>West · By the gate</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">02</td><td>West</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">03</td><td>West</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">04</td><td>West · At the turntable</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">05</td><td>East · By the gate</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">06</td><td>East</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">07</td><td>East</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">08</td><td>East · At the turntable</td><td>22′-6″ × 40′</td><td>≈ 900 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -701,12 +876,12 @@
       <h2 class="display" style="margin-top:22px">Good to<br><strong>know.</strong></h2>
     </div>
     <div class="reveal">
-      <details open><summary>What exactly is a garage residence?</summary><p>It's a private residence designed around the car. The main level is a garage and living space with a ceiling of about 14 feet, and a mezzanine above serves as a lounge, office or retreat. The project is planned as eight multifamily residential units under the site's RML-25 zoning.</p></details>
-      <details><summary>Will I own my residence?</summary><p>The residences are planned to be sold individually as condominium units, each with its own deed. The final ownership structure and association documents will be set out in the offering materials.</p></details>
-      <details><summary>Where is it, and what's there now?</summary><p>The site is on SE 12th Street in Rio Vista, just south of downtown Fort Lauderdale. Today it's a 16,875 SF lot with older existing structures and mature trees, which you can see in the drone photo above.</p></details>
-      <details><summary>Where is the project in the approval process?</summary><p>The plans shown here are conceptual schematics prepared for City development review. Dimensions, materials and amenities may change as the design is finalized and approved.</p></details>
-      <details><summary>Can I customize the interior?</summary><p>Yes. The concept is designed to be finished to each owner's taste, from a clean gallery for a collection to a fully fitted workspace and lounge. We'll share finish options as the design moves forward.</p></details>
-      <details><summary>How do I reserve?</summary><p>Send an inquiry below. We'll arrange a private conversation, share the plan set and pricing, and explain how reservations work.</p></details>
+      <details open><summary>What exactly is a bay at 8 AT RIO?</summary><p>It's a private garage residence. The main floor is a 14-foot garage and living space, a mezzanine lounge sits above it, and a glass door opens onto the covered Hall. The project is planned as eight multifamily residential units under the site's RML-25 zoning.</p></details>
+      <details><summary>Can I put a lift in?</summary><p>The bays are planned with about 14 feet of clear height and a slab ready for lift anchors, which suits a four-post stacking lift for most cars. Final lift sizing depends on the cars and the finished design.</p></details>
+      <details><summary>Can I work on my cars?</summary><p>Light maintenance, detailing and hobby work are what the bays are built for. Commercial repair, spray painting and fuel storage won't be permitted, and the association rules will set out the details.</p></details>
+      <details><summary>Is the Hall really enclosed?</summary><p>That's the plan: a covered, climate-controlled hall with a skylight, a single gated entry and mechanical ventilation. The pool terrace at the north end is the only open-air space.</p></details>
+      <details><summary>Will I own my bay?</summary><p>The bays are planned to be sold individually as condominium units, each with its own deed. The final ownership structure and association documents will be set out in the offering materials.</p></details>
+      <details><summary>Where is the project in the approval process?</summary><p>The covered-hall layout refines the conceptual schematics prepared for City development review. Dimensions, materials and amenities may change as the design is finalized and approved.</p></details>
     </div>
   </div>
 </section>
@@ -717,7 +892,7 @@
     <div class="reveal">
       <p class="eyebrow">Request Access</p>
       <h2 class="display" style="margin-top:22px">One of<br><strong>eight.</strong></h2>
-      <p class="lede" style="margin-top:24px">Tell us a little about yourself and what you drive. We'll be in touch to share the plans, pricing and timeline.</p>
+      <p class="lede" style="margin-top:24px">Tell us what's in your garage, and what you wish was. We'll be in touch to share the plans, pricing and timing.</p>
       <dl class="contact-list">
         <div><dt>Location</dt><dd>SE 12th Street · Rio Vista<br>Fort Lauderdale, FL</dd></div>
         <div><dt>Email</dt><dd><a href="mailto:rr@richardrosalaw.com">rr@richardrosalaw.com</a></dd></div>
@@ -728,12 +903,12 @@
       <div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div>
       <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
       <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
-      <div class="field"><label for="residence">Residence of interest</label>
-        <select id="residence" name="residence">
-          <option value="">Select</option>
-          <option>The 22 (≈ 880 SF)</option>
-          <option>The 24 · End unit (≈ 960 SF)</option>
-          <option>Not sure yet</option>
+      <div class="field"><label for="bay">Bay preference</label>
+        <select id="bay" name="bay">
+          <option value="">No preference</option>
+          <option>By the gate (01 / 05)</option>
+          <option>Mid-hall (02 · 03 · 06 · 07)</option>
+          <option>At the turntable (04 / 08)</option>
         </select>
       </div>
       <div class="field full">
@@ -742,10 +917,10 @@
           <label><input type="checkbox" name="interests" value="Ownership"><span>Ownership</span></label>
           <label><input type="checkbox" name="interests" value="Plan set"><span>The plan set</span></label>
           <label><input type="checkbox" name="interests" value="Pricing"><span>Pricing</span></label>
-          <label><input type="checkbox" name="interests" value="Investment"><span>Investment</span></label>
+          <label><input type="checkbox" name="interests" value="Hall Night"><span>Hall Night invite</span></label>
         </div>
       </div>
-      <div class="field full"><label for="collection">What drives you?</label><textarea id="collection" name="collection" placeholder="What you drive, how you'd use the space, timing…"></textarea></div>
+      <div class="field full"><label for="garage">What's in your garage?</label><textarea id="garage" name="garage" placeholder="The cars, the lift you'd want, how you'd use the mezzanine…"></textarea></div>
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-foot">
         <button type="submit" class="btn solid">Submit Inquiry <span class="arrow">→</span></button>
@@ -772,10 +947,10 @@
     <div class="foot-row">
       <span>© <span id="yr"></span> 8 AT RIO · SE 12th Street · Rio Vista · Fort Lauderdale, Florida</span>
       <nav aria-label="Footer">
-        <a href="#residences">Residences</a><a href="#siteplan">Site Plan</a><a href="#grounds">Grounds</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
+        <a href="#bays">Bays</a><a href="#hall">Hall</a><a href="#siteplan">Plan</a><a href="#owners">Owners</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
       </nav>
     </div>
-    <p class="legal">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING THE REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE. This website is for informational purposes only and is not an offer to sell, or a solicitation of an offer to buy, in any jurisdiction where prohibited by law. All renderings, site plans, sections, dimensions, amenities and features are conceptual, approximate and subject to change, final architecture and governmental approvals. Equal Housing Opportunity.</p>
+    <p class="legal">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING THE REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE. This website is for informational purposes only and is not an offer to sell, or a solicitation of an offer to buy, in any jurisdiction where prohibited by law. All illustrations, site plans, sections, dimensions, specifications, amenities and features are conceptual, approximate and subject to change, final architecture and governmental approvals. Equal Housing Opportunity.</p>
   </div>
 </footer>
 
@@ -799,30 +974,9 @@
     });
   })();
 
-  // Plan tabs (with arrow-key support)
+  // Reveal on scroll
   (function(){
-    var tabs = Array.prototype.slice.call(document.querySelectorAll('.plan-tab'));
-    function select(tab){
-      tabs.forEach(function(t){
-        var on = t === tab;
-        t.setAttribute('aria-selected', on ? 'true' : 'false');
-        t.tabIndex = on ? 0 : -1;
-        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-      });
-    }
-    tabs.forEach(function(t, i){
-      t.addEventListener('click', function(){ select(t); });
-      t.addEventListener('keydown', function(e){
-        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-        if(!d) return;
-        var n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus();
-      });
-    });
-  })();
-
-  // Reveal on scroll (+ slow settle on the hero rendering)
-  (function(){
-    var els = document.querySelectorAll('.reveal, #heroBand');
+    var els = document.querySelectorAll('.reveal');
     if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
@@ -844,7 +998,7 @@
     function mailtoFallback(){
       var body = [
         'Name: ' + v('name'), 'Email: ' + v('email'), 'Phone: ' + v('phone'),
-        'Residence of interest: ' + v('residence'), 'Interests: ' + interests(), '', 'What drives you:', v('collection')
+        'Bay preference: ' + (v('bay') || 'No preference'), 'Interests: ' + interests(), '', "What's in your garage:", v('garage')
       ].join('\n');
       window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject()) + '&body=' + encodeURIComponent(body);
     }
