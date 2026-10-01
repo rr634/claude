@@ -5,6 +5,9 @@ in Rio Vista, Fort Lauderdale (Richard N. Rosa, P.A.). The look follows the dark
 style of revaultsociety.com. Content comes from the DRC schematics and renderings.
 
 - `site/index.html` — the whole site (HTML + CSS + JS inline, no build step)
+- `site/brand.html` — brand guide (logo, color, type, materials, voice, applications); `noindex`, not linked from the site
+- `site/assets/brand/` — logo files: horizontal, stacked and monogram, in light and dark versions
+- `tools/brand.js` — regenerates the logo SVGs and favicon (`node tools/brand.js`); the logo is drawn as strokes, so it needs no font files
 - `site/assets/` — images cropped and compressed from the concept package and drone photography
 
 Open `site/index.html` in a browser to preview.
@@ -20,6 +23,14 @@ Open `site/index.html` in a browser to preview.
 | Project data + setbacks | DRC site plan sheet |
 | Rio Vista aerial | Drone photo looking north → `aerial-skyline.jpg` |
 | The site today | Overhead drone photo → `site-today.jpg` |
+
+## Brand
+
+The "8" in the logo is the building section: a 14′ garage loop, an 8′ mezzanine loop, and the mezzanine slab
+between them in Glow (#D3A462), making 22′ in total. The interior direction (metallic epoxy, black steel, warm wood,
+gloss white, dark ceiling) comes from reference photos of another car-condo project. Those photos are
+**not** used on the site, because they show a different building and the rights belong to someone else.
+The site and the brand guide show them only as CSS material swatches.
 
 ## Still to confirm before launch
 

@@ -101,10 +101,9 @@
   .nav{position:fixed;inset:0 0 auto 0;z-index:50;border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease)}
   .nav.scrolled{background:rgba(12,12,11,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
-  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-stretch:125%;text-transform:uppercase}
-  .brand b{font-weight:300;font-size:34px;line-height:1}
-  .brand span{font-weight:400;font-size:15px;letter-spacing:.32em;line-height:1.2}
-  .brand small{display:block;font-family:var(--font-body);font-size:9px;letter-spacing:.32em;color:var(--bone-faint);margin-top:3px}
+  .brand{display:flex;align-items:center}
+  .logo-nav{height:30px;width:auto}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   .nav-links{display:flex;gap:32px;align-items:center}
   .nav-links a{font-family:var(--font-display);font-stretch:110%;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-dim);transition:color .2s}
   .nav-links a:hover{color:var(--bone)}
@@ -129,8 +128,8 @@
   .hero{padding:0;background:var(--black);position:relative;overflow:hidden}
   .hero-top{padding:clamp(130px,16vw,190px) var(--gutter) clamp(36px,5vw,60px);position:relative}
   .hero-top::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;background:radial-gradient(45% 50% at 50% 70%,rgba(211,164,98,.10),transparent 70%);pointer-events:none}
-  .hero h1{font-size:clamp(64px,15vw,232px);line-height:.82;letter-spacing:.02em;margin:26px 0 0;font-weight:200}
-  .hero h1 b{font-weight:500}
+  .hero h1{margin:30px 0 0;line-height:0}
+  .logo-hero{height:clamp(84px,14vw,200px);width:auto;max-width:100%}
   .hero-sub{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-top:clamp(28px,4vw,48px)}
   .hero-sub .tags{font-family:var(--font-display);font-stretch:120%;font-size:12px;letter-spacing:.36em;text-transform:uppercase;color:var(--bone-dim);line-height:2.2;margin:0}
   .hero-cta{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
@@ -210,6 +209,43 @@
   .feature p{margin:10px 0 0;font-size:14px;color:var(--bone-dim)}
   @media (max-width:1060px){.features{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:560px){.features{grid-template-columns:1fr}}
+
+
+  /* Interior — design direction (material swatches) */
+  .interior{background:var(--black)}
+  .mat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .mat{display:flex;flex-direction:column;gap:16px}
+  .swatch{aspect-ratio:3/4;border:1px solid var(--line);position:relative;overflow:hidden}
+  .swatch::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.10) 50%,transparent 60%);pointer-events:none}
+  .sw-epoxy{background:
+      radial-gradient(40% 18% at 30% 70%,rgba(255,255,255,.55),transparent 70%),
+      radial-gradient(30% 12% at 70% 35%,rgba(255,255,255,.35),transparent 70%),
+      repeating-linear-gradient(160deg,rgba(80,84,88,.18) 0 2px,transparent 2px 38px),
+      linear-gradient(170deg,#c9cccf 0%,#9ea3a8 45%,#bfc3c6 70%,#8d9297 100%)}
+  .sw-steel{background:
+      repeating-linear-gradient(0deg,#2a2b2d 0 3px,#151617 3px 26px),
+      linear-gradient(90deg,#141516,#202123)}
+  .sw-walnut{background:
+      repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 1px,transparent 1px 64px),
+      repeating-linear-gradient(0deg,rgba(60,28,8,.18) 0 2px,transparent 2px 9px),
+      linear-gradient(90deg,#9a5a2a,#b9773f 30%,#8f5226 55%,#b06e38 80%,#9c5c2b)}
+  .sw-lacquer{background:
+      linear-gradient(90deg,transparent 49.6%,rgba(0,0,0,.08) 49.6% 50.4%,transparent 50.4%),
+      radial-gradient(70% 40% at 30% 20%,#fff,transparent 70%),
+      linear-gradient(180deg,#f7f7f5,#e6e6e3)}
+  .sw-ceiling{background:
+      radial-gradient(circle at 25% 30%,rgba(255,244,220,.95) 0 3px,rgba(255,236,200,.25) 4px,transparent 22px),
+      radial-gradient(circle at 70% 55%,rgba(255,244,220,.95) 0 3px,rgba(255,236,200,.25) 4px,transparent 22px),
+      radial-gradient(circle at 45% 82%,rgba(255,244,220,.95) 0 3px,rgba(255,236,200,.25) 4px,transparent 22px),
+      repeating-linear-gradient(35deg,rgba(255,255,255,.05) 0 2px,transparent 2px 30px),
+      repeating-linear-gradient(-35deg,rgba(255,255,255,.04) 0 2px,transparent 2px 30px),
+      #101011}
+  .mat h3{font-size:13px}
+  .mat p{margin:6px 0 0;font-size:14px;color:var(--bone-dim)}
+  .mat .where{display:block;margin-top:8px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  .interior .note{margin-top:32px}
+  @media (max-width:1060px){.mat-grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:640px){.mat-grid{grid-template-columns:repeat(2,1fr)}}
 
   /* Site plan */
   .siteplan{background:var(--stone);color:var(--ink)}
@@ -340,8 +376,8 @@
   /* Footer */
   footer{background:var(--black);border-top:1px solid var(--line);padding:72px 0 40px}
   .foot-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:48px}
-  .foot-mark{font-family:var(--font-display);font-stretch:125%;font-weight:200;text-transform:uppercase;font-size:clamp(56px,12vw,180px);line-height:.8;letter-spacing:.02em;margin:0}
-  .foot-mark b{font-weight:500}
+  .foot-mark{margin:0;line-height:0}
+  .logo-foot{height:clamp(64px,10vw,140px);width:auto;max-width:100%}
   .foot-dev{text-align:right}
   .foot-dev .rr{font-family:Georgia,"Times New Roman",serif;font-size:34px;letter-spacing:-.06em;line-height:1}
   .foot-dev p{margin:6px 0 0;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-faint)}
@@ -368,10 +404,17 @@
 <header class="nav" id="nav">
   <div class="wrap">
     <a href="#top" class="brand" aria-label="8 AT RIO — home">
-      <b>8</b><span>At Rio<small>Fort Lauderdale</small></span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.74 76" class="logo-nav" aria-hidden="true" focusable="false">
+<g transform="translate(2 2)" fill="none" stroke="#EFEBE4" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter">
+  <path d="M17.34 1.3H24.42A12.441600000000001 12.441600000000001 0 0 1 36.86 13.74V15.04A12.441600000000001 12.441600000000001 0 0 1 24.42 27.48H17.34A12.441600000000001 12.441600000000001 0 0 1 4.9 15.04V13.74A12.441600000000001 12.441600000000001 0 0 1 17.34 1.3Z M17.17 27.48H24.59A15.8688 15.8688 0 0 1 40.46 43.35V54.83A15.8688 15.8688 0 0 1 24.59 70.7H17.17A15.8688 15.8688 0 0 1 1.3 54.83V43.35A15.8688 15.8688 0 0 1 17.17 27.48Z"/>
+  <path d="M4.9 27.48H36.86" stroke="#D3A462"/>
+  <path d="M67.76 70.7L85.1 36.7L102.44 70.7M74.7 57.78H95.5 M117.44 36.7H148.72M133.08 36.7V70.7  M182.42 70.7V36.7H202.82A8.84 8.84 0 0 1 202.82 54.38H182.42M198.5 54.38L211.66 70.7 M226.66 36.7V70.7 M255.94 36.7H268.86A14.28 14.28 0 0 1 283.14 50.98V56.42A14.28 14.28 0 0 1 268.86 70.7H255.94A14.28 14.28 0 0 1 241.66 56.42V50.98A14.28 14.28 0 0 1 255.94 36.7Z"/>
+</g>
+</svg><span class="sr-only">8 AT RIO</span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#residences">Residences</a>
+      <a href="#interior">Interior</a>
       <a href="#siteplan">Site Plan</a>
       <a href="#grounds">Motor Court</a>
       <a href="#location">Rio Vista</a>
@@ -390,7 +433,13 @@
 <section class="hero">
   <div class="hero-top" style="max-width:var(--container);margin:0 auto">
     <p class="eyebrow">Rio Vista · Fort Lauderdale, FL</p>
-    <h1 class="display"><b>8</b> At Rio</h1>
+    <h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.74 76" class="logo-hero" aria-hidden="true" focusable="false">
+<g transform="translate(2 2)" fill="none" stroke="#EFEBE4" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter">
+  <path d="M17.34 1.3H24.42A12.441600000000001 12.441600000000001 0 0 1 36.86 13.74V15.04A12.441600000000001 12.441600000000001 0 0 1 24.42 27.48H17.34A12.441600000000001 12.441600000000001 0 0 1 4.9 15.04V13.74A12.441600000000001 12.441600000000001 0 0 1 17.34 1.3Z M17.17 27.48H24.59A15.8688 15.8688 0 0 1 40.46 43.35V54.83A15.8688 15.8688 0 0 1 24.59 70.7H17.17A15.8688 15.8688 0 0 1 1.3 54.83V43.35A15.8688 15.8688 0 0 1 17.17 27.48Z"/>
+  <path d="M4.9 27.48H36.86" stroke="#D3A462"/>
+  <path d="M67.76 70.7L85.1 36.7L102.44 70.7M74.7 57.78H95.5 M117.44 36.7H148.72M133.08 36.7V70.7  M182.42 70.7V36.7H202.82A8.84 8.84 0 0 1 202.82 54.38H182.42M198.5 54.38L211.66 70.7 M226.66 36.7V70.7 M255.94 36.7H268.86A14.28 14.28 0 0 1 283.14 50.98V56.42A14.28 14.28 0 0 1 268.86 70.7H255.94A14.28 14.28 0 0 1 241.66 56.42V50.98A14.28 14.28 0 0 1 255.94 36.7Z"/>
+</g>
+</svg><span class="sr-only">8 AT RIO</span></h1>
     <div class="hero-sub">
       <p class="tags">Eight private garage residences<br>Timeless design<br>Built for what drives you</p>
       <div class="hero-cta">
@@ -545,6 +594,27 @@
         <h3>Open court</h3><p>A paved motor court about 25 feet wide between the two rows, room to pull in, stage a car or line them all up.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ================= INTERIOR ================= -->
+<section class="interior" id="interior">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">The Interior · Design Direction</p>
+        <h2 class="display">Built like a garage.<br><strong>Finished like a home.</strong></h2>
+      </div>
+      <p class="lede">The look we're designing toward has five materials: a reflective floor under the cars, black steel, warm wood up on the mezzanine, a white kitchen and a dark ceiling with points of light. It's industrial where the cars are and warm where you are.</p>
+    </div>
+    <div class="mat-grid reveal">
+      <div class="mat"><div class="swatch sw-epoxy" role="img" aria-label="Metallic epoxy floor swatch"></div><div><h3>Metallic Epoxy</h3><p>A poured, high-gloss floor in silver-grey that reflects the lights and the cars.</p><span class="where">Garage floor</span></div></div>
+      <div class="mat"><div class="swatch sw-steel" role="img" aria-label="Blackened steel swatch"></div><div><h3>Black Steel</h3><p>The stair, the bar railings and the mezzanine edge, all in one matte black.</p><span class="where">Stair · Railings</span></div></div>
+      <div class="mat"><div class="swatch sw-walnut" role="img" aria-label="Walnut plank swatch"></div><div><h3>Warm Wood</h3><p>Wide planks on the mezzanine, so the lounge feels like a room rather than a shop.</p><span class="where">Mezzanine floor</span></div></div>
+      <div class="mat"><div class="swatch sw-lacquer" role="img" aria-label="Gloss white lacquer swatch"></div><div><h3>Gloss White</h3><p>Handleless, high-gloss cabinetry for a kitchen and bar that look as sharp as the cars.</p><span class="where">Kitchen · Bar</span></div></div>
+      <div class="mat"><div class="swatch sw-ceiling" role="img" aria-label="Exposed black ceiling with lights swatch"></div><div><h3>Dark Ceiling</h3><p>The ceiling is painted black, with pin lights and linear LEDs that streak across the floor.</p><span class="where">Overhead</span></div></div>
+    </div>
+    <p class="note">Design direction only. Materials, finishes, fixtures and appliances are not final and will be set out in the purchase documents.</p>
   </div>
 </section>
 
@@ -809,7 +879,13 @@
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <p class="foot-mark"><b>8</b> At Rio</p>
+      <p class="foot-mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.74 76" class="logo-foot" aria-hidden="true" focusable="false">
+<g transform="translate(2 2)" fill="none" stroke="#EFEBE4" stroke-width="2.6" stroke-linecap="square" stroke-linejoin="miter">
+  <path d="M17.34 1.3H24.42A12.441600000000001 12.441600000000001 0 0 1 36.86 13.74V15.04A12.441600000000001 12.441600000000001 0 0 1 24.42 27.48H17.34A12.441600000000001 12.441600000000001 0 0 1 4.9 15.04V13.74A12.441600000000001 12.441600000000001 0 0 1 17.34 1.3Z M17.17 27.48H24.59A15.8688 15.8688 0 0 1 40.46 43.35V54.83A15.8688 15.8688 0 0 1 24.59 70.7H17.17A15.8688 15.8688 0 0 1 1.3 54.83V43.35A15.8688 15.8688 0 0 1 17.17 27.48Z"/>
+  <path d="M4.9 27.48H36.86" stroke="#D3A462"/>
+  <path d="M67.76 70.7L85.1 36.7L102.44 70.7M74.7 57.78H95.5 M117.44 36.7H148.72M133.08 36.7V70.7  M182.42 70.7V36.7H202.82A8.84 8.84 0 0 1 202.82 54.38H182.42M198.5 54.38L211.66 70.7 M226.66 36.7V70.7 M255.94 36.7H268.86A14.28 14.28 0 0 1 283.14 50.98V56.42A14.28 14.28 0 0 1 268.86 70.7H255.94A14.28 14.28 0 0 1 241.66 56.42V50.98A14.28 14.28 0 0 1 255.94 36.7Z"/>
+</g>
+</svg><span class="sr-only">8 AT RIO</span></p>
       <div class="foot-dev">
         <div class="rr" aria-hidden="true">RR</div>
         <p>Richard N. Rosa, P.A.</p>
@@ -820,7 +896,7 @@
     <div class="foot-row">
       <span>© <span id="yr"></span> 8 AT RIO · SE 12th Street · Rio Vista · Fort Lauderdale, Florida</span>
       <nav aria-label="Footer">
-        <a href="#residences">Residences</a><a href="#siteplan">Site Plan</a><a href="#grounds">Motor Court</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
+        <a href="#residences">Residences</a><a href="#interior">Interior</a><a href="#siteplan">Site Plan</a><a href="#grounds">Motor Court</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
       </nav>
     </div>
     <p class="legal">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING THE REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE. This website is for informational purposes only and is not an offer to sell, or a solicitation of an offer to buy, in any jurisdiction where prohibited by law. No offer to sell will be made, and no reservation or contract will be accepted, until the developer has complied with the applicable requirements of Chapter 718, Florida Statutes. All renderings, site plans, diagrams, sections, dimensions, square footages, amenities and features are conceptual and approximate. They have not been approved by any governmental authority and are subject to change without notice. Square footages are approximate exterior dimensions and may differ from those in the offering documents. Equal Housing Opportunity.</p>

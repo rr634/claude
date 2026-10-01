@@ -1,1 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#0C0C0B"/><circle cx="16" cy="10.5" r="5" fill="none" stroke="#EFEBE4" stroke-width="2"/><circle cx="16" cy="21.5" r="6" fill="none" stroke="#EFEBE4" stroke-width="2"/><path d="M6 29h20" stroke="#D3A462" stroke-width="1.5"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="8 AT RIO">
+<rect width="32" height="32" rx="6" fill="#0C0C0B"/>
+<g transform="translate(9.04 4)" fill="none" stroke="#EFEBE4" stroke-width="3.4" stroke-linecap="square" stroke-linejoin="miter"><path d="M7.05 1.7H6.87A4.1472 4.1472 0 0 1 11.02 5.85V6.28A4.1472 4.1472 0 0 1 6.87 10.43H7.05A4.1472 4.1472 0 0 1 2.9 6.28V5.85A4.1472 4.1472 0 0 1 7.05 1.7Z M6.99 10.43H6.93A5.289599999999999 5.289599999999999 0 0 1 12.22 15.72V17.01A5.289599999999999 5.289599999999999 0 0 1 6.93 22.3H6.99A5.289599999999999 5.289599999999999 0 0 1 1.7 17.01V15.72A5.289599999999999 5.289599999999999 0 0 1 6.99 10.43Z"/><path d="M2.9 10.43H11.02" stroke="#D3A462"/></g>
+</svg>
