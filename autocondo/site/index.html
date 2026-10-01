@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Paddock — Private Car Studios · Fort Lauderdale</title>
+<meta name="description" content="The Paddock is a limited collection of private, two-story car studios in Fort Lauderdale — secure, climate-controlled, fully ownable, with a members-only clubhouse and a community built around the drive.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="The Paddock — Private Car Studios · Fort Lauderdale">
+<meta property="og:description" content="A limited collection of private, ownable car studios with a members-only clubhouse. Fort Lauderdale, Florida.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"The Paddock",
+  "description":"Private, ownable car studios and members-only clubhouse in Fort Lauderdale, Florida.",
+  "address":{"@type":"PostalAddress","addressLocality":"Fort Lauderdale","addressRegion":"FL","addressCountry":"US"},
+  "areaServed":"Broward County, Florida"
+}
+</script>
+
+<style>
+  /* ============================================================
+     TOKENS — swap brand name / colors here
+     ============================================================ */
+  :root{
+    --black:#0B0B0C;
+    --carbon:#141416;
+    --graphite:#1D1D20;
+    --steel:#2A2A2E;
+    --bone:#ECE8E1;
+    --bone-dim:rgba(236,232,225,.66);
+    --bone-faint:rgba(236,232,225,.38);
+    --line:rgba(236,232,225,.12);
+    --line-strong:rgba(236,232,225,.24);
+    --accent:#E8622C;          /* papaya / Florida sunset */
+    --accent-soft:rgba(232,98,44,.14);
+    --sky:#7FB4C9;             /* intracoastal blue, used sparingly */
+
+    --font-display:"Archivo",system-ui,sans-serif;
+    --font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+
+    --container:1280px;
+    --gutter:clamp(16px,4vw,40px);
+    --section-y:clamp(80px,11vw,160px);
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--black);color:var(--bone);
+    font-family:var(--font-body);font-weight:400;font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:var(--black)}
+
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+  .eyebrow{
+    font-family:var(--font-display);font-stretch:110%;font-weight:500;
+    font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--bone-faint);
+    display:flex;align-items:center;gap:14px;
+  }
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
+  .display{
+    font-family:var(--font-display);font-stretch:125%;font-weight:700;
+    text-transform:uppercase;letter-spacing:-.01em;line-height:.95;margin:0;
+  }
+  h2.display{font-size:clamp(34px,6vw,76px)}
+  h3{font-family:var(--font-display);font-stretch:115%;font-weight:600;text-transform:uppercase;letter-spacing:.04em;font-size:15px;margin:0}
+  .lede{font-size:clamp(17px,1.6vw,21px);font-weight:300;color:var(--bone-dim);max-width:60ch;line-height:1.6}
+  .muted{color:var(--bone-dim)}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:var(--font-display);font-stretch:115%;font-weight:600;font-size:12px;
+    letter-spacing:.22em;text-transform:uppercase;
+    padding:18px 28px;border:1px solid var(--bone);color:var(--bone);background:transparent;
+    cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease);
+  }
+  .btn:hover{background:var(--bone);color:var(--black)}
+  .btn.solid{background:var(--accent);border-color:var(--accent);color:var(--black)}
+  .btn.solid:hover{background:var(--bone);border-color:var(--bone)}
+  .btn .arrow{transition:transform .3s var(--ease)}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .nav{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    transition:background .4s var(--ease),border-color .4s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .nav.scrolled{background:rgba(11,11,12,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-stretch:125%;font-weight:700;letter-spacing:.18em;font-size:15px;text-transform:uppercase}
+  .brand small{display:block;font-weight:400;font-stretch:100%;letter-spacing:.3em;font-size:9px;color:var(--bone-faint);margin-top:2px}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-family:var(--font-display);font-stretch:110%;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bone-dim);transition:color .2s}
+  .nav-links a:hover{color:var(--bone)}
+  .nav-links .btn{padding:12px 18px;font-size:11px}
+  .menu-btn{display:none;background:none;border:0;color:var(--bone);cursor:pointer;padding:8px}
+  @media (max-width:960px){
+    .nav-links{
+      position:fixed;inset:76px 0 auto 0;flex-direction:column;align-items:flex-start;gap:0;
+      background:var(--black);border-bottom:1px solid var(--line);padding:8px var(--gutter) 24px;
+      transform:translateY(-8px);opacity:0;pointer-events:none;transition:.3s var(--ease);
+    }
+    .nav-links.open{transform:none;opacity:1;pointer-events:auto}
+    .nav-links a{padding:16px 0;width:100%;border-bottom:1px solid var(--line);font-size:12px}
+    .nav-links .btn{margin-top:20px;width:auto;border:1px solid var(--bone)}
+    .menu-btn{display:block}
+  }
+
+  /* ============================================================
+     HERO — CSS-built garage: LED ceiling strips + reflective floor
+     ============================================================ */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+  .hero-stage{position:absolute;inset:0;z-index:-1;perspective:900px;background:
+      radial-gradient(70% 55% at 50% 38%,rgba(232,98,44,.10),transparent 70%),
+      radial-gradient(120% 80% at 50% 0%,#18181b 0%,var(--black) 65%)}
+  .ceiling,.floor{position:absolute;left:-30%;right:-30%;height:70%;transform-style:preserve-3d}
+  .ceiling{top:-12%;transform:rotateX(-72deg);transform-origin:top center;
+    background:repeating-linear-gradient(90deg,transparent 0 9%,rgba(236,232,225,.0) 9%,rgba(236,232,225,.75) 9.25%,rgba(236,232,225,.0) 9.6%,transparent 9.6% 18%);
+    -webkit-mask-image:linear-gradient(to bottom,#000 10%,transparent 85%);mask-image:linear-gradient(to bottom,#000 10%,transparent 85%);
+    filter:blur(.4px) drop-shadow(0 0 6px rgba(236,232,225,.5));
+    animation:hum 6s ease-in-out infinite;
+  }
+  .floor{bottom:-20%;transform:rotateX(76deg);transform-origin:bottom center;
+    background:
+      repeating-linear-gradient(90deg,transparent 0 9.1%,rgba(236,232,225,.10) 9.25%,transparent 9.5% 18%),
+      repeating-linear-gradient(0deg,transparent 0 11%,rgba(236,232,225,.05) 11.1%,transparent 11.3%),
+      linear-gradient(to top,#121214,#0B0B0C);
+    -webkit-mask-image:linear-gradient(to top,#000 20%,transparent 90%);mask-image:linear-gradient(to top,#000 20%,transparent 90%);
+  }
+  .hero-car{position:absolute;left:50%;bottom:16%;width:min(1100px,118vw);transform:translateX(-50%);opacity:.95}
+  @keyframes hum{0%,100%{opacity:.85}50%{opacity:1}}
+  .hero-shade{position:absolute;inset:0;background:linear-gradient(to top,var(--black) 6%,rgba(11,11,12,.55) 40%,rgba(11,11,12,.2) 70%,rgba(11,11,12,.6));z-index:-1}
+
+  .hero-content{width:100%;padding-bottom:clamp(40px,7vw,88px);padding-top:140px}
+  .hero h1{font-size:clamp(46px,10.5vw,168px);line-height:.86;margin:22px 0 0}
+  .hero h1 .outline{color:transparent;-webkit-text-stroke:1px var(--bone)}
+  .hero-foot{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-top:clamp(28px,4vw,48px);border-top:1px solid var(--line);padding-top:28px}
+  .hero-foot p{margin:0}
+  .hero-cta{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap}
+  @media (max-width:760px){.hero-foot{grid-template-columns:1fr}.hero-cta{justify-content:flex-start}}
+
+  /* ============================================================
+     MARQUEE
+     ============================================================ */
+  .marquee{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:22px 0;background:var(--carbon)}
+  .marquee-track{display:inline-flex;gap:56px;animation:slide 38s linear infinite;padding-left:56px}
+  .marquee span{font-family:var(--font-display);font-stretch:125%;font-weight:600;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim);display:inline-flex;align-items:center;gap:56px}
+  .marquee span::after{content:"";width:6px;height:6px;background:var(--accent);transform:rotate(45deg)}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ============================================================
+     SECTIONS
+     ============================================================ */
+  section{padding:var(--section-y) 0;position:relative}
+  .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(48px,7vw,96px)}
+  .sec-head .display{margin-top:22px}
+  @media (max-width:860px){.sec-head{grid-template-columns:1fr}}
+
+  /* Manifesto */
+  .manifesto{background:var(--black)}
+  .manifesto-text{font-family:var(--font-display);font-stretch:100%;font-weight:300;font-size:clamp(26px,3.6vw,52px);line-height:1.18;letter-spacing:-.01em;max-width:22ch;margin:28px 0 0}
+  .manifesto-text em{font-style:normal;color:var(--accent)}
+  .manifesto-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(32px,6vw,96px);align-items:end}
+  .stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+  .stat{padding:26px 0 22px;border-bottom:1px solid var(--line)}
+  .stat:nth-child(odd){padding-right:20px;border-right:1px solid var(--line)}
+  .stat:nth-child(even){padding-left:20px}
+  .stat b{display:block;font-family:var(--font-display);font-stretch:125%;font-weight:700;font-size:clamp(34px,4vw,54px);line-height:1}
+  .stat span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-faint)}
+  @media (max-width:860px){.manifesto-grid{grid-template-columns:1fr}}
+
+  /* Studios */
+  .studios{background:var(--carbon)}
+  .studio-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);margin-bottom:48px;overflow-x:auto;scrollbar-width:none}
+  .studio-tabs::-webkit-scrollbar{display:none}
+  .studio-tab{background:none;border:0;color:var(--bone-faint);padding:18px 28px 18px 0;margin-right:28px;cursor:pointer;
+    font-family:var(--font-display);font-stretch:120%;font-weight:600;font-size:12px;letter-spacing:.24em;text-transform:uppercase;position:relative;white-space:nowrap}
+  .studio-tab[aria-selected="true"]{color:var(--bone)}
+  .studio-tab[aria-selected="true"]::after{content:"";position:absolute;left:0;right:28px;bottom:-1px;height:2px;background:var(--accent)}
+  .studio-panel{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+  .studio-panel[hidden]{display:none}
+  .plan{background:var(--black);border:1px solid var(--line);aspect-ratio:4/3;position:relative;overflow:hidden}
+  .plan svg{width:100%;height:100%}
+  .plan .tag{position:absolute;top:18px;left:18px;font-family:var(--font-display);font-stretch:115%;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--bone-faint)}
+  .studio-info h3.display{font-size:clamp(30px,4vw,54px);font-stretch:125%;letter-spacing:-.01em;text-transform:uppercase;margin:16px 0 18px}
+  .spec{display:grid;grid-template-columns:1fr 1fr;margin:28px 0 36px;border-top:1px solid var(--line)}
+  .spec div{padding:16px 0;border-bottom:1px solid var(--line)}
+  .spec dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-faint)}
+  .spec dd{margin:4px 0 0;font-family:var(--font-display);font-stretch:115%;font-weight:600;font-size:18px}
+  @media (max-width:860px){.studio-panel{grid-template-columns:1fr}}
+
+  /* Features grid */
+  .features{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:clamp(64px,8vw,112px)}
+  .feature{padding:34px 28px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .3s var(--ease)}
+  .feature:hover{background:var(--graphite)}
+  .feature .ico{width:28px;height:28px;color:var(--accent);margin-bottom:26px}
+  .feature p{margin:10px 0 0;font-size:14px;color:var(--bone-dim)}
+  @media (max-width:1060px){.features{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.features{grid-template-columns:1fr}}
+
+  /* Club */
+  .club{background:var(--black);overflow:hidden}
+  .club-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+  .tile{position:relative;overflow:hidden;border:1px solid var(--line);min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;background:var(--carbon);isolation:isolate}
+  .tile::before{content:"";position:absolute;inset:0;z-index:-1;transition:transform 1.2s var(--ease)}
+  .tile:hover::before{transform:scale(1.06)}
+  .tile .num{position:absolute;top:24px;right:28px;font-family:var(--font-display);font-stretch:125%;font-size:11px;letter-spacing:.24em;color:var(--bone-faint)}
+  .tile h3{font-size:20px;font-stretch:125%;font-weight:700}
+  .tile p{margin:10px 0 0;color:var(--bone-dim);font-size:14px;max-width:44ch}
+  .t1{grid-column:span 7;min-height:440px}
+  .t1::before{background:
+      radial-gradient(60% 70% at 70% 30%,rgba(232,98,44,.28),transparent 70%),
+      repeating-linear-gradient(90deg,rgba(236,232,225,.05) 0 1px,transparent 1px 80px),
+      linear-gradient(160deg,#1b1b1e,#0d0d0e)}
+  .t2{grid-column:span 5;min-height:440px}
+  .t2::before{background:
+      radial-gradient(50% 50% at 50% 35%,rgba(127,180,201,.22),transparent 70%),
+      repeating-linear-gradient(0deg,rgba(236,232,225,.04) 0 1px,transparent 1px 40px),
+      linear-gradient(200deg,#18191c,#0c0c0d)}
+  .t3,.t4,.t5{grid-column:span 4}
+  .t3::before{background:linear-gradient(135deg,rgba(236,232,225,.07),transparent 60%),#121214}
+  .t4::before{background:radial-gradient(80% 60% at 20% 100%,rgba(232,98,44,.18),transparent 70%),#121214}
+  .t5::before{background:linear-gradient(225deg,rgba(127,180,201,.12),transparent 55%),#121214}
+  @media (max-width:960px){.t1,.t2{grid-column:span 12;min-height:340px}.t3,.t4,.t5{grid-column:span 12;min-height:220px}}
+
+  /* Society */
+  .society{background:var(--bone);color:var(--black)}
+  .society .eyebrow{color:rgba(11,11,12,.5)}
+  .society .lede{color:rgba(11,11,12,.7)}
+  .society-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px)}
+  .calendar{border-top:1px solid rgba(11,11,12,.16)}
+  .event{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid rgba(11,11,12,.16)}
+  .event .when{font-family:var(--font-display);font-stretch:125%;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .event h3{font-size:15px}
+  .event p{margin:2px 0 0;font-size:14px;color:rgba(11,11,12,.62)}
+  .event .pill{font-size:10px;letter-spacing:.2em;text-transform:uppercase;border:1px solid rgba(11,11,12,.3);padding:6px 10px;white-space:nowrap}
+  .society .btn{border-color:var(--black);color:var(--black)}
+  .society .btn:hover{background:var(--black);color:var(--bone)}
+  .principles{list-style:none;padding:0;margin:36px 0 40px;counter-reset:p}
+  .principles li{counter-increment:p;display:grid;grid-template-columns:44px 1fr;padding:14px 0;border-top:1px solid rgba(11,11,12,.16);font-size:15px}
+  .principles li::before{content:"0" counter(p);font-family:var(--font-display);font-stretch:125%;font-weight:700;font-size:12px;letter-spacing:.1em;color:var(--accent);padding-top:3px}
+  @media (max-width:860px){.society-grid{grid-template-columns:1fr}.event{grid-template-columns:72px 1fr}.event .pill{display:none}}
+
+  /* Location */
+  .location{background:var(--carbon)}
+  .loc-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
+  .map{border:1px solid var(--line);background:var(--black);aspect-ratio:1/1;position:relative;overflow:hidden}
+  .map svg{width:100%;height:100%}
+  .drive{border-top:1px solid var(--line);margin-top:36px}
+  .drive div{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line);gap:16px}
+  .drive span{font-size:15px}
+  .drive b{font-family:var(--font-display);font-stretch:125%;font-weight:700;font-size:22px;white-space:nowrap}
+  .drive b small{font-size:11px;letter-spacing:.18em;color:var(--bone-faint);font-weight:500;margin-left:6px}
+  @media (max-width:860px){.loc-grid{grid-template-columns:1fr}}
+
+  /* Availability */
+  .avail{background:var(--black)}
+  .table-wrap{overflow-x:auto;border-top:1px solid var(--line-strong)}
+  table{width:100%;border-collapse:collapse;min-width:640px}
+  th,td{text-align:left;padding:20px 16px 20px 0;border-bottom:1px solid var(--line);font-size:15px}
+  th{font-family:var(--font-display);font-stretch:115%;font-weight:500;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--bone-faint)}
+  td.unit{font-family:var(--font-display);font-stretch:125%;font-weight:700;font-size:18px}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+  .s-open{color:#8BD17C}.s-hold{color:#E8B44C}.s-sold{color:var(--bone-faint)}
+  tr.sold td{color:var(--bone-faint)}
+  .note{font-size:12px;color:var(--bone-faint);margin-top:18px}
+
+  /* FAQ */
+  .faq{background:var(--carbon)}
+  .faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(32px,5vw,96px)}
+  details{border-bottom:1px solid var(--line)}
+  details:first-child{border-top:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;position:relative;font-family:var(--font-display);font-stretch:110%;font-weight:500;font-size:18px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .3s var(--ease)}
+  details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+  details p{margin:0 0 24px;color:var(--bone-dim);max-width:62ch}
+  @media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+
+  /* Inquire */
+  .inquire{background:var(--black);overflow:hidden}
+  .inquire::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:80%;background:radial-gradient(50% 50% at 50% 50%,rgba(232,98,44,.16),transparent 70%);pointer-events:none}
+  .inq-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(40px,6vw,96px);position:relative}
+  form{display:grid;grid-template-columns:1fr 1fr;gap:26px 24px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field.full{grid-column:1/-1}
+  label{font-family:var(--font-display);font-stretch:115%;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--bone-faint)}
+  input,select,textarea{
+    font:inherit;font-size:16px;color:var(--bone);background:transparent;border:0;border-bottom:1px solid var(--line-strong);
+    padding:10px 0 12px;border-radius:0;outline:none;transition:border-color .2s;width:100%;
+  }
+  select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--bone-dim) 50%),linear-gradient(135deg,var(--bone-dim) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 7px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+  select option{background:var(--carbon);color:var(--bone)}
+  textarea{resize:vertical;min-height:110px}
+  input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+  .checks{display:flex;flex-wrap:wrap;gap:10px}
+  .checks label{cursor:pointer}
+  .checks input{position:absolute;opacity:0;width:1px;height:1px}
+  .checks span{display:inline-block;border:1px solid var(--line-strong);padding:10px 14px;font-size:10px;letter-spacing:.2em;color:var(--bone-dim);transition:.2s}
+  .checks input:checked+span{border-color:var(--accent);background:var(--accent-soft);color:var(--bone)}
+  .checks input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+  .form-foot{grid-column:1/-1;display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:8px}
+  #formNote{font-size:14px;color:var(--bone-dim);margin:0}
+  .hp{position:absolute;left:-9999px}
+  .contact-list{margin-top:40px;border-top:1px solid var(--line)}
+  .contact-list div{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:15px}
+  .contact-list dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-faint)}
+  .contact-list dd{margin:0;text-align:right}
+  @media (max-width:860px){.inq-grid{grid-template-columns:1fr}}
+  @media (max-width:560px){form{grid-template-columns:1fr}}
+
+  /* Footer */
+  footer{background:var(--black);border-top:1px solid var(--line);padding:72px 0 40px}
+  .foot-mark{font-family:var(--font-display);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:clamp(40px,10.4vw,168px);line-height:.85;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px var(--line-strong);margin:0 0 56px;white-space:nowrap}
+  .foot-row{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;font-size:13px;color:var(--bone-faint)}
+  .foot-row nav{display:flex;gap:24px;flex-wrap:wrap}
+  .foot-row a:hover{color:var(--bone)}
+  .legal{margin-top:32px;font-size:11px;line-height:1.7;color:var(--bone-faint);max-width:110ch}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="The Paddock — home">
+      <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 25V9h10a5 5 0 0 1 0 10H7" fill="none" stroke="#E8622C" stroke-width="2.4"/></svg>
+      <span>The Paddock<small>Fort Lauderdale</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#studios">Studios</a>
+      <a href="#club">The Club</a>
+      <a href="#society">Society</a>
+      <a href="#location">Location</a>
+      <a href="#availability">Availability</a>
+      <a href="#inquire" class="btn">Request Access</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h18M3 16h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="padding:0">
+  <div class="hero-stage" aria-hidden="true">
+    <div class="ceiling"></div>
+    <div class="floor"></div>
+    <!-- Low-slung GT silhouette with rim light -->
+    <svg class="hero-car" viewBox="0 0 1200 300" fill="none">
+      <defs>
+        <linearGradient id="rim" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0" stop-color="#ECE8E1" stop-opacity="0"/>
+          <stop offset=".35" stop-color="#ECE8E1" stop-opacity=".9"/>
+          <stop offset=".7" stop-color="#E8622C" stop-opacity=".9"/>
+          <stop offset="1" stop-color="#E8622C" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+          <stop offset="0" stop-color="#E8622C" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#E8622C" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1c1c1f"/><stop offset="1" stop-color="#070708"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="600" cy="262" rx="560" ry="26" fill="url(#glow)"/>
+      <path d="M90 228c6-30 30-46 74-54l150-24c40-34 104-74 190-88 96-14 188-6 262 24 54 22 104 54 150 84l110 14c44 6 72 22 80 44l4 26c0 8-6 12-14 12H104c-10 0-16-6-14-14z" fill="url(#body)"/>
+      <path d="M90 228c6-30 30-46 74-54l150-24c40-34 104-74 190-88 96-14 188-6 262 24 54 22 104 54 150 84l110 14c44 6 72 22 80 44" stroke="url(#rim)" stroke-width="2"/>
+      <path d="M352 146c44-38 96-64 168-72 70-8 140 0 196 18 30 10 58 26 84 46z" fill="#0d0d0f" stroke="rgba(236,232,225,.18)"/>
+      <circle cx="300" cy="246" r="50" fill="#050506" stroke="rgba(236,232,225,.22)" stroke-width="2"/>
+      <circle cx="300" cy="246" r="30" stroke="rgba(236,232,225,.14)" stroke-width="6" stroke-dasharray="3 9"/>
+      <circle cx="930" cy="246" r="50" fill="#050506" stroke="rgba(236,232,225,.22)" stroke-width="2"/>
+      <circle cx="930" cy="246" r="30" stroke="rgba(236,232,225,.14)" stroke-width="6" stroke-dasharray="3 9"/>
+      <path d="M1062 196h40" stroke="#E8622C" stroke-width="5" stroke-linecap="round"/>
+      <path d="M100 206h44" stroke="#ECE8E1" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+    </svg>
+  </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <div class="wrap hero-content">
+    <p class="eyebrow">Private Car Studios · Fort Lauderdale, FL</p>
+    <h1 class="display">Where the<br><span class="outline">collection</span><br>lives.</h1>
+    <div class="hero-foot">
+      <p class="lede">A limited collection of private, two-story car studios — ownable, climate-controlled and secured around the clock — anchored by a members-only clubhouse for the people who would rather be driving.</p>
+      <div class="hero-cta">
+        <a href="#studios" class="btn">Explore Studios</a>
+        <a href="#inquire" class="btn solid">Request Access <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Store</span><span>Host</span><span>Work</span><span>Collect</span><span>Drive</span><span>Connect</span><span>Own the Deed</span><span>Fort Lauderdale</span>
+    <span>Store</span><span>Host</span><span>Work</span><span>Collect</span><span>Drive</span><span>Connect</span><span>Own the Deed</span><span>Fort Lauderdale</span>
+  </div>
+</div>
+
+<!-- ================= MANIFESTO ================= -->
+<section class="manifesto">
+  <div class="wrap manifesto-grid">
+    <div class="reveal">
+      <p class="eyebrow">The Idea</p>
+      <p class="manifesto-text">Not a storage unit. Not a showroom. A <em>private address</em> for the cars you love — and a room full of people who understand why.</p>
+    </div>
+    <div class="reveal">
+      <p class="muted" style="margin:0 0 32px">South Florida has the cars, the roads and the weather. What it hasn't had is a place built for them — somewhere you can keep a collection properly, spend a Saturday with it, and pull up to a crowd that cares about the same things you do. The Paddock is that place.</p>
+      <div class="stats">
+        <div class="stat"><b>24</b><span>Private studios</span></div>
+        <div class="stat"><b>2</b><span>Stories per studio</span></div>
+        <div class="stat"><b>24/7</b><span>Secured access</span></div>
+        <div class="stat"><b>1</b><span>Members' clubhouse</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STUDIOS ================= -->
+<section class="studios" id="studios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">The Studios</p>
+        <h2 class="display">Built for<br>the collection.</h2>
+      </div>
+      <p class="lede">Each studio is a fee-simple condominium unit you own outright — a ground-floor gallery for the cars and a mezzanine lounge above. Finish it as a garage, an office, a gallery or all three.</p>
+    </div>
+
+    <div class="studio-tabs" role="tablist" aria-label="Studio types">
+      <button class="studio-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">The Bay</button>
+      <button class="studio-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">The Gallery</button>
+      <button class="studio-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">The Grand Garage</button>
+    </div>
+
+    <!-- Panel 1 -->
+    <div class="studio-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+      <div class="plan">
+        <span class="tag">Plan · Ground Level</span>
+        <svg viewBox="0 0 400 300" fill="none" stroke="rgba(236,232,225,.55)" stroke-width="1.2">
+          <rect x="90" y="40" width="220" height="220"/>
+          <path d="M90 260h-0M120 260v8M280 260v8" />
+          <path d="M115 262h170" stroke="#E8622C" stroke-width="2.5"/>
+          <rect x="120" y="80" width="70" height="140" rx="16" stroke-dasharray="4 4"/>
+          <rect x="210" y="80" width="70" height="140" rx="16" stroke-dasharray="4 4"/>
+          <path d="M240 40v30h70" />
+          <text x="200" y="30" fill="rgba(236,232,225,.45)" stroke="none" font-size="10" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="2">≈ 30' × 30'</text>
+          <text x="275" y="58" fill="rgba(236,232,225,.45)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="1.5">STAIR / WC</text>
+        </svg>
+      </div>
+      <div class="studio-info">
+        <p class="eyebrow">Studio 01</p>
+        <h3 class="display">The Bay</h3>
+        <p class="muted">The entry to the collection. Room for two cars on the floor, with a lift-ready slab to stack a third, and a mezzanine you can make your own.</p>
+        <dl class="spec">
+          <div><dt>Footprint</dt><dd>≈ 900 sf</dd></div>
+          <div><dt>Mezzanine</dt><dd>≈ 300 sf</dd></div>
+          <div><dt>Capacity</dt><dd>2–3 cars</dd></div>
+          <div><dt>Door</dt><dd>14' insulated</dd></div>
+        </dl>
+        <a href="#inquire" class="btn">Request floor plan <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="studio-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+      <div class="plan">
+        <span class="tag">Plan · Ground Level</span>
+        <svg viewBox="0 0 400 300" fill="none" stroke="rgba(236,232,225,.55)" stroke-width="1.2">
+          <rect x="50" y="40" width="300" height="220"/>
+          <path d="M80 262h240" stroke="#E8622C" stroke-width="2.5"/>
+          <rect x="72" y="80" width="62" height="130" rx="15" stroke-dasharray="4 4"/>
+          <rect x="146" y="80" width="62" height="130" rx="15" stroke-dasharray="4 4"/>
+          <rect x="220" y="80" width="62" height="130" rx="15" stroke-dasharray="4 4"/>
+          <rect x="294" y="80" width="40" height="130" stroke-dasharray="2 6"/>
+          <path d="M280 40v30h70"/>
+          <text x="200" y="30" fill="rgba(236,232,225,.45)" stroke="none" font-size="10" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="2">≈ 40' × 34'</text>
+          <text x="314" y="230" fill="rgba(236,232,225,.45)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="1.5">BENCH</text>
+        </svg>
+      </div>
+      <div class="studio-info">
+        <p class="eyebrow">Studio 02</p>
+        <h3 class="display">The Gallery</h3>
+        <p class="muted">For a growing collection. Three to four on the floor, up to six with lifts, a workbench wall and a mezzanine lounge sized for a sofa, a bar and a view of the floor.</p>
+        <dl class="spec">
+          <div><dt>Footprint</dt><dd>≈ 1,350 sf</dd></div>
+          <div><dt>Mezzanine</dt><dd>≈ 500 sf</dd></div>
+          <div><dt>Capacity</dt><dd>4–6 cars</dd></div>
+          <div><dt>Door</dt><dd>16' insulated</dd></div>
+        </dl>
+        <a href="#inquire" class="btn">Request floor plan <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="studio-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+      <div class="plan">
+        <span class="tag">Plan · Ground Level</span>
+        <svg viewBox="0 0 400 300" fill="none" stroke="rgba(236,232,225,.55)" stroke-width="1.2">
+          <rect x="24" y="30" width="352" height="240"/>
+          <path d="M50 272h140M210 272h140" stroke="#E8622C" stroke-width="2.5"/>
+          <g stroke-dasharray="4 4">
+            <rect x="44" y="70" width="52" height="112" rx="13"/><rect x="104" y="70" width="52" height="112" rx="13"/>
+            <rect x="164" y="70" width="52" height="112" rx="13"/><rect x="224" y="70" width="52" height="112" rx="13"/>
+            <rect x="284" y="70" width="52" height="112" rx="13"/>
+          </g>
+          <rect x="44" y="200" width="120" height="50" stroke-dasharray="2 6"/>
+          <path d="M300 30v32h76"/>
+          <text x="200" y="22" fill="rgba(236,232,225,.45)" stroke="none" font-size="10" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="2">≈ 60' × 40'</text>
+          <text x="104" y="230" fill="rgba(236,232,225,.45)" stroke="none" font-size="8" text-anchor="middle" font-family="Inter, sans-serif" letter-spacing="1.5">LOUNGE / BAR</text>
+        </svg>
+      </div>
+      <div class="studio-info">
+        <p class="eyebrow">Studio 03 · Limited</p>
+        <h3 class="display">The Grand Garage</h3>
+        <p class="muted">The corner residences. Double doors, eight to twelve cars with lifts, a full ground-floor lounge and a mezzanine office. Only a handful exist.</p>
+        <dl class="spec">
+          <div><dt>Footprint</dt><dd>≈ 2,400 sf</dd></div>
+          <div><dt>Mezzanine</dt><dd>≈ 800 sf</dd></div>
+          <div><dt>Capacity</dt><dd>8–12 cars</dd></div>
+          <div><dt>Doors</dt><dd>2 × 16'</dd></div>
+        </dl>
+        <a href="#inquire" class="btn">Request floor plan <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <!-- Included in every studio -->
+    <div class="features reveal" aria-label="Included in every studio">
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v18M5 7l14 10M19 7L5 17"/></svg>
+        <h3>Climate controlled</h3><p>Ducted A/C and dehumidification sized for South Florida summers — kind to paint, leather and rubber.</p>
+      </div>
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21V9l9-6 9 6v12"/><path d="M8 21v-6h8v6"/></svg>
+        <h3>Hurricane-rated</h3><p>Concrete construction, impact-rated doors and glazing to Florida code, with the floor set above base flood elevation.</p>
+      </div>
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>
+        <h3>EV ready</h3><p>Dedicated 240V circuits and Level 2 charging rough-in in every studio, plus battery tenders throughout.</p>
+      </div>
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="10" width="16" height="11"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        <h3>Gated &amp; monitored</h3><p>Perimeter gate, credentialed entry, HD camera coverage and monitored alarm for every unit.</p>
+      </div>
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20h18M6 20V10M18 20V10M4 10h16M9 6h6"/></svg>
+        <h3>Lift-ready slab</h3><p>Reinforced floors and high ceilings engineered for four-post and two-post lifts.</p>
+      </div>
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 4h16v10H4z"/><path d="M8 18h8M12 14v4"/></svg>
+        <h3>Mezzanine lounge</h3><p>A second level with a private restroom — finish it as a lounge, office, bar or gallery.</p>
+      </div>
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 9a15 15 0 0 1 20 0M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg>
+        <h3>Fiber &amp; smart access</h3><p>Fiber internet, app-controlled doors and remote camera access from anywhere.</p>
+      </div>
+      <div class="feature">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20l6-6M14 4l6 6-8 8-6-6z"/></svg>
+        <h3>Fully customizable</h3><p>Delivered as a clean shell or turnkey. Bring your designer, or work with ours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLUB ================= -->
+<section class="club" id="club">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">The Club</p>
+        <h2 class="display">More than<br>a garage.</h2>
+      </div>
+      <p class="lede">Ownership comes with the clubhouse and the services that make keeping great cars effortless — so you can spend your time driving them.</p>
+    </div>
+    <div class="club-grid">
+      <article class="tile t1 reveal"><span class="num">01</span><h3>The Clubhouse</h3><p>A members-only lounge with a coffee bar, a library of marque books and magazines, and a terrace for long conversations about short gear ratios.</p></article>
+      <article class="tile t2 reveal"><span class="num">02</span><h3>Detail &amp; Wash Bay</h3><p>A shared, lit and drained detailing bay with filtered water, so the car leaves as clean as it arrived.</p></article>
+      <article class="tile t3 reveal"><span class="num">03</span><h3>Concierge</h3><p>Enclosed transport, service and registration coordination, battery and tire checks while you're away.</p></article>
+      <article class="tile t4 reveal"><span class="num">04</span><h3>Event Hall</h3><p>A flexible space for unveilings, dinners, private parties and client meetings — bookable by members.</p></article>
+      <article class="tile t5 reveal"><span class="num">05</span><h3>Guest Parking</h3><p>Covered visitor spaces and a staging lane for trailers, so arrivals and departures stay painless.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOCIETY ================= -->
+<section class="society" id="society">
+  <div class="wrap society-grid">
+    <div class="reveal">
+      <p class="eyebrow">The Society</p>
+      <h2 class="display" style="margin-top:22px">Kept by<br>its people.</h2>
+      <p class="lede" style="margin-top:28px">The Paddock is deliberately small. Owners are introduced, not marketed to — and what they share is a passion for design, performance and the drive itself.</p>
+      <ol class="principles">
+        <li>Every studio comes with membership. No separate dues for the club.</li>
+        <li>Owners may bring guests to events and reserve the clubhouse.</li>
+        <li>Ownership is by introduction or application, to keep the community right.</li>
+      </ol>
+      <a href="#inquire" class="btn">Apply for Membership <span class="arrow">→</span></a>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow" style="margin-bottom:22px">A Season at The Paddock</p>
+      <div class="calendar">
+        <div class="event"><span class="when">Monthly</span><div><h3>Cars &amp; Cortaditos</h3><p>First-Sunday morning meet on the courtyard. Owners plus one guest each.</p></div><span class="pill">Members</span></div>
+        <div class="event"><span class="when">Winter</span><div><h3>A1A Sunrise Run</h3><p>A dawn drive north along the coast, breakfast at the end of it.</p></div><span class="pill">Drive</span></div>
+        <div class="event"><span class="when">Spring</span><div><h3>Keys Rally</h3><p>Two days down the Overseas Highway with a support car and a dinner on the water.</p></div><span class="pill">Drive</span></div>
+        <div class="event"><span class="when">Quarterly</span><div><h3>Collector Talks</h3><p>Restorers, racers and designers in conversation at the clubhouse.</p></div><span class="pill">Talk</span></div>
+        <div class="event"><span class="when">Annual</span><div><h3>The Paddock Concours</h3><p>An owners' showcase and evening party — the one night the doors open to the city.</p></div><span class="pill">Signature</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="location" id="location">
+  <div class="wrap loc-grid">
+    <div class="map reveal" aria-label="Stylized map of the Fort Lauderdale area">
+      <svg viewBox="0 0 500 500" fill="none">
+        <defs>
+          <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0v25" stroke="rgba(236,232,225,.05)"/></pattern>
+          <radialGradient id="pulse" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E8622C" stop-opacity=".5"/><stop offset="1" stop-color="#E8622C" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="500" height="500" fill="url(#grid)"/>
+        <!-- Atlantic -->
+        <path d="M410 0c-6 80 6 170-4 260s10 170 4 240h90V0z" fill="rgba(127,180,201,.08)"/>
+        <path d="M410 0c-6 80 6 170-4 260s10 170 4 240" stroke="rgba(127,180,201,.45)"/>
+        <!-- Intracoastal -->
+        <path d="M384 0c4 60-6 120 0 180s-8 120-2 180 4 100 0 140" stroke="rgba(127,180,201,.3)" stroke-width="3"/>
+        <!-- New River -->
+        <path d="M384 210c-40 6-70-6-110 4s-60 2-90 12" stroke="rgba(127,180,201,.3)" stroke-width="2"/>
+        <!-- I-95 -->
+        <path d="M200 0v500" stroke="rgba(236,232,225,.35)" stroke-width="3"/>
+        <text x="208" y="40" fill="rgba(236,232,225,.45)" font-size="10" font-family="Inter, sans-serif" letter-spacing="2">I-95</text>
+        <!-- US-1 -->
+        <path d="M300 0c-4 120 6 240 0 360s4 100 0 140" stroke="rgba(236,232,225,.2)" stroke-width="2"/>
+        <text x="306" y="70" fill="rgba(236,232,225,.35)" font-size="9" font-family="Inter, sans-serif" letter-spacing="2">US-1</text>
+        <!-- Broward Blvd / Sunrise -->
+        <path d="M0 150h410" stroke="rgba(236,232,225,.14)" stroke-width="1.5"/>
+        <path d="M0 200h384" stroke="rgba(236,232,225,.14)" stroke-width="1.5"/>
+        <!-- I-595 -->
+        <path d="M0 330h330" stroke="rgba(236,232,225,.35)" stroke-width="3"/>
+        <text x="20" y="322" fill="rgba(236,232,225,.45)" font-size="10" font-family="Inter, sans-serif" letter-spacing="2">I-595</text>
+        <!-- Points -->
+        <g font-family="Inter, sans-serif" font-size="9" letter-spacing="1.6" fill="rgba(236,232,225,.6)">
+          <circle cx="340" cy="190" r="3" fill="#ECE8E1"/><text x="320" y="180" text-anchor="end">LAS OLAS</text>
+          <circle cx="270" cy="380" r="3" fill="#ECE8E1"/><text x="282" y="384">FLL AIRPORT</text>
+          <circle cx="360" cy="350" r="3" fill="#ECE8E1"/><text x="366" y="340">PORT EVERGLADES</text>
+          <circle cx="250" cy="200" r="3" fill="#ECE8E1"/><text x="260" y="218">DOWNTOWN</text>
+          <circle cx="292" cy="70" r="3" fill="#ECE8E1"/><text x="282" y="62" text-anchor="end">EXEC. AIRPORT</text>
+        </g>
+        <!-- The Paddock -->
+        <circle cx="236" cy="268" r="46" fill="url(#pulse)"><animate attributeName="r" values="22;52;22" dur="3.6s" repeatCount="indefinite"/></circle>
+        <rect x="229" y="261" width="14" height="14" fill="#E8622C" transform="rotate(45 236 268)"/>
+        <text x="256" y="272" fill="#ECE8E1" font-family="Archivo, sans-serif" font-weight="700" font-size="12" letter-spacing="2.4">THE PADDOCK</text>
+      </svg>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Location</p>
+      <h2 class="display" style="margin-top:22px">Minutes from<br>everything.</h2>
+      <p class="lede" style="margin-top:24px">Set in the heart of Fort Lauderdale — close to the water, the airports and the on-ramps, so the best part of the day starts fast.</p>
+      <div class="drive">
+        <div><span>Las Olas Boulevard</span><b>~8<small>MIN</small></b></div>
+        <div><span>Fort Lauderdale–Hollywood Int'l (FLL)</span><b>~10<small>MIN</small></b></div>
+        <div><span>Port Everglades &amp; the marinas</span><b>~12<small>MIN</small></b></div>
+        <div><span>Fort Lauderdale Executive (FXE)</span><b>~15<small>MIN</small></b></div>
+        <div><span>Miami Design District</span><b>~35<small>MIN</small></b></div>
+      </div>
+      <p class="note">Approximate drive times without traffic. Exact address shared with qualified inquiries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVAILABILITY ================= -->
+<section class="avail" id="availability">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Availability</p>
+        <h2 class="display">Phase one<br>release.</h2>
+      </div>
+      <p class="lede">Twenty-four studios across a single, low-rise campus. Pricing is shared on request with qualified buyers.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table>
+        <thead><tr><th>Studio</th><th>Type</th><th>Floor + Mezz.</th><th>Cars</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td class="unit">A-01</td><td>Grand Garage · Corner</td><td>≈ 3,200 sf</td><td>8–12</td><td><span class="status s-hold">Reserved</span></td></tr>
+          <tr><td class="unit">A-02</td><td>Gallery</td><td>≈ 1,850 sf</td><td>4–6</td><td><span class="status s-open">Available</span></td></tr>
+          <tr class="sold"><td class="unit">A-03</td><td>Gallery</td><td>≈ 1,850 sf</td><td>4–6</td><td><span class="status s-sold">Sold</span></td></tr>
+          <tr><td class="unit">A-04</td><td>Bay</td><td>≈ 1,200 sf</td><td>2–3</td><td><span class="status s-open">Available</span></td></tr>
+          <tr><td class="unit">A-05</td><td>Bay</td><td>≈ 1,200 sf</td><td>2–3</td><td><span class="status s-open">Available</span></td></tr>
+          <tr><td class="unit">B-01</td><td>Grand Garage · Corner</td><td>≈ 3,200 sf</td><td>8–12</td><td><span class="status s-open">Available</span></td></tr>
+          <tr><td class="unit">B-02</td><td>Gallery</td><td>≈ 1,850 sf</td><td>4–6</td><td><span class="status s-hold">Reserved</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Sample inventory for illustration — update with live availability. All dimensions approximate and subject to final plans.</p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <p class="eyebrow">Questions</p>
+      <h2 class="display" style="margin-top:22px">Good to<br>know.</h2>
+    </div>
+    <div class="reveal">
+      <details open><summary>Do I actually own my studio?</summary><p>Yes. Each studio is a separately deeded condominium unit. You can finance it, sell it, lease it within the association rules, or leave it to the next generation, like any other real property.</p></details>
+      <details><summary>What do monthly association fees cover?</summary><p>Building insurance, common-area upkeep, security and monitoring, the clubhouse, landscaping and reserves. Studio electricity and internet are metered and billed to each owner.</p></details>
+      <details><summary>Can I work on my cars in the studio?</summary><p>Light maintenance, detailing and hobby work are welcome. Commercial repair, painting and fuel storage aren't permitted; the association's rules set out the details.</p></details>
+      <details><summary>What happens in a hurricane?</summary><p>Studios are concrete, impact-rated and set above base flood elevation. Ahead of a storm, the team checks every door, generator and drain, and owners get status updates through the app.</p></details>
+      <details><summary>Can I store a boat, bike or RV?</summary><p>Motorcycles, track toys and memorabilia are all at home here. Boats and RVs depend on studio size and door clearance, so ask us about a specific unit.</p></details>
+      <details><summary>How do I become an owner?</summary><p>Submit an inquiry below. We'll arrange a private tour, share pricing and floor plans, and walk you through reservation and closing.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INQUIRE ================= -->
+<section class="inquire" id="inquire">
+  <div class="wrap inq-grid">
+    <div class="reveal">
+      <p class="eyebrow">Request Access</p>
+      <h2 class="display" style="margin-top:22px">Reserve<br>your place.</h2>
+      <p class="lede" style="margin-top:24px">Tell us about your collection and we'll be in touch to arrange a private tour and share pricing.</p>
+      <dl class="contact-list">
+        <div><dt>Sales Gallery</dt><dd>By appointment · Fort Lauderdale</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:rr@richardrosalaw.com">rr@richardrosalaw.com</a></dd></div>
+      </dl>
+    </div>
+
+    <form id="inquiryForm" class="reveal" novalidate>
+      <div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="studio">Studio of interest</label>
+        <select id="studio" name="studio">
+          <option value="">Select</option>
+          <option>The Bay (2–3 cars)</option>
+          <option>The Gallery (4–6 cars)</option>
+          <option>The Grand Garage (8–12 cars)</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label id="interestsLabel">I'm interested in</label>
+        <div class="checks" role="group" aria-labelledby="interestsLabel">
+          <label><input type="checkbox" name="interests" value="Ownership"><span>Ownership</span></label>
+          <label><input type="checkbox" name="interests" value="Private tour"><span>Private tour</span></label>
+          <label><input type="checkbox" name="interests" value="Events"><span>Society events</span></label>
+          <label><input type="checkbox" name="interests" value="Investment"><span>Investment</span></label>
+        </div>
+      </div>
+      <div class="field full"><label for="collection">Tell us about your collection</label><textarea id="collection" name="collection" placeholder="What you drive, how many cars, what you need from the space…"></textarea></div>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-foot">
+        <button type="submit" class="btn solid">Submit Inquiry <span class="arrow">→</span></button>
+        <p id="formNote" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <p class="foot-mark" aria-hidden="true">The Paddock</p>
+    <div class="foot-row">
+      <span>© <span id="yr"></span> The Paddock · Private Car Studios · Fort Lauderdale, Florida</span>
+      <nav aria-label="Footer">
+        <a href="#studios">Studios</a><a href="#club">Club</a><a href="#society">Society</a><a href="#location">Location</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
+      </nav>
+    </div>
+    <p class="legal">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING THE REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE. This website is for informational purposes only and is not an offer to sell, or a solicitation of an offer to buy, in any jurisdiction where prohibited by law. Renderings, dimensions, amenities, features, events and availability are illustrative and subject to change without notice. Equal Housing Opportunity.</p>
+  </div>
+</footer>
+
+<script>
+  // Nav background on scroll
+  (function(){
+    var nav = document.getElementById('nav');
+    var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 24); };
+    onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  })();
+
+  // Mobile menu
+  (function(){
+    var b = document.getElementById('menuBtn'), m = document.getElementById('navLinks');
+    b.addEventListener('click', function(){
+      var open = m.classList.toggle('open');
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    m.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ m.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
+    });
+  })();
+
+  // Studio tabs (with arrow-key support)
+  (function(){
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.studio-tab'));
+    function select(tab){
+      tabs.forEach(function(t){
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ select(t); });
+      t.addEventListener('keydown', function(e){
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if(!d) return;
+        var n = tabs[(i + d + tabs.length) % tabs.length]; select(n); n.focus();
+      });
+    });
+  })();
+
+  // Reveal on scroll
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.08});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // Inquiry → AJAX via FormSubmit (static hosting, no backend), mailto fallback
+  (function(){
+    var f = document.getElementById('inquiryForm'), note = document.getElementById('formNote');
+    var TO = 'rr@richardrosalaw.com';
+    var ENDPOINT = 'https://formsubmit.co/ajax/' + TO;
+    var v = function(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+    var interests = function(){
+      return Array.prototype.map.call(f.querySelectorAll('input[name="interests"]:checked'), function(c){ return c.value; }).join(', ');
+    };
+    var subject = function(){ return 'The Paddock — Inquiry: ' + v('name'); };
+
+    function mailtoFallback(){
+      var body = [
+        'Name: ' + v('name'), 'Email: ' + v('email'), 'Phone: ' + v('phone'),
+        'Studio of interest: ' + v('studio'), 'Interests: ' + interests(), '', 'Collection:', v('collection')
+      ].join('\n');
+      window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject()) + '&body=' + encodeURIComponent(body);
+    }
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!v('name') || !/^\S+@\S+\.\S+$/.test(v('email'))){
+        note.style.color = '#E8622C';
+        note.textContent = 'Please add your name and a valid email so we can reach you.';
+        return;
+      }
+      var btn = f.querySelector('button[type="submit"]'), label = btn.innerHTML;
+      btn.disabled = true; btn.textContent = 'Sending…';
+      note.style.color = ''; note.textContent = '';
+
+      var data = new FormData(f);
+      data.delete('interests');
+      data.append('interests', interests());
+      data.append('_subject', subject());
+      data.append('_template', 'table');
+      data.append('_captcha', 'false');
+
+      fetch(ENDPOINT, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
+        .then(function(r){ if(!r.ok) throw new Error('bad status'); return r.json(); })
+        .then(function(){
+          f.reset();
+          note.innerHTML = '<strong style="color:#ECE8E1">Thank you.</strong> We’ll be in touch shortly to arrange your tour.';
+        })
+        .catch(function(){
+          note.textContent = 'Opening your email app so your inquiry isn’t lost…';
+          mailtoFallback();
+        })
+        .then(function(){ btn.disabled = false; btn.innerHTML = label; });
+    });
+  })();
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
