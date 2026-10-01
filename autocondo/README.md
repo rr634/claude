@@ -18,10 +18,13 @@ Open `site/index.html` in a browser to preview.
 | Typical section | DRC sheet "Typical Section" → `typical-section.jpg` |
 | Site plan diagram | Inline SVG redrawn from the DRC site plan, with the courtyard shown as an open motor court (no trees in the middle). `site-plan.jpg` is kept but not used |
 | Project data + setbacks | DRC site plan sheet |
+| Interior gallery | Six conceptual interior renderings supplied by the owner (garage, door, garage + mezzanine, mezzanine lounge, bar, bath) → `interior-*.jpg` |
 | Rio Vista aerial | Drone photo looking north → `aerial-skyline.jpg` |
 | The site today | Overhead drone photo → `site-today.jpg` |
 
-## Still to confirm before launch
+## Still to confirm
+
+- The interior renderings show more cars and lifts (including triple stacking) than a 22′–24′ × 40′ unit with a ceiling of about 14′ can hold. The disclaimer under the gallery says so; consider re-rendering them at true scale before launch
 
 - The hero rendering still shows palms down the middle of the courtyard; replace it when an updated motor-court rendering is available
 - Drive times in the Rio Vista section (approximate)

@@ -211,6 +211,19 @@
   @media (max-width:1060px){.features{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:560px){.features{grid-template-columns:1fr}}
 
+
+  /* Interior — conceptual renderings */
+  .interior{background:var(--black)}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .shot{margin:0;position:relative;overflow:hidden;border:1px solid var(--line);aspect-ratio:2/1;background:var(--carbon)}
+  .shot img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+  .shot:hover img{transform:scale(1.04)}
+  .shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:56px 20px 16px;background:linear-gradient(to top,rgba(12,12,11,.9),rgba(12,12,11,.55) 55%,transparent);display:flex;flex-direction:column;gap:4px}
+  .shot figcaption b{font-family:var(--font-display);font-stretch:120%;font-weight:500;font-size:13px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+  .shot figcaption span{font-size:13px;color:rgba(239,235,228,.78)}
+  .interior .note{margin-top:24px;max-width:110ch}
+  @media (max-width:760px){.gallery{grid-template-columns:1fr}}
+
   /* Site plan */
   .siteplan{background:var(--stone);color:var(--ink)}
   .siteplan .eyebrow{color:rgba(18,18,17,.5)}
@@ -372,6 +385,7 @@
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#residences">Residences</a>
+      <a href="#interior">Interior</a>
       <a href="#siteplan">Site Plan</a>
       <a href="#grounds">Motor Court</a>
       <a href="#location">Rio Vista</a>
@@ -545,6 +559,28 @@
         <h3>Open court</h3><p>A paved motor court about 25 feet wide between the two rows, room to pull in, stage a car or line them all up.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ================= INTERIOR ================= -->
+<section class="interior" id="interior">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">The Interior · Conceptual Renderings</p>
+        <h2 class="display">Show garage.<br><strong>Private lounge.</strong></h2>
+      </div>
+      <p class="lede">Downstairs is polished concrete, black steel and a dark ceiling with pin lights, so the cars are the brightest thing in the room. Upstairs it gets warm, with wood floors, leather, a bar and a bath finished like a hotel.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure class="shot"><img src="assets/interior-garage-lifts.jpg" alt="Conceptual rendering of a garage interior with cars on a polished floor and a stacked car lift, a black steel spiral stair, a glass-railed mezzanine and a dark ceiling with pin lights" width="760" height="380" loading="lazy"><figcaption><b>The Garage</b><span>Polished floor, a stacked lift, a spiral stair to the mezzanine and a black ceiling with pin lights</span></figcaption></figure>
+      <figure class="shot"><img src="assets/interior-garage-door.jpg" alt="Conceptual rendering looking out through an open garage door from a polished-floor garage toward a palm-lined court" width="760" height="380" loading="lazy"><figcaption><b>The Door</b><span>Roll it up and the court is right there</span></figcaption></figure>
+      <figure class="shot"><img src="assets/interior-garage-mezz.jpg" alt="Conceptual rendering of a garage with cars on lifts and on the floor beneath a mezzanine with a steel railing and a spiral stair" width="760" height="380" loading="lazy"><figcaption><b>Below &amp; Above</b><span>The cars on the floor and the lounge on the mezzanine</span></figcaption></figure>
+      <figure class="shot"><img src="assets/interior-mezzanine.jpg" alt="Conceptual rendering of a mezzanine lounge with wood floors, a leather sectional, framed car photography and a horizontal-bar railing" width="760" height="380" loading="lazy"><figcaption><b>The Mezzanine</b><span>Wood floors, a leather sofa and a view of the cars</span></figcaption></figure>
+      <figure class="shot"><img src="assets/interior-bar.jpg" alt="Conceptual rendering of a bar and kitchen with a white marble waterfall island, leather stools, dark cabinetry, a wood backsplash and a wine refrigerator" width="760" height="380" loading="lazy"><figcaption><b>The Bar</b><span>A marble island, a wine column and warm under-cabinet light</span></figcaption></figure>
+      <figure class="shot"><img src="assets/interior-bath.jpg" alt="Conceptual rendering of a bathroom with stone-look tile, a floating vanity, a backlit mirror, a wall-hung toilet and a frameless glass shower" width="760" height="380" loading="lazy"><figcaption><b>The Bath</b><span>Stone tile, a backlit mirror and a walk-in glass shower</span></figcaption></figure>
+    </div>
+    <p class="note">Conceptual renderings showing design direction only. They are not to scale and do not show a specific residence. Each residence is about 22′–24′ wide by 40′ deep, with a garage ceiling of about 14′. The vehicles, lifts, stair type, finishes, furnishings, fixtures and appliances shown are illustrative only. They are not included, and some may not fit or be offered.</p>
   </div>
 </section>
 
@@ -820,7 +856,7 @@
     <div class="foot-row">
       <span>© <span id="yr"></span> 8 AT RIO · SE 12th Street · Rio Vista · Fort Lauderdale, Florida</span>
       <nav aria-label="Footer">
-        <a href="#residences">Residences</a><a href="#siteplan">Site Plan</a><a href="#grounds">Motor Court</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
+        <a href="#residences">Residences</a><a href="#interior">Interior</a><a href="#siteplan">Site Plan</a><a href="#grounds">Motor Court</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
       </nav>
     </div>
     <p class="legal">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING THE REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE. This website is for informational purposes only and is not an offer to sell, or a solicitation of an offer to buy, in any jurisdiction where prohibited by law. No offer to sell will be made, and no reservation or contract will be accepted, until the developer has complied with the applicable requirements of Chapter 718, Florida Statutes. All renderings, site plans, diagrams, sections, dimensions, square footages, amenities and features are conceptual and approximate. They have not been approved by any governmental authority and are subject to change without notice. Square footages are approximate exterior dimensions and may differ from those in the offering documents. Equal Housing Opportunity.</p>
