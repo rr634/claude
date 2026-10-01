@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>8 AT RIO — Eight Private Garage Residences · Rio Vista, Fort Lauderdale</title>
-<meta name="description" content="8 AT RIO is a gated collection of eight private garage residences on SE 12th Street in Rio Vista, Fort Lauderdale — a 14-foot garage and living level, a mezzanine above, a shared pool and a palm-lined promenade.">
+<meta name="description" content="8 AT RIO is a gated collection of eight private garage residences on SE 12th Street in Rio Vista, Fort Lauderdale — with a garage and living level of about 14 feet, a mezzanine above, an open motor court and a shared pool.">
 <meta name="theme-color" content="#0C0C0B">
 <meta property="og:title" content="8 AT RIO — Eight Private Garage Residences">
 <meta property="og:description" content="Eight private garage residences in Rio Vista, Fort Lauderdale. Built for what drives you.">
@@ -20,7 +20,7 @@
   "@context":"https://schema.org",
   "@type":"Residence",
   "name":"8 AT RIO",
-  "description":"Eight private garage residences with a garage/living level, mezzanine, shared pool and gated entry in Rio Vista, Fort Lauderdale.",
+  "description":"Eight private garage residences with a garage and living level, mezzanine, motor court, shared pool and gated entry in Rio Vista, Fort Lauderdale. Conceptual; subject to change and approvals.",
   "address":{"@type":"PostalAddress","streetAddress":"SE 12th Street","addressLocality":"Fort Lauderdale","addressRegion":"FL","addressCountry":"US"}
 }
 </script>
@@ -216,9 +216,9 @@
   .siteplan .eyebrow{color:rgba(18,18,17,.5)}
   .siteplan .lede{color:var(--ink-dim)}
   .sp-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
-  .sp-figure{margin:0;position:relative;background:#fff;border:1px solid var(--ink-line);overflow:hidden}
-  .sp-figure img{width:100%;height:auto}
-  .sp-figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);background:rgba(255,255,255,.88)}
+  .sp-figure{margin:0;background:#F7F4EF;border:1px solid var(--ink-line);padding:clamp(12px,2vw,24px)}
+  .sp-figure svg{width:100%;height:auto}
+  .sp-figure figcaption{margin-top:10px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
   .data{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
   .data caption{text-align:left;font-family:var(--font-display);font-stretch:120%;font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase;padding-bottom:12px}
   .data th,.data td{padding:12px 0;border-bottom:1px solid var(--ink-line);text-align:left;vertical-align:top}
@@ -231,6 +231,7 @@
   .setbacks span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
   .siteplan .btn{border-color:var(--ink);color:var(--ink);margin-top:32px}
   .siteplan .btn:hover{background:var(--ink);color:var(--stone)}
+  .siteplan .fine{font-size:12px;color:var(--ink-dim);margin:16px 0 0}
   @media (max-width:960px){.sp-grid{grid-template-columns:1fr}}
   @media (max-width:480px){.setbacks{grid-template-columns:repeat(2,1fr)}}
 
@@ -242,16 +243,17 @@
   .tile .num{position:absolute;top:22px;right:26px;font-family:var(--font-display);font-stretch:125%;font-size:11px;letter-spacing:.24em;color:var(--bone-faint)}
   .tile h3{font-size:18px;font-stretch:125%;font-weight:500;letter-spacing:.12em}
   .tile p{margin:10px 0 0;color:var(--bone-dim);font-size:14px;max-width:46ch}
-  .t-photo{grid-column:span 12;min-height:clamp(320px,42vw,540px);padding:clamp(24px,4vw,44px)}
-  .t-photo::before{background:linear-gradient(to top,rgba(12,12,11,.92),rgba(12,12,11,.1) 55%,rgba(12,12,11,.2)),url("assets/entry-rendering.jpg") center 55%/cover no-repeat}
+  .t-photo{grid-column:span 5;min-height:clamp(320px,34vw,460px)}
+  .t-photo::before{background:linear-gradient(to top,rgba(12,12,11,.97) 0%,rgba(12,12,11,.88) 34%,rgba(12,12,11,.05) 62%,rgba(12,12,11,.1)),url("assets/entry-gate.jpg") left 20%/cover no-repeat}
+  .t-court{grid-column:span 7;min-height:clamp(320px,34vw,460px)}
+  .t-court::before{background:repeating-linear-gradient(90deg,rgba(239,235,228,.05) 0 1px,transparent 1px 96px),linear-gradient(to right,rgba(78,107,79,.35) 0,transparent 12%,transparent 88%,rgba(78,107,79,.35) 100%),radial-gradient(60% 50% at 50% 60%,rgba(211,164,98,.14),transparent 70%),#131312}
   .t-photo .num{color:rgba(239,235,228,.75)}
-  .t-a,.t-b,.t-c,.t-d{grid-column:span 3}
+  .t-a,.t-c,.t-d{grid-column:span 4}
   .t-a::before{background:radial-gradient(70% 60% at 50% 0%,rgba(127,180,201,.18),transparent 70%),#121211}
-  .t-b::before{background:radial-gradient(70% 70% at 50% 100%,rgba(78,107,79,.38),transparent 70%),#121211}
   .t-c::before{background:radial-gradient(70% 60% at 0% 100%,rgba(211,164,98,.18),transparent 70%),#121211}
   .t-d::before{background:linear-gradient(225deg,rgba(239,235,228,.06),transparent 55%),#121211}
-  @media (max-width:1060px){.t-a,.t-b,.t-c,.t-d{grid-column:span 6}}
-  @media (max-width:600px){.t-a,.t-b,.t-c,.t-d{grid-column:span 12;min-height:200px}}
+  @media (max-width:1060px){.t-photo,.t-court{grid-column:span 12}.t-a,.t-c,.t-d{grid-column:span 12;min-height:220px}}
+  
 
   /* Owners */
   .society{background:var(--carbon)}
@@ -326,6 +328,7 @@
   .checks input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
   .form-foot{grid-column:1/-1;display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:8px}
   #formNote{font-size:14px;color:var(--bone-dim);margin:0}
+  .form-fine{grid-column:1/-1;font-size:12px;color:var(--bone-faint);margin:0}
   .hp{position:absolute;left:-9999px}
   .contact-list{margin:40px 0 0;border-top:1px solid var(--line)}
   .contact-list div{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:15px}
@@ -370,7 +373,7 @@
     <nav class="nav-links" id="navLinks" aria-label="Primary">
       <a href="#residences">Residences</a>
       <a href="#siteplan">Site Plan</a>
-      <a href="#grounds">Grounds</a>
+      <a href="#grounds">Motor Court</a>
       <a href="#location">Rio Vista</a>
       <a href="#availability">Availability</a>
       <a href="#inquire" class="btn">Request Access</a>
@@ -397,15 +400,15 @@
     </div>
   </div>
   <div class="hero-band" id="heroBand">
-    <img src="assets/entry-rendering.jpg" alt="Rendering of the gated entry to 8 AT RIO: limestone monument walls flanking a palm-lined promenade between two rows of dark-framed garage residences, lit at dusk" width="1224" height="378" fetchpriority="high">
-    <span class="cap">Conceptual rendering · Entry court</span>
+    <img src="assets/entry-rendering.jpg" alt="Conceptual rendering of the gated entry to 8 AT RIO: limestone monument walls and metal gates in front of two rows of dark-framed garage residences, lit at dusk" width="1224" height="378" fetchpriority="high">
+    <span class="cap">Conceptual rendering · Subject to change</span>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Eight Residences</span><span>Rio Vista</span><span>Garage + Living</span><span>Mezzanine</span><span>Private Pool</span><span>Gated Entry</span><span>SE 12th Street</span>
-    <span>Eight Residences</span><span>Rio Vista</span><span>Garage + Living</span><span>Mezzanine</span><span>Private Pool</span><span>Gated Entry</span><span>SE 12th Street</span>
+    <span>Eight Residences</span><span>Rio Vista</span><span>Garage + Living</span><span>Motor Court</span><span>Private Pool</span><span>Gated Entry</span><span>SE 12th Street</span>
+    <span>Eight Residences</span><span>Rio Vista</span><span>Garage + Living</span><span>Motor Court</span><span>Private Pool</span><span>Gated Entry</span><span>SE 12th Street</span>
   </div>
 </div>
 
@@ -414,15 +417,15 @@
   <div class="wrap idea-grid">
     <div class="reveal">
       <p class="eyebrow">The Idea</p>
-      <p class="idea-text">Eight private residences where the car comes <em>inside</em>, under a fourteen-foot ceiling, with a lounge above and palms out front.</p>
+      <p class="idea-text">Eight private residences where the car comes <em>inside</em>, under a fourteen-foot ceiling, with a lounge above.</p>
     </div>
     <div class="reveal">
-      <p class="muted" style="margin:0 0 32px">8 AT RIO is a small gated enclave on SE 12th Street in Rio Vista, one of Fort Lauderdale's most established neighborhoods. Two rows of four residences face a landscaped central promenade that leads to a shared pool and cabana. Each one has a double-height garage and living level, a mezzanine above, and two parking spaces.</p>
+      <p class="muted" style="margin:0 0 32px">8 AT RIO is a small gated enclave on SE 12th Street in Rio Vista, one of Fort Lauderdale's most established neighborhoods. Two rows of four residences face an open motor court that runs from the gate to a shared pool and cabana. Each one has a garage and living level with a ceiling of about 14 feet, and a mezzanine above it. The plan allows two parking spaces per residence.</p>
       <div class="stats">
         <div class="stat"><b>8</b><span>Private residences</span></div>
         <div class="stat"><b>880<sup>–960 SF</sup></b><span>Per residence</span></div>
         <div class="stat"><b>14′</b><span>Garage / living ceiling</span></div>
-        <div class="stat"><b>57%</b><span>Of the site is open space</span></div>
+        <div class="stat"><b>2</b><span>Parking spaces per residence</span></div>
       </div>
     </div>
   </div>
@@ -436,7 +439,7 @@
         <p class="eyebrow">The Residences</p>
         <h2 class="display">Garage below.<br><strong>Lounge above.</strong></h2>
       </div>
-      <p class="lede">Every residence is a single story plus a mezzanine, 40 feet deep and 22 or 24 feet wide. The car sits on a 14-foot garage and living level, and a mezzanine with an 8-foot ceiling looks down over it. Finish it as a showroom, a studio, an office or a place to land.</p>
+      <p class="lede">Every residence is a single story plus a mezzanine, 40 feet deep and 22 or 24 feet wide. The car sits on a garage and living level with a ceiling of about 14 feet, and a mezzanine with a ceiling of about 8 feet looks down over it. Use it as a showroom, a studio, an office or a place to land.</p>
     </div>
 
     <div class="res-grid">
@@ -471,7 +474,7 @@
           <div>
             <p class="eyebrow">Units 1–3 · 5–7</p>
             <h3 class="display">The 22</h3>
-            <p class="muted" style="margin:0">Six interior residences, each with a 22-foot frontage on the promenade.</p>
+            <p class="muted" style="margin:0">Six residences, each 22 feet wide, facing the motor court.</p>
             <dl class="spec">
               <div><dt>Dimensions</dt><dd>22′ W × 40′ D</dd></div>
               <div><dt>Footprint</dt><dd>≈ 880 SF</dd></div>
@@ -508,7 +511,7 @@
       </div>
     </div>
 
-    <div class="features reveal" aria-label="Every residence">
+    <div class="features reveal" aria-label="Every residence (conceptual)">
       <div class="feature">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21V8l9-5 9 5v13"/><path d="M6 21v-9h12v9M6 15h12M6 18h12"/></svg>
         <h3>Drive-in garage</h3><p>The car lives on the main floor under a ceiling of about 14 feet, not in a lot down the street.</p>
@@ -519,15 +522,15 @@
       </div>
       <div class="feature">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9h18M5 9v12M19 9v12M8 9v3M12 9v3M16 9v3"/></svg>
-        <h3>Private entry</h3><p>Each residence opens onto the central promenade under its own wood-slat pergola.</p>
+        <h3>Lift height</h3><p>A ceiling of about 14 feet leaves room to consider a car lift. Whether one fits depends on the final design and the cars.</p>
       </div>
       <div class="feature">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="8" height="12" rx="2"/><rect x="13" y="6" width="8" height="12" rx="2"/></svg>
-        <h3>Two spaces each</h3><p>Sixteen parking spaces on site, two for every residence.</p>
+        <h3>Two spaces each</h3><p>The plan provides 16 parking spaces, two for every residence.</p>
       </div>
       <div class="feature">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 21V9M19 21V9M3 9h18"/><path d="M8 21V12h8v9"/></svg>
-        <h3>Gated entry</h3><p>Limestone monument walls and metal gates off SE 12th Street, with one entrance for the whole community.</p>
+        <h3>Gated entry</h3><p>Monument walls and metal gates on SE 12th Street, as shown in the conceptual rendering.</p>
       </div>
       <div class="feature">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 18c3 0 3-2 6-2s3 2 6 2 3-2 6-2M3 14c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/></svg>
@@ -535,11 +538,11 @@
       </div>
       <div class="feature">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21V10M12 10C9 6 5 6 3 7c3 0 6 1 9 3zM12 10c3-4 7-4 9-3-3 0-6 1-9 3zM12 10c-1-4-4-6-7-6 2 1 5 3 7 6zM12 10c1-4 4-6 7-6-2 1-5 3-7 6z"/></svg>
-        <h3>Tropical landscape</h3><p>Palms and layered planting around the edges and along the promenade, lit at night.</p>
+        <h3>Landscaped edges</h3><p>Palms and planting along the property lines, which keeps the middle of the site open for the cars.</p>
       </div>
       <div class="feature">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 20l6-6M14 4l6 6-8 8-6-6z"/></svg>
-        <h3>Your finish</h3><p>Finish the interior to suit your collection, whether that's gallery-clean or a fully fitted workspace.</p>
+        <h3>Open court</h3><p>A paved motor court about 25 feet wide between the two rows, room to pull in, stage a car or line them all up.</p>
       </div>
     </div>
   </div>
@@ -549,16 +552,59 @@
 <section class="siteplan" id="siteplan">
   <div class="wrap sp-grid">
     <figure class="sp-figure reveal">
-      <img src="assets/site-plan.jpg" alt="Site plan of 8 AT RIO on a 125 by 135 foot lot: units 1 through 4 on the west row and 5 through 8 on the east row, a landscaped central promenade, the pool and cabana at the north end, and the entry on SE 12th Street" width="1100" height="1315" loading="lazy">
-      <figcaption>Site plan · Scale 1″ = 20′-0″ · Conceptual</figcaption>
+      <svg viewBox="0 0 540 640" role="img" aria-label="Site plan diagram: a 125 by 135 foot lot. Units 1 to 4 on the west and 5 to 8 on the east face an open, paved motor court. The gated entry is on SE 12th Street to the south, with the pool and cabana at the north end and landscaping along the property lines.">
+        <defs>
+          <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(78,107,79,.25)" stroke-width="2"/></pattern>
+        </defs>
+        <g transform="translate(20 20)" font-family="Inter, sans-serif">
+          <rect x="0" y="0" width="500" height="540" fill="#fff" stroke="#121211" stroke-dasharray="6 4"/>
+          <path d="M0 0H500V540H0Z M40 80V440H460V80Z" fill="url(#hatch)" fill-rule="evenodd"/>
+          <rect x="170" y="18" width="160" height="44" fill="#CFE3EA" stroke="#5E8C9C"/>
+          <text x="250" y="45" font-size="9" text-anchor="middle" fill="#2E5866" letter-spacing="1.5">POOL</text>
+          <rect x="372" y="16" width="56" height="48" fill="#F1E6D4" stroke="#121211" stroke-opacity=".5"/>
+          <text x="400" y="43" font-size="7" text-anchor="middle" fill="#121211" letter-spacing="1">CABANA</text>
+          <!-- unit rows -->
+          <rect x="40" y="80" width="160" height="360" fill="#EDE7DC" stroke="#121211" stroke-width="2"/>
+          <rect x="300" y="80" width="160" height="360" fill="#EDE7DC" stroke="#121211" stroke-width="2"/>
+          <g stroke="#121211" stroke-width="1.2">
+            <line x1="40" y1="176" x2="200" y2="176"/><line x1="40" y1="264" x2="200" y2="264"/><line x1="40" y1="352" x2="200" y2="352"/>
+            <line x1="300" y1="176" x2="460" y2="176"/><line x1="300" y1="264" x2="460" y2="264"/><line x1="300" y1="352" x2="460" y2="352"/>
+          </g>
+          <!-- motor court -->
+          <rect x="200" y="80" width="100" height="360" fill="#D9D3C8"/>
+          <g stroke="#121211" stroke-opacity=".12"><line x1="200" y1="140" x2="300" y2="140"/><line x1="200" y1="200" x2="300" y2="200"/><line x1="200" y1="260" x2="300" y2="260"/><line x1="200" y1="320" x2="300" y2="320"/><line x1="200" y1="380" x2="300" y2="380"/></g>
+          <text x="250" y="262" font-size="10" fill="#121211" fill-opacity=".7" text-anchor="middle" letter-spacing="3" transform="rotate(-90 250 262)">MOTOR COURT · OPEN AIR</text>
+          <!-- unit labels -->
+          <g font-family="Archivo, Inter, sans-serif" fill="#121211" text-anchor="middle">
+            <g font-size="18"><text x="120" y="126">4</text><text x="120" y="218">3</text><text x="120" y="306">2</text><text x="120" y="394">1</text>
+            <text x="380" y="126">8</text><text x="380" y="218">7</text><text x="380" y="306">6</text><text x="380" y="394">5</text></g>
+            <g font-size="8" fill-opacity=".65" letter-spacing="1"><text x="120" y="142">24′ × 40′</text><text x="120" y="234">22′ × 40′</text><text x="120" y="322">22′ × 40′</text><text x="120" y="410">22′ × 40′</text>
+            <text x="380" y="142">24′ × 40′</text><text x="380" y="234">22′ × 40′</text><text x="380" y="322">22′ × 40′</text><text x="380" y="410">22′ × 40′</text></g>
+          </g>
+          <!-- entry -->
+          <rect x="210" y="440" width="80" height="100" fill="#E6E1D8"/>
+          <line x1="204" y1="440" x2="296" y2="440" stroke="#D3A462" stroke-width="4"/>
+          <path d="M250 530 V452 M242 462 L250 450 L258 462" stroke="#121211" stroke-width="1.5" fill="none"/>
+          <text x="262" y="500" font-size="8" fill="#121211" letter-spacing="1.5">GATED ENTRY</text>
+          <g font-size="9" fill="#121211" fill-opacity=".7" letter-spacing="1">
+            <text x="250" y="-6" text-anchor="middle">125′ LOT</text>
+            <text x="508" y="270" transform="rotate(90 508 270)" text-anchor="middle">135′ LOT</text>
+            <text x="20" y="500" text-anchor="middle">25′</text><text x="20" y="44" text-anchor="middle">20′</text>
+            <text x="20" y="264" text-anchor="middle">10′</text><text x="480" y="236" text-anchor="middle">10′</text>
+          </g>
+          <g transform="translate(470 470)"><path d="M0 22 L8 0 L16 22 L8 16 Z" fill="#121211"/><text x="8" y="36" font-size="9" text-anchor="middle" fill="#121211">N</text></g>
+        </g>
+        <text x="270" y="632" font-family="Inter, sans-serif" font-size="11" letter-spacing="4" text-anchor="middle" fill="#121211">SE 12TH STREET</text>
+      </svg>
+      <figcaption>Diagram · Not to scale · Courtyard shown as an open motor court · Subject to final design and approvals</figcaption>
     </figure>
     <div class="reveal">
       <p class="eyebrow">Site Plan</p>
-      <h2 class="display" style="margin-top:22px">Two rows.<br><strong>One promenade.</strong></h2>
-      <p class="lede" style="margin-top:24px">A 125 × 135-foot lot with four residences on each side of a palm-lined walk. The gated entry faces SE 12th Street to the south and the pool sits at the north end. More than half the site stays open and planted.</p>
+      <h2 class="display" style="margin-top:22px">Two rows.<br><strong>One motor court.</strong></h2>
+      <p class="lede" style="margin-top:24px">A 125 × 135-foot lot with four residences on each side of an open, paved court. The gated entry faces SE 12th Street to the south, and the pool and cabana sit at the north end. Planting is kept to the property edges so the middle stays clear for the cars.</p>
 
       <table class="data">
-        <caption>Project data</caption>
+        <caption>Project data · per conceptual site plan</caption>
         <tbody>
           <tr><th>Lot size</th><td>16,875 SF <small>0.387 acres</small></td></tr>
           <tr><th>Zoning</th><td>RML-25</td></tr>
@@ -567,7 +613,7 @@
           <tr><th>Building height</th><td>22′ <small>35′ max</small></td></tr>
           <tr><th>Building length</th><td>90′ <small>200′ max</small></td></tr>
           <tr><th>Floor area ratio</th><td>0.71</td></tr>
-          <tr><th>Lot coverage / open space</th><td>42.7% / 57.3%</td></tr>
+          <tr><th>Lot coverage</th><td>42.7%</td></tr>
           <tr><th>Parking</th><td>16 spaces <small>2 per unit</small></td></tr>
         </tbody>
       </table>
@@ -578,6 +624,7 @@
         <div><b>10′</b><span>Side · E</span></div>
         <div><b>10′</b><span>Side · W</span></div>
       </div>
+      <p class="fine">Figures are from the conceptual site plan. They are approximate, not approved, and will be updated as the design changes.</p>
       <a href="#inquire" class="btn">Request the plan set <span class="arrow">→</span></a>
     </div>
   </div>
@@ -588,17 +635,17 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <div>
-        <p class="eyebrow">The Grounds</p>
-        <h2 class="display">An address,<br><strong>not a lot.</strong></h2>
+        <p class="eyebrow">The Motor Court</p>
+        <h2 class="display">Clear the middle.<br><strong>Bring the cars.</strong></h2>
       </div>
-      <p class="lede">The concept is a walled tropical garden with the cars inside it. You arrive through the gate, walk the promenade to your door and end the day at the pool.</p>
+      <p class="lede">The space between the two rows is about 25 feet wide, roughly the width of a standard drive aisle. So it's kept open and paved, with no trees in the middle. You come through the gate, pull up to your door and end the day at the pool.</p>
     </div>
     <div class="grounds-grid">
-      <article class="tile t-photo reveal"><span class="num">01</span><h3>The Entry Court</h3><p>Lit limestone monument walls, a pair of metal gates and a straight view down the palms to the pool.</p></article>
-      <article class="tile t-a reveal"><span class="num">02</span><h3>Pool &amp; Deck</h3><p>A pool with loungers on both sides, set against the north edge of the site.</p></article>
-      <article class="tile t-b reveal"><span class="num">03</span><h3>The Promenade</h3><p>A paved central walk through palms and garden rooms that links every front door.</p></article>
-      <article class="tile t-c reveal"><span class="num">04</span><h3>The Cabana</h3><p>A covered lounge by the pool where owners can meet, host or wait out an afternoon storm.</p></article>
-      <article class="tile t-d reveal"><span class="num">05</span><h3>Landscape Lighting</h3><p>Warm uplighting on the palms and walls makes the property look as good at night as it does by day.</p></article>
+      <article class="tile t-photo reveal"><span class="num">01</span><h3>The Gate</h3><p>Lit monument walls and metal gates on SE 12th Street. There is one way in.</p></article>
+      <article class="tile t-court reveal"><span class="num">02</span><h3>The Court</h3><p>An open, paved court between the rows. It's wide enough to pull in, turn and line up all eight cars on a Sunday morning.</p></article>
+      <article class="tile t-a reveal"><span class="num">03</span><h3>Pool &amp; Deck</h3><p>A pool with loungers on both sides, set against the north edge of the site.</p></article>
+            <article class="tile t-c reveal"><span class="num">04</span><h3>The Cabana</h3><p>A small structure by the pool where owners can meet, host or wait out an afternoon storm.</p></article>
+      <article class="tile t-d reveal"><span class="num">05</span><h3>Landscaped Edges</h3><p>Palms and planting along the property lines screen the site from the street and the neighbors.</p></article>
     </div>
   </div>
 </section>
@@ -609,18 +656,18 @@
     <div class="reveal">
       <p class="eyebrow">Eight Owners</p>
       <h2 class="display" style="margin-top:22px">Small by<br><strong>design.</strong></h2>
-      <p class="lede" style="margin-top:24px">There are only eight residences, so you'll know every neighbor. They'll be people who care about design, about cars and about where they keep them.</p>
+      <p class="lede" style="margin-top:24px">There are only eight residences, so you'll know every neighbor. It's a place built for people who care about design, about cars and about where they keep them.</p>
       <ol class="principles">
-        <li>Eight owners share one gate, one promenade and one pool.</li>
-        <li>Residences are offered privately, by introduction or by application.</li>
-        <li>Guests are welcome, and so is the occasional Sunday-morning meet.</li>
+        <li>Eight owners share one gate, one motor court and one pool.</li>
+        <li>Only eight residences will be built, and there are no plans for more.</li>
+        <li>Owners set the house rules through their association, including how the court is used.</li>
       </ol>
-      <a href="#inquire" class="btn">Request an Introduction <span class="arrow">→</span></a>
+      <a href="#inquire" class="btn">Join the Interest List <span class="arrow">→</span></a>
     </div>
     <div class="reveal">
       <p class="eyebrow" style="margin-bottom:22px">Around Rio</p>
       <div class="calendar">
-        <div class="event"><span class="when">Sunday</span><div><h3>Promenade Coffee</h3><p>Doors up, cars out and coffee on the walk.</p></div></div>
+        <div class="event"><span class="when">Sunday</span><div><h3>Motor Court Mornings</h3><p>Doors up, cars out and coffee in the court.</p></div></div>
         <div class="event"><span class="when">Dawn</span><div><h3>A1A Run</h3><p>Ten minutes to the beach road, then north along the coast before the traffic wakes up.</p></div></div>
         <div class="event"><span class="when">Evening</span><div><h3>Las Olas</h3><p>Dinner on the boulevard, a few minutes away across the New River.</p></div></div>
         <div class="event"><span class="when">Season</span><div><h3>Show Season</h3><p>From November through March, South Florida's concours and boat-show calendar starts at your door.</p></div></div>
@@ -637,11 +684,11 @@
         <p class="eyebrow">Rio Vista · Fort Lauderdale</p>
         <h2 class="display">Below the skyline.<br><strong>Above it all.</strong></h2>
       </div>
-      <p class="lede">Rio Vista is the leafy, low-rise neighborhood just south of downtown Fort Lauderdale, bounded by the New River and the Intracoastal. The tower views are close, but the streets stay quiet and lined with trees.</p>
+      <p class="lede">Rio Vista is the leafy, low-rise neighborhood just south of downtown Fort Lauderdale, near the New River and the Intracoastal. The tower views are close, but the streets stay quiet and lined with trees.</p>
     </div>
 
     <figure class="loc-photo reveal">
-      <img src="assets/aerial-skyline.jpg" alt="Aerial view looking north over Rio Vista toward the downtown Fort Lauderdale skyline, with the cleared 8 AT RIO site at lower right among tree-lined residential streets" width="1672" height="941" loading="lazy">
+      <img src="assets/aerial-skyline.jpg" alt="Aerial view looking north over Rio Vista toward the downtown Fort Lauderdale skyline" width="1672" height="941" loading="lazy">
       <figcaption>Rio Vista, looking north to downtown</figcaption>
     </figure>
 
@@ -657,8 +704,8 @@
         <p class="note">Approximate drive times without traffic. The exact address is shared with qualified inquiries.</p>
       </div>
       <figure class="site-today reveal">
-        <img src="assets/site-today.jpg" alt="Overhead drone photo of the site today on SE 12th Street, showing the existing structures and mature trees between neighboring townhomes" width="1672" height="941" loading="lazy">
-        <figcaption>The site today · SE 12th Street</figcaption>
+        <img src="assets/site-today.jpg" alt="Overhead drone photo of the site and surroundings on SE 12th Street" width="1672" height="941" loading="lazy">
+        <figcaption>The site and surroundings · SE 12th Street</figcaption>
       </figure>
     </div>
   </div>
@@ -672,24 +719,24 @@
         <p class="eyebrow">Availability</p>
         <h2 class="display">Eight.<br><strong>Only eight.</strong></h2>
       </div>
-      <p class="lede">The residences are offered privately ahead of construction. Pricing and reservation terms are shared with qualified buyers.</p>
+      <p class="lede">The project is in the planning stage. Nothing is for sale yet. Join the interest list and we'll reach out when plans, pricing and terms are available.</p>
     </div>
     <div class="table-wrap reveal">
       <table>
         <thead><tr><th>Residence</th><th>Row</th><th>Dimensions</th><th>Footprint</th><th>Parking</th><th>Status</th></tr></thead>
         <tbody>
-          <tr><td class="unit">01</td><td>West · Street end</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">02</td><td>West</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">03</td><td>West</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">04</td><td>West · Pool end</td><td>24′ × 40′</td><td>≈ 960 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">05</td><td>East · Street end</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">06</td><td>East</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">07</td><td>East</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
-          <tr><td class="unit">08</td><td>East · Pool end</td><td>24′ × 40′</td><td>≈ 960 SF</td><td>2</td><td><span class="status">Pre-release</span></td></tr>
+          <tr><td class="unit">01</td><td>West · Street end</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
+          <tr><td class="unit">02</td><td>West</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
+          <tr><td class="unit">03</td><td>West</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
+          <tr><td class="unit">04</td><td>West · Pool end</td><td>24′ × 40′</td><td>≈ 960 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
+          <tr><td class="unit">05</td><td>East · Street end</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
+          <tr><td class="unit">06</td><td>East</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
+          <tr><td class="unit">07</td><td>East</td><td>22′ × 40′</td><td>≈ 880 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
+          <tr><td class="unit">08</td><td>East · Pool end</td><td>24′ × 40′</td><td>≈ 960 SF</td><td>2</td><td><span class="status">Planned</span></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="note">Dimensions are approximate and subject to final architecture and City approvals.</p>
+    <p class="note">Dimensions are approximate, from the conceptual site plan, and subject to final architecture and City approvals.</p>
   </div>
 </section>
 
@@ -701,12 +748,12 @@
       <h2 class="display" style="margin-top:22px">Good to<br><strong>know.</strong></h2>
     </div>
     <div class="reveal">
-      <details open><summary>What exactly is a garage residence?</summary><p>It's a private residence designed around the car. The main level is a garage and living space with a ceiling of about 14 feet, and a mezzanine above serves as a lounge, office or retreat. The project is planned as eight multifamily residential units under the site's RML-25 zoning.</p></details>
-      <details><summary>Will I own my residence?</summary><p>The residences are planned to be sold individually as condominium units, each with its own deed. The final ownership structure and association documents will be set out in the offering materials.</p></details>
-      <details><summary>Where is it, and what's there now?</summary><p>The site is on SE 12th Street in Rio Vista, just south of downtown Fort Lauderdale. Today it's a 16,875 SF lot with older existing structures and mature trees, which you can see in the drone photo above.</p></details>
-      <details><summary>Where is the project in the approval process?</summary><p>The plans shown here are conceptual schematics prepared for City development review. Dimensions, materials and amenities may change as the design is finalized and approved.</p></details>
-      <details><summary>Can I customize the interior?</summary><p>Yes. The concept is designed to be finished to each owner's taste, from a clean gallery for a collection to a fully fitted workspace and lounge. We'll share finish options as the design moves forward.</p></details>
-      <details><summary>How do I reserve?</summary><p>Send an inquiry below. We'll arrange a private conversation, share the plan set and pricing, and explain how reservations work.</p></details>
+      <details open><summary>What exactly is a garage residence?</summary><p>It's a private residence designed around the car. The main level is a garage and living space with a ceiling of about 14 feet, and a mezzanine above serves as a lounge, office or retreat. The conceptual site plan proposes eight multifamily residential units under the site's RML-25 zoning.</p></details>
+      <details><summary>Will I own my residence?</summary><p>The intent is to offer the residences individually as condominium units. The ownership structure, budget and association documents will be set out in the offering documents required by Florida law, and those documents, not this website, will govern.</p></details>
+      <details><summary>Where is it, and what's there now?</summary><p>The site is on SE 12th Street in Rio Vista, just south of downtown Fort Lauderdale. The lot is 16,875 SF.</p></details>
+      <details><summary>Where is the project in the approval process?</summary><p>The plans and renderings shown are conceptual and have not been approved by the City of Fort Lauderdale. Dimensions, materials, amenities and the number and size of residences may change as the design moves through review.</p></details>
+      <details><summary>Can I customize the interior?</summary><p>The intent is to allow owners to choose finishes. Specific options, if any, will be set out in the purchase documents.</p></details>
+      <details><summary>How do I reserve?</summary><p>Reservations and contracts aren't being accepted yet. Join the interest list below and we'll contact you when they are.</p></details>
     </div>
   </div>
 </section>
@@ -717,7 +764,7 @@
     <div class="reveal">
       <p class="eyebrow">Request Access</p>
       <h2 class="display" style="margin-top:22px">One of<br><strong>eight.</strong></h2>
-      <p class="lede" style="margin-top:24px">Tell us a little about yourself and what you drive. We'll be in touch to share the plans, pricing and timeline.</p>
+      <p class="lede" style="margin-top:24px">Tell us a little about yourself and what you drive. We'll be in touch as plans, pricing and timing are available.</p>
       <dl class="contact-list">
         <div><dt>Location</dt><dd>SE 12th Street · Rio Vista<br>Fort Lauderdale, FL</dd></div>
         <div><dt>Email</dt><dd><a href="mailto:rr@richardrosalaw.com">rr@richardrosalaw.com</a></dd></div>
@@ -748,9 +795,10 @@
       <div class="field full"><label for="collection">What drives you?</label><textarea id="collection" name="collection" placeholder="What you drive, how you'd use the space, timing…"></textarea></div>
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-foot">
-        <button type="submit" class="btn solid">Submit Inquiry <span class="arrow">→</span></button>
+        <button type="submit" class="btn solid">Join the Interest List <span class="arrow">→</span></button>
         <p id="formNote" role="status" aria-live="polite"></p>
       </div>
+      <p class="form-fine">Joining the interest list is not a reservation and creates no obligation for you or the developer. We use your details only to respond to you.</p>
     </form>
   </div>
 </section>
@@ -772,10 +820,10 @@
     <div class="foot-row">
       <span>© <span id="yr"></span> 8 AT RIO · SE 12th Street · Rio Vista · Fort Lauderdale, Florida</span>
       <nav aria-label="Footer">
-        <a href="#residences">Residences</a><a href="#siteplan">Site Plan</a><a href="#grounds">Grounds</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
+        <a href="#residences">Residences</a><a href="#siteplan">Site Plan</a><a href="#grounds">Motor Court</a><a href="#location">Rio Vista</a><a href="#faq">FAQ</a><a href="#inquire">Inquire</a>
       </nav>
     </div>
-    <p class="legal">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING THE REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE. This website is for informational purposes only and is not an offer to sell, or a solicitation of an offer to buy, in any jurisdiction where prohibited by law. All renderings, site plans, sections, dimensions, amenities and features are conceptual, approximate and subject to change, final architecture and governmental approvals. Equal Housing Opportunity.</p>
+    <p class="legal">ORAL REPRESENTATIONS CANNOT BE RELIED UPON AS CORRECTLY STATING THE REPRESENTATIONS OF THE DEVELOPER. FOR CORRECT REPRESENTATIONS, MAKE REFERENCE TO THIS BROCHURE AND TO THE DOCUMENTS REQUIRED BY SECTION 718.503, FLORIDA STATUTES, TO BE FURNISHED BY A DEVELOPER TO A BUYER OR LESSEE. This website is for informational purposes only and is not an offer to sell, or a solicitation of an offer to buy, in any jurisdiction where prohibited by law. No offer to sell will be made, and no reservation or contract will be accepted, until the developer has complied with the applicable requirements of Chapter 718, Florida Statutes. All renderings, site plans, diagrams, sections, dimensions, square footages, amenities and features are conceptual and approximate. They have not been approved by any governmental authority and are subject to change without notice. Square footages are approximate exterior dimensions and may differ from those in the offering documents. Equal Housing Opportunity.</p>
   </div>
 </footer>
 
