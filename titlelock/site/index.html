@@ -20,6 +20,29 @@
 <meta name="twitter:title" content="DeedGuard USA — AI-Powered Home Title Monitoring">
 <meta name="twitter:description" content="Always Watching. Always Protected. AI monitors your Florida home's title every few days — with a real estate attorney on call.">
 <meta name="twitter:image" content="https://deedguardusa.com/assets/og-cover.png">
+
+<!-- Demand analytics. Inert until you fill in IDs below — no tracking, no cookies, no errors otherwise. -->
+<script>
+(function(){
+  var CFG = {
+    plausibleDomain: "",   // privacy-friendly, no cookie banner: set to "deedguardusa.com" (plausible.io)
+    ga4Id: "",             // or Google Analytics 4: "G-XXXXXXXXXX"
+    metaPixelId: ""        // Meta Pixel for FB/IG ad conversions: "123456789012345"
+  };
+  window.__DG_ANALYTICS__ = CFG;
+  function inject(src, attrs){ var s=document.createElement('script'); s.async=true; s.src=src; if(attrs){for(var k in attrs){s.setAttribute(k,attrs[k]);}} document.head.appendChild(s); }
+  if(CFG.plausibleDomain){ inject('https://plausible.io/js/script.js',{'data-domain':CFG.plausibleDomain}); window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments);}; }
+  if(CFG.ga4Id){ inject('https://www.googletagmanager.com/gtag/js?id='+CFG.ga4Id); window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);}; gtag('js',new Date()); gtag('config',CFG.ga4Id); }
+  if(CFG.metaPixelId){ !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments);};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s);}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init',CFG.metaPixelId); fbq('track','PageView'); }
+  window.dgTrack=function(name, props){
+    try{
+      if(CFG.plausibleDomain && window.plausible){ window.plausible(name,{props:props||{}}); }
+      if(CFG.ga4Id && window.gtag){ window.gtag('event',name,props||{}); }
+      if(CFG.metaPixelId && window.fbq){ window.fbq('trackCustom',name,props||{}); }
+    }catch(e){}
+  };
+})();
+</script>
 </head>
 <body>
 
@@ -516,6 +539,7 @@
     btn.addEventListener('click', function(ev){
       ev.preventDefault();
       var plan = btn.getAttribute('data-plan');
+      if(window.dgTrack) dgTrack('checkout_click', { plan: plan });
       var original = btn.textContent;
       btn.textContent = 'Starting…';
       fetch('/.netlify/functions/create-checkout', {
@@ -545,6 +569,7 @@
       return;
     }
     var btn = form.querySelector('button');
+    if(window.dgTrack) dgTrack('lead_submit', {});
     btn.textContent = 'Checking…';
     var success = '<b>You’re on the list.</b> We’ll start a free title check for <b>' +
       addr.replace(/</g,'&lt;') + '</b> and email the results to ' + email.replace(/</g,'&lt;') + '.';
