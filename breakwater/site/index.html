@@ -440,6 +440,9 @@
   .reveal.in{opacity:1;transform:none;}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 </style>
+<!-- Plausible Analytics — privacy-friendly, cookieless -->
+<script defer data-domain="brkwatercap.com" src="https://plausible.io/js/script.tagged-events.outbound-links.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
 </head>
 <body>
 
@@ -958,6 +961,7 @@
           f.reset();
           note.style.color = '';
           note.innerHTML = '<strong>Thank you — your project has been sent.</strong> We’ll be in touch shortly.';
+          if(window.plausible){ plausible('Lead'); }
         })
         .catch(function(){
           note.style.color = '';
