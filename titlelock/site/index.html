@@ -341,7 +341,7 @@
           <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Text alerts &amp; attorney on call</li>
           <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Optional insurance add-on</li>
         </ul>
-        <a class="btn btn-ghost" href="#check">Start with Essential</a>
+        <a class="btn btn-ghost js-checkout" data-plan="essential" href="#check">Start with Essential</a>
       </div>
       <div class="plan featured reveal">
         <h3>Defend</h3>
@@ -354,7 +354,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Florida attorney on call</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Optional insurance add-on (where available)</li>
         </ul>
-        <a class="btn btn-emerald" href="#check">Protect My Home</a>
+        <a class="btn btn-emerald js-checkout" data-plan="defend" href="#check">Protect My Home</a>
       </div>
       <div class="plan reveal">
         <h3>Premier</h3>
@@ -367,7 +367,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Priority attorney response</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Dedicated account manager</li>
         </ul>
-        <a class="btn btn-ghost" href="#check">Protect My Portfolio</a>
+        <a class="btn btn-ghost js-checkout" data-plan="premier" href="#check">Protect My Portfolio</a>
       </div>
     </div>
     <p class="form-note" style="color:var(--muted);text-align:center;margin-top:22px;max-width:96ch;margin-inline:auto">DeedGuard plans are a monitoring and alert service, not insurance. The optional title-insurance add-on (ALTA 49 / 49.1) is available only where sold through a licensed title agent/underwriter, is priced and billed separately, and is subject to eligibility, policy terms, and state availability. Pricing shown is illustrative.</p>
@@ -511,28 +511,48 @@
   // current year
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // free check form (demo: client-side confirmation, no backend)
+  // plan buttons -> Stripe Checkout (falls back to the free-check section if payments aren't live yet)
+  document.querySelectorAll('.js-checkout').forEach(function(btn){
+    btn.addEventListener('click', function(ev){
+      ev.preventDefault();
+      var plan = btn.getAttribute('data-plan');
+      var original = btn.textContent;
+      btn.textContent = 'Starting…';
+      fetch('/.netlify/functions/create-checkout', {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ plan: plan })
+      }).then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+        .then(function(d){ if(d && d.url){ window.location.href = d.url; } else { throw 0; } })
+        .catch(function(){ btn.textContent = original; document.getElementById('check').scrollIntoView({behavior:'smooth'}); });
+    });
+  });
+
+  // free check form -> lead capture (graceful fallback keeps the static preview working)
   var form = document.getElementById('checkForm');
   var result = document.getElementById('checkResult');
+  function showResult(ok, html){
+    result.classList.add('show');
+    result.style.background = ok ? 'rgba(16,185,129,.12)' : 'rgba(224,83,61,.12)';
+    result.style.borderColor = ok ? 'rgba(16,185,129,.4)' : 'rgba(224,83,61,.4)';
+    result.innerHTML = html;
+  }
   form.addEventListener('submit', function(ev){
     ev.preventDefault();
     var addr = document.getElementById('addr').value.trim();
     var email = document.getElementById('email').value.trim();
     var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if(!addr || !emailOk){
-      result.classList.add('show');
-      result.style.background = 'rgba(224,83,61,.12)';
-      result.style.borderColor = 'rgba(224,83,61,.4)';
-      result.innerHTML = 'Please enter a valid property address and email so we can run your check.';
+      showResult(false, 'Please enter a valid property address and email so we can run your check.');
       return;
     }
-    result.classList.add('show');
-    result.style.background = 'rgba(16,185,129,.12)';
-    result.style.borderColor = 'rgba(16,185,129,.4)';
-    result.innerHTML = '<b>You’re on the list.</b> We’ll start a free title check for <b>' +
-      addr.replace(/</g,'&lt;') + '</b> and email the results to ' + email.replace(/</g,'&lt;') +
-      '. (Demo: connect this form to your backend or CRM to go live.)';
-    form.querySelector('button').textContent = 'Check requested ✓';
+    var btn = form.querySelector('button');
+    btn.textContent = 'Checking…';
+    var success = '<b>You’re on the list.</b> We’ll start a free title check for <b>' +
+      addr.replace(/</g,'&lt;') + '</b> and email the results to ' + email.replace(/</g,'&lt;') + '.';
+    fetch('/.netlify/functions/lead', {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ address: addr, email: email })
+    }).then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+      .then(function(){ showResult(true, success); btn.textContent = 'Check requested ✓'; })
+      .catch(function(){ showResult(true, success + ' <span style="opacity:.7">(demo mode — connect the backend to capture leads)</span>'); btn.textContent = 'Check requested ✓'; });
   });
 </script>
 </body>

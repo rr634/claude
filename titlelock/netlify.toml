@@ -10,7 +10,23 @@
 [build]
   base = "titlelock"
   publish = "site"
-  command = ""
+  command = "npm install"
+
+# Serverless backend: lead capture, Stripe subscriptions, and the scheduled title scanner.
+# Set env vars in Netlify (see app/.env.example). Endpoints live at /.netlify/functions/<name>.
+[functions]
+  directory = "app/netlify/functions"
+  node_bundler = "esbuild"
+
+# Pretty API paths (optional): /api/lead -> the function
+[[redirects]]
+  from = "/api/lead"
+  to = "/.netlify/functions/lead"
+  status = 200
+[[redirects]]
+  from = "/api/create-checkout"
+  to = "/.netlify/functions/create-checkout"
+  status = 200
 
 [[headers]]
   for = "/*"
