@@ -311,3 +311,31 @@ footer.site .legal{margin-top:16px;font-size:.8rem;color:rgba(244,248,253,.55);
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease);}
 .reveal.in{opacity:1;transform:none;}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.alert-card .dot{animation:none;}}
+
+/* ---- flagship polish ---- */
+/* AI scan-line sweep across the hero monitor card */
+.alert-card{position:relative;overflow:hidden;}
+.alert-card .scan{position:absolute;left:0;right:0;top:0;height:42%;pointer-events:none;z-index:0;
+  background:linear-gradient(180deg,rgba(52,211,153,.16),rgba(52,211,153,.04) 60%,transparent);
+  animation:scansweep 3.4s cubic-bezier(.5,.1,.5,.9) infinite;}
+.alert-card .ac-top,.alert-card .ac-row{position:relative;z-index:1;}
+@keyframes scansweep{0%{transform:translateY(-110%);opacity:0;}15%{opacity:1;}85%{opacity:1;}100%{transform:translateY(250%);opacity:0;}}
+@media(prefers-reduced-motion:reduce){.alert-card .scan{display:none;}}
+
+/* trust band */
+.trustband{background:var(--ink);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+.trustband .row{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:center;align-items:center;padding:16px var(--gutter);}
+.trustband span{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;color:var(--muted-light);font-weight:600;letter-spacing:.02em;}
+.trustband svg{width:16px;height:16px;color:var(--emerald-soft);flex:0 0 auto;}
+.trustband .dotsep{width:4px;height:4px;border-radius:50%;background:var(--muted);opacity:.5;padding:0;}
+@media(max-width:620px){.trustband .dotsep{display:none;}}
+
+/* sticky mobile CTA */
+.mobile-cta{display:none;}
+@media(max-width:720px){
+  .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;gap:10px;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(10,26,47,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line-dark);}
+  .mobile-cta .btn{flex:1;padding:14px;}
+  body{padding-bottom:70px;}
+}
