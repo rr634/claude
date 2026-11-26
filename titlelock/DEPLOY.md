@@ -44,8 +44,9 @@ Done — `https://deedguardusa.com` is live. The site already sets `CNAME`, cano
 ---
 
 ## Before you point real customers at it
-- ✅ **FL availability:** ALTA 49 / 49.1 is approved/available in Florida. Pull Old Republic's
-  underwriting bulletin for your **endorsement cost** and any date-down requirement, and drop the
-  number into `tools/economics.html`.
+- ✅ **Build the AI monitoring pipeline** — county-record ingestion + change detection + alerting.
+  This is the actual product behind the site's claims; stand it up before taking paying customers.
+- ✅ **Insurance add-on:** keep it marketed only in states where ALTA 49/49.1 is genuinely for sale.
+  Drop your real per-property monitoring cost (and any add-on commission) into `tools/economics.html`.
 - ✅ Wire the free-check form to your inbox/CRM (currently a client-side demo — see `checkForm` in `site/index.html`).
-- ✅ Have counsel sign off on the insurance language (it's attorney-branded and makes coverage claims).
+- ✅ Have counsel sign off on the language (attorney-branded; the site states it is monitoring, not insurance).

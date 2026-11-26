@@ -1,8 +1,9 @@
-# DeedGuard USA — home title-fraud protection site
+# DeedGuard USA — AI home title monitoring site
 
 A self-contained, responsive marketing site for **DeedGuard USA** (deedguardusa.com), an
-insurance-backed, attorney-led deed & title monitoring service (home title theft / equity-fraud
-protection).
+**AI-powered title-monitoring subscription** with a Florida real estate attorney on call, plus an
+**optional** title-insurance add-on where available (home title theft / deed-fraud protection).
+Tagline: **Always Watching. Always Protected.**
 
 ## What's here
 
@@ -15,34 +16,31 @@ protection).
 
 ## Business model reflected in the site
 
-The site presents a **four-layer stack** — **Prevent → Detect → Insure → Restore** — sold as an
-annual **membership** ($249 / $399 / $499), where every layer is a real product:
+The core is a **recurring AI-monitoring subscription** ($199 / $349 / $599 per year), differentiated
+from basic "title locks" (Home Title Lock, etc.) by three things: an **AI** that re-scans the public
+record every few days and explains each filing in plain English, a **real Florida attorney on call**,
+and **honest, cancel-anytime pricing**. No carrier dependency, no regulatory gate — just software + a
+lawyer + recurring revenue.
 
-- **Prevent** — a recorded protection notice placed in the county chain of title (deterrent; adds
-  scrutiny, does not by itself block a filing).
-- **Detect** — 24/7 monitoring of public land records + instant alerts.
-- **Insure** — the **ALTA 49 / 49.1** post-closing forgery endorsement, **issued through Old Republic
-  Title** (the operator is an Old Republic agent). Coverage ties to the owner's policy amount (home
-  value). Eligibility: 1–4 family residential owned by a **natural person or estate-planning entity**
-  — **LLC-held property is excluded** (a Phase-2 own-paper opportunity).
-- **Restore** — attorney-led quiet-title / fraud restoration, with the policy covering the cost.
+**Insurance is an *optional* add-on, not the product.** Where the **ALTA 49 / 49.1** forgery
+endorsement is actually sold (through a licensed title agent/underwriter — *any* underwriter, not a
+specific one), we can help a homeowner add it to their owner's policy, priced and billed separately.
+The site never bundles it or claims it as DeedGuard's own insurance. (Earlier drafts framed it as an
+"Old Republic" product; Old Republic doesn't sell a consumer product like this, so that framing was
+removed.)
 
-**Pricing structure (deliberate, for compliance):** the insurance **premium is passed through at
-cost**; the **membership fee is a separate charge** for the recorded notice, monitoring, and
-restoration services (premium-vs-fee split, not a marked-up premium).
+- **Phase 1 — the subscription.** Sell AI monitoring + attorney access as recurring revenue. Offer
+  the insurance endorsement as a separate add-on only in states where it's genuinely available.
+- **Phase 2 — our own coverage.** Evaluate a bespoke insurance product via a specialty market
+  (e.g. **Lloyd's of London / surplus lines**) so coverage isn't dependent on third-party endorsements.
+- **Phase 3 — vertical.** In-house attorneys handle restoration; if DeedGuard ever carries risk,
+  firewall coverage-determination from the firm (Rule 4-1.7 / 4-5.4; ABS domicile) — clear with a
+  professional-responsibility specialist.
 
-- **Phase 1 — piggyback.** Add ALTA 49.1 to clients' existing owner's policies (or write a new
-  policy + ALTA 49) and wrap it in the membership service layer.
-- **Phase 2 — own paper.** Higher limits / DeedGuard's own program (fronting carrier + captive)
-  to capture underwriting profit, not just the service spread.
-- **Phase 3 — vertical.** In-house attorneys litigate the *fraud* (client-aligned quiet-title work);
-  coverage-determination is firewalled to an independent administrator to avoid the conflict.
-
-> ⚠️ **Before launch:** ALTA 49 / 49.1 is available in Florida (the operator is an Old Republic
-> agent), so the Phase-1 product is real. Still to finalize: the actual endorsement cost/commission
-> (drop into the calculator), and — for Phase 2/3 — the conflict/ownership structure
-> (Rule 4-1.7 / 4-5.4; ABS domicile) cleared by a professional-responsibility specialist.
-> Dollar figures on the site remain marked illustrative until real numbers are dropped in.
+> ⚠️ **Before launch:** the monitoring subscription is real and buildable today. Keep the insurance
+> add-on marketed only where it's actually for sale. Dollar figures remain illustrative until real
+> unit costs are dropped into `tools/economics.html`. Build the AI monitoring pipeline (county-record
+> ingestion + change detection + alerting) to back the product claims.
 
 ## Design
 

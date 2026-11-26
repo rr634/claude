@@ -1,49 +1,49 @@
 # DeedGuard USA — unit economics (assumptions & scenarios)
 
-Companion to `tools/economics.html`. ALTA 49 / 49.1 is **available in Florida**; the remaining
-unknowns are Old Republic's real **endorsement charge** and your **FL title-agency split** — drop
-those in and the margins are real. All numbers below are **illustrative placeholders**.
+Companion to `tools/economics.html`. The **core business is a recurring AI-monitoring subscription** —
+that's the engine. The insurance add-on and a future own-product are modeled as upside. All numbers
+below are **illustrative placeholders**.
 
-## Revenue streams (Phase 1 — piggyback on ORT)
+## Revenue streams
 
-1. **Membership fee** — recurring annual (e.g. $249 / $399 / $499). The core engine; SaaS-like margin.
-2. **Endorsement commission** — your title-agency split of the ALTA 49/49.1 premium (one-time at issuance).
-   The premium itself is **passed through at cost** to the homeowner; your income is the commission, not a markup.
-3. **New-policy title commission** — for clients without an eligible owner's policy, writing a new ORT
-   owner's policy is a one-time title-premium event (your agency retains its FL split).
+1. **Subscription (core)** — recurring annual ($199 / $349 / $599). AI monitoring + alerts + attorney
+   access. SaaS-like gross margin; the whole thesis rests on this.
+2. **Insurance add-on commission (optional)** — *only where the ALTA 49/49.1 endorsement is actually
+   sold*, through a licensed title agent/underwriter. The premium is passed through; your income is
+   the commission, billed separately. Treat as upside, not base case.
+3. **New-policy title commission (optional)** — if a client needs a new owner's policy to attach the
+   endorsement, that's a one-time title-premium event where you act as agent.
 
-## Costs (Phase 1)
+## Costs
 
-- **Service / member / yr** — monitoring data, recorded-notice upkeep, support concierge.
-- **Onboarding (yr 1)** — county recording fee for the protection notice + prep.
-- **Covered-claim legal defense** — borne by **Old Republic** on covered claims, so *not* a DeedGuard
-  cost in Phase 1. (This is also why the in-house-litigation margin needs Phase 2.)
+- **Service / member / yr** — county-record data/ingestion, AI compute, alerting, support.
+- **Onboarding (yr 1)** — baseline setup per property.
+- **Attorney response** — a cost reserve for the hands-on help; low-frequency.
 
 ## Why the margin works
 
-- Membership is **recurring**; the title commissions are **one-time** (year 1 boost).
-- Title fraud is **low-frequency / high-severity**, so the insurance leg carries a low expected loss —
-  which is the whole basis for Phase 2.
+- Subscription revenue is **recurring**; any insurance commission is **one-time** upside.
+- Monitoring is cheap per property at scale (data + compute); the differentiator (AI explanation +
+  attorney) is what justifies pricing above a bare "title lock."
 
-## Phase 2 — own paper (upside)
+## Phase 2 — our own coverage (upside)
 
-Replace pass-through with your own program (fronting carrier + captive): you keep
-`premium − expected losses − reinsurance/admin` as **underwriting profit**, on top of the recurring
-service margin. Toggle this in the calculator. This is also where the in-house litigation/defense
-dollars become capturable — subject to the conflict/firewall structure (see project README).
+Instead of relying on third-party endorsements, stand up a **bespoke product via a specialty market
+(e.g. Lloyd's of London / surplus lines)**. Toggle "Phase 2" in the calculator to model
+`premium − expected losses − reinsurance/admin` as underwriting profit on top of the subscription
+margin. Title fraud is low-frequency / high-severity, so expected loss is low — the basis for the play.
 
 ## Illustrative default scenario (calculator defaults)
 
 | Input | Default |
 |---|---|
 | Members | 500 |
-| Membership price | $399/yr |
+| Subscription price | $399/yr (calculator default; site tiers $199/$349/$599) |
 | Service cost / member | $40/yr |
 | Onboarding (yr 1) | $50 |
-| Endorsement premium (pass-through) | $100 |
-| Your commission on endorsement | 70% |
-| New-policy attach rate | 40% |
-| Avg new-policy premium / your retention | $1,500 / 70% |
+| Insurance add-on premium (pass-through) | $100 |
+| Commission on add-on | 70% |
+| Add-on attach rate (where available) | 40% |
 
 > Numbers move entirely with your inputs — the point of the tool is to make the real ones obvious
-> once ORT gives you the endorsement cost and your split.
+> once you have your true per-property monitoring cost and (optionally) the add-on economics.
