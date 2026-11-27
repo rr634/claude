@@ -74,6 +74,11 @@
 
 <main id="top">
 
+<div class="welcome-bar" id="welcomeBar" hidden>
+  <span>✓ You're in — welcome to DeedGuard. Check your email; we'll confirm the property you want us to watch.</span>
+  <button type="button" aria-label="Dismiss" onclick="this.parentNode.hidden=true">×</button>
+</div>
+
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="container hero-inner">
@@ -489,7 +494,8 @@
         <ul>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="mailto:rr@richardrosalaw.com">Contact</a></li>
-          <li><a href="#check">Free Property Check</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
         </ul>
       </div>
       <div>
@@ -503,7 +509,7 @@
     <p class="disc">DeedGuard is an AI-powered property-records monitoring and alert service; it is not insurance and is not a substitute for title insurance. Monitoring cannot prevent a third party from submitting documents to a government office; it detects and alerts you to activity affecting your property. Where available, an optional title-insurance endorsement (ALTA 49 / 49.1) may be offered through a licensed title agent/underwriter, priced and billed separately and subject to its own terms, conditions, exclusions, limits, eligibility, and state availability. Attorney services are provided under a separate engagement and applicable law; nothing here creates an attorney-client relationship. Statistics and figures shown are illustrative. This is a demonstration website.</p>
     <div class="legal">
       <span>© <span id="yr">2026</span> DeedGuard USA. All rights reserved.</span>
-      <span>Privacy · Terms · Do Not Sell My Info</span>
+      <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="privacy.html#do-not-sell">Do Not Sell My Info</a></span>
     </div>
   </div>
 </footer>
@@ -533,6 +539,12 @@
 
   // current year
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // post-checkout welcome bar
+  if(/[?&]welcome=1/.test(location.search)){
+    var wb = document.getElementById('welcomeBar');
+    if(wb){ wb.hidden = false; if(window.dgTrack) dgTrack('subscribe_success', {}); }
+  }
 
   // plan buttons -> Stripe Checkout (falls back to the free-check section if payments aren't live yet)
   document.querySelectorAll('.js-checkout').forEach(function(btn){
