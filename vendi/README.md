@@ -1,4 +1,4 @@
-# Keyhand Commercial: keyhandcommercial.com 
+# Vendí: vendicre.com 
 
 A one-page static site in `site/`. It has no build step.
 
@@ -6,7 +6,7 @@ The site works two ways: owners can sell their South Florida commercial property
 
 ## Before launch: replace placeholders (search `TODO` and `[` in index.html)
 - Phone `(305) 000-0000` / `tel:+13050000000`. It appears in the nav, the call-to-action band, the footer and the sticky phone bar.
-- Email `offers@keyhandcommercial.com`, also set as `TO_EMAIL` in the script.
+- Email `offers@vendicre.com`, also set as `TO_EMAIL` in the script.
 - Founder name, title and photo (`assets/founder.jpg`) for the "Who you're dealing with" section.
 - Legal footer: the brokerage's legal name and DBPR license number, and the LLC that makes the cash purchases.
 - Service promises to confirm or change:
@@ -16,7 +16,7 @@ The site works two ways: owners can sell their South Florida commercial property
   - "legal & title expertise in-house"
   - the comparison table's commission and timing ranges
 - Form delivery: paste a Formspree, Basin or Getform URL into `FORM_ENDPOINT`. Until then, the form opens the visitor's email app with the details pre-filled.
-- Name and domain: no conflicting "Keyhand" business turned up in a web search, but run a USPTO and Sunbiz check. Register keyhandcommercial.com, and keyhand.com if it's available.
+- Name and domain: no conflicting "Vendí" business turned up in a web search, but run a USPTO and Sunbiz check. Register vendicre.com, and vendi.com if it's available.
 
 ## Photos (optional)
 - Hero: uncomment the `.hero::before` photo line and add `assets/hero.jpg`.
@@ -25,4 +25,4 @@ The site works two ways: owners can sell their South Florida commercial property
 ## Deploy
 This repository's GitHub Pages already serves brkwatercap.com, and Pages allows only one custom domain per repository. Deploy this site one of these ways:
 - Put `site/` in its own repository and turn on Pages there.
-- Use Netlify or Cloudflare Pages with the publish directory set to `keyhand/site`.
+- Use Netlify or Cloudflare Pages with the publish directory set to `vendi/site`.
