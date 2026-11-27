@@ -43,6 +43,56 @@
   };
 })();
 </script>
+
+<!-- Structured data: helps search engines and LLMs understand DeedGuard as an authoritative entity. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://deedguardusa.com/#org",
+      "name": "DeedGuard USA",
+      "url": "https://deedguardusa.com/",
+      "slogan": "Always Watching. Always Protected.",
+      "description": "AI-powered home title and deed monitoring for Florida homeowners, supervised by a Florida real estate attorney. Detects fraudulent deeds, liens, and mortgages recorded against your property and alerts you fast.",
+      "areaServed": { "@type": "State", "name": "Florida" },
+      "knowsAbout": ["home title fraud", "deed fraud", "seller impersonation fraud", "title monitoring", "quiet title action", "ALTA 49 forgery endorsement"],
+      "email": "rr@richardrosalaw.com",
+      "logo": "https://deedguardusa.com/assets/og-cover.png",
+      "founder": { "@id": "https://deedguardusa.com/#attorney" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://deedguardusa.com/#attorney",
+      "name": "[Your Name], Esq.",
+      "jobTitle": "Florida Real Estate Attorney",
+      "worksFor": { "@id": "https://deedguardusa.com/#org" },
+      "description": "Florida-licensed real estate attorney supervising DeedGuard's title-fraud monitoring and restoration.",
+      "sameAs": ["https://www.richardrosalaw.com/"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://deedguardusa.com/#service",
+      "serviceType": "Home title and deed monitoring",
+      "name": "DeedGuard title monitoring",
+      "provider": { "@id": "https://deedguardusa.com/#org" },
+      "areaServed": { "@type": "State", "name": "Florida" },
+      "description": "Continuous AI monitoring of public land records for your property, with plain-English alerts and attorney-backed response if a fraudulent filing appears."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://deedguardusa.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is home title fraud?", "acceptedAnswer": { "@type": "Answer", "text": "Home title fraud (also called deed fraud or seller impersonation fraud) is when a criminal forges a deed to transfer, sell, or borrow against a home they do not own. The forged document is recorded in public land records, and the real owner often does not find out for months." } },
+        { "@type": "Question", "name": "How is DeedGuard different from Home Title Lock?", "acceptedAnswer": { "@type": "Answer", "text": "DeedGuard uses AI to re-scan the public record every few days and explain each filing in plain English, and it puts a real Florida real estate attorney on call. Basic 'title lock' services send a raw alert and provide a restoration call center rather than an attorney. DeedGuard also offers transparent, cancel-anytime pricing." } },
+        { "@type": "Question", "name": "Is DeedGuard insurance?", "acceptedAnswer": { "@type": "Answer", "text": "No. DeedGuard is an AI-powered monitoring and alert service with attorney support; it is not insurance and is not a substitute for title insurance. Where available, it can separately help a homeowner add a real title-insurance forgery endorsement through a licensed underwriter." } },
+        { "@type": "Question", "name": "How often does DeedGuard check my title?", "acceptedAnswer": { "@type": "Answer", "text": "DeedGuard's AI re-scans your property's public record every few days, continuously, and compares each new filing against your baseline." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
