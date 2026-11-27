@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sell to Javi | Sell Your South Florida Commercial Property the Easy Way</title>
+<meta name="description" content="Javi buys commercial property across South Florida: retail, office, warehouses, apartment buildings, and land. Sell as-is with no commissions and close when you're ready, or list it for top dollar." />
+<link rel="canonical" href="https://selltojavi.com/" />
+<meta name="theme-color" content="#1F4D3A" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Sell to Javi" />
+<meta property="og:title" content="Sell to Javi | Commercial property, sold the easy way" />
+<meta property="og:description" content="A fair cash offer for your South Florida commercial property. No commissions, no repairs, no runaround." />
+<meta property="og:url" content="https://selltojavi.com/" />
+<meta name="twitter:card" content="summary" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Sell to Javi",
+  "url": "https://selltojavi.com/",
+  "logo": "https://selltojavi.com/assets/favicon.svg",
+  "email": "hello@selltojavi.com",
+  "description": "Direct buyer and brokerage for commercial real estate in South Florida.",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Miami-Dade County, Florida" },
+    { "@type": "AdministrativeArea", "name": "Broward County, Florida" },
+    { "@type": "AdministrativeArea", "name": "Palm Beach County, Florida" }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --cream:#FBF6EE;
+  --cream-2:#F4EBDD;
+  --sand:#EADCC6;
+  --green:#1F4D3A;
+  --green-2:#2D6A50;
+  --mint:#DCEBE1;
+  --coral:#E8684A;
+  --coral-2:#F07E62;
+  --sun:#F2B544;
+  --peach:#FBE3D6;
+  --text:#2A2723;
+  --muted:#6E675E;
+  --line:rgba(42,39,35,.1);
+  --white:#fff;
+  --max:1160px;
+  --serif:"Fraunces", Georgia, serif;
+  --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);color:var(--text);background:var(--cream);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.015em;color:var(--green)}
+h2{font-size:clamp(34px,4.6vw,54px)}
+h2 em,h1 em{font-style:italic;font-weight:500;color:var(--coral)}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--green);font-weight:500;font-size:14.5px;padding:7px 14px;border-radius:999px}
+.lede{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:600px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;border-radius:999px;font-family:var(--sans);font-weight:700;font-size:16.5px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,background .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn-coral{background:var(--coral);color:var(--white);box-shadow:0 10px 22px -10px rgba(232,104,74,.8)}
+.btn-coral:hover{background:var(--coral-2)}
+.btn-green{background:var(--green);color:var(--white)}
+.btn-green:hover{background:var(--green-2)}
+.btn-soft{background:var(--white);color:var(--green);border-color:var(--line)}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,238,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:600;font-size:24px;color:var(--green);letter-spacing:-.01em}
+.logo svg{width:40px;height:40px;flex:none}
+.logo span em{font-style:italic;color:var(--coral);font-weight:500}
+.links{display:flex;align-items:center;gap:30px;font-size:16px;color:var(--muted);font-weight:500}
+.links a:not(.btn):hover{color:var(--green)}
+.links .phone{color:var(--green);font-weight:700;display:flex;gap:8px;align-items:center}
+.links .phone svg{width:18px;height:18px;color:var(--coral)}
+.links .btn{padding:11px 20px;font-size:15.5px}
+.menu-btn{display:none;background:none;border:0;color:var(--green);width:44px;height:44px;cursor:pointer}
+.menu-btn svg{width:26px;height:26px;margin:auto}
+
+/* Hero */
+.hero{padding:clamp(40px,6vw,72px) 0 clamp(72px,9vw,110px);position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);z-index:-1}
+.blob.b1{width:560px;height:560px;background:var(--peach);right:-160px;top:-120px}
+.blob.b2{width:320px;height:320px;background:var(--mint);left:-190px;bottom:60px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hi{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(140deg,var(--sun),var(--coral));display:grid;place-items:center;color:var(--white);font-family:var(--serif);font-size:28px;font-weight:600;border:4px solid var(--white);box-shadow:0 8px 20px -8px rgba(0,0,0,.25);flex:none;background-size:cover;background-position:center}
+/* Add Javi's photo: .avatar{background-image:url(assets/javi.jpg)} and remove the "J" */
+.hi p{font-size:17px;line-height:1.4;color:var(--muted)}
+.hi p b{display:block;color:var(--green);font-size:19px}
+.hero h1{font-size:clamp(44px,6vw,78px)}
+.hero .lede{margin:24px 0 30px}
+.checks{list-style:none;display:grid;grid-template-columns:repeat(2,max-content);gap:12px 28px;font-weight:500}
+.checks li{display:flex;gap:10px;align-items:center}
+.checks .ck{width:26px;height:26px;border-radius:50%;background:var(--mint);color:var(--green);display:grid;place-items:center;flex:none}
+.checks .ck svg{width:15px;height:15px}
+.rating{margin-top:34px;display:flex;align-items:center;gap:12px;font-size:15px;color:var(--muted)}
+.rating .pin{width:34px;height:34px;border-radius:50%;background:var(--peach);color:var(--coral);display:grid;place-items:center;flex:none}.rating .pin svg{width:17px;height:17px}
+
+/* Form card */
+.card-form{background:var(--white);border-radius:28px;padding:34px;box-shadow:0 30px 60px -30px rgba(31,77,58,.35),0 0 0 1px var(--line);position:relative}
+.card-form .note{position:absolute;top:-18px;right:26px;background:var(--sun);color:var(--text);font-weight:700;font-size:14px;padding:8px 16px;border-radius:999px;transform:rotate(3deg);box-shadow:0 6px 14px -6px rgba(0,0,0,.25)}
+.card-form h3{font-size:30px;margin-bottom:6px}
+.card-form p.sub{color:var(--muted);font-size:16px;margin-bottom:22px}
+.card-form form{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.full{grid-column:1/-1}
+label{display:block;font-size:14px;font-weight:500;color:var(--green);margin-bottom:6px}
+input,select{font:inherit;font-size:16px;width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--cream-2);background:var(--cream);color:var(--text);appearance:none;-webkit-appearance:none;transition:border-color .2s,background .2s}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236E675E' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
+input:focus,select:focus{outline:none;border-color:var(--green-2);background:var(--white)}
+.card-form .btn{width:100%;margin-top:4px;font-size:17px;padding:17px}
+.fine{font-size:13.5px;color:var(--muted);text-align:center;margin-top:12px;display:flex;gap:6px;justify-content:center;align-items:center}
+.fine svg{width:15px;height:15px;color:var(--green-2)}
+.form-msg{display:none;font-size:15px;font-weight:500;margin-top:10px;text-align:center}
+
+/* Promise strip */
+.promises{background:var(--green);color:var(--cream);border-radius:28px;margin:0 auto;max-width:calc(var(--max) - 48px);padding:30px 36px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.promises>div{display:flex;gap:14px;align-items:center}
+.promises .ic{width:46px;height:46px;border-radius:14px;background:rgba(251,246,238,.1);display:grid;place-items:center;color:var(--sun);flex:none}
+.promises .ic svg{width:22px;height:22px}
+.promises b{display:block;font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.15;color:var(--white)}
+.promises span{font-size:14px;color:rgba(251,246,238,.72)}
+
+section{padding:clamp(80px,10vw,124px) 0}
+.head{max-width:720px;margin-bottom:52px}
+.head h2{margin:16px 0 16px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.center .lede{margin:0 auto}
+
+/* Two ways */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.way{border-radius:28px;padding:clamp(30px,4vw,44px);display:flex;flex-direction:column}
+.way.a{background:var(--peach)}
+.way.b{background:var(--mint)}
+.way .num{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--coral)}
+.way.b .num{color:var(--green-2)}
+.way h3{font-size:clamp(28px,3vw,36px);margin:8px 0 12px}
+.way p{color:var(--muted)}
+.way ul{list-style:none;margin:22px 0 26px;display:grid;gap:12px}
+.way li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.way li .ck{width:24px;height:24px;border-radius:50%;background:var(--white);color:var(--green);display:grid;place-items:center;flex:none;margin-top:2px}
+.way li .ck svg{width:14px;height:14px}
+.way .good{margin-bottom:26px;font-size:15.5px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.65);color:var(--text)}
+.way .btn{margin-top:auto;align-self:flex-start}
+
+/* Steps */
+.how{background:var(--white);border-radius:40px;margin:0 12px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.step{background:var(--cream);border-radius:24px;padding:32px 30px}
+.step .n{width:52px;height:52px;border-radius:50%;background:var(--coral);color:var(--white);display:grid;place-items:center;font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:22px}
+.step:nth-child(2) .n{background:var(--sun);color:var(--text)}
+.step:nth-child(3) .n{background:var(--green)}
+.step h3{font-size:25px;margin-bottom:10px}
+.step p{color:var(--muted);font-size:16.5px}
+.step .time{display:inline-block;margin-top:18px;font-size:14px;font-weight:700;color:var(--green);background:var(--mint);padding:6px 12px;border-radius:999px}
+
+/* Types */
+.types{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.type{background:var(--white);border-radius:22px;padding:26px 24px;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.type:hover{transform:translateY(-4px);box-shadow:0 18px 34px -20px rgba(31,77,58,.4)}
+.type .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px}
+.type .ic svg{width:26px;height:26px}
+.type:nth-child(4n+1) .ic{background:var(--peach);color:var(--coral)}
+.type:nth-child(4n+2) .ic{background:var(--mint);color:var(--green)}
+.type:nth-child(4n+3) .ic{background:#FCEFD0;color:#B9801A}
+.type:nth-child(4n+4) .ic{background:var(--cream-2);color:var(--green-2)}
+.type h4{font-size:22px;margin-bottom:6px}
+.type p{font-size:15px;color:var(--muted);line-height:1.5}
+
+/* Messy */
+.messy{background:var(--green);color:var(--cream);border-radius:40px;margin:0 12px}
+.messy h2{color:var(--white)}
+.messy h2 em{color:var(--sun)}
+.messy .lede{color:rgba(251,246,238,.75)}
+.messy-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tags span{background:rgba(251,246,238,.1);border:1px solid rgba(251,246,238,.18);padding:12px 18px;border-radius:999px;font-weight:500;font-size:16px;color:var(--cream)}
+.tags span:nth-child(3n+1){background:rgba(242,181,68,.16);border-color:rgba(242,181,68,.35)}
+.promise-box{margin-top:30px;background:var(--cream);color:var(--text);border-radius:22px;padding:24px 26px;display:flex;gap:16px;align-items:flex-start}
+.promise-box .ic{width:46px;height:46px;border-radius:14px;background:var(--peach);color:var(--coral);display:grid;place-items:center;flex:none}
+.promise-box .ic svg{width:22px;height:22px}
+.promise-box b{font-family:var(--serif);font-size:21px;color:var(--green);display:block;margin-bottom:4px}
+.promise-box p{color:var(--muted);font-size:16px}
+
+/* Compare */
+.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:26px;box-shadow:0 0 0 1px var(--line)}
+.compare{width:100%;border-collapse:collapse;background:var(--white);font-size:16.5px;min-width:560px}
+.compare th,.compare td{padding:18px 24px;text-align:left;border-bottom:1px solid var(--line)}
+.compare tr:last-child td{border-bottom:0}
+.compare thead th{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--green);background:var(--cream-2)}
+.compare thead th.us{background:var(--coral);color:var(--white)}
+.compare td:first-child{color:var(--muted);width:32%}
+.compare td.us{background:#FFF4EE;font-weight:700;color:var(--green)}
+.compare td.us::before{content:"\2713  ";color:var(--coral)}
+
+/* Meet */
+.meet-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:center}
+.photo{aspect-ratio:4/5;border-radius:200px 200px 32px 32px;background:linear-gradient(170deg,var(--sun) 0%,var(--coral) 100%);position:relative;display:grid;place-items:center;color:rgba(255,255,255,.85);text-align:center;font-weight:500;background-size:cover;background-position:center}
+/* Add Javi's photo: .photo{background-image:url(assets/javi.jpg)} and delete the placeholder <div> inside */
+.photo .ph svg{width:76px;height:76px;margin:0 auto 8px}
+.photo .bubble{position:absolute;right:-14px;bottom:44px;background:var(--white);color:var(--green);font-family:var(--serif);font-size:20px;font-weight:600;padding:14px 20px;border-radius:22px 22px 4px 22px;box-shadow:0 14px 30px -14px rgba(0,0,0,.3)}
+.meet h2{margin:16px 0 20px}
+.meet p{color:var(--muted);margin-bottom:16px}
+.meet .sign{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--coral);margin:22px 0 26px}
+
+/* FAQ */
+.faq{max-width:840px;margin:0 auto;display:grid;gap:12px}
+details{background:var(--white);border-radius:20px;padding:0 26px;border:1px solid var(--line);transition:box-shadow .2s}
+details[open]{box-shadow:0 14px 30px -20px rgba(31,77,58,.35)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-family:var(--serif);font-weight:600;font-size:20px;color:var(--green);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:var(--peach);color:var(--coral);display:grid;place-items:center;font-family:var(--sans);font-size:22px;line-height:1;transition:transform .25s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{padding:0 0 24px;color:var(--muted)}
+
+/* CTA */
+.cta{padding:0 0 clamp(80px,10vw,120px)}
+.cta-box{background:var(--coral);color:var(--white);border-radius:40px;padding:clamp(44px,6vw,72px);display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta-box::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.1);right:-80px;top:-120px}
+.cta-box h2{color:var(--white);font-size:clamp(32px,4.2vw,52px);max-width:620px;position:relative}
+.cta-box h2 em{color:var(--white);text-decoration:underline;text-decoration-color:var(--sun);text-underline-offset:6px;text-decoration-thickness:4px}
+.cta-box p{color:rgba(255,255,255,.88);margin-top:12px;position:relative}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap;position:relative}
+.cta .btn-white{background:var(--white);color:var(--coral)}
+.cta .btn-outline{border-color:rgba(255,255,255,.7);color:var(--white)}
+
+/* Footer */
+footer{background:var(--cream-2);color:var(--muted);padding:60px 0 32px;font-size:15px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.foot h5{font-size:14px;font-weight:700;color:var(--green);margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:8px}
+.foot a:hover{color:var(--green)}
+.foot p{margin-top:14px;max-width:320px}
+.legal{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:24px;font-size:13px;line-height:1.6}
+.eho{display:flex;gap:10px;align-items:center;flex:none}
+.eho svg{width:26px;height:26px}
+
+.mcta{display:none}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+
+@media (max-width:1080px){
+  .types{grid-template-columns:repeat(2,1fr)}
+  .promises{grid-template-columns:1fr 1fr}
+  .foot{grid-template-columns:1fr 1fr}
+  .links .phone{display:none}
+}
+@media (max-width:900px){
+  .links{position:fixed;inset:0;background:var(--cream);flex-direction:column;justify-content:center;gap:26px;font-size:24px;font-family:var(--serif);color:var(--green);opacity:0;pointer-events:none;transition:opacity .25s}
+  .links.open{opacity:1;pointer-events:auto}
+  .links .phone{display:flex}
+  .links .btn{font-family:var(--sans);font-size:17px;padding:15px 30px}
+  .menu-btn{display:block;position:relative;z-index:60}
+  .hero .wrap,.ways,.messy-grid,.meet-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .photo{max-width:420px;width:100%;margin:0 auto;aspect-ratio:1/1}
+  .photo .bubble{right:10px}
+  .how,.messy{border-radius:28px;margin:0 8px}
+  .mcta{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;gap:8px;padding:8px;background:var(--white);border-radius:999px;box-shadow:0 14px 34px -10px rgba(0,0,0,.35)}
+  .mcta .btn{flex:1;padding:13px;font-size:15.5px}
+  footer{padding-bottom:110px}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .wrap{padding:0 18px}
+  .checks{grid-template-columns:1fr}
+  .card-form{padding:28px 20px;border-radius:24px}
+  .card-form form{grid-template-columns:1fr}
+  .promises{grid-template-columns:1fr;margin:0 12px;padding:26px 22px}
+  .types{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .cta-box{border-radius:28px;margin:0 -6px}
+  .cta-btns,.cta-btns .btn{width:100%}
+  summary{font-size:18px}
+  details{padding:0 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Sell to Javi home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#1F4D3A"/><path d="M16 30 32 17l16 13v17a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2z" fill="#FBF6EE"/><path d="M26 40c3 3 9 3 12 0" fill="none" stroke="#E8684A" stroke-width="3.5" stroke-linecap="round"/><circle cx="27" cy="33" r="2" fill="#1F4D3A"/><circle cx="37" cy="33" r="2" fill="#1F4D3A"/></svg>
+      <span>Sell to <em>Javi</em></span>
+    </a>
+    <nav class="links" id="links" aria-label="Primary">
+      <a href="#ways">Ways to sell</a>
+      <a href="#how">How it works</a>
+      <a href="#meet">Meet Javi</a>
+      <a href="#faq">FAQ</a>
+      <!-- TODO: real phone number (it appears several times on this page) -->
+      <a href="tel:+13050000000" class="phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>(305) 000-0000</a>
+      <a href="#offer" class="btn btn-coral">Get my offer</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap">
+    <div>
+      <div class="hi reveal">
+        <div class="avatar" aria-hidden="true">J</div>
+        <p><b>Hi, I&rsquo;m Javi.</b>I buy commercial property across South Florida.</p>
+      </div>
+      <h1 class="reveal">Selling your building should be <em>easy</em>.</h1>
+      <p class="lede reveal">Shopping center, office, warehouse, apartment building, or a piece of land: I&rsquo;ll make you a fair cash offer, buy it as-is, and close whenever you&rsquo;re ready. No commissions and no runaround.</p>
+      <ul class="checks reveal">
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>No commissions or fees</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>No repairs or cleanup</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>Tenants can stay put</li>
+        <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>You pick the closing date</li>
+      </ul>
+      <div class="rating reveal">
+        <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+        Serving owners in Miami-Dade, Broward &amp; Palm Beach
+      </div>
+    </div>
+
+    <div class="card-form reveal" id="offer">
+      <span class="note">Free &amp; no pressure</span>
+      <h3>Let&rsquo;s talk about your property</h3>
+      <p class="sub">Tell me a little about it. I&rsquo;ll personally call you back, usually the same day.</p>
+      <form id="offerForm" novalidate>
+        <div class="full"><label for="o-addr">Property address</label><input id="o-addr" name="address" autocomplete="street-address" placeholder="e.g. 123 Main St, Hialeah" required /></div>
+        <div><label for="o-type">What kind of property?</label>
+          <select id="o-type" name="type">
+            <option>Retail / storefront</option><option>Office</option><option>Warehouse / industrial</option><option>Apartment building</option><option>Mixed-use</option><option>Land</option><option>Motel / hotel</option><option>Something else</option>
+          </select></div>
+        <div><label for="o-goal">I&rsquo;m thinking about</label>
+          <select id="o-goal" name="goal"><option>Selling for cash</option><option>Listing it</option><option>Not sure yet</option></select></div>
+        <div class="full"><label for="o-name">Your name</label><input id="o-name" name="name" autocomplete="name" required /></div>
+        <div><label for="o-phone">Phone</label><input id="o-phone" name="phone" type="tel" autocomplete="tel" required /></div>
+        <div><label for="o-email">Email</label><input id="o-email" name="email" type="email" autocomplete="email" required /></div>
+        <div class="full"><button class="btn btn-coral" type="submit">Get my free offer
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+      </form>
+      <p class="form-msg" id="formMsg" role="status"></p>
+      <p class="fine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Private. I never share your info.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISES: TODO confirm these -->
+<div class="promises reveal">
+  <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Offer in 48 hours</b><span>In writing, no strings</span></div></div>
+  <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><div><b>Close in 2 weeks</b><span>Or whenever you&rsquo;re ready</span></div></div>
+  <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span><div><b>$0 commission</b><span>On every cash sale</span></div></div>
+  <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><b>Local &amp; hands-on</b><span>You deal with me directly</span></div></div>
+</div>
+
+<!-- TWO WAYS -->
+<section id="ways">
+  <div class="wrap">
+    <div class="head center">
+      <span class="pill reveal">Two ways I can help</span>
+      <h2 class="reveal">Sell it fast, or sell it for <em>top dollar</em>.</h2>
+      <p class="lede reveal">Every property and every owner is different. I&rsquo;ll lay out both options honestly, and you decide what works best for you.</p>
+    </div>
+    <div class="ways">
+      <div class="way a reveal">
+        <span class="num">Option one</span>
+        <h3>I buy it from you</h3>
+        <p>A straightforward cash offer. No listing, no showings, no waiting on a buyer&rsquo;s bank.</p>
+        <ul>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>A written offer in about 48 hours</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>As-is, whatever shape it&rsquo;s in</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>I cover the usual closing costs</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>Close in as little as two weeks</li>
+        </ul>
+        <div class="good"><b>Great if</b> you want certainty, a quick exit, or the property needs work.</div>
+        <a href="#offer" class="btn btn-coral" data-goal="Selling for cash">Get a cash offer</a>
+      </div>
+      <div class="way b reveal">
+        <span class="num">Option two</span>
+        <h3>I list it for you</h3>
+        <p>Through my brokerage, I market your property to investors and business owners to get the best price.</p>
+        <ul>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>An honest price opinion up front</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>Professional photos, video, and marketing</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>Reach to local, out-of-state, and 1031 buyers</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></span>My cash offer stays on the table as a backup</li>
+        </ul>
+        <div class="good"><b>Great if</b> your property is in good shape and you have time to wait for the best price.</div>
+        <a href="#offer" class="btn btn-green" data-goal="Listing it">Talk about listing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how">
+  <div class="wrap">
+    <div class="head center">
+      <span class="pill reveal">How it works</span>
+      <h2 class="reveal">Three simple steps. <em>That&rsquo;s it.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Say hello</h3><p>Fill out the form or give me a call. Tell me about the property and what you&rsquo;d like to happen.</p><span class="time">About 2 minutes</span></div>
+      <div class="step reveal"><div class="n">2</div><h3>Get your offer</h3><p>I&rsquo;ll take a look, walk the property with you, and send a clear written offer. Take your time deciding.</p><span class="time">Within 48 hours</span></div>
+      <div class="step reveal"><div class="n">3</div><h3>Get paid</h3><p>Pick your closing date. A trusted title company handles the paperwork, and you walk away with your money.</p><span class="time">As soon as 2 weeks</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I BUY -->
+<section id="buy">
+  <div class="wrap">
+    <div class="head center">
+      <span class="pill reveal">What I buy</span>
+      <h2 class="reveal">Big or small, <em>I&rsquo;ll take a look</em>.</h2>
+      <p class="lede reveal">From one storefront to a full apartment complex, occupied or empty, polished or needing a lot of love.</p>
+    </div>
+    <div class="types">
+      <a href="#offer" class="type reveal" data-type="Retail / storefront"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v8h14v-8"/><path d="M10 21v-5h4v5"/></svg></div><h4>Retail</h4><p>Storefronts, strip centers, and single-tenant buildings.</p></a>
+      <a href="#offer" class="type reveal" data-type="Office"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></svg></div><h4>Office</h4><p>Medical, professional, and partly empty buildings.</p></a>
+      <a href="#offer" class="type reveal" data-type="Warehouse / industrial"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 21V9l6 4V9l6 4V5h6v16z"/></svg></div><h4>Warehouses</h4><p>Industrial, flex space, storage, and service yards.</p></a>
+      <a href="#offer" class="type reveal" data-type="Apartment building"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13z"/><path d="M8 11h2M14 11h2M8 15h2M14 15h2M10 21v-3h4v3"/></svg></div><h4>Apartments</h4><p>Buildings with 5 or more units, any age or condition.</p></a>
+      <a href="#offer" class="type reveal" data-type="Mixed-use"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 14h16M8 7h2M14 7h2M8 10h2M14 10h2M9 21v-4h6v4"/></svg></div><h4>Mixed-use</h4><p>Shops downstairs with apartments or offices above.</p></a>
+      <a href="#offer" class="type reveal" data-type="Land"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 19 9 9l4 6 3-4 5 8z"/><circle cx="17" cy="6" r="2"/></svg></div><h4>Land</h4><p>Lots, development sites, and parcels of any size.</p></a>
+      <a href="#offer" class="type reveal" data-type="Motel / hotel"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 20V8h18v12"/><path d="M3 14h18M10 20v-3h4v3M8 8V4h8v4"/></svg></div><h4>Motels</h4><p>Small hotels, motels, and conversion opportunities.</p></a>
+      <a href="#offer" class="type reveal" data-type="Something else"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17h.01"/></svg></div><h4>Something else?</h4><p>Gas stations, churches, auto shops. Just ask!</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- MESSY SITUATIONS -->
+<section class="messy">
+  <div class="wrap messy-grid">
+    <div>
+      <span class="pill reveal" style="background:rgba(251,246,238,.12);color:var(--cream)">Life happens</span>
+      <h2 class="reveal" style="margin:16px 0 18px">Complicated situation? <em>I can help.</em></h2>
+      <p class="lede reveal">Lots of buyers disappear when things get messy. I&rsquo;ve seen it all, and I&rsquo;m happy to work through it with you, without judgment.</p>
+      <!-- TODO: confirm this point -->
+      <div class="promise-box reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div><b>Legal know-how on our side</b><p>Liens, probate, partner disagreements, and title problems are part of what we handle every day, so they won&rsquo;t hold up your sale.</p></div>
+      </div>
+    </div>
+    <div class="tags reveal">
+      <span>Loan coming due</span><span>Behind on payments</span><span>Partners who disagree</span><span>Inherited property</span>
+      <span>Empty building</span><span>Difficult tenants</span><span>Code violations</span><span>40-year recertification</span>
+      <span>Storm damage</span><span>Liens or back taxes</span><span>Tired of managing it</span><span>Ready to retire</span>
+      <span>Divorce</span><span>Relocating</span><span>Needs a new roof</span>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section>
+  <div class="wrap">
+    <div class="head center">
+      <span class="pill reveal">Side by side</span>
+      <h2 class="reveal">Selling to me vs. <em>the usual way</em>.</h2>
+    </div>
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <thead><tr><th></th><th class="us">Selling to Javi</th><th>Traditional sale</th></tr></thead>
+        <tbody>
+          <tr><td>Commissions</td><td class="us">None</td><td>Usually 3&ndash;6%</td></tr>
+          <tr><td>Time to close</td><td class="us">As little as 2 weeks</td><td>Often 3&ndash;9 months</td></tr>
+          <tr><td>Repairs</td><td class="us">None, I buy as-is</td><td>Buyers often ask for them</td></tr>
+          <tr><td>Deal falling through</td><td class="us">Very unlikely, it&rsquo;s cash</td><td>Common when loans fall apart</td></tr>
+          <tr><td>Showings</td><td class="us">Just one visit</td><td>Many tours and inspections</td></tr>
+          <tr><td>Closing date</td><td class="us">You choose</td><td>The buyer&rsquo;s lender decides</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- MEET JAVI: TODO replace with Javi's real photo and story -->
+<section id="meet" class="meet">
+  <div class="wrap meet-grid">
+    <div class="photo reveal">
+      <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Javi&rsquo;s photo here</div>
+      <span class="bubble">&iexcl;Mucho gusto! &#128075;</span>
+    </div>
+    <div>
+      <span class="pill reveal">Meet Javi</span>
+      <h2 class="reveal">A real person, <em>not a call center</em>.</h2>
+      <p class="reveal">When you reach out, you talk to me, not a sales team reading a script. I grew up around here, and I&rsquo;ve spent years buying, selling, and fixing up commercial property all over South Florida.</p>
+      <p class="reveal">My goal is simple: give you a fair number, explain it in plain English, and make the whole thing as painless as possible. If selling to me isn&rsquo;t your best move, I&rsquo;ll tell you.</p>
+      <p class="sign reveal">&mdash; Javi</p>
+      <a href="#offer" class="btn btn-green reveal">Let&rsquo;s talk</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center">
+      <span class="pill reveal">Good questions</span>
+      <h2 class="reveal">Things people <em>usually ask</em>.</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>How do you figure out your offer?</summary><p>I look at the rent it brings in, its condition, the neighborhood, and what similar properties have sold for. Then I walk you through the numbers so nothing feels like a mystery.</p></details>
+      <details><summary>Do I have to accept?</summary><p>Not at all. The offer is free, and there&rsquo;s zero pressure. If it doesn&rsquo;t work for you, no hard feelings.</p></details>
+      <details><summary>Will a cash offer be less than listing it?</summary><p>Sometimes, yes. A cash sale trades a bit of price for speed, certainty, and no commissions. That&rsquo;s exactly why I show you both options side by side.</p></details>
+      <details><summary>What happens to my tenants?</summary><p>They can stay. I buy occupied buildings all the time and handle the tenant paperwork at closing.</p></details>
+      <details><summary>The property has liens or code violations. Is that a problem?</summary><p>Nope. Those are usually paid off or resolved at closing, out of the sale. We handle the details with the title company.</p></details>
+      <details><summary>Will anyone know I&rsquo;m selling?</summary><p>Only if you want them to. Cash sales are completely private. I won&rsquo;t contact your tenants or advertise the property without your OK.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div>
+        <h2>Let&rsquo;s talk over a <em>cafecito</em>.</h2>
+        <p>No pressure, no obligation. Just a friendly conversation about your property.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="#offer" class="btn btn-white">Get my free offer</a>
+        <a href="tel:+13050000000" class="btn btn-outline">Call (305) 000-0000</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#1F4D3A"/><path d="M16 30 32 17l16 13v17a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2z" fill="#FBF6EE"/><path d="M26 40c3 3 9 3 12 0" fill="none" stroke="#E8684A" stroke-width="3.5" stroke-linecap="round"/><circle cx="27" cy="33" r="2" fill="#1F4D3A"/><circle cx="37" cy="33" r="2" fill="#1F4D3A"/></svg><span>Sell to <em>Javi</em></span></a>
+        <p>Buying and selling commercial property across South Florida, the friendly way.</p>
+      </div>
+      <div><h5>Selling</h5><ul><li><a href="#offer">Get an offer</a></li><li><a href="#ways">List with me</a></li><li><a href="#how">How it works</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h5>Property types</h5><ul><li><a href="#buy">Retail &amp; office</a></li><li><a href="#buy">Warehouses</a></li><li><a href="#buy">Apartments</a></li><li><a href="#buy">Land</a></li></ul></div>
+      <div><h5>Say hello</h5><ul><li><a href="tel:+13050000000">(305) 000-0000</a></li><li><a href="mailto:hello@selltojavi.com">hello@selltojavi.com</a></li><li>Miami-Dade &middot; Broward &middot; Palm Beach</li></ul></div>
+    </div>
+    <div class="legal">
+      <!-- TODO: legal entity names and Florida DBPR brokerage license number -->
+      <span>&copy; <span id="yr">2026</span> Sell to Javi. Brokerage services provided by [Brokerage Legal Name], a licensed Florida real estate brokerage, License #[XXXXXXX]. Cash purchases are made by [Buying Entity LLC] as principal, not as a broker or agent. Submitting a form creates no obligation to buy or sell.</span>
+      <span class="eho"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 15 16 5l12 10"/><path d="M7 13v13h18V13"/><path d="M11 17h10M11 21h10"/></svg>Equal Housing Opportunity</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mcta">
+  <a href="tel:+13050000000" class="btn btn-soft">Call Javi</a>
+  <a href="#offer" class="btn btn-coral">Get my offer</a>
+</div>
+
+<script>
+(function(){
+  // Optional: paste a Formspree / Basin / Getform endpoint to receive leads directly.
+  var FORM_ENDPOINT = "";
+  var TO_EMAIL = "hello@selltojavi.com";
+
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 10); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var btn = document.getElementById('menuBtn'), links = document.getElementById('links');
+  function setMenu(o){ links.classList.toggle('open',o); btn.setAttribute('aria-expanded',o); btn.setAttribute('aria-label',o?'Close menu':'Open menu'); document.body.style.overflow=o?'hidden':''; }
+  btn.addEventListener('click', function(){ setMenu(!links.classList.contains('open')); });
+  links.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+
+  function pick(id, val){ var s=document.getElementById(id); for (var i=0;i<s.options.length;i++){ if(s.options[i].text===val){ s.selectedIndex=i; } } }
+  document.querySelectorAll('[data-goal]').forEach(function(a){ a.addEventListener('click', function(){ pick('o-goal', a.dataset.goal); }); });
+  document.querySelectorAll('[data-type]').forEach(function(a){ a.addEventListener('click', function(){ pick('o-type', a.dataset.type); }); });
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ x.target.classList.add('in'); io.unobserve(x.target); } }); }, {threshold:.1, rootMargin:'0px 0px -30px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var form = document.getElementById('offerForm'), msg = document.getElementById('formMsg');
+  function say(t, bad){ msg.style.display='block'; msg.style.color = bad ? '#B3412B' : '#2D6A50'; msg.textContent=t; }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = new FormData(form);
+    if (!d.get('address') || !d.get('name') || !d.get('phone') || !/^\S+@\S+\.\S+$/.test(d.get('email')||'')) {
+      say('Just need the address, your name, phone, and a valid email.', true); return;
+    }
+    if (FORM_ENDPOINT) {
+      fetch(FORM_ENDPOINT, {method:'POST', body:d, headers:{Accept:'application/json'}})
+        .then(function(r){ if(!r.ok) throw 0; form.reset(); say('Thank you! Javi will call you soon.'); })
+        .catch(function(){ say('Something went wrong. Please call or email ' + TO_EMAIL + '.', true); });
+    } else {
+      var body = ['Property: '+d.get('address'),'Type: '+d.get('type'),'Thinking about: '+d.get('goal'),'Name: '+d.get('name'),'Phone: '+d.get('phone'),'Email: '+d.get('email')].join('\n');
+      window.location.href = 'mailto:'+TO_EMAIL+'?subject='+encodeURIComponent('Property inquiry: '+d.get('address'))+'&body='+encodeURIComponent(body);
+      say('Your email app should open with everything filled in.');
+    }
+  });
+})();
+</script>
+</body>
+</html>
