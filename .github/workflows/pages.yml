@@ -1,19 +1,16 @@
-# Deploys the Breakwater site (breakwater/site/) to GitHub Pages.
+# Deploys the DeedGuard USA site (titlelock/site/) to GitHub Pages.
 #
-# ONE-TIME ENABLE (repo owner): Settings -> Pages -> Build and deployment ->
-#   Source: "GitHub Actions". If the deploy step reports the branch isn't
-#   allowed, go to Settings -> Environments -> github-pages -> Deployment
-#   branches and add this branch (or set "All branches"), then re-run.
-#
-# After enabling, trigger from the Actions tab ("Run workflow") or push a
-# change under breakwater/site/. Live URL: https://rr634.github.io/claude/
-name: Deploy site to GitHub Pages
+# Live URL (free, no custom domain needed): https://rr634.github.io/claude/
+# Runs automatically on push to main and can be run manually from the Actions tab.
+# If the first run needs Pages turned on: Settings -> Pages -> Build and deployment
+#   -> Source: "GitHub Actions".
+name: Deploy DeedGuard to GitHub Pages
 
 on:
   push:
-    branches: [ "main", "claude/breakwater-capital-strategy-pdprql" ]
+    branches: [ "main" ]
     paths:
-      - "breakwater/site/**"
+      - "titlelock/site/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -22,7 +19,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment; don't cancel an in-progress one.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -37,6 +33,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Prepare site (strip CNAME so the free github.io URL works)
+        run: |
+          mkdir -p _site
+          cp -R titlelock/site/. _site/
+          rm -f _site/CNAME
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
@@ -45,7 +47,7 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: breakwater/site
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
