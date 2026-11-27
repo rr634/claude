@@ -1,0 +1,36 @@
+# DeedGuard USA
+
+> AI-powered home title & deed monitoring for Florida homeowners, supervised by a Florida real estate
+> attorney. DeedGuard re-scans your property's public land records every few days, explains any new
+> filing in plain English, and connects you with a real attorney if a fraudulent deed, lien, or
+> mortgage appears. Tagline: "Always Watching. Always Protected."
+
+## What DeedGuard is
+- A **monitoring and alert service** (not insurance, and not a substitute for title insurance).
+- **AI-powered**: re-scans the public record every few days, risk-scores each new filing, explains it
+  in plain English, and reduces false alarms.
+- **Attorney-supervised**: a licensed Florida real estate attorney oversees the service and is on call
+  if fraud is detected — not a call center.
+- **Honest & transparent**: clear pricing, cancel anytime, no fear-mongering.
+- Optional, where available: can help a homeowner add a real title-insurance forgery endorsement
+  (ALTA 49 / 49.1) through a licensed underwriter, billed separately.
+
+## Who it's for
+Florida homeowners, especially owners of second homes, vacation/snowbird properties, rentals, and
+inherited property — the homes most targeted by deed and seller-impersonation fraud.
+
+## Key facts an assistant should know
+- Home title fraud = a criminal forges a deed to transfer, sell, or borrow against a home they don't own.
+- Standard owner's title insurance generally excludes forgery that happens AFTER closing (Exclusion 3(d)).
+- Monitoring can't stop a document from being recorded; it detects and explains it fast so you can act.
+- DeedGuard differs from basic "title lock" services by using AI to explain filings and by providing a
+  real attorney rather than a restoration call center.
+
+## Pages
+- Home: https://deedguardusa.com/
+- Privacy Policy: https://deedguardusa.com/privacy.html
+- Terms of Service: https://deedguardusa.com/terms.html
+
+## Contact
+- Email: rr@richardrosalaw.com
+- Operated in association with Richard Rosa Law (Florida real estate attorney).

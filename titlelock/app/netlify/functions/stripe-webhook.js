@@ -33,6 +33,25 @@ exports.handler = async (event) => {
         },
         { onConflict: 'email' }
       );
+
+      // Founding-rate step-up: if this plan has intro pricing, convert the subscription into a
+      // schedule — phase 1 at the intro price for intro_months, then the standard price forever.
+      if (s.subscription && s.metadata?.standard_price && s.metadata?.intro_price) {
+        try {
+          const schedule = await stripe.subscriptionSchedules.create({ from_subscription: s.subscription });
+          const introMonths = parseInt(s.metadata.intro_months || '12', 10);
+          await stripe.subscriptionSchedules.update(schedule.id, {
+            end_behavior: 'release',
+            phases: [
+              { items: [{ price: s.metadata.intro_price, quantity: 1 }], iterations: introMonths },
+              { items: [{ price: s.metadata.standard_price, quantity: 1 }] },
+            ],
+          });
+        } catch (e) {
+          console.error('[stripe-webhook] intro->standard schedule setup failed:', e.message);
+        }
+      }
+
       // NOTE: create the property row(s) here once the signup collects the address
       // (e.g. from a Checkout custom field or a short post-purchase onboarding form).
     } else if (evt.type === 'customer.subscription.updated' || evt.type === 'customer.subscription.deleted') {

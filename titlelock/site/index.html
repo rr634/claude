@@ -43,6 +43,56 @@
   };
 })();
 </script>
+
+<!-- Structured data: helps search engines and LLMs understand DeedGuard as an authoritative entity. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://deedguardusa.com/#org",
+      "name": "DeedGuard USA",
+      "url": "https://deedguardusa.com/",
+      "slogan": "Always Watching. Always Protected.",
+      "description": "AI-powered home title and deed monitoring for Florida homeowners, supervised by a Florida real estate attorney. Detects fraudulent deeds, liens, and mortgages recorded against your property and alerts you fast.",
+      "areaServed": { "@type": "State", "name": "Florida" },
+      "knowsAbout": ["home title fraud", "deed fraud", "seller impersonation fraud", "title monitoring", "quiet title action", "ALTA 49 forgery endorsement"],
+      "email": "rr@richardrosalaw.com",
+      "logo": "https://deedguardusa.com/assets/og-cover.png",
+      "founder": { "@id": "https://deedguardusa.com/#attorney" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://deedguardusa.com/#attorney",
+      "name": "[Your Name], Esq.",
+      "jobTitle": "Florida Real Estate Attorney",
+      "worksFor": { "@id": "https://deedguardusa.com/#org" },
+      "description": "Florida-licensed real estate attorney supervising DeedGuard's title-fraud monitoring and restoration.",
+      "sameAs": ["https://www.richardrosalaw.com/"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://deedguardusa.com/#service",
+      "serviceType": "Home title and deed monitoring",
+      "name": "DeedGuard title monitoring",
+      "provider": { "@id": "https://deedguardusa.com/#org" },
+      "areaServed": { "@type": "State", "name": "Florida" },
+      "description": "Continuous AI monitoring of public land records for your property, with plain-English alerts and attorney-backed response if a fraudulent filing appears."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://deedguardusa.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is home title fraud?", "acceptedAnswer": { "@type": "Answer", "text": "Home title fraud (also called deed fraud or seller impersonation fraud) is when a criminal forges a deed to transfer, sell, or borrow against a home they do not own. The forged document is recorded in public land records, and the real owner often does not find out for months." } },
+        { "@type": "Question", "name": "How is DeedGuard different from Home Title Lock?", "acceptedAnswer": { "@type": "Answer", "text": "DeedGuard uses AI to re-scan the public record every few days and explain each filing in plain English, and it puts a real Florida real estate attorney on call. Basic 'title lock' services send a raw alert and provide a restoration call center rather than an attorney. DeedGuard also offers transparent, cancel-anytime pricing." } },
+        { "@type": "Question", "name": "Is DeedGuard insurance?", "acceptedAnswer": { "@type": "Answer", "text": "No. DeedGuard is an AI-powered monitoring and alert service with attorney support; it is not insurance and is not a substitute for title insurance. Where available, it can separately help a homeowner add a real title-insurance forgery endorsement through a licensed underwriter." } },
+        { "@type": "Question", "name": "How often does DeedGuard check my title?", "acceptedAnswer": { "@type": "Answer", "text": "DeedGuard's AI re-scans your property's public record every few days, continuously, and compares each new filing against your baseline." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -57,7 +107,7 @@
         <path d="M27.5 30 V26.5 a4.5 4.5 0 0 1 9 0 V30" fill="none" stroke="#34D399" stroke-width="2.6"/>
         <circle cx="32" cy="35.5" r="1.9" fill="#0E2A47"/>
       </svg>
-      <span><b>Deed<span>Guard</span></b><small>AI Title Monitoring · USA</small></span>
+      <span><b>Deed<span>Guard</span></b><small>Attorney-Led Title Monitoring · FL</small></span>
     </a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
     <nav class="menu" id="menu">
@@ -86,7 +136,7 @@
       <span class="eyebrow">Florida is a top target for home title &amp; deed fraud</span>
       <h1>Someone can steal your home with a <mark>single forged signature.</mark></h1>
       <p class="brandline">Always Watching. <b>Always Protected.</b></p>
-      <p class="sub">DeedGuard's AI watches your deed and title in the public record — re-scanning every few days and alerting you the instant anything changes. A Florida real estate attorney is on call if fraud ever strikes. Smarter than a basic "title lock," and it never sleeps.</p>
+      <p class="sub">DeedGuard is the only home-title watch run by a <strong>real Florida real estate attorney</strong> — backed by AI that re-scans the public record every few days and flags any change in plain English. The "title lock" companies hand you an alert and a call center. We give you a lawyer.</p>
       <div class="hero-cta">
         <a class="btn btn-emerald" href="#check">Check My Property Free
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -94,10 +144,10 @@
         <a class="btn btn-outline" href="#how">See How It Works</a>
       </div>
       <div class="hero-trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Real Florida real estate attorney</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> AI re-scans every few days</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Florida attorney on call</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Plain-English alerts</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Optional insurance add-on</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Less than the call-center guys</span>
       </div>
     </div>
 
@@ -274,45 +324,44 @@
   <div class="container">
     <div class="section-head reveal" style="margin-bottom:36px">
       <span class="eyebrow">Why DeedGuard</span>
-      <h2>An alert is cheap. Knowing what it means — and who to call — is the product.</h2>
-      <p class="lede">Basic "title locks" fire a scary notification and leave you to figure it out alone. DeedGuard uses AI to tell you what actually happened, puts a real Florida attorney on call, and only offers insurance where it's genuinely available — no bundled claims, no pressure.</p>
+      <h2>A call center sends an alert. A real attorney protects your home.</h2>
+      <p class="lede">Home Title Lock and the other "title locks" charge about <strong>$20/month</strong> for monitoring and a restoration <em>call center</em> — their headline "$1 million protection" is a capped service credit, not cash and not insurance. DeedGuard gives you a <strong>real Florida real estate attorney</strong>, AI that explains every filing, and honest pricing that's less than theirs.</p>
     </div>
 
     <div class="grid grid-2" style="gap:22px;align-items:stretch">
       <div class="compare reveal">
-        <div class="ch"><h3>Basic "title lock"</h3><span class="tag them">Them</span></div>
+        <div class="ch"><h3>Home Title Lock &amp; basic "title locks"</h3><span class="tag them">Them</span></div>
         <ul>
-          <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Sends a raw alert</li>
-          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> No context — you decode it alone</li>
-          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> No attorney — you find your own</li>
-          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Checks infrequently</li>
-          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Lock-in renewals &amp; upsells</li>
+          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> A restoration <em>call center</em> — no attorney</li>
+          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> "$1M protection" is a capped service credit, not insurance</li>
+          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Raw alert, no plain-English context</li>
+          <li class="no"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> ~$20/mo, lock-in renewals &amp; upsells</li>
         </ul>
       </div>
       <div class="compare featured reveal">
         <div class="ch"><h3>DeedGuard</h3><span class="tag us">Us</span></div>
         <ul>
+          <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <strong>A real Florida real estate attorney on call</strong></li>
           <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> AI re-scans every few days and scores the risk</li>
           <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Plain-English alerts — what it is, what to do</li>
-          <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> A real Florida real estate attorney on call</li>
           <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Optional title-insurance add-on where available</li>
-          <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Transparent pricing — cancel anytime</li>
+          <li><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Honest, cancel-anytime pricing — for less</li>
         </ul>
       </div>
     </div>
 
     <div class="grid grid-4" style="margin-top:22px">
+      <div class="cov reveal"><b>Real attorney</b><span>A Florida real estate attorney on call — not a call center</span></div>
       <div class="cov reveal"><b>Every few days</b><span>AI re-scans your title in the public record</span></div>
       <div class="cov reveal"><b>Plain English</b><span>Alerts that explain the filing and the next step</span></div>
-      <div class="cov reveal"><b>Attorney</b><span>A Florida real estate attorney on call</span></div>
-      <div class="cov reveal"><b>Cancel anytime</b><span>No contracts, no lock-in renewals</span></div>
+      <div class="cov reveal"><b>For less</b><span>Priced under the "title lock" companies — cancel anytime</span></div>
     </div>
 
     <div class="structure reveal">
       <h3>What you're actually paying for</h3>
       <ol>
-        <li><b>The monitoring service</b> Your subscription funds AI that re-scans the public record every few days, risk-scores each filing, and sends plain-English alerts.</li>
-        <li><b>A real attorney on call</b> When a filing looks wrong, a Florida real estate attorney helps you verify it and act — not a call center.</li>
+        <li><b>A real attorney on call</b> When a filing looks wrong, a licensed Florida real estate attorney helps you verify it and act — the thing the "title lock" companies replace with a call center.</li>
+        <li><b>AI monitoring</b> Your subscription funds AI that re-scans the public record every few days, risk-scores each filing, and sends plain-English alerts.</li>
         <li><b>Optional insurance, where it's real</b> In states where it's sold, we can add a genuine title-insurance forgery endorsement through a licensed underwriter — priced and billed separately, never bundled as ours.</li>
       </ol>
     </div>
@@ -353,41 +402,41 @@
 <section class="section" id="pricing">
   <div class="container">
     <div class="section-head reveal center" style="margin-bottom:42px">
-      <span class="eyebrow" style="justify-content:center">Simple pricing</span>
-      <h2>Less than a coffee a week to watch your biggest asset.</h2>
-      <p class="lede center">Cancel anytime. Every plan includes AI title monitoring and instant, plain-English alerts.</p>
+      <span class="eyebrow" style="justify-content:center">Founding-member pricing</span>
+      <h2>A real attorney on your title — for less than a call center.</h2>
+      <p class="lede center">Home Title Lock charges about <strong>$19.95/mo</strong> for monitoring and a call center. DeedGuard includes a real Florida attorney — and costs less. Cancel anytime.</p>
     </div>
     <div class="plans">
       <div class="plan reveal">
         <h3>Essential</h3>
-        <div class="price">$199<small>/yr</small></div>
-        <p class="price-note">≈ $17/mo · one property</p>
+        <div class="price">$7.99<small>/mo</small></div>
+        <p class="price-note">billed $95/yr · one property</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <strong>AI title monitoring, every few days</strong></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Plain-English email alerts</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Annual title health report</li>
-          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Text alerts &amp; attorney on call</li>
-          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Optional insurance add-on</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> About half the price of a basic "title lock"</li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Attorney on call</li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg> Text alerts &amp; lien watch</li>
         </ul>
         <a class="btn btn-ghost js-checkout" data-plan="essential" href="#check">Start with Essential</a>
       </div>
       <div class="plan featured reveal">
-        <h3>Defend</h3>
-        <div class="price">$349<small>/yr</small></div>
-        <p class="price-note">≈ $29/mo · one property</p>
+        <h3>Guardian</h3>
+        <div class="price">$9.99<small>/mo</small></div>
+        <p class="price-note"><strong style="color:var(--emerald-600)">Founding rate — first year</strong>, then $17.95/mo</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <strong>Everything in Essential, plus:</strong></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Email <em>+ text</em> alerts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <strong>A real Florida real estate attorney on call</strong></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> AI monitoring + email <em>&amp; text</em> alerts</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Lien, mortgage &amp; judgment watch</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Florida attorney on call</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Renews $2/mo <em>under</em> Home Title Lock</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Optional insurance add-on (where available)</li>
         </ul>
-        <a class="btn btn-emerald js-checkout" data-plan="defend" href="#check">Protect My Home</a>
+        <a class="btn btn-emerald js-checkout" data-plan="defend" href="#check">Claim Founding Rate</a>
       </div>
       <div class="plan reveal">
         <h3>Premier</h3>
-        <div class="price">$599<small>/yr</small></div>
-        <p class="price-note">Up to 5 properties</p>
+        <div class="price">$24.99<small>/mo</small></div>
+        <p class="price-note">billed $299/yr · up to 5 properties</p>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> <strong>Up to 5 properties watched</strong></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Everything in Defend, per property</li>
@@ -398,7 +447,12 @@
         <a class="btn btn-ghost js-checkout" data-plan="premier" href="#check">Protect My Portfolio</a>
       </div>
     </div>
-    <p class="form-note" style="color:var(--muted);text-align:center;margin-top:22px;max-width:96ch;margin-inline:auto">DeedGuard plans are a monitoring and alert service, not insurance. The optional title-insurance add-on (ALTA 49 / 49.1) is available only where sold through a licensed title agent/underwriter, is priced and billed separately, and is subject to eligibility, policy terms, and state availability. Pricing shown is illustrative.</p>
+    <div class="reveal" style="text-align:center;margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:center">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--slate)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--emerald-600)" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> 30-day money-back guarantee</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--slate)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--emerald-600)" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Cancel anytime, no contracts</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--slate)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--emerald-600)" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Founding rate locked for early members</span>
+    </div>
+    <p class="form-note" style="color:var(--muted);text-align:center;margin-top:22px;max-width:96ch;margin-inline:auto">Founding rate applies to the first year and renews at the stated rate; we tell you the renewal price up front. Competitor price (~$19.95/mo) is per Home Title Lock's public pricing, shown for comparison only. DeedGuard plans are a monitoring and alert service, not insurance; the optional title-insurance add-on (ALTA 49 / 49.1) is available only where sold through a licensed title agent/underwriter, billed separately, and subject to eligibility, policy terms, and state availability. Pricing shown is illustrative.</p>
   </div>
 </section>
 

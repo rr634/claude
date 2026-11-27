@@ -24,7 +24,17 @@ Everything is swappable — the functions are plain Node and the county adapters
 
 ## One-time setup
 1. **Supabase:** create a project → run `app/db/schema.sql` in the SQL editor. Copy the URL + **service-role** key.
-2. **Stripe:** create 3 Products with recurring Prices (Essential/Defend/Premier) → copy the `price_…` IDs.
+2. **Stripe:** create recurring (monthly) Prices and copy the `price_…` IDs:
+   - Essential — $7.99/mo → `STRIPE_PRICE_ESSENTIAL`
+   - Guardian **founding** — $9.99/mo → `STRIPE_PRICE_DEFEND_INTRO`
+   - Guardian **standard** — $17.95/mo → `STRIPE_PRICE_DEFEND`
+   - Premier — $24.99/mo → `STRIPE_PRICE_PREMIER`
+
+   The **founding-rate step-up is automatic**: checkout starts Guardian at the founding price, and the
+   webhook converts the subscription into a schedule that charges the founding price for 12 months,
+   then the standard price forever. (Test this flow in **Stripe test mode** first — subscription
+   schedules can vary slightly by API version.)
+
    Add a webhook to `https://deedguardusa.com/.netlify/functions/stripe-webhook` (events:
    `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`) → copy the signing secret.
 3. **Resend:** verify the sending domain → copy the API key.
@@ -48,5 +58,6 @@ npm test            # exercises the change-detection engine against the mock cou
   custom field or a short post-purchase onboarding form) and insert a `properties` row so the scanner picks it up.
 
 ## Pricing (Stripe Prices → match the site)
-Essential $199/yr · Defend $349/yr · Premier $599/yr (monthly options optional). Figures are illustrative
+Essential $7.99/mo ($95/yr) · Guardian $9.99/mo founding rate then $17.95/mo · Premier $24.99/mo ($299/yr).
+Anchored to undercut Home Title Lock (~$19.95/mo). Figures are illustrative
 until unit costs are set — see `../strategy/unit-economics.md` and `../tools/economics.html`.

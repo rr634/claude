@@ -229,7 +229,7 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(10,26,47,.86);
   display:flex;flex-direction:column;transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
 .plan:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
 .plan.featured{border:1.5px solid var(--emerald);box-shadow:0 24px 60px rgba(16,185,129,.16);position:relative;}
-.plan.featured::after{content:"Most protection";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+.plan.featured::after{content:"Founding rate";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
   background:var(--emerald);color:#04231a;font-size:.7rem;font-weight:800;text-transform:uppercase;
   letter-spacing:.1em;padding:6px 14px;border-radius:var(--r-pill);}
 .plan h3{font-size:1.2rem;color:var(--slate);}
