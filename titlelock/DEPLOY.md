@@ -1,4 +1,4 @@
-# Go live: DeedGuard USA → deedguardusa.com
+# Go live: DeedGuard USA → deedguard.us
 
 The repo is **deploy-ready**. Pick ONE host below, connect this repo, point it at
 **`titlelock/site`**, and add the domain. ~10 minutes, no build step.
@@ -9,7 +9,7 @@ The repo is **deploy-ready**. Pick ONE host below, connect this repo, point it a
 ---
 
 ## Step 1 — Register the domain
-Buy **deedguardusa.com** at any registrar (Cloudflare ~$10, Namecheap, GoDaddy).
+Buy **deedguard.us** at any registrar (Cloudflare ~$10, Namecheap, GoDaddy).
 If you use **Cloudflare Pages** for hosting, registering the domain at Cloudflare too makes
 Step 3 automatic.
 
@@ -31,14 +31,14 @@ Step 3 automatic.
 3. **Deploy** → temporary `*.vercel.app` URL.
 
 ## Step 3 — Add the custom domain + DNS
-1. In the host: **Domains/Custom domains → Add `deedguardusa.com`** (and `www`).
+1. In the host: **Domains/Custom domains → Add `deedguard.us`** (and `www`).
 2. Point DNS at the host per its instructions:
    - **Cloudflare Pages** + domain on Cloudflare → added automatically.
    - **Netlify/Vercel** → either use their nameservers, or add the **apex A/ALIAS** record (and a
      `www` CNAME) they show you at your registrar.
 3. Wait for DNS to propagate (minutes–hours). HTTPS is issued automatically.
 
-Done — `https://deedguardusa.com` is live. The site already sets `CNAME`, canonical URL,
+Done — `https://deedguard.us` is live. The site already sets `CNAME`, canonical URL,
 `sitemap.xml`, and `robots.txt` to this domain.
 
 ---

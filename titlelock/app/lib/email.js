@@ -4,7 +4,7 @@ const { Resend } = require('resend');
 
 async function sendEmail({ to, subject, html }) {
   const key = process.env.RESEND_API_KEY;
-  const from = process.env.ALERT_FROM || 'DeedGuard USA <alerts@deedguardusa.com>';
+  const from = process.env.ALERT_FROM || 'DeedGuard USA <alerts@deedguard.us>';
   if (!key) {
     console.log('[email] RESEND_API_KEY missing — would send:', { to, subject });
     return { skipped: true };

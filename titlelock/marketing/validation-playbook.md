@@ -74,12 +74,12 @@ build the county adapters. Paying customers + manual delivery = validated busine
   demand is weak as framed. Change audience (e.g. realtors/estate attorneys as referrers), or pivot.
 
 ## 8. Go-live checklist to start the test
-- [ ] Register `deedguardusa.com`, connect Netlify, deploy (see `../DEPLOY.md`).
+- [ ] Register `deedguard.us`, connect Netlify, deploy (see `../DEPLOY.md`).
 - [ ] Set analytics IDs in `site/index.html` (`__DG_ANALYTICS__` block) — Plausible and/or Meta Pixel.
 - [ ] Wire `OPERATOR_EMAIL` so free-check leads hit your inbox (or just use the client-side fallback
       + Netlify Forms for the very first test — even lighter).
 - [ ] (For pre-sale) create Stripe Prices + set env vars; add a "Founding member" line to pricing.
-- [ ] Launch 2 Meta ad sets + 1 Google ad; point all at `deedguardusa.com`.
+- [ ] Launch 2 Meta ad sets + 1 Google ad; point all at `deedguard.us`.
 - [ ] Watch `lead_submit` and `checkout_click` events daily.
 
 **Bottom line:** spend two weeks and a few hundred dollars to learn whether Florida homeowners raise

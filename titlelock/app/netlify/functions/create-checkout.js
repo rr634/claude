@@ -29,7 +29,7 @@ exports.handler = async (event) => {
   const cfg = PLANS[plan];
   if (!cfg || !cfg.price) return resp(400, { error: 'Unknown or unconfigured plan' });
 
-  const site = process.env.SITE_URL || `https://${event.headers.host || 'deedguardusa.com'}`;
+  const site = process.env.SITE_URL || `https://${event.headers.host || 'deedguard.us'}`;
 
   // Pass intro details through metadata so the webhook can build the step-up schedule.
   const meta = { plan };
