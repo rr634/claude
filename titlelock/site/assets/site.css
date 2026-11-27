@@ -346,6 +346,25 @@ footer.site .legal{margin-top:16px;font-size:.8rem;color:rgba(244,248,253,.55);
 .doc a{color:var(--emerald-600);text-decoration:underline;}
 .doc .note{background:var(--panel);border-left:4px solid var(--emerald);border-radius:8px;
   padding:12px 16px;font-size:.9rem;color:var(--muted);margin:18px 0;}
+.doc .byline{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem;margin:-14px 0 24px;flex-wrap:wrap;}
+.doc .byline b{color:var(--slate);}
+.doc .answer{font-size:1.12rem;color:var(--slate);font-weight:600;line-height:1.6;background:var(--panel);
+  border-left:4px solid var(--emerald);border-radius:8px;padding:16px 20px;margin:0 0 26px;}
+.doc .lead-links{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 8px;}
+.doc .lead-links a{display:inline-block;border:1px solid var(--line);border-radius:var(--r-pill);
+  padding:7px 14px;font-size:.85rem;color:var(--slate);text-decoration:none;}
+.doc .lead-links a:hover{border-color:var(--emerald);color:var(--emerald-600);}
+.doc table.cmp2{width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem;}
+.doc table.cmp2 th,.doc table.cmp2 td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+.doc table.cmp2 th{background:var(--panel);font-weight:700;color:var(--slate);}
+.doc .article-cta{background:linear-gradient(150deg,#0E2A47,#143655);color:#fff;border-radius:14px;
+  padding:26px 28px;margin:36px 0;text-align:center;}
+.doc .article-cta h3{color:#fff;margin:0 0 8px;font-size:1.25rem;}
+.doc .article-cta p{color:var(--muted-light);margin:0 auto 18px;max-width:54ch;}
+.doc .related{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;}
+.doc .related h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 10px;}
+.doc .related ul{list-style:none;padding:0;margin:0;}
+.doc .related li{margin-bottom:8px;}
 .doc .center404{text-align:center;padding:40px 0;}
 .doc .center404 .big{font-family:var(--font-display);font-weight:800;font-size:clamp(3rem,10vw,6rem);color:var(--emerald-600);letter-spacing:-.03em;line-height:1;}
 
