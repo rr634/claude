@@ -6,7 +6,8 @@ below are **illustrative placeholders**.
 
 ## Revenue streams
 
-1. **Subscription (core)** — recurring annual ($199 / $349 / $599). AI monitoring + alerts + attorney
+1. **Subscription (core)** — Essential $7.99/mo, Guardian $9.99/mo founding (renews $17.95/mo), Premier
+   $24.99/mo — penetration-priced to undercut Home Title Lock (~$19.95/mo). AI monitoring + alerts + attorney
    access. SaaS-like gross margin; the whole thesis rests on this.
 2. **Insurance add-on commission (optional)** — *only where the ALTA 49/49.1 endorsement is actually
    sold*, through a licensed title agent/underwriter. The premium is passed through; your income is

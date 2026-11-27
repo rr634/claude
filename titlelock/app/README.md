@@ -48,5 +48,6 @@ npm test            # exercises the change-detection engine against the mock cou
   custom field or a short post-purchase onboarding form) and insert a `properties` row so the scanner picks it up.
 
 ## Pricing (Stripe Prices → match the site)
-Essential $199/yr · Defend $349/yr · Premier $599/yr (monthly options optional). Figures are illustrative
+Essential $7.99/mo ($95/yr) · Guardian $9.99/mo founding rate then $17.95/mo · Premier $24.99/mo ($299/yr).
+Anchored to undercut Home Title Lock (~$19.95/mo). Figures are illustrative
 until unit costs are set — see `../strategy/unit-economics.md` and `../tools/economics.html`.
