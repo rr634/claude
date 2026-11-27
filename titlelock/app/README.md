@@ -35,7 +35,7 @@ Everything is swappable — the functions are plain Node and the county adapters
    then the standard price forever. (Test this flow in **Stripe test mode** first — subscription
    schedules can vary slightly by API version.)
 
-   Add a webhook to `https://deedguardusa.com/.netlify/functions/stripe-webhook` (events:
+   Add a webhook to `https://deedguard.us/.netlify/functions/stripe-webhook` (events:
    `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`) → copy the signing secret.
 3. **Resend:** verify the sending domain → copy the API key.
 4. **Netlify:** connect the repo (base `titlelock`), then add all env vars from `app/.env.example`

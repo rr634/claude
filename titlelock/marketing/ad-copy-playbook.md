@@ -3,7 +3,7 @@
 **Positioning:** AI-powered home title monitoring for Florida homeowners — smarter than a basic
 "title lock," with a real estate attorney on call.
 **Tagline:** *Always Watching. Always Protected.*
-**Landing page:** https://deedguardusa.com (primary CTA: **free property check**)
+**Landing page:** https://deedguard.us (primary CTA: **free property check**)
 **Creatives:** in `marketing/creatives/renders/` — `ad-square-fear`, `ad-square-vs`,
 `ad-square-price`, `ad-story`, `ad-landscape`. OG share card: `site/assets/og-cover.png`.
 

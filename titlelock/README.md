@@ -1,6 +1,6 @@
 # DeedGuard USA — AI home title monitoring site
 
-A self-contained, responsive marketing site for **DeedGuard USA** (deedguardusa.com), an
+A self-contained, responsive marketing site for **DeedGuard USA** (deedguard.us), an
 **AI-powered title-monitoring subscription** with a Florida real estate attorney on call, plus an
 **optional** title-insurance add-on where available (home title theft / deed-fraud protection).
 Tagline: **Always Watching. Always Protected.**
@@ -67,17 +67,17 @@ The "Run Free Check" form is wired up client-side only — it validates input an
 To go live, point the form `submit` handler at your backend, CRM, or an email/Forms endpoint
 (e.g. Formspree, a Lambda, or your intake system). Search for `checkForm` in `index.html`.
 
-## Deploying — domain: `deedguardusa.com`
+## Deploying — domain: `deedguard.us`
 
 The site is **deploy-ready**: `site/CNAME`, `site/sitemap.xml`, `site/robots.txt`, canonical/OG URLs,
-and `netlify.toml` all point at **deedguardusa.com**. Pick a host and connect this repo — no build step.
+and `netlify.toml` all point at **deedguard.us**. Pick a host and connect this repo — no build step.
 
 **Recommended (doesn't touch the Breakwater site):** any static host pointed at **`titlelock/site`**.
 - **Netlify:** New site from Git → this repo → set **Base directory = `titlelock`** (reads `netlify.toml`,
-  publishes `site`). Add `deedguardusa.com` as a custom domain.
+  publishes `site`). Add `deedguard.us` as a custom domain.
 - **Cloudflare Pages / Vercel:** framework preset **None/Other**, **output dir = `titlelock/site`**.
 
-**DNS at your registrar** for `deedguardusa.com`: follow the host's instructions — typically an
+**DNS at your registrar** for `deedguard.us`: follow the host's instructions — typically an
 apex `A`/`ALIAS` (or `CNAME` for `www`) pointing at the host. The `CNAME` file in `site/` also makes
 this repo's folder GitHub-Pages-ready if you ever move to a dedicated repo.
 
