@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New River Realty | South Florida Real Estate</title>
+<meta name="description" content="New River Realty is a boutique South Florida real estate brokerage. We help clients buy, sell, lease, and invest across Fort Lauderdale, Miami, and Palm Beach, with local insight and personal service." />
+<link rel="canonical" href="https://newriverrealty.com/" />
+<meta name="theme-color" content="#0E2230" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="New River Realty" />
+<meta property="og:title" content="New River Realty | South Florida Real Estate" />
+<meta property="og:description" content="Boutique South Florida brokerage for buying, selling, leasing, and investing, from Miami to Palm Beach." />
+<meta property="og:url" content="https://newriverrealty.com/" />
+<meta name="twitter:card" content="summary" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "New River Realty",
+  "url": "https://newriverrealty.com/",
+  "logo": "https://newriverrealty.com/assets/favicon.svg",
+  "email": "hello@newriverrealty.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Fort Lauderdale", "addressRegion": "FL", "addressCountry": "US" },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Broward County, Florida" },
+    { "@type": "AdministrativeArea", "name": "Miami-Dade County, Florida" },
+    { "@type": "AdministrativeArea", "name": "Palm Beach County, Florida" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --ink:#0E2230;
+  --ink-2:#16323F;
+  --river:#1F5E63;
+  --river-2:#2E7C7F;
+  --sand:#F6F1E9;
+  --sand-2:#EDE5D8;
+  --brass:#B8915A;
+  --brass-2:#C9A46A;
+  --text:#1B2A33;
+  --muted:#5C6A72;
+  --line:rgba(14,34,48,.12);
+  --white:#fff;
+  --radius:18px;
+  --max:1180px;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);color:var(--text);background:var(--sand);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--brass)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(36px,5vw,58px);color:var(--ink)}
+h2 em,h1 em{font-style:italic;color:var(--brass-2)}
+.lede{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:620px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:500;font-size:15.5px;transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease;cursor:pointer;border:1px solid transparent;font-family:var(--sans)}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--brass-2);color:var(--ink)}
+.btn-gold:hover{background:#d6b37b}
+.btn-ghost{border-color:rgba(246,241,233,.35);color:var(--sand)}
+.btn-ghost:hover{border-color:var(--sand);background:rgba(246,241,233,.06)}
+.btn-dark{background:var(--ink);color:var(--sand)}
+.btn-dark:hover{background:var(--ink-2)}
+.btn svg{width:16px;height:16px}
+
+/* Nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s ease,box-shadow .3s ease,padding .3s ease;padding:22px 0}
+.nav.scrolled{background:rgba(14,34,48,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 0;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:12px;color:var(--sand)}
+.logo svg{width:38px;height:38px}
+.logo b{font-family:var(--serif);font-weight:400;font-size:25px;letter-spacing:.005em;line-height:1}
+.logo small{display:block;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-2);margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:34px;color:rgba(246,241,233,.82);font-size:15px}
+.nav-links a:not(.btn):hover{color:var(--white)}
+.nav-links .btn{padding:11px 20px;font-size:14.5px}
+.menu-btn{display:none;background:none;border:0;color:var(--sand);width:44px;height:44px;cursor:pointer}
+.menu-btn svg{width:26px;height:26px;margin:auto}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;background:var(--ink);color:var(--sand);display:flex;align-items:center;overflow:hidden;padding:140px 0 110px}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(1200px 600px at 85% 10%,rgba(46,124,127,.45),transparent 60%),
+  radial-gradient(900px 500px at 0% 100%,rgba(184,145,90,.18),transparent 60%),
+  linear-gradient(180deg,#0E2230 0%,#0F2833 100%)}
+/* Drop a photo at assets/hero.jpg and uncomment to use it as the hero background */
+/* .hero-bg{background:linear-gradient(180deg,rgba(14,34,48,.55),rgba(14,34,48,.85)),url(assets/hero.jpg) center/cover} */
+.river{position:absolute;inset:auto -5% -2% -5%;height:72%;opacity:.9;pointer-events:none}
+.river path{fill:none;stroke-linecap:round}
+.river .flow{stroke-dasharray:6 14;animation:flow 30s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-400}}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-size:clamp(52px,8.4vw,112px);max-width:980px;color:var(--sand)}
+.hero .lede{color:rgba(246,241,233,.74);margin:28px 0 40px;font-size:clamp(17px,1.8vw,20px)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{margin-top:84px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px;border-top:1px solid rgba(246,241,233,.14)}
+.hero-meta div{padding:22px 22px 0 0}
+.hero-meta b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;color:var(--sand);line-height:1.1}
+.hero-meta span{font-size:13.5px;color:rgba(246,241,233,.6)}
+
+/* Sections */
+section{padding:clamp(84px,11vw,140px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head h2{margin-top:14px;max-width:640px}
+.sec-head .lede{max-width:440px}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:38px 34px 34px;transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -24px rgba(14,34,48,.25)}
+.icon{width:52px;height:52px;border-radius:14px;background:var(--sand);display:grid;place-items:center;color:var(--river);margin-bottom:28px}
+.icon svg{width:26px;height:26px}
+.card h3{font-size:32px;color:var(--ink);margin-bottom:12px}
+.card p{color:var(--muted);font-size:16px}
+.card ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px;font-size:15px}
+.card li{display:flex;gap:10px;align-items:flex-start}
+.card li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--brass);margin-top:10px}
+.card .more{margin-top:auto;font-weight:500;font-size:15px;color:var(--river);display:inline-flex;gap:8px;align-items:center}
+.card .more:hover{color:var(--ink)}
+
+/* Approach split */
+.approach{background:var(--white)}
+.split{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,96px);align-items:center}
+.visual{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,var(--river) 0%,var(--ink) 100%)}
+/* To use a photo: add assets/approach.jpg and set: .visual{background:url(assets/approach.jpg) center/cover} */
+.visual>svg{position:absolute;inset:0;width:100%;height:100%}
+.visual .tag{position:absolute;left:24px;bottom:24px;right:24px;background:rgba(246,241,233,.94);backdrop-filter:blur(6px);border-radius:14px;padding:20px 22px;display:flex;gap:16px;align-items:center}
+.visual .tag b{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink);line-height:1.15;display:block}
+.visual .tag span{font-size:13.5px;color:var(--muted)}
+.steps{margin-top:40px;display:grid;gap:0}
+.step{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:24px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .n{font-family:var(--serif);font-size:30px;color:var(--brass);line-height:1}
+.step h4{font-size:17px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* Neighborhoods */
+.hoods{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.hood{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;color:var(--sand);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;isolation:isolate;transition:transform .35s ease}
+.hood:hover{transform:translateY(-4px)}
+.hood::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--bg);transition:transform .6s ease}
+.hood:hover::before{transform:scale(1.05)}
+.hood::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 35%,rgba(14,34,48,.78) 100%)}
+.hood svg{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.5}
+.hood small{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2);font-weight:600}
+.hood h3{font-size:30px;margin-top:6px}
+.hood p{font-size:14px;color:rgba(246,241,233,.75);margin-top:6px;line-height:1.5}
+.hood.wide{grid-column:span 2;aspect-ratio:auto}
+.h1{--bg:linear-gradient(155deg,#2E7C7F,#0E2230)}
+.h2{--bg:linear-gradient(155deg,#C9A46A,#6B4E2E 70%,#0E2230)}
+.h3{--bg:linear-gradient(155deg,#3D7A8C,#16323F)}
+.h4{--bg:linear-gradient(155deg,#8BA89A,#1F5E63 60%,#0E2230)}
+.h5{--bg:linear-gradient(155deg,#D2B48C,#8C6A46 60%,#16323F)}
+.h6{--bg:linear-gradient(155deg,#1F5E63,#0E2230)}
+/* Add a photo to any tile: .h1{--bg:url(assets/fort-lauderdale.jpg) center/cover} */
+
+/* Quote band */
+.band{background:var(--ink);color:var(--sand);position:relative;overflow:hidden}
+.band .river{height:100%;inset:0;opacity:.35}
+.quote{position:relative;max-width:900px;margin:0 auto;text-align:center}
+.quote p{font-family:var(--serif);font-size:clamp(30px,4.2vw,50px);line-height:1.2}
+.quote p em{color:var(--brass-2)}
+.quote .sig{margin-top:28px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,241,233,.6)}
+.pillars{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:84px;padding-top:48px;border-top:1px solid rgba(246,241,233,.14)}
+.pillars h4{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:8px}
+.pillars p{color:rgba(246,241,233,.66);font-size:15.5px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:start}
+.contact-list{margin-top:40px;display:grid;gap:22px}
+.contact-list a,.contact-list div{display:flex;gap:16px;align-items:center}
+.contact-list .icon{margin:0;background:var(--white);width:48px;height:48px}
+.contact-list b{display:block;font-weight:500;color:var(--ink)}
+.contact-list span{font-size:14px;color:var(--muted)}
+form{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:clamp(28px,4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:grid;gap:8px}
+.field.full{grid-column:1/-1}
+label{font-size:13px;font-weight:500;color:var(--ink)}
+input,select,textarea{font:inherit;font-size:16px;color:var(--text);background:var(--sand);border:1px solid transparent;border-radius:12px;padding:14px 16px;width:100%;transition:border-color .2s,background .2s;appearance:none;-webkit-appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235C6A72' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--river);background:var(--white)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.chips input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
+.chips label{padding:10px 16px;border-radius:999px;border:1px solid var(--line);font-size:14.5px;cursor:pointer;transition:all .2s;font-weight:400}
+.chips input:checked+label{background:var(--ink);color:var(--sand);border-color:var(--ink)}
+.chips input:focus-visible+label{outline:2px solid var(--river);outline-offset:2px}
+.form-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:6px}
+.form-foot small{color:var(--muted);font-size:13px;max-width:320px;line-height:1.5}
+.form-msg{grid-column:1/-1;font-size:15px;color:var(--river);display:none}
+
+/* Footer */
+footer{background:var(--ink);color:rgba(246,241,233,.66);padding:72px 0 36px;font-size:14.5px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(246,241,233,.12)}
+.foot-top h5{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-2);margin-bottom:16px;font-weight:600}
+.foot-top ul{list-style:none;display:grid;gap:10px}
+.foot-top a:hover{color:var(--sand)}
+.foot-top p{max-width:320px;margin-top:18px}
+.foot-bot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:28px;font-size:12.5px;line-height:1.6}
+.eho{display:flex;gap:10px;align-items:center}
+.eho svg{width:26px;height:26px;flex:none}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  .river .flow{animation:none}
+  *{transition:none!important}
+}
+
+/* Responsive */
+@media (max-width:1020px){
+  .hoods{grid-template-columns:repeat(2,1fr)}
+  .services{grid-template-columns:1fr}
+  .card{padding:32px 28px}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .nav-links{position:fixed;inset:0;background:var(--ink);flex-direction:column;justify-content:center;gap:28px;font-size:22px;font-family:var(--serif);opacity:0;pointer-events:none;transition:opacity .3s}
+  .nav-links.open{opacity:1;pointer-events:auto}
+  .nav-links .btn{font-family:var(--sans);font-size:16px;padding:14px 28px}
+  .menu-btn{display:block;position:relative;z-index:60}
+  .split,.contact-grid{grid-template-columns:1fr}
+  .visual{aspect-ratio:4/3;order:-1}
+  .pillars{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .hero{padding:120px 0 80px}
+  .hero-meta{grid-template-columns:1fr;margin-top:56px}
+  .hero-meta div{padding:14px 0;border-bottom:1px solid rgba(246,241,233,.1)}
+  .hero-meta b{font-size:24px}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .hoods{grid-template-columns:1fr}
+  .hood,.hood.wide{grid-column:auto;aspect-ratio:16/11}
+  form{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .form-foot .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="New River Realty home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 46c9 0 9-10 18-10s9 10 18 10 9-10 12-10" fill="none" stroke="#C9A46A" stroke-width="3.2" stroke-linecap="round"/><path d="M8 34c9 0 9-10 18-10s9 10 18 10 9-10 12-10" fill="none" stroke="#F6F1E9" stroke-width="3.2" stroke-linecap="round"/><path d="M32 6 21 15h22z" fill="#F6F1E9"/></svg>
+      <span><b>New River</b><small>Realty</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#services">Buy &amp; Sell</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#neighborhoods">Neighborhoods</a>
+      <a href="#contact" class="btn btn-gold">Let&rsquo;s Talk</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <svg class="river" viewBox="0 0 1440 520" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#C9A46A" stop-opacity="0"/><stop offset=".35" stop-color="#C9A46A" stop-opacity=".9"/><stop offset="1" stop-color="#C9A46A" stop-opacity=".15"/></linearGradient>
+      <linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#2E7C7F" stop-opacity=".1"/><stop offset=".6" stop-color="#5FA6A6" stop-opacity=".7"/><stop offset="1" stop-color="#2E7C7F" stop-opacity=".1"/></linearGradient>
+    </defs>
+    <path d="M-20 420 C 200 300, 360 480, 560 360 S 900 180, 1080 300 S 1360 360, 1460 220" stroke="url(#g2)" stroke-width="90" opacity=".25"/>
+    <path d="M-20 420 C 200 300, 360 480, 560 360 S 900 180, 1080 300 S 1360 360, 1460 220" stroke="url(#g1)" stroke-width="1.6"/>
+    <path class="flow" d="M-20 445 C 200 325, 360 505, 560 385 S 900 205, 1080 325 S 1360 385, 1460 245" stroke="#F6F1E9" stroke-opacity=".28" stroke-width="1.2"/>
+    <path d="M-20 470 C 200 350, 360 530, 560 410 S 900 230, 1080 350 S 1360 410, 1460 270" stroke="#5FA6A6" stroke-opacity=".35" stroke-width="1"/>
+    <path class="flow" d="M-20 395 C 200 275, 360 455, 560 335 S 900 155, 1080 275 S 1360 335, 1460 195" stroke="#F6F1E9" stroke-opacity=".16" stroke-width="1"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow reveal">South Florida Real Estate</p>
+    <h1 class="reveal" style="margin-top:22px">Find your place<br/>on the <em>water&rsquo;s edge</em>.</h1>
+    <p class="lede reveal">New River Realty is a boutique brokerage rooted in Fort Lauderdale. We help clients buy, sell, and invest from Miami to Palm Beach, with clear advice and a team that answers the phone.</p>
+    <div class="hero-ctas reveal">
+      <a href="#contact" class="btn btn-gold" data-interest="Buying">Start your search
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#contact" class="btn btn-ghost" data-interest="Selling">What&rsquo;s my home worth?</a>
+    </div>
+    <div class="hero-meta reveal">
+      <div><b>3 counties</b><span>Broward, Miami-Dade, Palm Beach</span></div>
+      <div><b>Every price point</b><span>Condos, family homes, waterfront</span></div>
+      <div><b>One point of contact</b><span>From first tour to closing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow reveal">What we do</p>
+        <h2 class="reveal">Real estate, <em>done right</em>.</h2>
+      </div>
+      <p class="lede reveal">Whatever you&rsquo;re planning, you get local market knowledge, honest pricing, and steady guidance from offer to keys.</p>
+    </div>
+
+    <div class="services">
+      <article class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>Buy</h3>
+        <p>Find the right home in the right neighborhood, at the right price.</p>
+        <ul>
+          <li>Early access to new and off-market listings</li>
+          <li>Neighborhood, flood-zone, and HOA guidance</li>
+          <li>Skilled negotiation and inspection support</li>
+        </ul>
+        <a href="#contact" class="more" data-interest="Buying">Start buying <span aria-hidden="true">&rarr;</span></a>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 19h16"/><path d="M6 15l4-4 3 3 5-6"/><path d="M14 8h4v4"/></svg></div>
+        <h3>Sell</h3>
+        <p>Price it right, show it well, and close with fewer surprises.</p>
+        <ul>
+          <li>A free, data-backed pricing analysis</li>
+          <li>Professional photography, video, and staging</li>
+          <li>Targeted marketing to local and out-of-state buyers</li>
+        </ul>
+        <a href="#contact" class="more" data-interest="Selling">Get a home valuation <span aria-hidden="true">&rarr;</span></a>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></div>
+        <h3>Invest &amp; Lease</h3>
+        <p>Grow a portfolio, or find the right tenant or rental.</p>
+        <ul>
+          <li>Income property and short-term rental analysis</li>
+          <li>Residential leasing for owners and renters</li>
+          <li>1031 exchange and pre-construction guidance</li>
+        </ul>
+        <a href="#contact" class="more" data-interest="Investing">Talk investments <span aria-hidden="true">&rarr;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section id="approach" class="approach">
+  <div class="wrap split">
+    <div class="visual reveal" aria-hidden="true">
+      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+        <g fill="none" stroke-linecap="round">
+          <path d="M-20 380 C 80 300, 120 420, 200 340 S 330 230, 420 280" stroke="#C9A46A" stroke-width="1.5" opacity=".9"/>
+          <path d="M-20 400 C 80 320, 120 440, 200 360 S 330 250, 420 300" stroke="#F6F1E9" stroke-width="1" opacity=".35"/>
+          <path d="M-20 420 C 80 340, 120 460, 200 380 S 330 270, 420 320" stroke="#F6F1E9" stroke-width="1" opacity=".2"/>
+          <path d="M-20 360 C 80 280, 120 400, 200 320 S 330 210, 420 260" stroke="#5FA6A6" stroke-width="1" opacity=".5"/>
+        </g>
+        <!-- skyline -->
+        <g fill="#F6F1E9" opacity=".1">
+          <rect x="40" y="170" width="34" height="140"/><rect x="82" y="120" width="28" height="190"/><rect x="118" y="150" width="40" height="160"/>
+          <rect x="166" y="90" width="30" height="220"/><rect x="204" y="135" width="44" height="175"/><rect x="256" y="160" width="26" height="150"/>
+          <rect x="290" y="110" width="36" height="200"/><rect x="334" y="185" width="30" height="125"/>
+        </g>
+        <circle cx="300" cy="80" r="34" fill="#C9A46A" opacity=".25"/>
+      </svg>
+      <div class="tag">
+        <div class="icon" style="margin:0;background:var(--ink);color:var(--brass-2);flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div><b>Rooted in Fort Lauderdale</b><span>Named for the river that runs through it</span></div>
+      </div>
+    </div>
+
+    <div>
+      <p class="eyebrow reveal">Our approach</p>
+      <h2 class="reveal" style="margin-top:14px">Clear advice.<br/><em>No pressure.</em></h2>
+      <p class="lede reveal" style="margin-top:22px">Buying or selling a home is one of the biggest decisions you&rsquo;ll make. We keep it simple, keep you informed, and put your goals ahead of a quick sale.</p>
+      <div class="steps">
+        <div class="step reveal"><span class="n">01</span><div><h4>A real conversation</h4><p>We start with your goals, timeline, and budget, not a sales pitch.</p></div></div>
+        <div class="step reveal"><span class="n">02</span><div><h4>A clear plan</h4><p>Pricing, neighborhoods, and next steps, laid out in plain language.</p></div></div>
+        <div class="step reveal"><span class="n">03</span><div><h4>Hands-on execution</h4><p>Tours, marketing, offers, and negotiation, handled closely and quickly.</p></div></div>
+        <div class="step reveal"><span class="n">04</span><div><h4>A smooth closing</h4><p>We coordinate with lenders, inspectors, and title so nothing slips.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEIGHBORHOODS ============ -->
+<section id="neighborhoods">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow reveal">Where we work</p>
+        <h2 class="reveal">From Miami <em>to Palm Beach</em>.</h2>
+      </div>
+      <p class="lede reveal">Every neighborhood has its own market. We know the streets, the buildings, and what homes are really selling for.</p>
+    </div>
+
+    <div class="hoods">
+      <a href="#contact" class="hood wide h1 reveal" data-interest="Buying">
+        <svg viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 260 C 120 200, 200 300, 320 230 S 500 150, 610 200" fill="none" stroke="#C9A46A" stroke-width="1.4"/><path d="M-10 280 C 120 220, 200 320, 320 250 S 500 170, 610 220" fill="none" stroke="#F6F1E9" stroke-width="1" opacity=".5"/></svg>
+        <small>Broward</small><h3>Fort Lauderdale &amp; Las Olas</h3><p>Waterfront homes, downtown high-rises, and the canals of the Venice of America.</p>
+      </a>
+      <a href="#contact" class="hood h2 reveal" data-interest="Buying">
+        <small>Miami-Dade</small><h3>Miami Beach</h3><p>Oceanfront condos and island living.</p>
+      </a>
+      <a href="#contact" class="hood h3 reveal" data-interest="Buying">
+        <small>Palm Beach</small><h3>Boca Raton</h3><p>Golf communities and quiet luxury.</p>
+      </a>
+      <a href="#contact" class="hood h4 reveal" data-interest="Buying">
+        <small>Broward</small><h3>Wilton Manors &amp; Victoria Park</h3><p>Walkable, historic, full of character.</p>
+      </a>
+      <a href="#contact" class="hood h5 reveal" data-interest="Buying">
+        <small>Miami-Dade</small><h3>Coral Gables</h3><p>Tree-lined streets and classic estates.</p>
+      </a>
+      <a href="#contact" class="hood wide h6 reveal" data-interest="Buying">
+        <svg viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 230 C 140 290, 260 170, 380 240 S 540 300, 610 250" fill="none" stroke="#C9A46A" stroke-width="1.4"/><path d="M-10 250 C 140 310, 260 190, 380 260 S 540 320, 610 270" fill="none" stroke="#F6F1E9" stroke-width="1" opacity=".5"/></svg>
+        <small>Broward &amp; Palm Beach</small><h3>Hollywood to Delray Beach</h3><p>Beach towns, family neighborhoods, and the coastline in between. Don&rsquo;t see your area? We probably cover it.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAND ============ -->
+<section class="band">
+  <svg class="river" viewBox="0 0 1440 520" preserveAspectRatio="none" aria-hidden="true">
+    <path class="flow" d="M-20 300 C 240 180, 420 420, 720 280 S 1180 140, 1460 260" stroke="#C9A46A" stroke-width="1.2"/>
+    <path d="M-20 330 C 240 210, 420 450, 720 310 S 1180 170, 1460 290" stroke="#5FA6A6" stroke-width="1"/>
+  </svg>
+  <div class="wrap">
+    <div class="quote reveal">
+      <p>&ldquo;We&rsquo;re here to give you <em>straight answers</em>, real local knowledge, and an agent who&rsquo;s with you from the first tour to the closing table.&rdquo;</p>
+      <div class="sig">The New River Realty Team</div>
+    </div>
+    <div class="pillars">
+      <div class="reveal"><h4>Local first</h4><p>We live and work here. Our advice comes from the streets and buildings we know firsthand.</p></div>
+      <div class="reveal"><h4>Always reachable</h4><p>Calls and texts get answered the same day, including evenings and weekends.</p></div>
+      <div class="reveal"><h4>Your interests first</h4><p>We tell you what you need to hear, even when it&rsquo;s not what you hoped to hear.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow reveal">Get in touch</p>
+      <h2 class="reveal" style="margin-top:14px">Let&rsquo;s talk about<br/><em>your next move</em>.</h2>
+      <p class="lede reveal" style="margin-top:22px">Tell us a little about what you&rsquo;re looking for. A local agent will get back to you within one business day, usually much sooner.</p>
+      <div class="contact-list reveal">
+        <!-- TODO: replace with the brokerage phone number -->
+        <a href="tel:+19540000000"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span><b>(954) 000-0000</b><span>Call or text</span></span></a>
+        <a href="mailto:hello@newriverrealty.com"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><b>hello@newriverrealty.com</b><span>We reply within one business day</span></span></a>
+        <div><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span><b>Fort Lauderdale, Florida</b><span>Serving all of South Florida</span></span></div>
+      </div>
+    </div>
+
+    <form id="leadForm" class="reveal" novalidate>
+      <div class="field full">
+        <label>I&rsquo;m interested in</label>
+        <div class="chips" role="radiogroup">
+          <input type="radio" name="interest" id="i-buy" value="Buying" checked /><label for="i-buy">Buying</label>
+          <input type="radio" name="interest" id="i-sell" value="Selling" /><label for="i-sell">Selling</label>
+          <input type="radio" name="interest" id="i-inv" value="Investing" /><label for="i-inv">Investing</label>
+          <input type="radio" name="interest" id="i-rent" value="Leasing" /><label for="i-rent">Leasing</label>
+        </div>
+      </div>
+      <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required /></div>
+      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" /></div>
+      <div class="field full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required /></div>
+      <div class="field full">
+        <label for="f-area">Area of interest</label>
+        <select id="f-area" name="area">
+          <option>Fort Lauderdale &amp; Las Olas</option>
+          <option>Miami &amp; Miami Beach</option>
+          <option>Boca Raton &amp; Palm Beach</option>
+          <option>Wilton Manors &amp; Victoria Park</option>
+          <option>Hollywood to Delray Beach</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field full"><label for="f-msg">Anything else?</label><textarea id="f-msg" name="message" placeholder="Timeline, budget, must-haves, or the address you&rsquo;re thinking of selling"></textarea></div>
+      <p class="form-msg" id="formMsg" role="status"></p>
+      <div class="form-foot">
+        <small>We&rsquo;ll only use your details to respond to your inquiry. No spam, ever.</small>
+        <button class="btn btn-dark" type="submit">Send message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a href="#top" class="logo">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 46c9 0 9-10 18-10s9 10 18 10 9-10 12-10" fill="none" stroke="#C9A46A" stroke-width="3.2" stroke-linecap="round"/><path d="M8 34c9 0 9-10 18-10s9 10 18 10 9-10 12-10" fill="none" stroke="#F6F1E9" stroke-width="3.2" stroke-linecap="round"/><path d="M32 6 21 15h22z" fill="#F6F1E9"/></svg>
+          <span><b>New River</b><small>Realty</small></span>
+        </a>
+        <p>A boutique South Florida real estate brokerage serving buyers, sellers, and investors from Miami to Palm Beach.</p>
+      </div>
+      <div><h5>Services</h5><ul><li><a href="#services">Buying</a></li><li><a href="#services">Selling</a></li><li><a href="#services">Investing &amp; Leasing</a></li></ul></div>
+      <div><h5>Areas</h5><ul><li><a href="#neighborhoods">Fort Lauderdale</a></li><li><a href="#neighborhoods">Miami Beach</a></li><li><a href="#neighborhoods">Boca Raton</a></li><li><a href="#neighborhoods">Coral Gables</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="tel:+19540000000">(954) 000-0000</a></li><li><a href="mailto:hello@newriverrealty.com">hello@newriverrealty.com</a></li><li>Fort Lauderdale, FL</li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <!-- TODO: insert the brokerage's legal name and Florida DBPR license number -->
+      <span>&copy; <span id="yr">2026</span> New River Realty. A licensed Florida real estate brokerage. License #[XXXXXXX].<br/>Information is deemed reliable but not guaranteed.</span>
+      <span class="eho">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 15 16 5l12 10"/><path d="M7 13v13h18V13"/><path d="M11 17h10M11 21h10"/></svg>
+        Equal Housing Opportunity
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Optional: set to a Formspree / Basin / Getform endpoint to receive form posts directly.
+  // Left empty, the form opens the visitor's email app with the message pre-filled.
+  var FORM_ENDPOINT = "";
+  var TO_EMAIL = "hello@newriverrealty.com";
+
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 40); };
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  var btn = document.getElementById('menuBtn'), links = document.getElementById('navLinks');
+  function setMenu(open){
+    links.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function(){ setMenu(!links.classList.contains('open')); });
+  links.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+
+  // Pre-select the form's interest from whichever CTA was clicked
+  document.querySelectorAll('[data-interest]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var r = document.querySelector('input[name=interest][value="'+a.dataset.interest+'"]');
+      if (r) r.checked = true;
+    });
+  });
+
+  // Reveal on scroll
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Lead form
+  var form = document.getElementById('leadForm'), msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = new FormData(form);
+    if (!d.get('name') || !/^\S+@\S+\.\S+$/.test(d.get('email')||'')) {
+      msg.style.display='block'; msg.style.color='#A4453A';
+      msg.textContent = 'Please add your name and a valid email so we can reach you.';
+      return;
+    }
+    if (FORM_ENDPOINT) {
+      fetch(FORM_ENDPOINT, {method:'POST', body:d, headers:{Accept:'application/json'}})
+        .then(function(r){ if(!r.ok) throw 0; form.reset(); ok('Thank you. A New River agent will be in touch shortly.'); })
+        .catch(function(){ ok('Something went wrong. Please email ' + TO_EMAIL + ' directly.'); });
+    } else {
+      var body = ['Interest: '+d.get('interest'),'Name: '+d.get('name'),'Phone: '+(d.get('phone')||''),'Email: '+d.get('email'),'Area: '+d.get('area'),'','Message:',d.get('message')||''].join('\n');
+      window.location.href = 'mailto:' + TO_EMAIL + '?subject=' + encodeURIComponent('Website inquiry: ' + d.get('interest')) + '&body=' + encodeURIComponent(body);
+      ok('Your email app should open with your message ready to send.');
+    }
+  });
+  function ok(t){ msg.style.display='block'; msg.style.color=''; msg.textContent=t; }
+})();
+</script>
+</body>
+</html>
