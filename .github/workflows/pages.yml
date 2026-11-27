@@ -1,16 +1,23 @@
-# Deploys the DeedGuard USA site (titlelock/site/) to GitHub Pages.
+# Deploys the Breakwater Capital site (breakwater/site/) to GitHub Pages.
 #
-# Live URL (free, no custom domain needed): https://rr634.github.io/claude/
+# This repository hosts the Breakwater site, served at its custom domain
+# brkwatercap.com (see breakwater/site/CNAME).
+#
+# The DeedGuard USA site lives in its own repository (rr634/deedguard) and is
+# NOT deployed from here — one GitHub Pages site can serve only one custom
+# domain, so the two sites are kept in separate repositories.
+#
+# Free URL (no custom domain needed): https://rr634.github.io/claude/
 # Runs automatically on push to main and can be run manually from the Actions tab.
 # If the first run needs Pages turned on: Settings -> Pages -> Build and deployment
 #   -> Source: "GitHub Actions".
-name: Deploy DeedGuard to GitHub Pages
+name: Deploy Breakwater to GitHub Pages
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - "titlelock/site/**"
+      - "breakwater/site/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -41,7 +48,7 @@ jobs:
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: titlelock/site
+          path: breakwater/site
 
       - name: Deploy to GitHub Pages
         id: deployment
