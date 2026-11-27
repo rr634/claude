@@ -1,0 +1,36 @@
+# Deploy config for DeedGuard USA (deedguardusa.com)
+# Works with Netlify, and the publish dir applies to Cloudflare Pages / Vercel too.
+#
+# Netlify: New site from Git -> this repo -> set "Base directory" = titlelock
+#   (Netlify then reads this file; no build command, just publishes ./site)
+# Cloudflare Pages: framework preset "None", build output dir = titlelock/site
+# Vercel: framework "Other", output dir = titlelock/site
+#
+# Then add deedguardusa.com as a custom domain in the host and point DNS at it.
+[build]
+  base = "titlelock"
+  publish = "site"
+  command = "npm install"
+
+# Serverless backend: lead capture, Stripe subscriptions, and the scheduled title scanner.
+# Set env vars in Netlify (see app/.env.example). Endpoints live at /.netlify/functions/<name>.
+[functions]
+  directory = "app/netlify/functions"
+  node_bundler = "esbuild"
+
+# Pretty API paths (optional): /api/lead -> the function
+[[redirects]]
+  from = "/api/lead"
+  to = "/.netlify/functions/lead"
+  status = 200
+[[redirects]]
+  from = "/api/create-checkout"
+  to = "/.netlify/functions/create-checkout"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

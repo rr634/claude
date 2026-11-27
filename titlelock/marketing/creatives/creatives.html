@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DeedGuard USA — Creative Kit</title>
+<style>
+:root{--ink:#0A1A2F;--slate:#0E2A47;--emerald:#10B981;--emerald-600:#059669;--emerald-soft:#34D399;
+  --alert:#E0533D;--muted:rgba(244,248,253,.72);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#5b6775;font-family:var(--font);padding:30px;display:flex;flex-wrap:wrap;gap:30px;}
+.frame{position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(120% 90% at 85% -10%, rgba(16,185,129,.26), transparent 52%),
+    radial-gradient(90% 80% at 5% 115%, rgba(29,74,114,.6), transparent 60%),
+    linear-gradient(155deg,#0A1A2F 0%,#0E2A47 55%,#143655 100%);}
+.frame::after{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:52px 52px;mask-image:radial-gradient(120% 80% at 75% 0%,#000,transparent 72%);}
+.inner{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;}
+.brandrow{display:flex;align-items:center;gap:16px;}
+.brandrow .logo{flex:0 0 auto;}
+.brandrow b{font-weight:800;letter-spacing:-.01em;line-height:1;}
+.brandrow b span{color:var(--emerald-soft);}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;text-transform:uppercase;letter-spacing:.2em;
+  font-weight:800;color:var(--emerald-soft);}
+.eyebrow::before{content:"";height:3px;background:currentColor;}
+.head{font-weight:800;letter-spacing:-.025em;line-height:1.04;}
+.head mark{background:none;color:var(--emerald-soft);}
+.tagline{font-weight:800;letter-spacing:-.01em;}
+.tagline span{color:var(--emerald-soft);}
+.sub{color:var(--muted);font-weight:500;}
+.pill{display:inline-flex;align-items:center;gap:14px;background:var(--emerald);color:#04231a;font-weight:800;border-radius:999px;align-self:flex-start;}
+.url{color:var(--emerald-soft);font-weight:800;letter-spacing:.01em;}
+.shieldbg{position:absolute;z-index:1;opacity:.14;right:-6%;top:50%;transform:translateY(-50%);}
+.cmp{display:flex;gap:20px;}
+.cmpcol{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;}
+.cmpcol.us{border-color:rgba(16,185,129,.5);background:rgba(16,185,129,.1);}
+.cmpcol h4{font-weight:800;display:flex;align-items:center;justify-content:space-between;}
+.cmpcol .li{display:flex;align-items:flex-start;gap:12px;color:#eaf2fb;}
+.x{color:var(--alert);flex:0 0 auto;}
+.c{color:var(--emerald-soft);flex:0 0 auto;}
+.price{font-weight:800;letter-spacing:-.03em;line-height:1;}
+.price small{font-weight:700;color:var(--muted);letter-spacing:0;}
+
+/* ---------- OG / landscape 1200x630 ---------- */
+#og{width:1200px;height:630px;}
+#og .inner{padding:68px 72px;justify-content:space-between;}
+#og .brandrow .logo{width:58px;height:58px;}
+#og .brandrow b{font-size:30px;}
+#og .head{font-size:68px;max-width:17ch;margin-top:30px;}
+#og .tagline{font-size:28px;margin-top:22px;}
+#og .url{font-size:26px;}
+#og .foot{display:flex;align-items:center;justify-content:space-between;}
+#og .shieldbg{width:460px;height:460px;}
+
+/* ---------- square 1080 ---------- */
+.sq{width:1080px;height:1080px;}
+.sq .inner{padding:92px 86px;}
+.sq .brandrow .logo{width:66px;height:66px;}
+.sq .brandrow b{font-size:36px;}
+
+#sq1 .eyebrow{font-size:24px;margin-top:70px;}
+#sq1 .eyebrow::before{width:40px;}
+#sq1 .head{font-size:104px;margin-top:30px;}
+#sq1 .spacer{flex:1;}
+#sq1 .pill{font-size:34px;padding:30px 44px;}
+#sq1 .url{font-size:30px;margin-top:34px;}
+
+#sq2 .head{font-size:62px;margin-top:54px;max-width:20ch;}
+#sq2 .cmp{margin-top:54px;}
+#sq2 .cmpcol{padding:40px 36px;}
+#sq2 .cmpcol h4{font-size:30px;margin-bottom:26px;}
+#sq2 .tag{font-size:18px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:7px 16px;border-radius:999px;}
+#sq2 .tag.them{background:rgba(224,83,61,.2);color:#F0795F;}
+#sq2 .tag.us{background:rgba(16,185,129,.22);color:var(--emerald-soft);}
+#sq2 .li{font-size:27px;margin-bottom:20px;line-height:1.3;}
+#sq2 .li svg{width:28px;height:28px;margin-top:3px;}
+#sq2 .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:46px;}
+#sq2 .url{font-size:30px;}
+#sq2 .pill{font-size:28px;padding:22px 36px;}
+
+#sq3 .eyebrow{font-size:23px;margin-top:64px;}
+#sq3 .eyebrow::before{width:40px;}
+#sq3 .price{font-size:150px;margin-top:24px;}
+#sq3 .sub{font-size:34px;margin-top:10px;max-width:22ch;}
+#sq3 .checks{margin-top:54px;display:flex;flex-direction:column;gap:22px;}
+#sq3 .li{display:flex;align-items:center;gap:16px;font-size:30px;font-weight:600;}
+#sq3 .li svg{width:30px;height:30px;color:var(--emerald-soft);flex:0 0 auto;}
+#sq3 .foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:50px;}
+#sq3 .url{font-size:30px;}
+#sq3 .pill{font-size:28px;padding:22px 36px;}
+
+/* ---------- story 1080x1920 ---------- */
+#story{width:1080px;height:1920px;}
+#story .inner{padding:130px 92px;}
+#story .brandrow .logo{width:74px;height:74px;}
+#story .brandrow b{font-size:42px;}
+#story .eyebrow{font-size:26px;margin-top:150px;}
+#story .eyebrow::before{width:46px;}
+#story .head{font-size:120px;margin-top:40px;}
+#story .sub{font-size:40px;margin-top:40px;max-width:20ch;line-height:1.35;}
+#story .spacer{flex:1;}
+#story .pill{font-size:42px;padding:40px 56px;align-self:stretch;justify-content:center;}
+#story .url{font-size:38px;margin-top:40px;text-align:center;}
+#story .tagline{font-size:34px;margin-top:10px;}
+</style>
+</head>
+<body>
+
+<!-- OG / share 1200x630 -->
+<div class="frame" id="og">
+  <svg class="shieldbg" viewBox="0 0 64 64"><path d="M32 6 L56 16 V32 C56 46 46 56 32 61 C18 56 8 46 8 32 V16 Z" fill="none" stroke="#34D399" stroke-width="2"/><rect x="23" y="30" width="18" height="15" rx="3" fill="#34D399"/><path d="M26 30 V25 a6 6 0 0 1 12 0 V30" fill="none" stroke="#34D399" stroke-width="3"/></svg>
+  <div class="inner">
+    <div class="brandrow"><svg class="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E2A47"/><path d="M32 11 L49 18 V32 C49 43 41 50 32 54 C23 50 15 43 15 32 V18 Z" fill="none" stroke="#34D399" stroke-width="3.2"/><rect x="25" y="30" width="14" height="12" rx="2.4" fill="#34D399"/><path d="M27.5 30 V26.5 a4.5 4.5 0 0 1 9 0 V30" fill="none" stroke="#34D399" stroke-width="2.6"/></svg><b>Deed<span>Guard</span> USA</b></div>
+    <div class="head">AI watches your home's <mark>title.</mark> 24/7.</div>
+    <div class="foot">
+      <div><div class="tagline">Always Watching. <span>Always Protected.</span></div></div>
+      <div class="url">deedguardusa.com</div>
+    </div>
+  </div>
+</div>
+
+<!-- Square 1 — fear hook -->
+<div class="frame sq" id="sq1">
+  <div class="inner">
+    <div class="brandrow"><svg class="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E2A47"/><path d="M32 11 L49 18 V32 C49 43 41 50 32 54 C23 50 15 43 15 32 V18 Z" fill="none" stroke="#34D399" stroke-width="3.2"/><rect x="25" y="30" width="14" height="12" rx="2.4" fill="#34D399"/><path d="M27.5 30 V26.5 a4.5 4.5 0 0 1 9 0 V30" fill="none" stroke="#34D399" stroke-width="2.6"/></svg><b>Deed<span>Guard</span> USA</b></div>
+    <div class="eyebrow">Florida home title fraud</div>
+    <div class="head">Someone can steal your home with a <mark>single forged signature.</mark></div>
+    <div class="spacer"></div>
+    <div class="pill">Check your title — free &nbsp;→</div>
+    <div class="url">deedguardusa.com</div>
+  </div>
+</div>
+
+<!-- Square 2 — vs title lock -->
+<div class="frame sq" id="sq2">
+  <div class="inner">
+    <div class="brandrow"><svg class="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E2A47"/><path d="M32 11 L49 18 V32 C49 43 41 50 32 54 C23 50 15 43 15 32 V18 Z" fill="none" stroke="#34D399" stroke-width="3.2"/><rect x="25" y="30" width="14" height="12" rx="2.4" fill="#34D399"/><path d="M27.5 30 V26.5 a4.5 4.5 0 0 1 9 0 V30" fill="none" stroke="#34D399" stroke-width="2.6"/></svg><b>Deed<span>Guard</span> USA</b></div>
+    <div class="head">A basic "title lock" just pings you. We bring <mark>AI + a real attorney.</mark></div>
+    <div class="cmp">
+      <div class="cmpcol"><h4>Basic lock <span class="tag them">Them</span></h4>
+        <div class="li"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 6 6 18M6 6l12 12"/></svg> Raw alert, no context</div>
+        <div class="li"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 6 6 18M6 6l12 12"/></svg> No attorney</div>
+        <div class="li"><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M18 6 6 18M6 6l12 12"/></svg> Checks rarely</div>
+      </div>
+      <div class="cmpcol us"><h4>DeedGuard <span class="tag us">Us</span></h4>
+        <div class="li"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg> AI explains the filing</div>
+        <div class="li"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg> FL attorney on call</div>
+        <div class="li"><svg class="c" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg> Scans every few days</div>
+      </div>
+    </div>
+    <div class="foot"><div class="url">deedguardusa.com</div><div class="pill">Protect my home →</div></div>
+  </div>
+</div>
+
+<!-- Square 3 — value / price -->
+<div class="frame sq" id="sq3">
+  <div class="inner">
+    <div class="brandrow"><svg class="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E2A47"/><path d="M32 11 L49 18 V32 C49 43 41 50 32 54 C23 50 15 43 15 32 V18 Z" fill="none" stroke="#34D399" stroke-width="3.2"/><rect x="25" y="30" width="14" height="12" rx="2.4" fill="#34D399"/><path d="M27.5 30 V26.5 a4.5 4.5 0 0 1 9 0 V30" fill="none" stroke="#34D399" stroke-width="2.6"/></svg><b>Deed<span>Guard</span> USA</b></div>
+    <div class="eyebrow">Your biggest asset, watched</div>
+    <div class="price">$17<small>/mo</small></div>
+    <div class="sub">AI title monitoring for your Florida home.</div>
+    <div class="checks">
+      <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg> AI re-scans every few days</div>
+      <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg> Plain-English alerts</div>
+      <div class="li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg> Florida attorney on call</div>
+    </div>
+    <div class="foot"><div class="url">deedguardusa.com</div><div class="pill">Start free check →</div></div>
+  </div>
+</div>
+
+<!-- Story 1080x1920 -->
+<div class="frame" id="story">
+  <div class="inner">
+    <div class="brandrow"><svg class="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E2A47"/><path d="M32 11 L49 18 V32 C49 43 41 50 32 54 C23 50 15 43 15 32 V18 Z" fill="none" stroke="#34D399" stroke-width="3.2"/><rect x="25" y="30" width="14" height="12" rx="2.4" fill="#34D399"/><path d="M27.5 30 V26.5 a4.5 4.5 0 0 1 9 0 V30" fill="none" stroke="#34D399" stroke-width="2.6"/></svg><b>Deed<span>Guard</span> USA</b></div>
+    <div class="eyebrow">Florida title theft is rising</div>
+    <div class="head">Is someone forging the deed to <mark>your home?</mark></div>
+    <div class="sub">Our AI watches your title around the clock — and a real Florida attorney has your back.</div>
+    <div class="spacer"></div>
+    <div class="pill">Run your free title check →</div>
+    <div class="tagline" style="text-align:center">Always Watching. <span>Always Protected.</span></div>
+    <div class="url">deedguardusa.com</div>
+  </div>
+</div>
+
+</body>
+</html>

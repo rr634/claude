@@ -1,0 +1,15 @@
+{
+  "name": "deedguard-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeedGuard USA — serverless backend (lead capture, Stripe subscriptions, title monitoring).",
+  "scripts": {
+    "test": "node --test app/test/*.test.js"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.8.1",
+    "@supabase/supabase-js": "^2.45.4",
+    "resend": "^4.0.1",
+    "stripe": "^16.12.0"
+  }
+}
