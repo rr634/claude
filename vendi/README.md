@@ -22,7 +22,18 @@ The site works two ways: owners can sell their South Florida commercial property
 - Hero: uncomment the `.hero::before` photo line and add `assets/hero.jpg`.
 - Founder: set `.portrait{background:url(assets/founder.jpg) center/cover}`.
 
-## Deploy
-This repository's GitHub Pages already serves brkwatercap.com, and Pages allows only one custom domain per repository. Deploy this site one of these ways:
-- Put `site/` in its own repository and turn on Pages there.
-- Use Netlify or Cloudflare Pages with the publish directory set to `vendi/site`.
+## Going live
+
+GitHub Pages serves one custom domain per repository, and this repository already serves brkwatercap.com, so Vendí gets its own repository.
+
+1. **Create the repository.** Create an empty repository named `rr634/vendi` on GitHub. Public is fine, and you don't need a README.
+2. **I push the site.** That covers the site files at the root plus `deploy/pages.yml` as `.github/workflows/pages.yml`. The workflow turns Pages on and deploys automatically. The site is first live at https://rr634.github.io/vendi/.
+3. **Buy the domain** (for example vendicre.com). At the registrar, add:
+   - `A` records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - a `CNAME` record for `www` pointing to `rr634.github.io`
+4. **Connect the domain.** In the vendi repository, go to Settings → Pages → Custom domain, enter the domain and save. Tick "Enforce HTTPS" once the certificate is issued, which usually takes minutes and can take up to a day.
+   - Deploying through Actions ignores the CNAME file, so this step is required.
+   - If you buy a different domain than vendicre.com, tell me and I'll update `CNAME`, `robots.txt`, `sitemap.xml`, and the canonical and Open Graph tags.
+
+## Leads
+Create a free Formspree form and paste its endpoint into `FORM_ENDPOINT` at the bottom of `index.html`. Until then, the form opens the visitor's email app addressed to `offers@vendicre.com`, which you'll also need to set up once you own the domain.
